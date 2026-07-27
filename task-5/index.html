@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 05 - Weather Web Application</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="weather-app">
+    <div class="badge">PRODIGY INFOTECH - TASK 05</div>
+    <h1>Live Weather Dashboard</h1>
+    <p class="subtitle">Search live weather metrics and 5-day forecasts for any city</p>
+
+    <!-- Search Bar -->
+    <div class="search-box">
+      <input type="text" id="cityInput" placeholder="Enter city name (e.g. London, Tokyo, New York)...">
+      <button id="searchBtn" class="btn-search">🔍 Search</button>
+    </div>
+
+    <!-- Main Card -->
+    <div class="weather-card">
+      <div class="card-header">
+        <div>
+          <h2 id="cityName">London, UK</h2>
+          <span id="currentDate" class="date-str">Monday, Jul 27</span>
+        </div>
+        <div id="weatherIcon" class="icon-large">🌧️</div>
+      </div>
+
+      <div class="temp-row">
+        <div id="temp" class="temp-val">18°C</div>
+        <div id="desc" class="desc-val">Light Rain</div>
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric">
+          <span class="m-label">Humidity</span>
+          <span id="humidity" class="m-val">82%</span>
+        </div>
+        <div class="metric">
+          <span class="m-label">Wind Speed</span>
+          <span id="wind" class="m-val">14 km/h</span>
+        </div>
+        <div class="metric">
+          <span class="m-label">Pressure</span>
+          <span id="pressure" class="m-val">1012 hPa</span>
+        </div>
+        <div class="metric">
+          <span class="m-label">UV Index</span>
+          <span id="uv" class="m-val">3 (Low)</span>
+        </div>
+      </div>
+
+      <h3>5-Day Forecast</h3>
+      <div id="forecastGrid" class="forecast-grid"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

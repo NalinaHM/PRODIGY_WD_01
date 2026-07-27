@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prodigy InfoTech - Web Development Suite | Internship Projects</title>
+  <meta name="description" content="Prodigy InfoTech Web Development Internship Task Portfolio featuring Landing Page, Stopwatch App, Tic-Tac-Toe Game, Personal Portfolio, and Live Weather App.">
+  
+  <!-- Favicon & Fonts -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/stopwatch.css">
+  <link rel="stylesheet" href="css/tictactoe.css">
+  <link rel="stylesheet" href="css/portfolio.css">
+  <link rel="stylesheet" href="css/weather.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       TASK-01: INTERACTIVE NAVIGATION HEADER & LANDING PAGE
+       ========================================================================== -->
+  <header class="main-header" id="mainHeader">
+    <div class="container nav-wrapper">
+      <a href="#hero" class="brand-logo" id="brandLogo">
+        <div class="logo-badge">P</div>
+        <div class="brand-title">PRODIGY <span>INFOTECH</span></div>
+      </a>
+      
+      <nav id="navMenu">
+        <ul class="nav-menu">
+          <li><a href="#hero" class="nav-link active" id="navLinkHome">Home</a></li>
+          <li><a href="#task-01" class="nav-link" id="navLinkTask1">Task 01: Landing Page</a></li>
+          <li><a href="#task-02" class="nav-link" id="navLinkTask2">Task 02: Stopwatch</a></li>
+          <li><a href="#task-03" class="nav-link" id="navLinkTask3">Task 03: Tic-Tac-Toe</a></li>
+          <li><a href="#task-04" class="nav-link" id="navLinkTask4">Task 04: Portfolio</a></li>
+          <li><a href="#task-05" class="nav-link" id="navLinkTask5">Task 05: Weather App</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main>
+    
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-content">
+        <div class="hero-pill">
+          <span class="badge">PRODIGY INFOTECH INTERNSHIP</span>
+        </div>
+        <h1 class="hero-title">Web Development <span class="gradient-text">Project Suite</span></h1>
+        <p class="hero-subtitle">
+          An interactive, modern application showcasing all 5 mandatory internship tasks for the Web Development track with rich UI design, dark mode aesthetics, and micro-animations.
+        </p>
+        <div class="hero-actions">
+          <a href="#task-01" class="btn btn-primary" id="btnExploreTasks">
+            <span>Explore Tasks</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#task-04" class="btn btn-secondary" id="btnViewPortfolio">
+            <span>View Developer Profile</span>
+          </a>
+        </div>
+
+        <!-- Task Grid Cards Overview -->
+        <div class="task-grid">
+          <div class="glass-card task-card">
+            <div class="task-card-header">
+              <div class="task-icon-box">🌐</div>
+              <span class="badge">TASK 01</span>
+            </div>
+            <h3>Responsive Landing & Nav</h3>
+            <p>Fixed interactive navigation menu with scroll opacity triggers, smooth link highlighting, and glassmorphism styling.</p>
+            <div class="task-card-footer">
+              <a href="#task-01" class="btn btn-secondary" style="width: 100%;">Launch Task 01</a>
+            </div>
+          </div>
+
+          <div class="glass-card task-card">
+            <div class="task-card-header">
+              <div class="task-icon-box">⏱️</div>
+              <span class="badge">TASK 02</span>
+            </div>
+            <h3>Stopwatch Web App</h3>
+            <p>Precise timer application featuring Start, Pause, Lap recording, lap statistics, and best/worst lap highlighting.</p>
+            <div class="task-card-footer">
+              <a href="#task-02" class="btn btn-secondary" style="width: 100%;">Launch Task 02</a>
+            </div>
+          </div>
+
+          <div class="glass-card task-card">
+            <div class="task-card-header">
+              <div class="task-icon-box">🎮</div>
+              <span class="badge">TASK 03</span>
+            </div>
+            <h3>Tic-Tac-Toe Web App</h3>
+            <p>Interactive 3x3 grid game featuring Player vs Player mode, unbeatable Minimax AI mode, and real-time scorekeeping.</p>
+            <div class="task-card-footer">
+              <a href="#task-03" class="btn btn-secondary" style="width: 100%;">Launch Task 03</a>
+            </div>
+          </div>
+
+          <div class="glass-card task-card">
+            <div class="task-card-header">
+              <div class="task-icon-box">👨‍💻</div>
+              <span class="badge">TASK 04</span>
+            </div>
+            <h3>Developer Portfolio</h3>
+            <p>Personal portfolio site showcasing skills, project filter tags, interactive bio, and validated contact form.</p>
+            <div class="task-card-footer">
+              <a href="#task-04" class="btn btn-secondary" style="width: 100%;">Launch Task 04</a>
+            </div>
+          </div>
+
+          <div class="glass-card task-card">
+            <div class="task-card-header">
+              <div class="task-icon-box">🌤️</div>
+              <span class="badge">TASK 05</span>
+            </div>
+            <h3>Live Weather App</h3>
+            <p>Weather dashboard fetching real-time weather metrics, city location search, humidity/wind metrics, and 5-day forecast.</p>
+            <div class="task-card-footer">
+              <a href="#task-05" class="btn btn-secondary" style="width: 100%;">Launch Task 05</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: TASK 01 - LANDING PAGE & NAVIGATION MENU -->
+    <section class="section-padding" id="task-01">
+      <div class="container">
+        <div class="section-header">
+          <div class="subtitle">TASK-01 DEMONSTRATION</div>
+          <h2>Interactive <span class="gradient-text-cyan">Navigation & Landing</span></h2>
+          <p>Scroll up and down to observe how the fixed header dynamically adjusts its background opacity, blur, padding, and hover states.</p>
+        </div>
+
+        <div class="glass-card" style="padding: 3rem; text-align: center; max-width: 900px; margin: 0 auto;">
+          <h3 style="font-size: 1.8rem; margin-bottom: 1rem;">Navigation Scroll Interaction Active</h3>
+          <p style="color: var(--text-muted); margin-bottom: 2rem;">
+            This header features zero-dependency Vanilla JS scroll listening (`window.scrollY`), CSS `backdrop-filter: blur()`, and active anchor section highlighting. Try scrolling or clicking any top menu item!
+          </p>
+          <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <a href="#task-02" class="btn btn-accent">Proceed to Task 02: Stopwatch &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: TASK 02 - STOPWATCH WEB APP -->
+    <section class="section-padding" id="task-02">
+      <div class="container">
+        <div class="section-header">
+          <div class="subtitle">TASK-02 DEMONSTRATION</div>
+          <h2>Stopwatch <span class="gradient-text">Web Application</span></h2>
+          <p>Measure time intervals accurately with start, pause, lap tracking, and performance analysis.</p>
+        </div>
+
+        <div class="glass-card stopwatch-wrapper">
+          <div class="timer-display" id="stopwatchTimerBox">
+            <span class="time-text" id="stopwatchDisplay">00:00</span><span class="time-ms" id="stopwatchMsDisplay">.00</span>
+          </div>
+
+          <div class="stopwatch-controls">
+            <button class="btn control-btn btn-start" id="stopwatchStartBtn">Start</button>
+            <button class="btn control-btn btn-secondary" id="stopwatchLapBtn" disabled>Lap</button>
+            <button class="btn control-btn btn-reset" id="stopwatchResetBtn">Reset</button>
+          </div>
+
+          <div class="laps-container">
+            <div class="laps-header">
+              <span>Lap #</span>
+              <span>Lap Time</span>
+              <span>Total Time</span>
+            </div>
+            <ul class="lap-list" id="lapList">
+              <li class="lap-item" style="justify-content: center; color: var(--text-dim);">No laps recorded yet</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: TASK 03 - TIC-TAC-TOE GAME -->
+    <section class="section-padding" id="task-03">
+      <div class="container">
+        <div class="section-header">
+          <div class="subtitle">TASK-03 DEMONSTRATION</div>
+          <h2>Tic-Tac-Toe <span class="gradient-text-cyan">Web Application</span></h2>
+          <p>Play against a friend in 2-Player mode or test your skills against an unbeatable Minimax AI opponent.</p>
+        </div>
+
+        <div class="glass-card ttt-wrapper">
+          <div class="ttt-controls">
+            <button class="btn mode-btn btn-secondary active" id="modePVP">2 Players (PVP)</button>
+            <button class="btn mode-btn btn-accent" id="modeAI">vs Minimax AI</button>
+          </div>
+
+          <div class="scoreboard">
+            <div class="score-box player-x" id="scoreBoxX">
+              <div class="score-label">Player X</div>
+              <div class="score-value" id="scoreX">0</div>
+            </div>
+            <div class="score-box" id="scoreBoxDraw">
+              <div class="score-label">Draws</div>
+              <div class="score-value" id="scoreDraw">0</div>
+            </div>
+            <div class="score-box player-o" id="scoreBoxO">
+              <div class="score-label">Player O</div>
+              <div class="score-value" id="scoreO">0</div>
+            </div>
+          </div>
+
+          <div class="ttt-status" id="tttStatus">Player X's Turn</div>
+
+          <div class="ttt-grid" id="tttGrid">
+            <!-- 9 Cells generated dynamically -->
+          </div>
+
+          <button class="btn btn-secondary" id="tttResetBtn" style="margin-top: 1rem;">
+            🔄 Reset Board
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: TASK 04 - PERSONAL DEVELOPER PORTFOLIO -->
+    <section class="section-padding" id="task-04">
+      <div class="container">
+        <div class="section-header">
+          <div class="subtitle">TASK-04 DEMONSTRATION</div>
+          <h2>Personal <span class="gradient-text">Developer Portfolio</span></h2>
+          <p>Showcasing web engineering skills, interactive project category filters, and contact capabilities.</p>
+        </div>
+
+        <!-- Portfolio Hero -->
+        <div class="portfolio-hero">
+          <div class="avatar-wrapper">
+            <div class="avatar-glow"></div>
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Developer Profile" class="avatar-img" id="portfolioAvatar">
+          </div>
+          <div class="portfolio-bio">
+            <span class="badge">WEB DEVELOPMENT INTERN</span>
+            <h1 style="margin-top: 0.5rem;">Hello, I'm <span class="gradient-text-cyan">Alex Morgan</span></h1>
+            <div class="role-tag">Full-Stack & Frontend Engineer</div>
+            <p>
+              Passionate developer specializing in modern web design, reactive JavaScript applications, and performant user interfaces. Currently completing the Prodigy InfoTech Web Development Internship.
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="#contact" class="btn btn-primary">Get In Touch</a>
+              <button class="btn btn-secondary" onclick="alert('Resume PDF Download Simulated!')">📄 Download CV</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills Section -->
+        <h3 style="font-size: 1.5rem; text-align: center; margin-bottom: 1.5rem;">Technical Skills</h3>
+        <div class="skills-grid" style="margin-bottom: 4rem;">
+          <div class="skill-card">
+            <div class="skill-info"><span>HTML5 & CSS3</span><span>95%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width: 95%;"></div></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-info"><span>JavaScript (ES6+)</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-info"><span>React & Vite</span><span>85%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width: 85%;"></div></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-info"><span>REST APIs & Async JS</span><span>88%</span></div>
+            <div class="skill-bar"><div class="skill-fill" style="width: 88%;"></div></div>
+          </div>
+        </div>
+
+        <!-- Filterable Project Gallery -->
+        <h3 style="font-size: 1.5rem; text-align: center; margin-bottom: 1.5rem;">Project Showcase</h3>
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="web">Web Apps</button>
+          <button class="filter-btn" data-filter="ui">UI/UX Components</button>
+        </div>
+
+        <div class="task-grid" style="margin-bottom: 5rem;">
+          <div class="glass-card task-card portfolio-project-card" data-category="web">
+            <div class="task-card-header">
+              <div class="task-icon-box">⏱️</div>
+              <span class="badge">WEB APP</span>
+            </div>
+            <h3>Precision Stopwatch</h3>
+            <p>Centisecond timer with lap logging, fastest/slowest lap markers, and dark mode UI.</p>
+            <div class="task-card-footer">
+              <a href="#task-02" class="btn btn-secondary" style="width: 100%;">View Project</a>
+            </div>
+          </div>
+
+          <div class="glass-card task-card portfolio-project-card" data-category="web">
+            <div class="task-card-header">
+              <div class="task-icon-box">🎮</div>
+              <span class="badge">GAME</span>
+            </div>
+            <h3>Tic-Tac-Toe Minimax</h3>
+            <p>AI-driven board game using the Minimax decision algorithm for unbeatable computer moves.</p>
+            <div class="task-card-footer">
+              <a href="#task-03" class="btn btn-secondary" style="width: 100%;">View Project</a>
+            </div>
+          </div>
+
+          <div class="glass-card task-card portfolio-project-card" data-category="ui">
+            <div class="task-card-header">
+              <div class="task-icon-box">🌤️</div>
+              <span class="badge">UI COMPONENT</span>
+            </div>
+            <h3>Live Weather Dashboard</h3>
+            <p>OpenWeather API integration with location search, UV index, humidity, and 5-day forecast cards.</p>
+            <div class="task-card-footer">
+              <a href="#task-05" class="btn btn-secondary" style="width: 100%;">View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="glass-card" style="padding: 3rem; text-align: center; max-width: 650px; margin: 0 auto;" id="contact">
+          <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Contact Me</h3>
+          <p style="color: var(--text-muted); margin-bottom: 2rem;">Have a project in mind or interested in collaboration? Drop a message!</p>
+          
+          <form class="contact-form" id="portfolioContactForm">
+            <div class="form-group">
+              <label for="contactName">Your Name</label>
+              <input type="text" id="contactName" class="form-control" placeholder="John Doe" required>
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Your Email</label>
+              <input type="email" id="contactEmail" class="form-control" placeholder="john@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" class="form-control" placeholder="Write your message here..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Send Message</button>
+            <div id="formFeedback" style="display: none;"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: TASK 05 - LIVE WEATHER APP -->
+    <section class="section-padding" id="task-05">
+      <div class="container">
+        <div class="section-header">
+          <div class="subtitle">TASK-05 DEMONSTRATION</div>
+          <h2>Live Weather <span class="gradient-text-cyan">Dashboard</span></h2>
+          <p>Fetch real-time weather conditions, humidity, wind speeds, and 5-day forecasts for any city worldwide.</p>
+        </div>
+
+        <div class="glass-card weather-wrapper">
+          <div class="weather-search">
+            <input type="text" id="weatherCityInput" placeholder="Enter city name (e.g. London, Tokyo, New York)...">
+            <button class="btn btn-accent" id="weatherSearchBtn">🔍 Search</button>
+          </div>
+
+          <div class="weather-main-card">
+            <div class="weather-location">
+              <div>
+                <div class="city-name" id="weatherCityName">London, UK</div>
+                <div class="weather-date" id="weatherDate">Monday, Jul 27</div>
+              </div>
+              <div class="weather-icon-large" id="weatherIcon">🌧️</div>
+            </div>
+
+            <div class="temp-badge-row">
+              <div class="temp-large" id="weatherTemp">18°C</div>
+              <div class="weather-desc" id="weatherDesc">Light Rain</div>
+            </div>
+
+            <div class="weather-metrics">
+              <div class="metric-card">
+                <div class="metric-title">Humidity</div>
+                <div class="metric-value" id="weatherHumidity">82%</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-title">Wind Speed</div>
+                <div class="metric-value" id="weatherWind">14 km/h</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-title">Pressure</div>
+                <div class="metric-value" id="weatherPressure">1012 hPa</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-title">UV Index</div>
+                <div class="metric-value" id="weatherUV">3 (Low)</div>
+              </div>
+            </div>
+
+            <div class="forecast-header">5-Day Forecast</div>
+            <div class="forecast-grid" id="weatherForecastGrid">
+              <!-- Forecast cards generated dynamically -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer style="padding: 3rem 0; text-align: center; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.9rem;">
+    <div class="container">
+      <p>Prodigy InfoTech Web Development Internship Submission &copy; 2026. Built with HTML5, Vanilla CSS, and JavaScript.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript Bundle (ES6 Modules) -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

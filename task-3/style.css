@@ -1,0 +1,201 @@
+:root {
+  --bg-dark: #0f172a;
+  --card-bg: rgba(30, 41, 59, 0.8);
+  --color-x: #06b6d4;
+  --color-o: #ec4899;
+  --color-win: #10b981;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-image: radial-gradient(circle at 50% 30%, rgba(6, 182, 212, 0.1) 0%, transparent 60%);
+}
+
+.game-container {
+  width: 100%;
+  max-width: 480px;
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(16px);
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-x);
+  background: rgba(6, 182, 212, 0.1);
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.mode-selector {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.mode-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mode-btn.active {
+  background: var(--color-x);
+  color: white;
+  border-color: var(--color-x);
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.3);
+}
+
+.scoreboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.score-card {
+  background: rgba(15, 23, 42, 0.6);
+  padding: 0.75rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.score-title {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.score-num {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.player-x .score-num { color: var(--color-x); }
+.player-o .score-num { color: var(--color-o); }
+
+.status-msg {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  min-height: 1.8rem;
+}
+
+.ttt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  max-width: 330px;
+  margin: 0 auto 1.5rem auto;
+  aspect-ratio: 1;
+}
+
+.cell {
+  background: rgba(15, 23, 42, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+  font-weight: 900;
+  font-family: var(--font-heading);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.cell:hover:not(.taken) {
+  background: rgba(6, 182, 212, 0.15);
+  border-color: var(--color-x);
+  transform: scale(1.03);
+}
+
+.cell.taken {
+  cursor: not-allowed;
+}
+
+.cell.x {
+  color: var(--color-x);
+  text-shadow: 0 0 12px rgba(6, 182, 212, 0.4);
+}
+
+.cell.o {
+  color: var(--color-o);
+  text-shadow: 0 0 12px rgba(236, 72, 153, 0.4);
+}
+
+.cell.winner {
+  background: rgba(16, 185, 129, 0.25);
+  border-color: var(--color-win);
+  animation: winPulse 0.8s infinite alternate;
+}
+
+@keyframes winPulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+.btn-reset {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-reset:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}

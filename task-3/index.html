@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 03 - Tic-Tac-Toe Web Application</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="game-container">
+    <div class="badge">PRODIGY INFOTECH - TASK 03</div>
+    <h1>Tic-Tac-Toe Game</h1>
+    <p class="subtitle">Play against a friend or test your skills against Minimax AI</p>
+
+    <!-- Mode Selector -->
+    <div class="mode-selector">
+      <button id="pvpBtn" class="mode-btn active">2 Players (PVP)</button>
+      <button id="aiBtn" class="mode-btn">vs Minimax AI</button>
+    </div>
+
+    <!-- Scoreboard -->
+    <div class="scoreboard">
+      <div class="score-card player-x">
+        <span class="score-title">Player X</span>
+        <span id="scoreX" class="score-num">0</span>
+      </div>
+      <div class="score-card draw">
+        <span class="score-title">Draws</span>
+        <span id="scoreDraw" class="score-num">0</span>
+      </div>
+      <div class="score-card player-o">
+        <span class="score-title">Player O</span>
+        <span id="scoreO" class="score-num">0</span>
+      </div>
+    </div>
+
+    <!-- Status -->
+    <div id="gameStatus" class="status-msg">Player X's Turn</div>
+
+    <!-- 3x3 Grid -->
+    <div id="grid" class="ttt-grid"></div>
+
+    <button id="resetBtn" class="btn-reset">🔄 Reset Game</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

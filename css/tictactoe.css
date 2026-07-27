@@ -1,0 +1,126 @@
+/* ==========================================================================
+   TASK-03: TIC-TAC-TOE WEB APPLICATION STYLING
+   ========================================================================== */
+
+.ttt-wrapper {
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Mode Selector & Scoreboard */
+.ttt-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.mode-btn {
+  padding: 0.6rem 1.25rem;
+  font-size: 0.85rem;
+  border-radius: var(--radius-full);
+}
+
+.scoreboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.score-box {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.score-box.active-turn {
+  border-color: var(--secondary);
+  box-shadow: 0 0 15px var(--secondary-glow);
+}
+
+.score-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.score-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  color: var(--text-main);
+}
+
+.score-box.player-x .score-value { color: var(--secondary); }
+.score-box.player-o .score-value { color: var(--accent-pink); }
+
+/* Game Grid */
+.ttt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+  max-width: 380px;
+  margin: 0 auto 2rem auto;
+  aspect-ratio: 1;
+}
+
+.ttt-cell {
+  background: rgba(26, 36, 56, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: 900;
+  font-family: var(--font-heading);
+  cursor: pointer;
+  transition: var(--transition-bounce);
+  user-select: none;
+}
+
+.ttt-cell:hover:not(.taken) {
+  background: rgba(99, 102, 241, 0.15);
+  border-color: var(--primary-light);
+  transform: scale(1.03);
+}
+
+.ttt-cell.taken {
+  cursor: not-allowed;
+}
+
+.ttt-cell.cell-x {
+  color: var(--secondary);
+  text-shadow: 0 0 15px var(--secondary-glow);
+}
+
+.ttt-cell.cell-o {
+  color: var(--accent-pink);
+  text-shadow: 0 0 15px rgba(236, 72, 153, 0.5);
+}
+
+.ttt-cell.winning-cell {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.3) 0%, rgba(6, 182, 212, 0.3) 100%);
+  border-color: var(--accent-emerald);
+  animation: pulse-win 1s infinite alternate;
+}
+
+@keyframes pulse-win {
+  0% { transform: scale(1); box-shadow: 0 0 10px var(--accent-emerald); }
+  100% { transform: scale(1.05); box-shadow: 0 0 25px var(--accent-emerald); }
+}
+
+/* Status Message */
+.ttt-status {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  min-height: 2rem;
+  color: var(--text-main);
+}

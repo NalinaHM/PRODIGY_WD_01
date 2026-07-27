@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 04 - Personal Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="nav">
+    <div class="nav-container">
+      <a href="#" class="logo">Alex Morgan</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="about">
+    <div class="hero-container">
+      <div class="avatar-box">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="Alex Morgan">
+      </div>
+      <div class="hero-text">
+        <span class="badge">PRODIGY INFOTECH - TASK 04</span>
+        <h1>Web Developer & <span class="gradient">Frontend Engineer</span></h1>
+        <p>I build clean, responsive, and user-driven web applications with modern design principles.</p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-primary">Hire Me</a>
+          <a href="#projects" class="btn-secondary">View Work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+    <div class="section-container">
+      <h2>Skills & Expertise</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-head"><span>HTML5 & CSS3</span><span>95%</span></div>
+          <div class="bar"><div class="fill" style="width: 95%;"></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-head"><span>JavaScript (ES6+)</span><span>90%</span></div>
+          <div class="bar"><div class="fill" style="width: 90%;"></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-head"><span>React & State Management</span><span>85%</span></div>
+          <div class="bar"><div class="fill" style="width: 85%;"></div></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-head"><span>REST API & Async JS</span><span>88%</span></div>
+          <div class="bar"><div class="fill" style="width: 88%;"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <div class="section-container">
+      <h2>Featured Projects</h2>
+      
+      <div class="filter-tabs">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web Apps</button>
+        <button class="filter-btn" data-filter="ui">UI/UX</button>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card" data-category="web">
+          <div class="card-icon">⏱️</div>
+          <h3>Precision Stopwatch</h3>
+          <p>Centisecond web timer featuring lap history logging and statistics.</p>
+        </div>
+        <div class="project-card" data-category="web">
+          <div class="card-icon">🎮</div>
+          <h3>Tic-Tac-Toe Minimax</h3>
+          <p>Interactive board game featuring an unbeatable AI engine.</p>
+        </div>
+        <div class="project-card" data-category="ui">
+          <div class="card-icon">🌤️</div>
+          <h3>Live Weather Dashboard</h3>
+          <p>Real-time weather query dashboard with location search and forecast.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="section-container">
+      <h2>Get In Touch</h2>
+      <form id="contactForm" class="contact-form">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn-primary">Send Message</button>
+        <div id="msgStatus" class="status-msg"></div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Alex Morgan | Prodigy InfoTech Web Development Internship</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

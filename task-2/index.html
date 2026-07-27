@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 02 - Stopwatch Web Application</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="stopwatch-container">
+    <div class="badge">PRODIGY INFOTECH - TASK 02</div>
+    <h1>Stopwatch Web Application</h1>
+    <p class="subtitle">Accurate centisecond timer with lap history logging</p>
+
+    <!-- Timer Box -->
+    <div class="timer-box">
+      <span id="timeDisplay">00:00:00</span><span id="msDisplay">.00</span>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button id="startBtn" class="btn btn-start">Start</button>
+      <button id="lapBtn" class="btn btn-lap" disabled>Lap</button>
+      <button id="resetBtn" class="btn btn-reset">Reset</button>
+    </div>
+
+    <!-- Lap History List -->
+    <div class="laps-box">
+      <div class="laps-header">
+        <span>Lap #</span>
+        <span>Split Time</span>
+        <span>Total Time</span>
+      </div>
+      <ul id="lapsList">
+        <li class="empty-lap">No lap records yet</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
