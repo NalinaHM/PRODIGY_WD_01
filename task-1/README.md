@@ -1,7 +1,13 @@
 # Prodigy InfoTech Web Development Internship - Task 01
 ## Responsive Landing Page with Interactive Navigation Menu
 
-### 📌 Overview
+### 🔗 Live Demo Links
+- 🌐 **Live Demo (Githack)**: [Task 01 Live App](https://raw.githack.com/NalinaHM/PRODIGY_WD_01/main/task-1/index.html)
+- 🚀 **GitHub Pages**: [Task 01 GitHub Pages](https://nalinahm.github.io/PRODIGY_WD_01/task-1/)
+
+---
+
+### 📌 Task Overview
 This repository contains the complete implementation for **Task 01** of the Prodigy InfoTech Web Development Internship Track.
 
 ### ✨ Key Features Implemented
@@ -13,14 +19,7 @@ This repository contains the complete implementation for **Task 01** of the Prod
 6. **Responsive Hamburger Drawer Menu**: Smooth navigation drawer for mobile viewports.
 7. **FAQ Accordion & Form Validation**: Expandable FAQ items and contact form input validation.
 
-### 🛠️ File Structure
-```
-c:\prodig\task-1\
-├── index.html        # Main HTML5 landing page structure
-├── style.css         # Custom CSS tokens, glassmorphism & responsive layout
-├── script.js        # ES6 JavaScript scroll listening & theme studio engine
-└── README.md         # Project documentation
-```
-
-### 🚀 How to Run
-Simply open `index.html` in any modern web browser or serve via HTTP dev server.
+### 🛠️ Tech Stack
+- HTML5
+- CSS3 (Custom properties, Glassmorphism, CSS Grid)
+- Vanilla JavaScript (ES6)
