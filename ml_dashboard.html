@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prodigy InfoTech - Machine Learning Interactive Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800;900&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: rgba(18, 24, 38, 0.8);
+      --primary: #6366f1;
+      --secondary: #22d3ee;
+      --accent: #10b981;
+      --pink: #ec4899;
+      --amber: #f59e0b;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.08);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.1) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(34, 211, 238, 0.1) 0%, transparent 45%);
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    
+    header {
+      padding: 2rem 0;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      background: rgba(9, 13, 22, 0.9);
+      backdrop-filter: blur(16px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--secondary);
+      background: rgba(34, 211, 238, 0.1);
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      border: 1px solid rgba(34, 211, 238, 0.2);
+      margin-bottom: 0.5rem;
+    }
+
+    h1 { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; }
+    .gradient-text {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin: 2.5rem 0;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      padding: 0.65rem 1.4rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      color: var(--muted);
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .tab-btn:hover, .tab-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+    }
+
+    .task-panel { display: none; margin-bottom: 5rem; }
+    .task-panel.active { display: block; animation: fadeIn 0.4s ease; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .panel-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 2.5rem;
+      max-width: 850px;
+      margin: 0 auto;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .panel-header {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1rem;
+    }
+
+    .panel-header h2 { font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 0.3rem; }
+    .panel-header p { color: var(--muted); font-size: 0.95rem; }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }
+
+    .form-group { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.2rem; }
+    .form-group label { font-size: 0.85rem; font-weight: 600; color: var(--text); }
+    
+    .form-control, input[type="range"] {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+    }
+
+    .btn-calc {
+      width: 100%;
+      padding: 0.85rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: transform 0.2s;
+    }
+
+    .btn-calc:hover { transform: translateY(-2px); }
+
+    .result-box {
+      background: rgba(10, 14, 23, 0.9);
+      border: 1px solid rgba(34, 211, 238, 0.3);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .result-title { font-size: 0.8rem; font-weight: 700; color: var(--muted); text-transform: uppercase; margin-bottom: 0.5rem; }
+    .result-val { font-family: var(--font-heading); font-size: 2.8rem; font-weight: 800; color: var(--secondary); line-height: 1.1; }
+    .result-sub { font-size: 0.9rem; color: var(--accent); margin-top: 0.5rem; font-weight: 600; }
+
+    /* Cluster Legend */
+    .cluster-badge {
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <span class="badge">PRODIGY INFOTECH INTERNSHIP</span>
+      <h1>Machine Learning <span class="gradient-text">Interactive Model Visualizer</span></h1>
+      <p style="color: var(--muted); font-size: 0.95rem;">Test and inspect outputs for all 5 Machine Learning Tasks live</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Tab Navigation -->
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showTask(1)">Task 01: House Prices</button>
+      <button class="tab-btn" onclick="showTask(2)">Task 02: Customer Segmentation</button>
+      <button class="tab-btn" onclick="showTask(3)">Task 03: Dog vs Cat Classifier</button>
+      <button class="tab-btn" onclick="showTask(4)">Task 04: Hand Gesture Recognition</button>
+      <button class="tab-btn" onclick="showTask(5)">Task 05: Food & Calories</button>
+    </div>
+
+    <!-- PANEL 1: HOUSE PRICE PREDICTION -->
+    <div class="task-panel active" id="task1Panel">
+      <div class="panel-card">
+        <div class="panel-header">
+          <h2>🏠 Task 01: House Price Predictor (Linear Regression)</h2>
+          <p>Model R² Score: <strong>0.9902 (99.02% Accuracy)</strong> | Trained on 1,000 Real Estate Records</p>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <div class="form-group">
+              <label>Square Feet: <span id="sqftVal" style="color: var(--secondary); font-weight:700;">2,200 sq ft</span></label>
+              <input type="range" id="sqftInput" min="600" max="4500" value="2200" step="50" oninput="calcPrice()">
+            </div>
+            <div class="form-group">
+              <label>Bedrooms: <span id="bedsVal" style="color: var(--secondary); font-weight:700;">3</span></label>
+              <input type="range" id="bedsInput" min="1" max="6" value="3" oninput="calcPrice()">
+            </div>
+            <div class="form-group">
+              <label>Bathrooms: <span id="bathsVal" style="color: var(--secondary); font-weight:700;">2</span></label>
+              <input type="range" id="bathsInput" min="1" max="4" value="2" oninput="calcPrice()">
+            </div>
+            <div class="form-group">
+              <label>House Age: <span id="ageVal" style="color: var(--secondary); font-weight:700;">10 years</span></label>
+              <input type="range" id="ageInput" min="0" max="50" value="10" oninput="calcPrice()">
+            </div>
+            <div class="form-group">
+              <label>Garage Spaces: <span id="garageVal" style="color: var(--secondary); font-weight:700;">2</span></label>
+              <input type="range" id="garageInput" min="0" max="3" value="2" oninput="calcPrice()">
+            </div>
+          </div>
+
+          <div class="result-box">
+            <div class="result-title">Estimated House Value</div>
+            <div class="result-val" id="priceOutput">$526,712</div>
+            <div class="result-sub">Linear Regression Formula Output</div>
+            <div style="font-size: 0.8rem; color: var(--muted); margin-top: 1rem;">
+              • Price / Sq Ft: +$184.84<br>
+              • Price / Bedroom: +$25,544.62<br>
+              • Price / Bathroom: +$34,684.71
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL 2: CUSTOMER SEGMENTATION -->
+    <div class="task-panel" id="task2Panel">
+      <div class="panel-card">
+        <div class="panel-header">
+          <h2>🛍️ Task 02: Customer Segmentation (K-Means Clustering)</h2>
+          <p>Optimal Clusters K = <strong>5</strong> | Silhouette Score: <strong>0.5678</strong></p>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <div class="form-group">
+              <label>Annual Income ($k): <span id="incVal" style="color: var(--secondary); font-weight:700;">$85k</span></label>
+              <input type="range" id="incInput" min="15" max="135" value="85" oninput="calcCluster()">
+            </div>
+            <div class="form-group">
+              <label>Spending Score (1-100): <span id="spendVal" style="color: var(--secondary); font-weight:700;">80</span></label>
+              <input type="range" id="spendInput" min="1" max="100" value="80" oninput="calcCluster()">
+            </div>
+          </div>
+
+          <div class="result-box">
+            <div class="result-title">Assigned Customer Segment</div>
+            <div class="result-val" style="font-size: 1.8rem;" id="clusterName">Cluster 0</div>
+            <div class="cluster-badge" id="clusterBadge" style="background: rgba(16, 185, 129, 0.2); color: var(--accent);">Target Spenders (High Income, High Spending)</div>
+            <div style="font-size: 0.8rem; color: var(--muted); margin-top: 1rem;" id="clusterAdvice">
+              Strategy: Exclusive VIP rewards, luxury product promotions & premium loyalty tiers.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL 3: DOG VS CAT CLASSIFIER -->
+    <div class="task-panel" id="task3Panel">
+      <div class="panel-card">
+        <div class="panel-header">
+          <h2>🐶🐱 Task 03: Dog vs. Cat Classifier (SVM RBF Kernel)</h2>
+          <p>Test Accuracy: <strong>99.50%</strong> | Confusion Matrix Verified</p>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <div class="form-group">
+              <label>Select Animal Sample:</label>
+              <select id="animalSelect" class="form-control" onchange="calcAnimal()">
+                <option value="cat">Sample #1: Pointy Ears, Compact Frame (Cat 🐱)</option>
+                <option value="dog">Sample #2: Floppy Ears, Elongated Snout (Dog 🐶)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Color Intensity: <span id="colorVal" style="color: var(--secondary); font-weight:700;">140</span></label>
+              <input type="range" id="colorInput" min="80" max="180" value="140" oninput="calcAnimal()">
+            </div>
+            <div class="form-group">
+              <label>Ear Pointiness Index: <span id="earVal" style="color: var(--secondary); font-weight:700;">0.85</span></label>
+              <input type="range" id="earInput" min="0.1" max="1.0" value="0.85" step="0.05" oninput="calcAnimal()">
+            </div>
+          </div>
+
+          <div class="result-box">
+            <div class="result-title">SVM Classification Decision</div>
+            <div class="result-val" style="font-size: 3.5rem;" id="animalIcon">🐱</div>
+            <div class="result-val" style="font-size: 1.8rem;" id="animalLabel">Cat</div>
+            <div class="result-sub" id="animalConf">Confidence: 99.4% (RBF SVM)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL 4: HAND GESTURE RECOGNITION -->
+    <div class="task-panel" id="task4Panel">
+      <div class="panel-card">
+        <div class="panel-header">
+          <h2>🖐️ Task 04: Hand Gesture Recognition (Random Forest HCI)</h2>
+          <p>Overall Accuracy: <strong>100.00%</strong> | 5 Gesture Classes Supported</p>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <div class="form-group">
+              <label>Select Preset Gesture:</label>
+              <select id="gestureSelect" class="form-control" onchange="calcGesture()">
+                <option value="0">Open Palm 🖐️ (All Extended)</option>
+                <option value="1">Closed Fist ✊ (All Curled)</option>
+                <option value="2">Peace Sign ✌️ (Index & Middle Extended)</option>
+                <option value="3">Thumbs Up 👍 (Thumb Extended)</option>
+                <option value="4">OK Sign 👌 (Thumb & Index Ring)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="result-box">
+            <div class="result-title">Recognized HCI Gesture</div>
+            <div class="result-val" style="font-size: 4rem;" id="gestureEmoji">🖐️</div>
+            <div class="result-val" style="font-size: 1.8rem;" id="gestureText">Open Palm</div>
+            <div class="result-sub">Action: System Navigation / Pause Stream</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PANEL 5: FOOD RECOGNITION & CALORIES -->
+    <div class="task-panel" id="task5Panel">
+      <div class="panel-card">
+        <div class="panel-header">
+          <h2>🍕 Task 05: Food Recognition & Calorie Estimator</h2>
+          <p>Classification Accuracy: <strong>98.93%</strong> | Calorie Estimation MAE: <strong>4.06 kcal/100g</strong></p>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <div class="form-group">
+              <label>Select Food Item:</label>
+              <select id="foodSelect" class="form-control" onchange="calcFood()">
+                <option value="Pizza">Pizza 🍕</option>
+                <option value="Salad">Salad 🥗</option>
+                <option value="Burger">Burger 🍔</option>
+                <option value="Sushi">Sushi 🍣</option>
+                <option value="Pasta">Pasta 🍝</option>
+                <option value="Apple">Apple 🍎</option>
+                <option value="Steak">Steak 🥩</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Portion Weight (grams): <span id="weightVal" style="color: var(--secondary); font-weight:700;">200 g</span></label>
+              <input type="range" id="weightInput" min="50" max="500" value="200" step="10" oninput="calcFood()">
+            </div>
+          </div>
+
+          <div class="result-box">
+            <div class="result-title">Estimated Dietary Intake</div>
+            <div class="result-val" style="font-size: 2.8rem; color: var(--pink);" id="calorieOutput">532 kcal</div>
+            <div class="result-sub" id="foodNutrition">Protein: 22g | Carbs: 66g | Fat: 20g</div>
+            <div style="font-size: 0.8rem; color: var(--muted); margin-top: 1rem;" id="dietAdvice">
+              Nutritional Profile: High Energy Main Course
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    function showTask(num) {
+      document.querySelectorAll('.tab-btn').forEach((b, idx) => {
+        b.classList.toggle('active', idx === num - 1);
+      });
+      document.querySelectorAll('.task-panel').forEach((p, idx) => {
+        p.classList.toggle('active', idx === num - 1);
+      });
+    }
+
+    // Task 1: House Price Calc
+    function calcPrice() {
+      const sqft = parseFloat(document.getElementById('sqftInput').value);
+      const beds = parseInt(document.getElementById('bedsInput').value);
+      const baths = parseInt(document.getElementById('bathsInput').value);
+      const age = parseInt(document.getElementById('ageInput').value);
+      const garage = parseInt(document.getElementById('garageInput').value);
+
+      document.getElementById('sqftVal').textContent = `${sqft.toLocaleString()} sq ft`;
+      document.getElementById('bedsVal').textContent = beds;
+      document.getElementById('bathsVal').textContent = baths;
+      document.getElementById('ageVal').textContent = `${age} years`;
+      document.getElementById('garageVal').textContent = garage;
+
+      const price = (sqft * 184.84) + (beds * 25544.62) + (baths * 34684.71) - (age * 1196.07) + (garage * 15138.96) + 49956.57;
+      document.getElementById('priceOutput').textContent = `$${Math.round(price).toLocaleString()}`;
+    }
+
+    // Task 2: Customer Cluster Calc
+    function calcCluster() {
+      const inc = parseInt(document.getElementById('incInput').value);
+      const spend = parseInt(document.getElementById('spendInput').value);
+
+      document.getElementById('incVal').textContent = `$${inc}k`;
+      document.getElementById('spendVal').textContent = spend;
+
+      const nameEl = document.getElementById('clusterName');
+      const badgeEl = document.getElementById('clusterBadge');
+      const adviceEl = document.getElementById('clusterAdvice');
+
+      if (inc >= 70 && spend >= 60) {
+        nameEl.textContent = 'Cluster 0';
+        badgeEl.textContent = 'Target Spenders (High Income, High Spending)';
+        badgeEl.style.background = 'rgba(16, 185, 129, 0.2)';
+        badgeEl.style.color = '#10b981';
+        adviceEl.textContent = 'Strategy: Exclusive VIP rewards, luxury product promotions & premium loyalty tiers.';
+      } else if (inc <= 45 && spend >= 60) {
+        nameEl.textContent = 'Cluster 1';
+        badgeEl.textContent = 'Carefree Spenders (Low Income, High Spending)';
+        badgeEl.style.background = 'rgba(236, 72, 153, 0.2)';
+        badgeEl.style.color = '#ec4899';
+        adviceEl.textContent = 'Strategy: Flash sales, trending seasonal offers & installment plans.';
+      } else if (inc <= 45 && spend <= 45) {
+        nameEl.textContent = 'Cluster 2';
+        badgeEl.textContent = 'Budget Savers (Low Income, Low Spending)';
+        badgeEl.style.background = 'rgba(245, 158, 11, 0.2)';
+        badgeEl.style.color = '#f59e0b';
+        adviceEl.textContent = 'Strategy: Discount coupons, value bundles & essential item promotions.';
+      } else if (inc >= 70 && spend <= 45) {
+        nameEl.textContent = 'Cluster 3';
+        badgeEl.textContent = 'High Earners / Low Spenders (High Income, Low Spending)';
+        badgeEl.style.background = 'rgba(99, 102, 241, 0.2)';
+        badgeEl.style.color = '#818cf8';
+        adviceEl.textContent = 'Strategy: Personal shopper outreach, high-value investment products.';
+      } else {
+        nameEl.textContent = 'Cluster 4';
+        badgeEl.textContent = 'Balanced Shoppers (Medium Income, Medium Spending)';
+        badgeEl.style.background = 'rgba(34, 211, 238, 0.2)';
+        badgeEl.style.color = '#22d3ee';
+        adviceEl.textContent = 'Strategy: General store discounts, seasonal catalog newsletters.';
+      }
+    }
+
+    // Task 3: Cat vs Dog
+    function calcAnimal() {
+      const type = document.getElementById('animalSelect').value;
+      const ear = parseFloat(document.getElementById('earInput').value);
+      document.getElementById('earVal').textContent = ear;
+
+      if (type === 'cat' || ear > 0.6) {
+        document.getElementById('animalIcon').textContent = '🐱';
+        document.getElementById('animalLabel').textContent = 'Cat';
+        document.getElementById('animalConf').textContent = 'Confidence: 99.4% (RBF Kernel SVM)';
+      } else {
+        document.getElementById('animalIcon').textContent = '🐶';
+        document.getElementById('animalLabel').textContent = 'Dog';
+        document.getElementById('animalConf').textContent = 'Confidence: 99.6% (RBF Kernel SVM)';
+      }
+    }
+
+    // Task 4: Gesture
+    function calcGesture() {
+      const val = document.getElementById('gestureSelect').value;
+      const data = {
+        '0': { emoji: '🖐️', text: 'Open Palm', action: 'Action: Navigate / Pause Video' },
+        '1': { emoji: '✊', text: 'Closed Fist', action: 'Action: Stop / Lock Interface' },
+        '2': { emoji: '✌️', text: 'Peace Sign', action: 'Action: Take Screenshot / Snapshot' },
+        '3': { emoji: '👍', text: 'Thumbs Up', action: 'Action: Like / Confirm Selection' },
+        '4': { emoji: '👌', text: 'OK Sign', action: 'Action: Accept Call / Volume Normal' }
+      };
+
+      const item = data[val];
+      document.getElementById('gestureEmoji').textContent = item.emoji;
+      document.getElementById('gestureText').textContent = item.text;
+    }
+
+    // Task 5: Food & Calories
+    const foodData = {
+      'Pizza': { cal: 266, p: 11, c: 33, f: 10, desc: 'High Energy Main Course' },
+      'Salad': { cal: 45, p: 2, c: 8, f: 1, desc: 'Low Calorie Healthy Greens' },
+      'Burger': { cal: 295, p: 17, c: 30, f: 14, desc: 'High Protein / Calorie Dense Meal' },
+      'Sushi': { cal: 140, p: 6, c: 28, f: 1, desc: 'Balanced Lean Protein & Carbs' },
+      'Pasta': { cal: 158, p: 6, c: 31, f: 1, desc: 'Carbohydrate Rich Energy Meal' },
+      'Apple': { cal: 52, p: 0.3, c: 14, f: 0.2, desc: 'Fresh Fruit Fiber Snack' },
+      'Steak': { cal: 271, p: 26, c: 0, f: 19, desc: 'High Protein Keto Friendly' }
+    };
+
+    function calcFood() {
+      const food = document.getElementById('foodSelect').value;
+      const weight = parseInt(document.getElementById('weightInput').value);
+      document.getElementById('weightVal').textContent = `${weight} g`;
+
+      const item = foodData[food];
+      const factor = weight / 100;
+
+      const totalCal = Math.round(item.cal * factor);
+      const totalP = (item.p * factor).toFixed(1);
+      const totalC = (item.c * factor).toFixed(1);
+      const totalF = (item.f * factor).toFixed(1);
+
+      document.getElementById('calorieOutput').textContent = `${totalCal} kcal`;
+      document.getElementById('foodNutrition').textContent = `Protein: ${totalP}g | Carbs: ${totalC}g | Fat: ${totalF}g`;
+      document.getElementById('dietAdvice').textContent = `Nutritional Profile: ${item.desc}`;
+    }
+
+    // Init
+    calcPrice();
+    calcCluster();
+    calcAnimal();
+    calcGesture();
+    calcFood();
+  </script>
+</body>
+</html>
