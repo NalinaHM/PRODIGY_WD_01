@@ -1,0 +1,1501 @@
+PersonID,Age,Gender,Country,Education_Level,Income_USD
+10001,49,Male,Germany,High School,77193.57
+10002,46,Male,India,High School,49252.67
+10003,31,Female,Japan,High School,73261.44
+10004,20,Female,Japan,Bachelors,42003.5
+10005,27,Female,Germany,Masters,74974.08
+10006,75,Male,Germany,Masters,102244.22
+10007,46,Female,USA,Bachelors,40614.56
+10008,60,Male,Australia,High School,67837.09
+10009,30,Female,UK,Bachelors,60283.83
+10010,36,Female,USA,High School,27274.39
+10011,34,Male,Australia,High School,48741.29
+10012,49,Male,UK,High School,52648.8
+10013,46,Female,Japan,Bachelors,47917.01
+10014,62,Male,UK,Masters,45647.41
+10015,38,Non-Binary,Germany,PhD,88860.84
+10016,44,Male,Australia,High School,44248.13
+10017,72,Female,Germany,PhD,77374.73
+10018,27,Female,Canada,High School,79925.09
+10019,56,Female,USA,Bachelors,48484.3
+10020,37,Non-Binary,Germany,High School,29326.55
+10021,26,Female,India,PhD,50619.38
+10022,50,Female,UK,Bachelors,85287.96
+10023,32,Female,Canada,Bachelors,37650.56
+10024,37,Female,Brazil,High School,34311.64
+10025,46,Male,Canada,High School,59244.66
+10026,25,Male,Australia,High School,24862.17
+10027,32,Male,Brazil,High School,47141.17
+10028,27,Female,Australia,Bachelors,44161.03
+10029,50,Non-Binary,India,High School,130832.76
+10030,28,Male,Brazil,High School,29577.74
+10031,63,Male,India,High School,70176.25
+10032,42,Male,Japan,Masters,13641.6
+10033,57,Male,Brazil,High School,56860.48
+10034,55,Male,Brazil,Bachelors,70198.45
+10035,73,Male,UK,High School,11929.56
+10036,45,Female,USA,Bachelors,41505.38
+10037,43,Female,Canada,Bachelors,39456.98
+10038,29,Female,Brazil,Bachelors,61879.14
+10039,41,Non-Binary,India,High School,35071.79
+10040,69,Female,Canada,Bachelors,76849.08
+10041,78,Female,USA,Bachelors,97372.64
+10042,27,Female,Germany,High School,23052.98
+10043,34,Female,Australia,High School,57322.18
+10044,42,Female,USA,High School,44773.46
+10045,19,Female,Germany,High School,41377.52
+10046,45,Male,UK,Bachelors,97484.57
+10047,29,Male,Germany,Bachelors,26514.45
+10048,51,Female,Australia,Masters,85396.57
+10049,48,Male,Canada,Masters,66426.51
+10050,69,Female,Canada,Bachelors,64626.15
+10051,63,Female,Canada,High School,85128.27
+10052,59,Female,Canada,High School,33128.45
+10053,63,Female,Germany,Bachelors,50270.52
+10054,61,Male,USA,High School,84131.15
+10055,28,Male,Australia,Bachelors,74839.7
+10056,24,Male,Canada,Bachelors,39644.63
+10057,61,Female,Germany,Bachelors,60624.44
+10058,52,Female,Canada,Bachelors,120407.34
+10059,35,Female,USA,Bachelors,15361.96
+10060,47,Male,Brazil,Bachelors,30756.16
+10061,66,Female,UK,Bachelors,28233.8
+10062,48,Male,Canada,Bachelors,36500.42
+10063,22,Male,Brazil,Bachelors,74823.9
+10064,64,Female,Japan,Bachelors,25887.55
+10065,20,Female,India,Masters,14312.11
+10066,52,Male,Canada,Masters,33699.75
+10067,41,Female,Australia,PhD,116633.87
+10068,53,Female,Brazil,Masters,72973.11
+10069,33,Male,Germany,Masters,51480.01
+10070,34,Male,Germany,High School,13144.31
+10071,26,Male,Japan,Bachelors,59231.68
+10072,39,Female,Japan,High School,78252.85
+10073,56,Female,USA,Masters,70804.19
+10074,20,Male,Japan,Masters,95745.6
+10075,55,Female,Canada,Bachelors,33568.31
+10076,38,Female,Japan,Bachelors,115299.36
+10077,50,Male,Japan,High School,47354.01
+10078,38,Male,Australia,Bachelors,76971.26
+10079,71,Male,India,Bachelors,61410.8
+10080,71,Male,India,Masters,83253.63
+10081,71,Male,USA,Bachelors,32016.06
+10082,28,Female,Brazil,Bachelors,64543.4
+10083,47,Female,India,Masters,32253.6
+10084,46,Female,Japan,Bachelors,59850.25
+10085,51,Female,India,Bachelors,28594.39
+10086,58,Female,USA,Bachelors,44462.26
+10087,43,Male,Japan,Masters,96659.99
+10088,52,Male,Germany,Bachelors,41237.48
+10089,46,Male,Canada,Masters,32518.38
+10090,47,Male,USA,Bachelors,36574.27
+10091,37,Male,Germany,Masters,62220.65
+10092,21,Female,India,High School,40927.73
+10093,33,Male,Brazil,Bachelors,27262.64
+10094,39,Male,Australia,Bachelors,51337.08
+10095,54,Male,Brazil,Bachelors,38465.02
+10096,31,Male,UK,High School,65048.19
+10097,46,Female,Germany,PhD,73527.97
+10098,37,Male,UK,Bachelors,59504.78
+10099,63,Female,USA,Bachelors,46774.12
+10100,31,Male,Brazil,High School,23539.69
+10101,46,Female,UK,High School,52967.11
+10102,80,Male,Japan,Bachelors,67648.15
+10103,43,Male,Brazil,Bachelors,55990.88
+10104,45,Male,India,Masters,35678.75
+10105,50,Male,UK,Bachelors,29789.34
+10106,51,Male,USA,High School,89114.99
+10107,40,Female,Germany,Masters,67278.93
+10108,69,Male,Canada,Bachelors,25403.6
+10109,45,Male,India,Bachelors,37002.9
+10110,34,Female,Brazil,High School,24467.15
+10111,35,Male,India,High School,143180.78
+10112,46,Male,Germany,Bachelors,64448.47
+10113,43,Male,Germany,High School,59898.67
+10114,42,Male,Australia,Bachelors,41298.43
+10115,30,Male,Brazil,Bachelors,53041.02
+10116,35,Male,Japan,Masters,88333.76
+10117,25,Female,Brazil,Bachelors,64861.44
+10118,44,Female,Brazil,Masters,48363.3
+10119,48,Female,UK,Bachelors,24230.36
+10120,32,Female,India,Bachelors,48780.36
+10121,43,Male,Brazil,PhD,30035.57
+10122,38,Female,UK,Masters,19653.99
+10123,39,Female,Germany,Masters,37588.14
+10124,46,Non-Binary,Brazil,Masters,44850.28
+10125,36,Female,Japan,Bachelors,40602.36
+10126,52,Female,Canada,Masters,43815.86
+10127,41,Female,Japan,Bachelors,107289.75
+10128,76,Female,USA,High School,89102.74
+10129,27,Female,India,Bachelors,42911.27
+10130,39,Female,UK,High School,68088.08
+10131,48,Male,India,Masters,42166.5
+10132,53,Female,USA,Bachelors,23840.41
+10133,34,Male,India,Bachelors,19140.32
+10134,63,Male,Germany,Masters,36919.14
+10135,29,Female,UK,High School,56120.54
+10136,67,Male,Brazil,Bachelors,44174.76
+10137,66,Male,Germany,Bachelors,28983.75
+10138,36,Female,Japan,Bachelors,46487.87
+10139,83,Female,India,High School,56675.37
+10140,79,Male,Japan,Bachelors,58687.7
+10141,54,Male,Brazil,Masters,15233.26
+10142,32,Male,Germany,Bachelors,85479.11
+10143,61,Female,USA,Bachelors,43445.65
+10144,54,Male,Germany,Bachelors,44770.82
+10145,57,Female,Australia,Bachelors,14926.52
+10146,42,Female,Australia,Masters,47601.7
+10147,55,Male,Japan,PhD,74009.05
+10148,57,Male,India,Bachelors,77067.69
+10149,46,Female,Australia,High School,103928.18
+10150,67,Male,India,Bachelors,44243.56
+10151,49,Male,USA,Masters,35216.17
+10152,27,Female,UK,Bachelors,70723.83
+10153,46,Female,Japan,Bachelors,103230.11
+10154,70,Male,Australia,High School,46069.18
+10155,37,Non-Binary,Australia,Bachelors,92884.03
+10156,38,Male,India,Masters,66579.02
+10157,32,Female,USA,High School,66817.12
+10158,60,Female,Canada,Masters,17764.61
+10159,57,Female,Germany,Masters,34533.61
+10160,33,Male,USA,High School,27591.7
+10161,46,Male,Germany,High School,75924.81
+10162,54,Male,Australia,Bachelors,24937.61
+10163,71,Male,Germany,Bachelors,47565.89
+10164,51,Female,Brazil,High School,19574.84
+10165,25,Male,Australia,Bachelors,55186.75
+10166,43,Male,India,Masters,85845.37
+10167,53,Male,Brazil,Masters,31940.65
+10168,38,Female,Australia,Bachelors,61472.46
+10169,29,Female,India,High School,26212.06
+10170,54,Male,UK,Bachelors,58056.41
+10171,36,Male,Australia,Masters,94438.92
+10172,67,Male,Germany,Bachelors,36261.5
+10173,32,Female,Canada,Masters,36690.09
+10174,28,Male,Canada,Masters,99391.55
+10175,49,Male,Germany,High School,21621.57
+10176,68,Male,UK,Masters,53902.77
+10177,29,Female,USA,High School,51119.19
+10178,40,Male,Germany,Bachelors,84893.97
+10179,26,Male,UK,Masters,45038.96
+10180,47,Male,Canada,Masters,27417.64
+10181,34,Female,Brazil,Bachelors,39702.89
+10182,77,Male,Canada,Bachelors,36787.3
+10183,33,Male,USA,Bachelors,45784.2
+10184,44,Male,Australia,High School,101940.32
+10185,46,Female,Japan,Bachelors,43902.55
+10186,37,Male,India,High School,57534.25
+10187,38,Male,Australia,High School,63526.73
+10188,48,Female,Canada,Masters,30518.25
+10189,59,Female,Canada,High School,38053.09
+10190,29,Female,India,High School,77857.47
+10191,55,Female,Brazil,Bachelors,122752.58
+10192,78,Male,Australia,High School,25238.28
+10193,35,Male,USA,Bachelors,24870.38
+10194,23,Male,Germany,High School,59881.87
+10195,41,Female,USA,Bachelors,105165.41
+10196,35,Male,UK,PhD,39163.16
+10197,60,Non-Binary,India,Bachelors,33746.56
+10198,40,Male,UK,Bachelors,88010.54
+10199,56,Female,USA,Masters,56121.21
+10200,27,Female,Germany,Bachelors,54376.34
+10201,26,Female,Australia,Bachelors,72852.22
+10202,28,Female,India,Bachelors,29503.59
+10203,59,Female,India,Bachelors,44225.24
+10204,37,Male,Canada,Bachelors,65026.51
+10205,84,Male,Germany,Masters,26961.57
+10206,56,Male,Japan,High School,20105.04
+10207,48,Female,Brazil,High School,32367.28
+10208,74,Female,Brazil,High School,21679.53
+10209,45,Male,Germany,Masters,49231.49
+10210,30,Male,UK,Masters,23399.27
+10211,37,Female,India,Bachelors,66859.85
+10212,66,Male,Japan,High School,43436.3
+10213,37,Male,India,Bachelors,112549.03
+10214,57,Male,Germany,Masters,42621.02
+10215,55,Male,USA,Masters,57637.68
+10216,56,Male,India,High School,35112.93
+10217,41,Male,Brazil,Bachelors,37855.6
+10218,39,Female,Canada,Bachelors,21842.5
+10219,43,Male,USA,Bachelors,45692.39
+10220,76,Male,USA,Bachelors,30067.73
+10221,50,Male,Australia,High School,40475.95
+10222,49,Female,Brazil,PhD,47929.19
+10223,29,Female,Brazil,High School,14395.19
+10224,64,Male,Germany,Bachelors,20791.83
+10225,31,Male,USA,Masters,41578.33
+10226,37,Female,Brazil,Masters,48704.11
+10227,68,Female,India,Bachelors,19761.18
+10228,59,Female,Australia,High School,39753.07
+10229,40,Female,UK,Bachelors,42917.31
+10230,63,Male,Japan,Bachelors,17933.19
+10231,37,Female,UK,PhD,22453.24
+10232,57,Male,India,High School,59588.11
+10233,71,Male,UK,Bachelors,90494.64
+10234,55,Female,Australia,Bachelors,58160.51
+10235,28,Female,Brazil,Bachelors,108760.98
+10236,32,Female,Brazil,High School,18405.37
+10237,81,Female,Australia,Bachelors,73087.41
+10238,34,Male,UK,Bachelors,81864.82
+10239,28,Male,UK,High School,48629.06
+10240,46,Male,UK,Bachelors,29323.3
+10241,83,Female,Japan,Masters,42867.12
+10242,36,Female,UK,Masters,25846.48
+10243,63,Female,UK,Bachelors,50143.34
+10244,26,Male,Germany,High School,34114.11
+10245,42,Male,UK,High School,145733.95
+10246,36,Female,USA,Masters,65296.02
+10247,49,Female,Japan,Bachelors,54675.71
+10248,35,Male,Japan,Bachelors,44336.14
+10249,31,Female,Australia,Masters,39317.01
+10250,55,Female,India,Bachelors,47133.56
+10251,33,Male,Germany,Masters,83854.35
+10252,73,Female,Australia,Masters,61952.29
+10253,30,Non-Binary,Brazil,Bachelors,106108.55
+10254,74,Male,Australia,High School,30761.8
+10255,61,Female,Germany,Bachelors,82726.37
+10256,64,Female,Japan,Bachelors,40197.11
+10257,31,Female,India,Bachelors,44595.96
+10258,60,Female,India,High School,28227.95
+10259,78,Female,Australia,Masters,28973.33
+10260,42,Male,UK,Bachelors,84325.14
+10261,29,Female,UK,Bachelors,55039.38
+10262,79,Female,Germany,Bachelors,49652.19
+10263,42,Female,Brazil,Masters,34676.99
+10264,76,Female,USA,Bachelors,27338.32
+10265,75,Female,Canada,Bachelors,53442.97
+10266,48,Female,Japan,High School,57530.74
+10267,71,Male,USA,Bachelors,43535.17
+10268,31,Female,Brazil,Masters,60823.32
+10269,29,Male,Australia,PhD,47582.91
+10270,72,Male,Australia,Bachelors,153253.22
+10271,51,Female,Germany,Bachelors,34533.08
+10272,45,Male,Germany,Masters,86456.44
+10273,42,Male,Germany,Bachelors,56272.97
+10274,65,Male,Australia,PhD,70844.79
+10275,34,Female,Australia,Masters,83242.36
+10276,32,Female,Germany,Masters,59578.07
+10277,48,Female,Canada,High School,76791.07
+10278,32,Male,Australia,Bachelors,91179.75
+10279,69,Female,Brazil,Bachelors,66701.04
+10280,34,Male,India,Bachelors,20353.54
+10281,61,Male,UK,Bachelors,66407.07
+10282,55,Female,Germany,Masters,52753.72
+10283,70,Female,Brazil,Bachelors,72821.13
+10284,54,Female,UK,High School,40207.54
+10285,50,Male,Japan,Masters,49729.42
+10286,50,Male,UK,Bachelors,40925.04
+10287,33,Male,USA,Bachelors,41866.98
+10288,50,Male,UK,Bachelors,50041.77
+10289,52,Male,India,Bachelors,89108.39
+10290,32,Female,Brazil,High School,84034.1
+10291,39,Female,Brazil,Masters,98979.56
+10292,47,Female,Brazil,Bachelors,11700.55
+10293,28,Female,Canada,Bachelors,31350.37
+10294,43,Male,Canada,Bachelors,44588.13
+10295,40,Male,UK,Bachelors,47130.36
+10296,41,Female,USA,Bachelors,142607.0
+10297,46,Male,Australia,Bachelors,50897.67
+10298,65,Non-Binary,Brazil,High School,34948.81
+10299,56,Female,Japan,Bachelors,90101.62
+10300,67,Male,India,Bachelors,66253.06
+10301,49,Male,UK,PhD,44129.48
+10302,76,Female,USA,PhD,43784.28
+10303,39,Male,Canada,High School,40856.65
+10304,70,Female,India,High School,70041.46
+10305,69,Female,Canada,High School,65035.23
+10306,24,Female,Japan,Bachelors,56322.76
+10307,56,Male,Germany,High School,113846.02
+10308,46,Female,Australia,High School,50568.45
+10309,34,Female,UK,Bachelors,43312.43
+10310,75,Female,Japan,Masters,37556.95
+10311,29,Male,Brazil,High School,27774.88
+10312,25,Male,Japan,Bachelors,32385.45
+10313,31,Female,Brazil,Masters,34100.76
+10314,50,Female,India,High School,110659.27
+10315,45,Male,Australia,Bachelors,76503.75
+10316,31,Female,Brazil,Masters,86374.95
+10317,38,Male,Australia,Masters,39359.77
+10318,37,Male,Brazil,Bachelors,124957.28
+10319,55,Male,Canada,Bachelors,41408.51
+10320,32,Male,Germany,Bachelors,63413.87
+10321,34,Male,Canada,Bachelors,86776.85
+10322,49,Female,Germany,Masters,47320.21
+10323,54,Male,Australia,High School,70921.14
+10324,67,Female,USA,Bachelors,55286.65
+10325,29,Male,Brazil,Bachelors,66390.19
+10326,48,Male,Brazil,High School,51376.61
+10327,21,Female,Germany,High School,111754.03
+10328,58,Female,India,Masters,50390.47
+10329,48,Male,Australia,Bachelors,42571.41
+10330,39,Female,Canada,Bachelors,24948.05
+10331,37,Male,USA,Bachelors,59034.02
+10332,76,Female,USA,High School,53028.8
+10333,68,Female,Germany,Masters,51861.39
+10334,69,Male,Canada,Bachelors,104105.67
+10335,38,Male,UK,Bachelors,71681.16
+10336,51,Female,Japan,Masters,72053.89
+10337,75,Male,Japan,High School,19514.39
+10338,47,Female,Australia,High School,48411.28
+10339,70,Male,Japan,High School,81131.2
+10340,53,Male,UK,Bachelors,65377.41
+10341,38,Male,India,High School,37913.5
+10342,34,Male,UK,Bachelors,54190.12
+10343,27,Male,India,Bachelors,24014.53
+10344,56,Female,Canada,Bachelors,31018.25
+10345,29,Male,Brazil,High School,33048.86
+10346,35,Female,Australia,Bachelors,27455.05
+10347,47,Male,India,High School,24340.53
+10348,61,Male,Australia,Bachelors,34987.21
+10349,49,Female,Germany,Bachelors,86459.62
+10350,52,Female,Canada,Bachelors,20331.74
+10351,37,Female,Canada,Bachelors,55435.06
+10352,45,Female,Brazil,Masters,14313.81
+10353,60,Male,Japan,Bachelors,31447.1
+10354,33,Male,Japan,Masters,47585.05
+10355,43,Female,Japan,Bachelors,72356.04
+10356,65,Female,India,High School,25743.48
+10357,30,Female,Japan,PhD,24127.5
+10358,27,Male,Canada,Bachelors,50941.75
+10359,46,Male,Japan,Bachelors,80622.12
+10360,29,Non-Binary,Brazil,High School,31361.3
+10361,41,Male,Brazil,Bachelors,46923.49
+10362,24,Female,USA,Masters,72629.09
+10363,30,Non-Binary,Canada,Bachelors,52394.46
+10364,39,Male,Japan,Bachelors,22359.83
+10365,38,Female,Canada,Bachelors,46133.88
+10366,32,Male,India,Bachelors,85368.43
+10367,37,Male,India,Bachelors,94714.31
+10368,49,Female,Japan,Bachelors,21069.89
+10369,48,Female,Germany,Masters,62061.52
+10370,35,Male,India,High School,68815.83
+10371,39,Male,Japan,Bachelors,47824.09
+10372,68,Female,UK,Bachelors,48516.8
+10373,35,Male,USA,Masters,103984.72
+10374,31,Male,Brazil,Bachelors,47835.09
+10375,40,Male,USA,Masters,35178.83
+10376,57,Female,Brazil,Bachelors,25750.54
+10377,24,Female,Canada,PhD,66635.2
+10378,83,Male,Australia,Masters,18988.12
+10379,51,Female,Japan,High School,33188.49
+10380,31,Male,Australia,Bachelors,54171.07
+10381,76,Male,Germany,PhD,55483.38
+10382,59,Male,Japan,Masters,23295.5
+10383,60,Female,Japan,Bachelors,53681.13
+10384,39,Male,India,Bachelors,98898.3
+10385,64,Male,Brazil,Bachelors,102940.09
+10386,41,Female,Australia,Masters,74689.89
+10387,74,Female,Brazil,Bachelors,75002.95
+10388,46,Female,Brazil,Masters,12665.31
+10389,64,Male,Australia,Bachelors,15635.45
+10390,30,Male,Germany,Bachelors,71938.6
+10391,27,Male,Canada,Bachelors,32625.5
+10392,51,Male,Australia,Masters,101197.12
+10393,29,Male,Japan,High School,65685.9
+10394,37,Male,Japan,Masters,62975.63
+10395,79,Male,USA,Bachelors,31443.4
+10396,32,Female,Japan,Bachelors,46021.44
+10397,65,Male,India,Bachelors,40742.31
+10398,34,Male,Germany,Masters,143505.55
+10399,50,Male,Canada,Bachelors,40721.07
+10400,65,Female,Brazil,Bachelors,26538.46
+10401,26,Female,USA,PhD,100413.39
+10402,37,Female,Brazil,PhD,29650.22
+10403,24,Male,Japan,Bachelors,61146.65
+10404,39,Female,India,Bachelors,50925.52
+10405,26,Male,Canada,PhD,31600.5
+10406,46,Female,India,Bachelors,15500.34
+10407,33,Male,Japan,High School,54281.21
+10408,50,Female,UK,High School,89091.43
+10409,30,Female,Germany,High School,70392.31
+10410,25,Female,India,Bachelors,49503.13
+10411,62,Male,UK,Bachelors,22039.72
+10412,53,Male,USA,High School,74019.38
+10413,41,Male,UK,High School,121681.51
+10414,50,Male,Canada,Bachelors,63531.38
+10415,26,Male,USA,High School,47017.81
+10416,61,Male,Brazil,High School,27211.01
+10417,35,Female,Brazil,Bachelors,118721.18
+10418,44,Female,UK,High School,44328.82
+10419,36,Female,USA,PhD,146889.89
+10420,27,Female,Canada,Bachelors,32017.86
+10421,24,Male,Japan,Bachelors,21081.45
+10422,40,Female,Canada,Bachelors,28389.37
+10423,36,Male,Canada,High School,15386.26
+10424,46,Male,UK,Bachelors,40887.53
+10425,37,Female,Brazil,Bachelors,38986.41
+10426,30,Female,USA,High School,70201.29
+10427,52,Female,Japan,Bachelors,60199.94
+10428,79,Male,Japan,Masters,54539.72
+10429,27,Male,UK,High School,36422.04
+10430,38,Female,India,Bachelors,16239.65
+10431,22,Male,Brazil,Masters,66300.28
+10432,70,Male,Japan,Masters,44676.26
+10433,51,Male,Canada,Masters,34599.51
+10434,29,Female,Canada,Bachelors,48624.82
+10435,41,Male,Japan,High School,52050.33
+10436,58,Female,Japan,Masters,37597.02
+10437,42,Female,Australia,Bachelors,32753.98
+10438,32,Female,Germany,High School,58891.14
+10439,59,Female,USA,Masters,121207.55
+10440,77,Male,UK,High School,73829.63
+10441,52,Female,USA,Bachelors,36524.66
+10442,29,Female,Brazil,Bachelors,18850.02
+10443,22,Male,Australia,Masters,36515.69
+10444,53,Female,Australia,High School,17618.67
+10445,29,Male,Australia,PhD,44372.75
+10446,35,Male,UK,Bachelors,42187.69
+10447,42,Male,Australia,High School,53772.75
+10448,35,Female,UK,High School,74504.36
+10449,56,Female,UK,Bachelors,28252.7
+10450,70,Male,India,High School,80552.16
+10451,64,Male,Germany,High School,63266.49
+10452,57,Female,USA,Bachelors,93967.71
+10453,38,Female,India,Masters,88164.03
+10454,55,Male,Brazil,High School,74654.79
+10455,35,Female,India,Bachelors,72879.45
+10456,26,Female,India,Bachelors,66733.66
+10457,49,Female,Japan,High School,31871.89
+10458,31,Female,Germany,Bachelors,40448.33
+10459,38,Female,Brazil,High School,39792.93
+10460,34,Female,Brazil,High School,40355.61
+10461,61,Male,Japan,Bachelors,77717.44
+10462,49,Male,Australia,Masters,40049.65
+10463,33,Male,Canada,Masters,52308.79
+10464,52,Male,Australia,Masters,36208.86
+10465,32,Male,Japan,Masters,42181.55
+10466,63,Male,Canada,Bachelors,70912.29
+10467,66,Female,UK,High School,64005.03
+10468,77,Female,Canada,High School,94640.27
+10469,33,Female,India,High School,54607.74
+10470,62,Female,USA,Masters,61150.03
+10471,39,Male,UK,Bachelors,150114.35
+10472,63,Female,Japan,Bachelors,66851.57
+10473,41,Male,Japan,High School,66452.33
+10474,24,Female,Australia,Bachelors,23466.03
+10475,34,Male,Australia,Masters,38764.44
+10476,42,Female,India,PhD,35116.15
+10477,54,Female,Australia,Bachelors,40078.23
+10478,31,Male,Japan,Bachelors,86514.09
+10479,30,Male,Japan,High School,33013.68
+10480,67,Female,Germany,Bachelors,46588.35
+10481,68,Female,Canada,Bachelors,54072.75
+10482,63,Female,Australia,Bachelors,72452.08
+10483,60,Male,USA,Bachelors,24934.76
+10484,73,Female,Canada,Bachelors,35051.21
+10485,22,Female,USA,Bachelors,33474.65
+10486,58,Male,Germany,Bachelors,62807.99
+10487,65,Female,Brazil,Bachelors,44869.29
+10488,60,Male,India,High School,95206.55
+10489,47,Male,India,Bachelors,40372.59
+10490,36,Male,Germany,High School,49987.38
+10491,25,Female,Japan,Bachelors,85501.07
+10492,50,Non-Binary,Germany,Masters,35924.32
+10493,46,Non-Binary,Canada,Bachelors,87856.39
+10494,49,Male,Australia,Bachelors,72720.6
+10495,27,Male,Germany,Bachelors,87510.54
+10496,71,Female,India,High School,26826.77
+10497,37,Female,Brazil,Masters,40572.38
+10498,46,Female,India,Bachelors,36400.01
+10499,51,Female,Japan,High School,69719.8
+10500,31,Male,Brazil,High School,71628.51
+10501,26,Male,UK,Bachelors,24541.19
+10502,32,Female,UK,Bachelors,62812.29
+10503,48,Female,Japan,Bachelors,48075.3
+10504,44,Female,USA,Masters,78416.37
+10505,22,Male,Canada,High School,78438.42
+10506,27,Female,Germany,High School,72824.98
+10507,34,Female,Australia,Bachelors,58980.3
+10508,81,Female,Canada,High School,21421.65
+10509,28,Female,USA,Bachelors,82964.95
+10510,48,Female,USA,Bachelors,56071.2
+10511,51,Male,Japan,High School,24066.98
+10512,31,Female,USA,Bachelors,73928.48
+10513,34,Female,UK,Bachelors,98722.41
+10514,48,Male,India,Bachelors,74688.65
+10515,60,Female,Australia,Bachelors,40833.52
+10516,42,Male,Brazil,Bachelors,58127.51
+10517,27,Female,India,Masters,61568.21
+10518,76,Male,USA,High School,19822.14
+10519,35,Female,India,Masters,20349.89
+10520,36,Female,Germany,Masters,31133.5
+10521,73,Male,Japan,Bachelors,47464.14
+10522,64,Male,UK,Bachelors,29723.85
+10523,46,Female,Brazil,High School,41738.84
+10524,23,Female,UK,Bachelors,44773.23
+10525,40,Male,Australia,High School,95309.66
+10526,54,Female,Canada,PhD,61094.07
+10527,43,Female,India,Bachelors,71343.78
+10528,50,Female,UK,Masters,23924.35
+10529,33,Female,USA,Bachelors,52559.81
+10530,59,Male,Brazil,Masters,35938.66
+10531,40,Male,Brazil,Bachelors,24504.81
+10532,23,Female,India,Masters,105299.09
+10533,49,Male,Australia,Bachelors,29971.34
+10534,40,Female,Brazil,Bachelors,39569.42
+10535,27,Female,USA,Bachelors,33749.78
+10536,52,Male,UK,Bachelors,143218.85
+10537,39,Male,Canada,High School,90025.08
+10538,41,Female,Australia,High School,18036.01
+10539,60,Female,Brazil,Bachelors,57212.15
+10540,73,Male,USA,Bachelors,42662.91
+10541,68,Female,UK,Bachelors,18161.68
+10542,47,Male,Japan,Bachelors,66439.74
+10543,33,Male,Australia,PhD,46785.47
+10544,39,Female,Germany,Masters,52040.01
+10545,54,Female,Canada,High School,56961.54
+10546,36,Female,UK,Bachelors,62690.8
+10547,28,Male,Brazil,Bachelors,200429.46
+10548,44,Female,Japan,Masters,50011.21
+10549,29,Female,Canada,Bachelors,58940.93
+10550,25,Female,Canada,Masters,78742.89
+10551,32,Female,Germany,Bachelors,26151.12
+10552,39,Female,Australia,PhD,85403.14
+10553,32,Female,Australia,Masters,54220.57
+10554,56,Female,Germany,Bachelors,37891.6
+10555,30,Female,USA,Bachelors,60645.93
+10556,30,Male,USA,Masters,97299.34
+10557,35,Female,Australia,High School,71349.63
+10558,72,Female,UK,Bachelors,50766.14
+10559,32,Male,Australia,Bachelors,59468.29
+10560,45,Female,USA,High School,41196.91
+10561,49,Female,Canada,PhD,61734.07
+10562,67,Female,Japan,Bachelors,52210.69
+10563,43,Female,Brazil,High School,74837.9
+10564,43,Female,UK,PhD,81002.89
+10565,48,Male,Canada,Masters,45590.27
+10566,44,Female,Japan,Bachelors,28305.0
+10567,36,Male,USA,High School,38990.34
+10568,59,Female,Japan,Bachelors,59694.96
+10569,21,Female,USA,Bachelors,74308.54
+10570,46,Female,India,Bachelors,49189.06
+10571,51,Female,Germany,Masters,44874.33
+10572,50,Male,Canada,High School,30893.27
+10573,44,Female,UK,Bachelors,119910.88
+10574,72,Male,UK,High School,89414.97
+10575,35,Female,Australia,High School,33663.14
+10576,48,Male,India,High School,52054.99
+10577,25,Male,Brazil,PhD,33765.62
+10578,32,Male,India,Masters,36882.41
+10579,48,Male,UK,Bachelors,41356.56
+10580,39,Male,Canada,Masters,81371.68
+10581,34,Male,Australia,Masters,46644.25
+10582,35,Female,UK,Bachelors,29779.12
+10583,60,Female,Canada,Bachelors,49333.35
+10584,46,Male,Canada,Masters,54010.76
+10585,82,Male,UK,Bachelors,17298.66
+10586,54,Male,Brazil,Bachelors,28223.29
+10587,21,Male,UK,Masters,33965.65
+10588,45,Female,UK,Bachelors,47950.85
+10589,32,Male,India,Bachelors,24626.77
+10590,43,Female,Japan,Bachelors,47061.01
+10591,76,Male,Germany,Masters,31396.16
+10592,30,Female,Australia,Bachelors,32858.3
+10593,59,Male,Brazil,Masters,45846.27
+10594,43,Male,UK,High School,32271.99
+10595,28,Male,Australia,Bachelors,47552.05
+10596,32,Male,Japan,High School,19559.47
+10597,30,Female,USA,Masters,34086.42
+10598,68,Female,Japan,Bachelors,51823.19
+10599,53,Female,Germany,Masters,26428.03
+10600,41,Male,Canada,Masters,74693.03
+10601,59,Male,Germany,High School,53579.65
+10602,38,Male,USA,High School,91337.39
+10603,39,Male,India,High School,115938.12
+10604,64,Female,India,High School,197777.43
+10605,44,Male,Japan,Bachelors,43641.57
+10606,44,Male,Brazil,Masters,38258.06
+10607,54,Female,India,Bachelors,19944.12
+10608,67,Male,Japan,Bachelors,50368.58
+10609,31,Female,Japan,Bachelors,20954.75
+10610,33,Female,Japan,Bachelors,43894.3
+10611,45,Female,UK,Bachelors,52214.69
+10612,35,Male,Japan,Bachelors,119816.73
+10613,55,Male,UK,High School,50688.57
+10614,58,Female,USA,High School,93616.43
+10615,25,Male,India,Bachelors,38258.91
+10616,34,Female,USA,Masters,105200.12
+10617,40,Male,Germany,High School,80630.99
+10618,52,Female,USA,Bachelors,30048.02
+10619,38,Female,Japan,Bachelors,51940.32
+10620,26,Male,Germany,Bachelors,55358.02
+10621,36,Female,Canada,Bachelors,53474.36
+10622,39,Male,India,Bachelors,41962.77
+10623,43,Male,Germany,Bachelors,127365.33
+10624,73,Male,Brazil,Masters,89272.18
+10625,33,Male,Canada,Bachelors,34942.34
+10626,72,Female,USA,Bachelors,36871.19
+10627,38,Female,Australia,High School,99401.77
+10628,37,Female,Germany,High School,17837.57
+10629,32,Male,Germany,High School,34898.41
+10630,48,Male,India,High School,48711.3
+10631,62,Female,Brazil,Bachelors,105668.89
+10632,34,Male,Germany,Bachelors,62702.37
+10633,43,Male,USA,Bachelors,36656.63
+10634,30,Female,Brazil,Bachelors,43695.08
+10635,37,Female,UK,Bachelors,32000.2
+10636,47,Male,Brazil,Bachelors,37047.04
+10637,37,Male,Brazil,High School,23247.97
+10638,32,Male,Germany,Masters,68210.38
+10639,31,Female,UK,Bachelors,23695.73
+10640,29,Female,Australia,Masters,33132.51
+10641,45,Male,UK,High School,81980.37
+10642,48,Male,Australia,Bachelors,37392.17
+10643,59,Male,Japan,High School,26665.75
+10644,49,Male,Germany,Bachelors,65504.02
+10645,54,Female,Japan,Bachelors,23949.02
+10646,63,Female,Australia,Bachelors,57632.78
+10647,66,Male,Australia,High School,39275.01
+10648,33,Female,Germany,Masters,76409.06
+10649,40,Male,USA,High School,36164.35
+10650,54,Female,Canada,High School,100643.02
+10651,22,Male,India,High School,54755.4
+10652,69,Male,Canada,High School,29862.89
+10653,29,Female,USA,High School,11506.78
+10654,63,Male,Germany,Bachelors,53229.11
+10655,41,Female,Japan,Bachelors,58300.59
+10656,36,Female,India,Bachelors,41959.69
+10657,35,Male,UK,Bachelors,47732.01
+10658,68,Female,Brazil,Bachelors,151566.3
+10659,47,Female,Australia,High School,87759.61
+10660,33,Female,Japan,Masters,37786.88
+10661,48,Female,Germany,Bachelors,145782.5
+10662,39,Female,UK,High School,26538.77
+10663,40,Female,Brazil,High School,50860.82
+10664,27,Male,Brazil,Bachelors,37427.2
+10665,42,Male,Germany,Masters,48913.61
+10666,52,Male,India,Masters,63235.5
+10667,41,Male,Germany,Masters,67553.32
+10668,56,Male,Brazil,High School,61253.99
+10669,50,Male,Japan,Bachelors,38635.2
+10670,48,Male,India,Bachelors,56856.47
+10671,65,Female,Canada,PhD,32851.29
+10672,21,Female,India,Bachelors,61382.72
+10673,51,Male,India,High School,49009.99
+10674,36,Female,USA,High School,74251.15
+10675,57,Male,Canada,Bachelors,56435.18
+10676,36,Female,Canada,High School,33509.2
+10677,33,Male,Brazil,Bachelors,52674.51
+10678,45,Female,Australia,Bachelors,15635.35
+10679,67,Female,India,Bachelors,38544.72
+10680,44,Male,Japan,Bachelors,116282.72
+10681,37,Female,Australia,Bachelors,65807.88
+10682,38,Female,Brazil,Masters,32407.82
+10683,39,Male,India,Bachelors,29835.0
+10684,27,Female,Japan,Bachelors,52794.04
+10685,33,Male,India,High School,45438.89
+10686,37,Female,Japan,Masters,60655.35
+10687,54,Female,India,Masters,74043.12
+10688,31,Female,Canada,Bachelors,116923.69
+10689,45,Female,Australia,Bachelors,66386.67
+10690,27,Female,Japan,Bachelors,65506.6
+10691,47,Female,Australia,Bachelors,39934.32
+10692,60,Male,Canada,Bachelors,17200.0
+10693,68,Male,Brazil,Bachelors,35506.49
+10694,77,Female,UK,PhD,38448.13
+10695,32,Female,USA,Masters,102291.37
+10696,45,Female,India,High School,42459.12
+10697,37,Female,Canada,Bachelors,32898.8
+10698,45,Male,India,Bachelors,66420.71
+10699,60,Female,India,Bachelors,25952.14
+10700,46,Male,USA,Masters,15036.79
+10701,40,Female,India,Masters,24956.55
+10702,47,Male,Japan,High School,50550.43
+10703,45,Male,Canada,High School,52624.73
+10704,40,Female,UK,High School,21257.43
+10705,24,Male,India,Bachelors,40701.34
+10706,55,Male,Canada,Bachelors,57667.52
+10707,48,Female,Canada,High School,34482.65
+10708,51,Female,India,Bachelors,44327.63
+10709,35,Female,USA,Masters,31689.08
+10710,59,Female,UK,Bachelors,78803.76
+10711,51,Male,India,High School,59103.44
+10712,40,Male,Canada,Bachelors,28427.81
+10713,55,Female,UK,Bachelors,61791.42
+10714,66,Female,Germany,High School,20357.0
+10715,48,Male,USA,High School,73730.63
+10716,67,Male,India,High School,120441.59
+10717,32,Male,India,Masters,47445.91
+10718,27,Male,Brazil,Bachelors,59266.12
+10719,68,Male,Brazil,Bachelors,31244.63
+10720,37,Female,Canada,PhD,86414.85
+10721,25,Male,Japan,Masters,52337.53
+10722,29,Female,UK,High School,63422.34
+10723,32,Male,UK,Bachelors,32604.26
+10724,40,Male,UK,Bachelors,59749.1
+10725,29,Female,UK,Bachelors,66699.89
+10726,30,Male,India,High School,68928.74
+10727,23,Male,Japan,PhD,25258.57
+10728,59,Female,Germany,High School,36018.03
+10729,22,Non-Binary,Germany,Bachelors,62241.53
+10730,32,Male,India,Bachelors,47083.27
+10731,47,Female,Australia,High School,40803.84
+10732,30,Male,Japan,Masters,36698.42
+10733,78,Female,India,High School,98280.84
+10734,48,Female,Brazil,Masters,37135.27
+10735,47,Female,Australia,Bachelors,118178.72
+10736,44,Female,USA,Bachelors,38563.36
+10737,24,Non-Binary,Japan,PhD,25715.81
+10738,56,Female,Canada,Bachelors,43227.94
+10739,60,Male,Japan,Bachelors,93479.5
+10740,49,Male,India,High School,98085.9
+10741,44,Male,Australia,Bachelors,25025.79
+10742,53,Male,Brazil,High School,31907.52
+10743,52,Male,India,High School,79492.04
+10744,26,Female,UK,Bachelors,31510.54
+10745,67,Female,UK,High School,28107.17
+10746,54,Female,Germany,Bachelors,24951.9
+10747,33,Male,Brazil,Bachelors,28371.23
+10748,41,Male,India,Bachelors,29363.09
+10749,59,Male,UK,High School,56189.62
+10750,62,Female,Germany,Bachelors,28411.36
+10751,52,Female,UK,PhD,68478.22
+10752,23,Female,Australia,Bachelors,43854.03
+10753,39,Female,Germany,Bachelors,38181.46
+10754,32,Male,USA,High School,83375.44
+10755,78,Male,Germany,Bachelors,73347.34
+10756,46,Female,UK,Bachelors,48464.55
+10757,42,Female,Canada,Bachelors,43884.88
+10758,45,Female,USA,Bachelors,60998.67
+10759,25,Male,Australia,Masters,29827.39
+10760,38,Female,USA,Masters,98260.5
+10761,41,Male,UK,Bachelors,134699.95
+10762,44,Male,Japan,Masters,22133.12
+10763,45,Female,USA,High School,108412.99
+10764,65,Male,UK,Bachelors,97594.98
+10765,45,Male,India,Masters,101931.62
+10766,35,Male,Japan,High School,82014.95
+10767,60,Male,Germany,High School,43823.06
+10768,31,Male,USA,Masters,37589.92
+10769,63,Male,Australia,High School,43402.66
+10770,43,Male,USA,Bachelors,53561.76
+10771,41,Male,Germany,High School,90576.28
+10772,32,Male,Germany,Bachelors,37139.45
+10773,28,Male,Germany,High School,119691.88
+10774,27,Female,Australia,Bachelors,52927.53
+10775,35,Female,Brazil,High School,26223.95
+10776,26,Male,Brazil,Bachelors,20307.33
+10777,53,Female,India,PhD,73907.2
+10778,29,Female,Brazil,High School,31026.92
+10779,56,Male,Canada,High School,77456.29
+10780,37,Male,Australia,Masters,89318.8
+10781,23,Male,Australia,Bachelors,74103.67
+10782,36,Female,India,Bachelors,60223.26
+10783,45,Male,Germany,Bachelors,42402.27
+10784,48,Female,Brazil,Bachelors,23523.73
+10785,46,Female,Japan,Bachelors,31491.49
+10786,30,Female,Brazil,High School,55390.17
+10787,27,Male,Germany,PhD,159239.46
+10788,38,Female,USA,High School,126831.83
+10789,18,Male,UK,Bachelors,30785.12
+10790,40,Male,Australia,Bachelors,107787.15
+10791,67,Female,Australia,PhD,58844.13
+10792,43,Female,Germany,High School,42492.56
+10793,48,Female,Japan,Bachelors,54976.78
+10794,41,Male,Japan,Masters,39909.09
+10795,34,Female,UK,High School,70960.3
+10796,40,Non-Binary,India,High School,130575.22
+10797,40,Male,Brazil,Bachelors,32566.28
+10798,20,Female,Canada,Bachelors,52457.56
+10799,23,Male,Australia,High School,46575.03
+10800,29,Female,Germany,Bachelors,25105.37
+10801,54,Female,India,Bachelors,53102.62
+10802,47,Female,USA,Bachelors,50034.33
+10803,54,Male,Germany,Bachelors,107324.38
+10804,45,Male,Brazil,Bachelors,58796.96
+10805,34,Female,USA,Bachelors,23758.08
+10806,62,Male,UK,Bachelors,37816.95
+10807,54,Female,UK,Bachelors,42810.09
+10808,57,Male,UK,Masters,78631.55
+10809,26,Male,UK,Masters,70920.8
+10810,38,Female,UK,High School,66632.4
+10811,49,Female,India,High School,46215.38
+10812,41,Female,Canada,Bachelors,68573.88
+10813,29,Female,USA,Bachelors,74062.01
+10814,35,Female,USA,High School,51100.04
+10815,61,Female,Germany,Bachelors,39278.88
+10816,49,Male,Canada,Bachelors,53880.88
+10817,36,Female,UK,Bachelors,26122.19
+10818,43,Female,Australia,High School,38934.76
+10819,22,Male,Canada,PhD,73550.64
+10820,28,Female,UK,Bachelors,93228.09
+10821,58,Male,India,Bachelors,32960.76
+10822,69,Female,Germany,Masters,80498.98
+10823,56,Male,India,Bachelors,26530.78
+10824,81,Male,Germany,High School,32120.96
+10825,49,Male,Japan,High School,200166.04
+10826,53,Male,India,High School,117733.46
+10827,22,Female,USA,Masters,59425.3
+10828,52,Female,USA,Bachelors,102833.77
+10829,40,Female,India,Bachelors,83001.15
+10830,45,Female,Australia,Bachelors,40986.29
+10831,81,Female,Australia,Bachelors,42265.64
+10832,49,Male,USA,PhD,59673.45
+10833,38,Male,Australia,Bachelors,88249.55
+10834,31,Male,USA,Bachelors,57301.9
+10835,25,Female,Germany,Bachelors,39808.97
+10836,53,Male,Canada,Masters,63893.59
+10837,51,Female,UK,Bachelors,38299.26
+10838,54,Male,USA,Bachelors,59789.68
+10839,30,Male,Germany,Masters,20160.77
+10840,60,Male,India,High School,60594.03
+10841,25,Male,Australia,Masters,52867.02
+10842,60,Female,USA,Bachelors,41752.91
+10843,29,Male,Australia,Bachelors,24151.49
+10844,24,Male,Japan,Masters,21810.76
+10845,20,Male,India,Bachelors,54843.92
+10846,52,Female,Brazil,Bachelors,24348.2
+10847,43,Male,UK,Bachelors,48925.83
+10848,48,Female,Australia,Bachelors,52117.57
+10849,78,Female,Australia,Masters,45153.72
+10850,31,Male,India,Masters,47731.84
+10851,50,Male,Australia,Bachelors,45063.33
+10852,58,Female,USA,High School,21380.3
+10853,30,Male,India,High School,32566.27
+10854,46,Male,Australia,High School,31791.16
+10855,32,Male,Canada,Bachelors,31165.53
+10856,42,Female,UK,High School,54951.34
+10857,37,Male,Canada,Bachelors,17345.6
+10858,25,Male,Brazil,Bachelors,31899.69
+10859,64,Female,UK,Bachelors,51986.84
+10860,39,Female,Canada,Bachelors,73204.07
+10861,54,Female,Canada,High School,45591.19
+10862,68,Female,USA,Bachelors,73419.25
+10863,39,Male,India,Bachelors,29610.08
+10864,21,Female,Canada,High School,29818.5
+10865,27,Male,Germany,High School,45193.36
+10866,46,Female,Brazil,Masters,84101.5
+10867,57,Male,Brazil,Bachelors,35620.98
+10868,44,Male,Germany,Bachelors,61523.85
+10869,31,Female,Australia,Bachelors,186714.21
+10870,28,Male,USA,Bachelors,26073.67
+10871,25,Female,Canada,High School,36041.9
+10872,49,Female,Canada,Masters,68139.38
+10873,65,Female,Japan,Bachelors,27667.3
+10874,42,Female,India,Bachelors,57338.04
+10875,66,Male,Australia,Masters,91133.27
+10876,26,Female,Germany,PhD,33170.66
+10877,29,Male,USA,Bachelors,117990.3
+10878,29,Male,Brazil,Bachelors,89150.48
+10879,36,Female,Australia,Bachelors,66356.57
+10880,44,Male,UK,Masters,22300.36
+10881,32,Male,Germany,Masters,26896.28
+10882,41,Male,UK,Bachelors,126457.91
+10883,50,Male,Canada,High School,45232.0
+10884,31,Female,Australia,PhD,28353.56
+10885,75,Female,India,Masters,41625.35
+10886,29,Male,Australia,High School,119200.49
+10887,43,Female,Germany,Bachelors,24433.82
+10888,66,Male,India,Bachelors,52217.59
+10889,38,Female,Brazil,Bachelors,33520.52
+10890,31,Female,Germany,High School,96182.15
+10891,42,Female,USA,Masters,42622.34
+10892,62,Male,Australia,High School,40447.02
+10893,40,Female,Canada,Bachelors,70698.77
+10894,58,Female,Japan,Bachelors,31336.64
+10895,47,Male,Germany,Bachelors,62380.1
+10896,39,Female,Japan,High School,45469.69
+10897,67,Male,Japan,Bachelors,46836.98
+10898,35,Female,Brazil,Bachelors,47466.79
+10899,19,Male,Brazil,High School,59861.73
+10900,30,Female,Canada,High School,76719.1
+10901,74,Female,Australia,Bachelors,75149.68
+10902,48,Male,India,Bachelors,29940.33
+10903,29,Male,UK,Bachelors,26894.16
+10904,49,Female,USA,Bachelors,73046.88
+10905,43,Female,UK,Masters,54269.36
+10906,35,Male,Germany,Bachelors,63983.28
+10907,44,Male,UK,High School,50254.68
+10908,42,Male,UK,High School,33509.09
+10909,31,Female,India,Bachelors,32162.98
+10910,29,Male,Australia,High School,25447.9
+10911,28,Male,UK,Bachelors,39773.34
+10912,76,Male,India,High School,129439.52
+10913,24,Male,USA,Bachelors,60580.11
+10914,31,Female,USA,High School,88457.48
+10915,30,Female,Canada,Bachelors,79161.4
+10916,53,Female,UK,Masters,163629.71
+10917,27,Male,Brazil,Bachelors,56208.57
+10918,72,Male,Australia,PhD,42871.26
+10919,39,Female,Australia,High School,105020.56
+10920,45,Male,Australia,Bachelors,40864.2
+10921,54,Female,Brazil,High School,31842.96
+10922,65,Female,Australia,High School,26831.26
+10923,50,Male,UK,Bachelors,31363.98
+10924,31,Male,Japan,High School,140839.98
+10925,34,Female,Germany,Masters,33849.68
+10926,71,Non-Binary,Germany,High School,46895.21
+10927,42,Male,UK,High School,163090.65
+10928,42,Male,UK,Bachelors,58772.26
+10929,48,Male,India,Bachelors,50700.77
+10930,41,Male,Brazil,Bachelors,35901.84
+10931,62,Female,USA,PhD,36649.91
+10932,40,Male,UK,Bachelors,76382.33
+10933,52,Female,UK,Bachelors,32755.75
+10934,45,Female,Brazil,Bachelors,90774.86
+10935,38,Female,Japan,Bachelors,41837.86
+10936,24,Female,Australia,Masters,66618.51
+10937,48,Male,Japan,Bachelors,40595.27
+10938,50,Male,Germany,Bachelors,38077.42
+10939,22,Male,Brazil,Bachelors,42742.75
+10940,39,Male,Brazil,Bachelors,95760.67
+10941,38,Female,Brazil,High School,61463.57
+10942,42,Female,Australia,High School,24300.87
+10943,75,Male,Canada,Bachelors,43977.81
+10944,54,Male,India,Bachelors,31308.12
+10945,44,Male,Australia,Masters,59052.43
+10946,58,Male,Australia,High School,39204.53
+10947,40,Female,UK,Masters,61492.78
+10948,31,Female,Brazil,Bachelors,91053.2
+10949,62,Female,USA,Bachelors,42761.68
+10950,29,Female,Germany,Masters,28266.81
+10951,67,Female,Japan,Bachelors,39434.24
+10952,51,Male,Canada,High School,34534.37
+10953,60,Male,Japan,Bachelors,75813.44
+10954,34,Male,Germany,Bachelors,106269.15
+10955,22,Female,India,Bachelors,40739.28
+10956,72,Female,India,Bachelors,28919.18
+10957,42,Male,Germany,Bachelors,20367.95
+10958,56,Male,Japan,Masters,37391.24
+10959,32,Male,Japan,Bachelors,56988.4
+10960,37,Female,Australia,Bachelors,47637.73
+10961,34,Female,UK,Bachelors,138082.33
+10962,22,Female,USA,Masters,106345.05
+10963,33,Female,Germany,Bachelors,68985.62
+10964,32,Male,USA,Masters,38929.33
+10965,59,Male,Canada,Masters,29162.33
+10966,35,Female,Japan,Masters,39707.72
+10967,57,Female,Japan,Masters,38238.53
+10968,67,Male,UK,Bachelors,49433.48
+10969,47,Female,Australia,Bachelors,68076.68
+10970,57,Male,Japan,High School,33083.63
+10971,28,Male,UK,Masters,105703.64
+10972,35,Male,UK,Bachelors,124026.63
+10973,58,Male,Japan,Bachelors,42331.4
+10974,60,Female,USA,Masters,157309.73
+10975,75,Male,UK,High School,63151.87
+10976,29,Female,UK,Masters,24461.7
+10977,40,Female,India,High School,70711.25
+10978,54,Male,Japan,Masters,27537.6
+10979,39,Male,UK,High School,46353.79
+10980,46,Female,India,High School,30794.74
+10981,51,Female,Japan,Bachelors,64362.66
+10982,27,Male,Australia,Masters,47163.98
+10983,47,Female,USA,High School,49330.28
+10984,76,Female,UK,PhD,55369.33
+10985,33,Female,Australia,Masters,30869.42
+10986,44,Male,India,Bachelors,111258.83
+10987,75,Male,Australia,Masters,73590.16
+10988,33,Male,UK,Bachelors,95720.57
+10989,25,Male,Canada,High School,47547.72
+10990,41,Male,Brazil,High School,32113.45
+10991,42,Female,UK,High School,35265.11
+10992,43,Male,Canada,Bachelors,115093.26
+10993,45,Male,India,High School,48933.17
+10994,36,Male,India,Bachelors,240034.41
+10995,60,Male,India,Bachelors,69045.86
+10996,48,Male,USA,Bachelors,22809.96
+10997,84,Female,UK,High School,41747.87
+10998,26,Female,Japan,High School,37184.22
+10999,56,Male,USA,Masters,23259.6
+11000,49,Male,Brazil,Masters,117411.96
+11001,37,Male,Australia,Bachelors,45357.06
+11002,41,Female,Japan,High School,44126.92
+11003,31,Female,India,High School,38061.85
+11004,32,Female,UK,Masters,52382.49
+11005,26,Male,India,Masters,47927.46
+11006,28,Female,Canada,Bachelors,40773.15
+11007,26,Male,India,Bachelors,42643.65
+11008,53,Female,Australia,Bachelors,23802.29
+11009,28,Female,UK,Masters,38445.57
+11010,35,Female,Brazil,Bachelors,72539.28
+11011,31,Female,Germany,Masters,23736.98
+11012,20,Male,UK,Bachelors,46284.45
+11013,50,Female,Brazil,Bachelors,98796.97
+11014,51,Female,Japan,Masters,60303.0
+11015,23,Male,UK,Bachelors,42307.03
+11016,57,Male,Germany,Masters,29085.05
+11017,28,Female,Brazil,PhD,41174.37
+11018,46,Male,Japan,High School,152868.99
+11019,47,Female,Germany,High School,41075.85
+11020,53,Female,Brazil,High School,56766.23
+11021,34,Female,Brazil,High School,66002.82
+11022,40,Male,UK,Bachelors,32781.72
+11023,32,Male,Australia,Masters,142135.06
+11024,41,Female,Japan,PhD,117477.4
+11025,54,Female,UK,Bachelors,23290.91
+11026,50,Male,Canada,High School,47455.31
+11027,70,Female,Canada,High School,81484.21
+11028,30,Female,USA,Masters,41894.57
+11029,32,Female,Brazil,Bachelors,39639.17
+11030,24,Female,Germany,Masters,54168.5
+11031,24,Female,Brazil,PhD,91027.65
+11032,62,Male,USA,Bachelors,35460.46
+11033,31,Male,Germany,Bachelors,76723.72
+11034,63,Male,Australia,Bachelors,44828.64
+11035,56,Male,Brazil,Bachelors,49252.22
+11036,37,Female,Australia,Bachelors,20237.3
+11037,44,Female,UK,Masters,43228.64
+11038,41,Female,Australia,Masters,39565.43
+11039,53,Female,India,High School,94300.2
+11040,49,Female,USA,PhD,26741.92
+11041,52,Female,Australia,Masters,66149.47
+11042,52,Male,Canada,Masters,64820.76
+11043,40,Male,Japan,Masters,51670.24
+11044,53,Female,Germany,High School,49739.61
+11045,36,Female,USA,High School,91521.44
+11046,33,Female,Japan,PhD,36603.75
+11047,37,Male,India,Bachelors,52180.18
+11048,36,Male,Canada,Bachelors,20769.16
+11049,53,Female,Japan,Bachelors,35523.29
+11050,46,Female,Australia,Bachelors,28914.71
+11051,39,Male,Japan,Masters,47250.64
+11052,37,Female,Japan,Masters,59809.12
+11053,81,Female,Brazil,Bachelors,45020.69
+11054,43,Male,Brazil,High School,176854.66
+11055,28,Male,Brazil,High School,25147.11
+11056,68,Male,Japan,High School,41878.81
+11057,43,Male,Germany,PhD,35303.16
+11058,57,Male,Japan,High School,48486.85
+11059,36,Female,Japan,Bachelors,36385.65
+11060,36,Male,UK,Masters,49393.81
+11061,40,Male,Australia,High School,65142.13
+11062,38,Female,Australia,Bachelors,86811.69
+11063,63,Female,Germany,Bachelors,23568.19
+11064,31,Female,USA,PhD,52828.47
+11065,42,Male,UK,PhD,38443.7
+11066,60,Female,Brazil,High School,51140.89
+11067,46,Female,USA,Bachelors,50956.49
+11068,27,Female,UK,Bachelors,15141.62
+11069,30,Female,UK,High School,63617.13
+11070,27,Male,Australia,Bachelors,29569.06
+11071,47,Male,Japan,Masters,36668.94
+11072,45,Male,USA,Bachelors,59830.9
+11073,45,Female,Germany,Bachelors,36264.08
+11074,42,Female,UK,Bachelors,51837.7
+11075,67,Male,USA,Masters,57393.21
+11076,25,Female,Germany,Bachelors,78416.86
+11077,37,Female,Germany,High School,78399.05
+11078,35,Male,India,Masters,73951.85
+11079,43,Female,Australia,Bachelors,27542.59
+11080,35,Male,Australia,High School,78075.79
+11081,19,Male,USA,Bachelors,24071.81
+11082,52,Female,India,Masters,56310.59
+11083,23,Female,Brazil,Bachelors,24996.19
+11084,60,Male,UK,Masters,29398.96
+11085,31,Male,USA,Masters,83497.47
+11086,31,Female,Germany,Masters,48013.71
+11087,47,Male,Japan,High School,33449.25
+11088,30,Male,UK,High School,30351.67
+11089,32,Female,Germany,High School,69872.19
+11090,33,Female,Brazil,High School,40487.69
+11091,49,Female,Australia,Bachelors,65495.12
+11092,37,Female,Canada,High School,105610.47
+11093,35,Male,Australia,High School,52219.33
+11094,54,Female,Japan,PhD,76524.45
+11095,36,Male,India,High School,46174.89
+11096,58,Female,Germany,High School,28278.04
+11097,60,Female,Canada,Masters,91284.18
+11098,56,Female,India,High School,17127.34
+11099,25,Male,Brazil,High School,57941.22
+11100,27,Male,USA,Bachelors,43806.6
+11101,55,Male,USA,Bachelors,46458.68
+11102,48,Male,USA,Bachelors,40843.53
+11103,27,Female,India,Bachelors,25507.7
+11104,37,Male,Brazil,High School,22727.66
+11105,43,Female,Australia,Bachelors,31650.9
+11106,36,Male,USA,Bachelors,57417.97
+11107,32,Female,USA,Bachelors,35357.37
+11108,66,Female,Australia,High School,45817.91
+11109,41,Female,Australia,Bachelors,45105.07
+11110,40,Female,USA,Bachelors,132879.59
+11111,51,Male,Canada,High School,28112.76
+11112,31,Male,USA,Bachelors,30783.24
+11113,31,Female,Australia,High School,65142.39
+11114,45,Male,USA,High School,39052.69
+11115,60,Male,India,Bachelors,31037.12
+11116,37,Male,UK,Masters,32038.13
+11117,37,Female,Canada,Masters,84696.53
+11118,62,Male,UK,Bachelors,37365.07
+11119,41,Female,India,High School,21671.94
+11120,55,Male,Brazil,High School,71976.68
+11121,42,Female,Brazil,Bachelors,16680.03
+11122,46,Male,Canada,Masters,46458.4
+11123,32,Male,Japan,Bachelors,89039.55
+11124,45,Male,India,Bachelors,50059.66
+11125,24,Female,Australia,Bachelors,46765.83
+11126,58,Male,Japan,High School,45793.21
+11127,26,Female,Germany,Masters,50553.6
+11128,57,Female,India,High School,37643.81
+11129,36,Female,Germany,Bachelors,115304.94
+11130,34,Female,UK,PhD,112652.49
+11131,67,Male,Germany,Bachelors,21065.46
+11132,32,Male,Brazil,Bachelors,41809.91
+11133,35,Male,Japan,High School,44480.9
+11134,37,Female,UK,Bachelors,73702.96
+11135,50,Male,Canada,Bachelors,64027.45
+11136,56,Female,Australia,Bachelors,52046.59
+11137,29,Female,Australia,Bachelors,54395.53
+11138,38,Female,India,Bachelors,36318.63
+11139,45,Male,Germany,High School,22945.13
+11140,23,Female,Brazil,High School,43336.36
+11141,34,Female,Brazil,High School,49970.78
+11142,62,Male,UK,PhD,28368.28
+11143,54,Male,Canada,High School,31425.4
+11144,52,Male,Germany,Bachelors,49352.13
+11145,34,Male,UK,Bachelors,99168.8
+11146,33,Male,Brazil,Bachelors,62854.55
+11147,34,Female,Brazil,Bachelors,28880.63
+11148,61,Male,UK,Masters,70899.07
+11149,67,Male,India,Bachelors,81049.67
+11150,63,Male,Germany,Bachelors,35611.68
+11151,28,Male,India,Bachelors,73602.12
+11152,30,Male,USA,Bachelors,69296.71
+11153,54,Female,Japan,High School,23496.89
+11154,29,Female,Brazil,Bachelors,21587.35
+11155,33,Female,UK,Bachelors,39108.84
+11156,61,Female,UK,Bachelors,51472.2
+11157,26,Female,Germany,High School,41965.44
+11158,23,Female,Canada,Bachelors,51955.5
+11159,50,Male,Germany,Bachelors,53559.37
+11160,37,Male,Canada,Bachelors,38298.75
+11161,39,Non-Binary,Australia,Masters,57801.6
+11162,72,Male,UK,Bachelors,21975.48
+11163,59,Male,Canada,Bachelors,90748.82
+11164,39,Male,India,Bachelors,30691.39
+11165,35,Male,Brazil,High School,59147.15
+11166,48,Male,Canada,Bachelors,77543.34
+11167,79,Female,UK,Bachelors,29304.88
+11168,48,Male,UK,Bachelors,133330.85
+11169,35,Female,Brazil,High School,44818.67
+11170,54,Female,USA,High School,128908.55
+11171,35,Female,Canada,Bachelors,26808.88
+11172,35,Male,Canada,Bachelors,21634.99
+11173,78,Male,Australia,High School,23513.21
+11174,24,Female,Japan,Bachelors,76496.87
+11175,33,Female,Canada,Masters,60871.78
+11176,63,Female,UK,Bachelors,31046.38
+11177,48,Male,Canada,High School,26359.11
+11178,58,Male,India,Bachelors,47392.09
+11179,31,Male,Canada,Bachelors,35252.69
+11180,37,Male,Brazil,Bachelors,49867.59
+11181,55,Female,Brazil,High School,24419.22
+11182,55,Female,UK,Bachelors,31288.54
+11183,35,Male,Brazil,High School,27249.16
+11184,30,Male,USA,Masters,67224.16
+11185,39,Male,Japan,PhD,39609.78
+11186,49,Female,Japan,Masters,125073.1
+11187,36,Female,Australia,Bachelors,64010.68
+11188,23,Female,USA,Bachelors,58032.9
+11189,41,Female,Germany,High School,59824.42
+11190,30,Male,India,Bachelors,88758.1
+11191,46,Female,Canada,Masters,29728.46
+11192,51,Female,Japan,Bachelors,110262.86
+11193,68,Female,India,Bachelors,70404.25
+11194,29,Female,Japan,Bachelors,48636.96
+11195,56,Male,Japan,Bachelors,62381.36
+11196,37,Female,Canada,Bachelors,49144.48
+11197,45,Male,Canada,High School,15835.39
+11198,33,Female,Japan,Bachelors,55668.95
+11199,26,Male,India,Bachelors,56427.32
+11200,50,Male,USA,Bachelors,14908.79
+11201,37,Female,Germany,Masters,47352.11
+11202,39,Male,Australia,PhD,61562.57
+11203,25,Male,Australia,Masters,29384.94
+11204,68,Male,India,Masters,26134.0
+11205,59,Male,Brazil,Bachelors,32322.53
+11206,63,Female,Australia,Bachelors,31464.81
+11207,54,Female,Australia,Bachelors,39353.13
+11208,29,Female,USA,High School,70574.15
+11209,50,Female,Brazil,High School,46532.2
+11210,50,Male,Canada,High School,38507.44
+11211,34,Female,Brazil,PhD,75920.71
+11212,68,Female,Brazil,High School,177124.11
+11213,69,Female,India,Bachelors,33746.71
+11214,54,Male,Japan,Masters,37490.75
+11215,27,Male,Canada,Bachelors,29120.21
+11216,62,Female,USA,Bachelors,53925.23
+11217,38,Male,Australia,Masters,69093.57
+11218,27,Male,Brazil,Bachelors,72088.55
+11219,32,Female,UK,Bachelors,19777.6
+11220,58,Female,Australia,Bachelors,43969.94
+11221,42,Female,Japan,High School,67106.89
+11222,53,Female,Canada,Bachelors,28646.19
+11223,38,Non-Binary,UK,PhD,52159.68
+11224,51,Non-Binary,Japan,Bachelors,50681.33
+11225,52,Male,Japan,High School,23725.91
+11226,63,Male,Germany,Bachelors,35084.6
+11227,52,Male,UK,High School,67817.25
+11228,49,Male,India,Bachelors,96217.19
+11229,61,Female,India,Bachelors,32601.23
+11230,28,Female,Australia,Bachelors,45015.03
+11231,33,Male,UK,Bachelors,34653.28
+11232,58,Female,Brazil,Masters,58564.81
+11233,49,Male,India,High School,19849.45
+11234,66,Male,Brazil,Bachelors,136401.72
+11235,31,Male,Japan,Bachelors,30442.76
+11236,53,Female,UK,Bachelors,65123.79
+11237,59,Female,Brazil,High School,91792.44
+11238,59,Female,Canada,PhD,74328.55
+11239,47,Male,Brazil,Masters,33821.5
+11240,31,Male,Germany,Masters,49428.69
+11241,44,Male,USA,High School,80111.77
+11242,44,Male,Brazil,Bachelors,196944.03
+11243,37,Female,Canada,Bachelors,56727.78
+11244,23,Male,Canada,PhD,54817.27
+11245,37,Male,Japan,High School,34892.33
+11246,66,Male,India,Masters,33378.82
+11247,48,Male,Canada,Bachelors,57238.63
+11248,43,Male,UK,Bachelors,72945.52
+11249,73,Male,Germany,High School,23371.46
+11250,25,Female,Australia,Masters,64822.26
+11251,58,Male,India,Bachelors,93630.93
+11252,27,Female,UK,Bachelors,107298.51
+11253,58,Male,Australia,Bachelors,98606.89
+11254,47,Female,UK,Bachelors,63811.51
+11255,58,Female,Japan,Bachelors,49700.9
+11256,28,Male,Germany,High School,62133.26
+11257,47,Female,UK,Bachelors,38727.53
+11258,34,Female,Canada,Bachelors,43622.24
+11259,27,Male,Canada,Masters,78299.93
+11260,42,Female,Japan,Bachelors,48728.59
+11261,51,Female,India,Bachelors,150139.18
+11262,54,Female,Australia,High School,52140.67
+11263,47,Female,Canada,High School,42976.93
+11264,37,Male,Brazil,Bachelors,43365.87
+11265,67,Male,India,Bachelors,48065.15
+11266,19,Female,Japan,High School,99082.82
+11267,23,Male,Brazil,High School,22350.8
+11268,35,Male,Australia,Masters,32303.6
+11269,27,Female,India,Bachelors,87559.65
+11270,67,Male,Germany,High School,43127.06
+11271,39,Male,Germany,High School,35312.79
+11272,30,Male,Japan,High School,30729.94
+11273,29,Male,Australia,Masters,34072.43
+11274,41,Female,Germany,High School,48117.94
+11275,51,Male,Japan,Bachelors,44042.33
+11276,28,Male,UK,Bachelors,42203.72
+11277,20,Male,Germany,Bachelors,66005.53
+11278,29,Female,Canada,Bachelors,31307.56
+11279,52,Female,Japan,High School,124473.02
+11280,52,Female,UK,High School,111331.96
+11281,29,Male,Japan,High School,41571.82
+11282,27,Male,Japan,Bachelors,32343.76
+11283,25,Male,USA,Bachelors,37230.42
+11284,36,Male,Australia,Masters,60045.58
+11285,34,Male,India,Bachelors,32282.49
+11286,36,Male,USA,Bachelors,64007.41
+11287,37,Female,Australia,High School,30873.52
+11288,27,Male,India,High School,68689.06
+11289,40,Male,Australia,Bachelors,44685.48
+11290,44,Male,UK,High School,51945.29
+11291,64,Female,Australia,Masters,41926.41
+11292,67,Male,Japan,Bachelors,33070.79
+11293,74,Male,USA,Masters,93072.93
+11294,38,Female,India,High School,69509.39
+11295,57,Male,Germany,High School,53088.59
+11296,69,Female,Germany,Bachelors,21541.95
+11297,45,Male,USA,Bachelors,29868.48
+11298,70,Male,UK,Bachelors,98432.84
+11299,33,Female,India,High School,35193.67
+11300,37,Male,Germany,Bachelors,40040.26
+11301,36,Male,USA,Masters,221923.58
+11302,56,Female,India,Bachelors,28088.98
+11303,47,Male,Brazil,High School,30513.67
+11304,58,Female,UK,Bachelors,69439.9
+11305,29,Male,Brazil,High School,29032.3
+11306,54,Female,USA,Bachelors,59747.92
+11307,29,Male,Brazil,Masters,53319.93
+11308,58,Female,Japan,Bachelors,73989.82
+11309,20,Female,Australia,Masters,72452.41
+11310,41,Male,Germany,Bachelors,30198.76
+11311,43,Female,UK,High School,36105.86
+11312,38,Male,Germany,High School,83147.53
+11313,64,Female,India,Bachelors,84556.9
+11314,26,Male,Australia,Masters,54669.56
+11315,44,Female,Japan,High School,60200.26
+11316,59,Male,India,Bachelors,48970.89
+11317,33,Female,India,Masters,64809.08
+11318,29,Male,Brazil,Masters,27459.29
+11319,53,Male,Australia,PhD,31454.04
+11320,35,Male,Japan,Bachelors,56160.43
+11321,70,Female,Japan,Bachelors,48760.16
+11322,44,Female,Japan,High School,72381.42
+11323,56,Female,Canada,Bachelors,159750.94
+11324,68,Male,Australia,Bachelors,27631.49
+11325,60,Female,Japan,High School,64927.7
+11326,22,Female,Australia,High School,21856.75
+11327,41,Female,UK,High School,43238.97
+11328,26,Female,Japan,High School,16945.42
+11329,55,Female,Germany,Bachelors,69101.53
+11330,49,Male,India,High School,75635.71
+11331,21,Female,Brazil,Bachelors,49292.44
+11332,39,Male,India,Bachelors,25622.63
+11333,32,Male,India,Masters,47125.97
+11334,49,Female,UK,High School,40478.85
+11335,34,Male,Australia,Bachelors,32613.82
+11336,25,Female,Germany,High School,38429.0
+11337,45,Male,Brazil,High School,25454.98
+11338,34,Male,Canada,Bachelors,42377.74
+11339,29,Female,Australia,Bachelors,61720.84
+11340,58,Male,Japan,Bachelors,19635.94
+11341,26,Female,Canada,Masters,105108.14
+11342,56,Male,Australia,Bachelors,31379.63
+11343,48,Female,USA,Masters,71973.07
+11344,31,Female,India,PhD,68244.3
+11345,63,Female,India,Bachelors,46784.73
+11346,34,Male,Australia,Bachelors,25451.15
+11347,70,Female,Brazil,High School,81964.22
+11348,62,Female,UK,Bachelors,50438.83
+11349,35,Male,Japan,Bachelors,74068.42
+11350,49,Female,Canada,Bachelors,52139.96
+11351,27,Male,Japan,Masters,61258.21
+11352,41,Female,Brazil,High School,36041.44
+11353,73,Male,Japan,High School,39529.58
+11354,81,Male,Brazil,High School,44997.25
+11355,71,Male,Canada,Bachelors,9739.09
+11356,37,Male,Brazil,High School,71998.76
+11357,33,Male,UK,High School,43649.58
+11358,53,Female,Canada,Bachelors,14505.99
+11359,27,Female,Australia,PhD,39443.3
+11360,70,Male,UK,PhD,26359.89
+11361,45,Female,Canada,High School,71374.02
+11362,35,Non-Binary,Australia,High School,48986.72
+11363,57,Female,Germany,Bachelors,67929.68
+11364,40,Female,India,High School,63541.33
+11365,52,Female,Japan,High School,36033.63
+11366,51,Female,Australia,Masters,49688.33
+11367,52,Female,Brazil,Bachelors,23383.19
+11368,39,Female,Australia,High School,30137.58
+11369,30,Female,Japan,Bachelors,126806.58
+11370,40,Male,India,PhD,65697.92
+11371,49,Female,Japan,High School,86675.72
+11372,44,Female,USA,Bachelors,71881.93
+11373,56,Female,India,High School,47581.18
+11374,74,Female,Japan,Masters,87286.58
+11375,38,Female,Canada,Bachelors,27336.56
+11376,35,Female,Japan,Bachelors,52201.3
+11377,35,Male,Japan,High School,100972.58
+11378,58,Female,UK,Masters,34692.03
+11379,38,Male,UK,Bachelors,49508.89
+11380,57,Female,Germany,Masters,31837.42
+11381,27,Male,USA,Bachelors,53226.35
+11382,52,Female,India,Bachelors,65690.77
+11383,49,Male,Canada,Bachelors,18153.79
+11384,57,Female,USA,Bachelors,65003.25
+11385,27,Male,India,High School,24571.62
+11386,37,Female,Japan,High School,75528.67
+11387,42,Female,Canada,Bachelors,41944.99
+11388,66,Female,UK,Bachelors,135579.61
+11389,48,Female,India,PhD,60816.98
+11390,30,Female,India,High School,49606.88
+11391,63,Male,Canada,High School,59169.84
+11392,34,Male,India,Bachelors,52187.36
+11393,54,Female,Japan,Masters,37524.83
+11394,61,Female,Japan,High School,90193.04
+11395,30,Male,Brazil,Bachelors,43721.27
+11396,34,Male,India,Bachelors,42613.42
+11397,37,Female,India,Bachelors,34238.68
+11398,47,Female,Australia,Bachelors,45505.94
+11399,33,Male,Australia,Bachelors,64419.18
+11400,35,Male,Australia,High School,53385.94
+11401,32,Male,Germany,Bachelors,50315.45
+11402,34,Female,India,Bachelors,72744.49
+11403,40,Female,Canada,High School,82284.34
+11404,79,Male,India,Bachelors,60646.17
+11405,32,Male,USA,Bachelors,80289.83
+11406,61,Male,USA,Bachelors,22410.43
+11407,60,Male,Germany,Bachelors,70466.2
+11408,45,Male,USA,Bachelors,66766.87
+11409,61,Female,India,Masters,150869.5
+11410,32,Male,Australia,Masters,50633.88
+11411,51,Male,USA,High School,33589.23
+11412,59,Male,UK,Masters,53174.56
+11413,35,Male,Japan,Bachelors,66286.83
+11414,33,Male,Brazil,PhD,27789.46
+11415,32,Male,Germany,Bachelors,22773.25
+11416,33,Female,Canada,Bachelors,23835.41
+11417,32,Female,Brazil,Masters,36353.91
+11418,31,Female,Australia,Masters,36474.42
+11419,30,Female,UK,High School,93763.96
+11420,57,Male,Germany,Bachelors,52774.67
+11421,41,Male,India,High School,74296.0
+11422,23,Female,Brazil,Bachelors,23670.46
+11423,37,Male,Japan,Bachelors,49374.09
+11424,34,Male,Japan,Bachelors,44620.42
+11425,38,Female,Brazil,Bachelors,38474.19
+11426,28,Female,Germany,High School,50921.47
+11427,64,Female,Japan,Bachelors,76488.53
+11428,31,Female,Australia,Bachelors,62817.51
+11429,19,Male,Brazil,Bachelors,129195.88
+11430,30,Female,UK,High School,22125.67
+11431,36,Male,Germany,Masters,15091.49
+11432,21,Male,Brazil,Bachelors,48371.76
+11433,28,Female,Germany,Masters,50313.56
+11434,29,Male,Germany,Masters,37170.41
+11435,36,Female,Brazil,Bachelors,39918.26
+11436,35,Male,Brazil,High School,88110.16
+11437,22,Female,Canada,Bachelors,26578.7
+11438,33,Female,Japan,Bachelors,63577.07
+11439,72,Female,Germany,Masters,17263.05
+11440,44,Male,Australia,Masters,41755.51
+11441,80,Male,USA,Bachelors,139248.4
+11442,28,Female,Australia,Bachelors,109498.27
+11443,51,Male,UK,Bachelors,32594.92
+11444,30,Male,India,Masters,31027.29
+11445,25,Male,Japan,Bachelors,80124.41
+11446,72,Female,India,Bachelors,15548.68
+11447,40,Female,Germany,High School,47304.01
+11448,59,Female,Japan,Bachelors,119904.01
+11449,30,Male,Australia,Masters,33949.86
+11450,31,Male,Germany,Bachelors,62464.18
+11451,37,Female,Japan,High School,52813.18
+11452,43,Female,Australia,Bachelors,44043.65
+11453,39,Male,USA,PhD,37129.19
+11454,48,Male,Canada,Bachelors,36787.19
+11455,66,Female,USA,Masters,42015.29
+11456,20,Female,Brazil,Masters,30087.03
+11457,77,Male,India,Masters,58772.4
+11458,63,Male,USA,Bachelors,50607.47
+11459,74,Male,UK,Bachelors,58802.29
+11460,18,Female,India,Bachelors,38487.93
+11461,22,Female,Japan,High School,28430.03
+11462,77,Female,Germany,Masters,148080.54
+11463,48,Male,USA,High School,108847.45
+11464,30,Female,Canada,Bachelors,28517.97
+11465,72,Female,Germany,Bachelors,59273.95
+11466,39,Male,USA,Bachelors,28748.26
+11467,46,Male,Brazil,High School,44382.35
+11468,34,Non-Binary,Australia,Bachelors,72575.09
+11469,66,Female,India,High School,20556.68
+11470,45,Male,UK,Bachelors,67720.61
+11471,38,Female,Brazil,Bachelors,45658.75
+11472,46,Female,Germany,High School,34869.67
+11473,38,Male,UK,High School,65068.07
+11474,51,Male,Canada,PhD,131920.71
+11475,32,Female,UK,Bachelors,71960.92
+11476,37,Female,USA,Masters,29460.89
+11477,37,Non-Binary,Canada,High School,47869.65
+11478,32,Female,Japan,Masters,68036.73
+11479,46,Female,India,High School,39994.81
+11480,44,Male,UK,Bachelors,50504.6
+11481,31,Female,Australia,Bachelors,77733.16
+11482,48,Female,India,High School,49834.07
+11483,42,Male,Australia,High School,72268.63
+11484,60,Male,Australia,High School,20765.89
+11485,62,Female,Germany,Bachelors,26083.69
+11486,67,Male,USA,High School,45056.7
+11487,65,Male,Canada,Bachelors,154962.89
+11488,32,Male,USA,Bachelors,26089.51
+11489,54,Female,Brazil,Masters,39917.73
+11490,23,Female,Australia,Bachelors,15948.32
+11491,74,Male,USA,High School,66219.71
+11492,47,Male,USA,Bachelors,65772.91
+11493,39,Male,Brazil,High School,137112.7
+11494,37,Male,USA,High School,36265.63
+11495,58,Female,USA,PhD,33164.72
+11496,24,Male,Canada,PhD,28927.78
+11497,50,Female,India,Bachelors,52792.51
+11498,54,Male,Canada,Bachelors,37522.53
+11499,45,Female,Canada,Bachelors,25342.4
+11500,43,Male,Japan,Bachelors,56678.32

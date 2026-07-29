@@ -1,0 +1,2501 @@
+Accident_ID,Severity,State,City,Weather_Condition,Road_Condition,Light_Condition,Hour_Of_Day,Is_Weekend
+A-100001,3,CA,San Diego,Clear,Dry,Dark - Street Lights,1,1
+A-100002,2,CA,San Diego,Clear,Dry,Daylight,14,1
+A-100003,1,FL,Miami,Clear,Dry,Daylight,16,0
+A-100004,1,CA,Los Angeles,Clear,Dry,Daylight,16,1
+A-100005,1,IL,Chicago,Clear,Dry,Daylight,6,0
+A-100006,2,CA,Los Angeles,Overcast,Dry,Daylight,16,0
+A-100007,1,IL,Chicago,Clear,Dry,Daylight,14,0
+A-100008,3,CA,San Diego,Clear,Dry,Daylight,18,0
+A-100009,3,TX,Houston,Clear,Construction Zone,Daylight,10,1
+A-100010,3,TX,Houston,Clear,Dry,Daylight,13,1
+A-100011,1,FL,Miami,Heavy Rain,Wet,Daylight,16,0
+A-100012,3,IL,Chicago,Fog,Dry,Daylight,10,1
+A-100013,2,FL,Miami,Fog,Dry,Daylight,15,0
+A-100014,3,FL,Miami,Heavy Rain,Wet,Daylight,16,0
+A-100015,1,IL,Chicago,Rain,Wet,Daylight,7,0
+A-100016,1,CA,San Diego,Rain,Wet,Daylight,7,1
+A-100017,3,NC,Charlotte,Snow,Icy,Daylight,13,0
+A-100018,1,NY,New York,Clear,Dry,Daylight,17,0
+A-100019,3,NY,New York,Rain,Wet,Dark - Street Lights,22,0
+A-100020,2,FL,Miami,Rain,Wet,Daylight,7,0
+A-100021,4,CA,Los Angeles,Clear,Dry,Daylight,14,0
+A-100022,2,NY,New York,Rain,Wet,Daylight,8,1
+A-100023,1,CA,San Diego,Clear,Dry,Dark - No Lights,22,0
+A-100024,2,AZ,Phoenix,Heavy Rain,Wet,Dark - Street Lights,21,0
+A-100025,1,IL,Chicago,Clear,Dry,Daylight,11,0
+A-100026,1,FL,Miami,Heavy Rain,Wet,Daylight,14,1
+A-100027,1,CA,Los Angeles,Clear,Dry,Daylight,18,1
+A-100028,2,TX,Houston,Rain,Wet,Daylight,16,0
+A-100029,2,AZ,Phoenix,Clear,Dry,Daylight,7,1
+A-100030,1,CA,Los Angeles,Clear,Dry,Daylight,15,0
+A-100031,1,CA,San Diego,Clear,Dry,Daylight,8,1
+A-100032,1,FL,Miami,Snow,Snow Cover,Daylight,18,1
+A-100033,2,CA,Los Angeles,Snow,Icy,Dark - Street Lights,22,0
+A-100034,1,AZ,Phoenix,Clear,Dry,Dawn,19,1
+A-100035,2,NC,Charlotte,Overcast,Dry,Daylight,7,0
+A-100036,4,IL,Chicago,Rain,Construction Zone,Dark - Street Lights,4,0
+A-100037,2,CA,San Diego,Clear,Wet,Daylight,18,1
+A-100038,2,FL,Miami,Clear,Dry,Daylight,14,1
+A-100039,3,IL,Chicago,Heavy Rain,Wet,Dark - Street Lights,20,1
+A-100040,3,NY,New York,Fog,Dry,Daylight,12,0
+A-100041,4,CA,San Diego,Clear,Construction Zone,Dusk,5,1
+A-100042,4,IL,Chicago,Rain,Wet,Daylight,8,0
+A-100043,4,CA,Los Angeles,Fog,Dry,Daylight,15,0
+A-100044,2,NY,New York,Rain,Wet,Daylight,6,1
+A-100045,3,IL,Chicago,Clear,Dry,Daylight,7,0
+A-100046,2,CA,Los Angeles,Clear,Dry,Dusk,5,0
+A-100047,1,NY,New York,Heavy Rain,Wet,Daylight,7,0
+A-100048,1,TX,Houston,Rain,Wet,Daylight,13,0
+A-100049,1,NY,New York,Overcast,Dry,Daylight,10,0
+A-100050,4,FL,Miami,Rain,Construction Zone,Daylight,15,0
+A-100051,2,TX,Houston,Clear,Dry,Dark - Street Lights,20,1
+A-100052,4,TX,Houston,Fog,Wet,Daylight,16,0
+A-100053,3,FL,Miami,Clear,Wet,Daylight,8,0
+A-100054,3,FL,Miami,Clear,Wet,Daylight,7,0
+A-100055,1,FL,Miami,Clear,Wet,Dark - No Lights,1,1
+A-100056,3,AZ,Phoenix,Clear,Dry,Daylight,15,0
+A-100057,2,NY,New York,Clear,Dry,Daylight,7,0
+A-100058,1,IL,Chicago,Clear,Wet,Daylight,11,0
+A-100059,3,CA,Los Angeles,Fog,Dry,Daylight,16,1
+A-100060,1,FL,Miami,Rain,Wet,Daylight,10,1
+A-100061,2,CA,San Diego,Clear,Dry,Daylight,16,0
+A-100062,2,NY,New York,Rain,Wet,Daylight,14,1
+A-100063,1,TX,Houston,Rain,Wet,Daylight,15,0
+A-100064,2,AZ,Phoenix,Clear,Dry,Daylight,17,0
+A-100065,2,NC,Charlotte,Heavy Rain,Wet,Daylight,17,0
+A-100066,3,IL,Chicago,Clear,Dry,Daylight,6,0
+A-100067,2,TX,Houston,Clear,Wet,Dark - Street Lights,1,1
+A-100068,2,FL,Miami,Clear,Dry,Daylight,16,0
+A-100069,2,CA,San Diego,Snow,Snow Cover,Daylight,17,1
+A-100070,2,FL,Miami,Clear,Dry,Dark - Street Lights,20,1
+A-100071,3,IL,Chicago,Rain,Wet,Dark - Street Lights,21,0
+A-100072,3,NC,Charlotte,Clear,Dry,Dusk,19,0
+A-100073,1,NY,New York,Rain,Wet,Daylight,17,0
+A-100074,2,NY,New York,Fog,Dry,Daylight,7,0
+A-100075,2,AZ,Phoenix,Clear,Dry,Daylight,16,0
+A-100076,3,AZ,Phoenix,Clear,Dry,Dusk,5,0
+A-100077,3,AZ,Phoenix,Clear,Dry,Daylight,12,0
+A-100078,2,AZ,Phoenix,Snow,Snow Cover,Daylight,13,0
+A-100079,2,NY,New York,Clear,Dry,Daylight,11,1
+A-100080,3,TX,Houston,Overcast,Dry,Daylight,18,0
+A-100081,2,CA,Los Angeles,Snow,Icy,Dawn,5,0
+A-100082,4,FL,Miami,Snow,Icy,Daylight,12,0
+A-100083,4,AZ,Phoenix,Clear,Dry,Daylight,8,1
+A-100084,1,IL,Chicago,Overcast,Dry,Daylight,7,1
+A-100085,2,FL,Miami,Clear,Dry,Daylight,7,1
+A-100086,4,FL,Miami,Clear,Dry,Daylight,12,1
+A-100087,3,CA,San Diego,Clear,Dry,Daylight,17,1
+A-100088,2,AZ,Phoenix,Clear,Dry,Daylight,10,0
+A-100089,2,CA,San Diego,Rain,Wet,Daylight,16,0
+A-100090,1,CA,Los Angeles,Clear,Dry,Daylight,9,0
+A-100091,3,AZ,Phoenix,Overcast,Dry,Daylight,17,1
+A-100092,3,TX,Houston,Overcast,Dry,Daylight,11,0
+A-100093,1,NC,Charlotte,Rain,Wet,Daylight,12,0
+A-100094,3,CA,San Diego,Heavy Rain,Wet,Daylight,8,0
+A-100095,1,IL,Chicago,Clear,Dry,Dark - Street Lights,2,0
+A-100096,2,NY,New York,Clear,Dry,Daylight,14,0
+A-100097,1,FL,Miami,Clear,Dry,Daylight,16,0
+A-100098,2,FL,Miami,Rain,Wet,Daylight,11,1
+A-100099,1,IL,Chicago,Clear,Dry,Daylight,11,0
+A-100100,4,NY,New York,Clear,Dry,Daylight,7,0
+A-100101,2,TX,Houston,Clear,Dry,Daylight,7,0
+A-100102,2,NY,New York,Clear,Dry,Dark - Street Lights,22,0
+A-100103,1,TX,Houston,Rain,Wet,Daylight,8,0
+A-100104,1,NC,Charlotte,Clear,Dry,Daylight,6,1
+A-100105,2,CA,Los Angeles,Clear,Dry,Daylight,8,0
+A-100106,2,CA,Los Angeles,Fog,Dry,Daylight,7,0
+A-100107,2,AZ,Phoenix,Clear,Dry,Daylight,15,0
+A-100108,1,NC,Charlotte,Clear,Dry,Daylight,8,0
+A-100109,1,CA,San Diego,Clear,Dry,Dark - Street Lights,21,1
+A-100110,1,CA,San Diego,Rain,Wet,Daylight,7,0
+A-100111,3,NY,New York,Clear,Dry,Daylight,16,0
+A-100112,4,FL,Miami,Rain,Construction Zone,Daylight,11,0
+A-100113,2,CA,San Diego,Rain,Wet,Dawn,5,0
+A-100114,2,NC,Charlotte,Fog,Dry,Daylight,16,0
+A-100115,1,CA,San Diego,Heavy Rain,Wet,Daylight,14,0
+A-100116,3,FL,Miami,Rain,Construction Zone,Dark - No Lights,21,0
+A-100117,2,NY,New York,Clear,Dry,Daylight,14,0
+A-100118,1,NY,New York,Rain,Wet,Daylight,7,0
+A-100119,2,IL,Chicago,Clear,Dry,Daylight,11,0
+A-100120,3,NC,Charlotte,Snow,Icy,Daylight,8,0
+A-100121,4,IL,Chicago,Heavy Rain,Construction Zone,Daylight,8,1
+A-100122,1,CA,Los Angeles,Clear,Dry,Daylight,15,0
+A-100123,3,NC,Charlotte,Clear,Dry,Daylight,15,0
+A-100124,2,NC,Charlotte,Clear,Dry,Daylight,18,0
+A-100125,3,TX,Houston,Clear,Dry,Daylight,8,1
+A-100126,3,CA,San Diego,Snow,Icy,Daylight,12,1
+A-100127,1,NY,New York,Clear,Dry,Daylight,11,0
+A-100128,3,FL,Miami,Snow,Snow Cover,Dark - Street Lights,20,0
+A-100129,2,AZ,Phoenix,Clear,Dry,Daylight,9,0
+A-100130,2,NC,Charlotte,Clear,Dry,Daylight,18,0
+A-100131,2,AZ,Phoenix,Clear,Dry,Daylight,12,0
+A-100132,3,FL,Miami,Clear,Dry,Daylight,18,0
+A-100133,2,AZ,Phoenix,Snow,Snow Cover,Daylight,10,0
+A-100134,3,CA,Los Angeles,Clear,Dry,Daylight,6,0
+A-100135,3,CA,San Diego,Heavy Rain,Wet,Daylight,13,0
+A-100136,2,TX,Houston,Clear,Dry,Dawn,5,0
+A-100137,2,IL,Chicago,Clear,Dry,Daylight,18,0
+A-100138,3,NC,Charlotte,Clear,Dry,Daylight,18,1
+A-100139,3,FL,Miami,Clear,Dry,Daylight,16,0
+A-100140,1,NC,Charlotte,Clear,Dry,Daylight,7,0
+A-100141,2,IL,Chicago,Rain,Wet,Daylight,10,1
+A-100142,2,TX,Houston,Clear,Dry,Daylight,7,0
+A-100143,3,TX,Houston,Clear,Dry,Daylight,7,0
+A-100144,4,NC,Charlotte,Clear,Dry,Dawn,19,0
+A-100145,1,NY,New York,Clear,Wet,Daylight,15,0
+A-100146,1,AZ,Phoenix,Clear,Dry,Daylight,18,1
+A-100147,2,NY,New York,Clear,Dry,Dark - No Lights,1,0
+A-100148,3,CA,Los Angeles,Snow,Snow Cover,Dusk,19,0
+A-100149,2,IL,Chicago,Clear,Dry,Daylight,7,1
+A-100150,2,TX,Houston,Rain,Wet,Daylight,15,0
+A-100151,1,IL,Chicago,Clear,Dry,Daylight,16,1
+A-100152,1,TX,Houston,Clear,Dry,Daylight,17,0
+A-100153,2,TX,Houston,Clear,Wet,Daylight,8,0
+A-100154,1,IL,Chicago,Clear,Dry,Daylight,17,0
+A-100155,2,AZ,Phoenix,Clear,Dry,Dark - Street Lights,22,0
+A-100156,2,NC,Charlotte,Clear,Dry,Daylight,10,0
+A-100157,2,IL,Chicago,Clear,Wet,Daylight,6,1
+A-100158,2,FL,Miami,Clear,Dry,Daylight,15,0
+A-100159,1,CA,San Diego,Clear,Dry,Daylight,6,0
+A-100160,3,TX,Houston,Fog,Dry,Daylight,10,0
+A-100161,1,TX,Houston,Snow,Snow Cover,Dawn,19,0
+A-100162,4,IL,Chicago,Clear,Dry,Daylight,7,0
+A-100163,1,IL,Chicago,Clear,Dry,Daylight,13,0
+A-100164,4,CA,San Diego,Clear,Dry,Dark - Street Lights,21,0
+A-100165,1,CA,Los Angeles,Clear,Dry,Daylight,17,1
+A-100166,2,FL,Miami,Clear,Dry,Daylight,14,0
+A-100167,2,CA,Los Angeles,Overcast,Dry,Daylight,8,0
+A-100168,1,CA,San Diego,Clear,Dry,Daylight,15,1
+A-100169,1,IL,Chicago,Clear,Dry,Dark - Street Lights,0,1
+A-100170,3,NC,Charlotte,Clear,Dry,Daylight,17,0
+A-100171,2,CA,Los Angeles,Rain,Wet,Daylight,16,0
+A-100172,2,CA,Los Angeles,Clear,Dry,Dawn,5,0
+A-100173,2,NC,Charlotte,Rain,Wet,Dawn,5,1
+A-100174,2,IL,Chicago,Clear,Dry,Daylight,10,0
+A-100175,2,CA,San Diego,Heavy Rain,Wet,Daylight,18,0
+A-100176,2,NC,Charlotte,Snow,Icy,Dusk,19,0
+A-100177,1,IL,Chicago,Clear,Construction Zone,Daylight,15,0
+A-100178,3,CA,San Diego,Heavy Rain,Wet,Daylight,6,1
+A-100179,2,IL,Chicago,Snow,Snow Cover,Daylight,15,0
+A-100180,2,CA,Los Angeles,Clear,Dry,Dark - Street Lights,22,0
+A-100181,1,FL,Miami,Rain,Wet,Daylight,18,0
+A-100182,2,FL,Miami,Overcast,Wet,Daylight,17,0
+A-100183,1,CA,Los Angeles,Rain,Wet,Daylight,15,0
+A-100184,1,NY,New York,Clear,Dry,Dark - Street Lights,20,0
+A-100185,1,CA,Los Angeles,Clear,Dry,Dusk,5,0
+A-100186,1,IL,Chicago,Clear,Dry,Daylight,17,0
+A-100187,2,CA,Los Angeles,Rain,Wet,Daylight,15,1
+A-100188,2,NY,New York,Clear,Dry,Daylight,7,0
+A-100189,1,NC,Charlotte,Clear,Construction Zone,Daylight,13,0
+A-100190,1,FL,Miami,Clear,Dry,Daylight,8,1
+A-100191,1,CA,Los Angeles,Clear,Dry,Daylight,13,0
+A-100192,3,IL,Chicago,Clear,Dry,Dusk,5,0
+A-100193,1,AZ,Phoenix,Clear,Dry,Daylight,14,0
+A-100194,1,IL,Chicago,Clear,Dry,Daylight,7,0
+A-100195,1,AZ,Phoenix,Rain,Wet,Daylight,18,1
+A-100196,3,NY,New York,Heavy Rain,Wet,Daylight,16,1
+A-100197,2,FL,Miami,Heavy Rain,Wet,Dusk,19,0
+A-100198,1,TX,Houston,Clear,Dry,Daylight,8,1
+A-100199,3,NC,Charlotte,Rain,Wet,Daylight,12,0
+A-100200,2,IL,Chicago,Clear,Dry,Daylight,18,0
+A-100201,2,NY,New York,Clear,Dry,Daylight,17,0
+A-100202,2,CA,Los Angeles,Clear,Wet,Dark - No Lights,4,0
+A-100203,2,AZ,Phoenix,Snow,Snow Cover,Daylight,12,0
+A-100204,1,FL,Miami,Clear,Dry,Daylight,9,0
+A-100205,4,IL,Chicago,Rain,Wet,Dark - Street Lights,22,1
+A-100206,2,TX,Houston,Clear,Dry,Daylight,10,0
+A-100207,2,CA,Los Angeles,Clear,Dry,Daylight,17,0
+A-100208,1,NY,New York,Overcast,Dry,Daylight,8,0
+A-100209,3,CA,San Diego,Clear,Construction Zone,Daylight,14,1
+A-100210,2,AZ,Phoenix,Clear,Dry,Daylight,6,0
+A-100211,3,IL,Chicago,Snow,Snow Cover,Daylight,17,0
+A-100212,1,CA,San Diego,Clear,Dry,Daylight,15,0
+A-100213,2,FL,Miami,Clear,Construction Zone,Daylight,9,0
+A-100214,4,NY,New York,Heavy Rain,Wet,Daylight,18,1
+A-100215,1,CA,Los Angeles,Rain,Wet,Daylight,15,0
+A-100216,3,TX,Houston,Snow,Icy,Daylight,17,0
+A-100217,2,AZ,Phoenix,Overcast,Dry,Daylight,10,0
+A-100218,3,NC,Charlotte,Overcast,Dry,Daylight,7,1
+A-100219,1,FL,Miami,Overcast,Dry,Daylight,10,0
+A-100220,2,AZ,Phoenix,Clear,Dry,Daylight,13,0
+A-100221,3,NY,New York,Clear,Construction Zone,Dark - Street Lights,4,0
+A-100222,2,CA,San Diego,Clear,Construction Zone,Daylight,8,0
+A-100223,2,AZ,Phoenix,Snow,Snow Cover,Dusk,5,0
+A-100224,1,AZ,Phoenix,Overcast,Dry,Daylight,13,1
+A-100225,2,CA,San Diego,Snow,Icy,Daylight,18,0
+A-100226,1,NC,Charlotte,Heavy Rain,Wet,Daylight,16,1
+A-100227,3,CA,San Diego,Clear,Construction Zone,Dark - Street Lights,1,1
+A-100228,2,NY,New York,Clear,Dry,Daylight,8,1
+A-100229,2,CA,San Diego,Rain,Wet,Daylight,6,0
+A-100230,2,FL,Miami,Clear,Dry,Daylight,16,0
+A-100231,2,TX,Houston,Overcast,Dry,Daylight,15,1
+A-100232,2,CA,Los Angeles,Rain,Construction Zone,Daylight,10,0
+A-100233,1,CA,Los Angeles,Clear,Dry,Daylight,9,1
+A-100234,3,IL,Chicago,Clear,Dry,Daylight,6,0
+A-100235,3,NC,Charlotte,Clear,Dry,Dark - Street Lights,22,0
+A-100236,3,CA,Los Angeles,Clear,Dry,Daylight,8,1
+A-100237,1,AZ,Phoenix,Clear,Dry,Dark - Street Lights,23,0
+A-100238,3,CA,Los Angeles,Clear,Dry,Daylight,18,0
+A-100239,1,NC,Charlotte,Overcast,Dry,Dawn,19,0
+A-100240,3,NY,New York,Clear,Dry,Daylight,17,0
+A-100241,2,NY,New York,Rain,Wet,Daylight,9,1
+A-100242,3,AZ,Phoenix,Clear,Dry,Daylight,7,0
+A-100243,3,AZ,Phoenix,Fog,Dry,Daylight,8,0
+A-100244,3,IL,Chicago,Clear,Dry,Daylight,13,0
+A-100245,3,NC,Charlotte,Heavy Rain,Wet,Dark - Street Lights,3,1
+A-100246,2,TX,Houston,Clear,Dry,Daylight,15,0
+A-100247,2,IL,Chicago,Clear,Dry,Daylight,10,0
+A-100248,2,NC,Charlotte,Clear,Dry,Daylight,13,0
+A-100249,4,FL,Miami,Fog,Dry,Dark - Street Lights,23,0
+A-100250,4,NC,Charlotte,Overcast,Wet,Daylight,7,0
+A-100251,1,IL,Chicago,Rain,Wet,Daylight,15,0
+A-100252,2,TX,Houston,Rain,Wet,Daylight,16,0
+A-100253,2,CA,San Diego,Clear,Dry,Dark - Street Lights,23,0
+A-100254,1,NC,Charlotte,Rain,Wet,Daylight,17,0
+A-100255,4,NC,Charlotte,Snow,Icy,Daylight,13,0
+A-100256,2,CA,San Diego,Clear,Wet,Daylight,12,0
+A-100257,4,TX,Houston,Rain,Construction Zone,Daylight,17,1
+A-100258,4,TX,Houston,Fog,Dry,Daylight,8,1
+A-100259,1,NY,New York,Rain,Wet,Daylight,18,1
+A-100260,2,NY,New York,Rain,Wet,Daylight,15,1
+A-100261,2,TX,Houston,Rain,Wet,Daylight,15,0
+A-100262,3,CA,Los Angeles,Heavy Rain,Wet,Dusk,5,0
+A-100263,3,AZ,Phoenix,Fog,Dry,Daylight,15,1
+A-100264,1,NY,New York,Rain,Wet,Daylight,12,0
+A-100265,1,CA,Los Angeles,Clear,Dry,Daylight,7,0
+A-100266,1,IL,Chicago,Overcast,Dry,Daylight,16,0
+A-100267,1,CA,San Diego,Clear,Dry,Daylight,9,0
+A-100268,4,NY,New York,Clear,Construction Zone,Dark - No Lights,21,0
+A-100269,3,IL,Chicago,Overcast,Dry,Daylight,7,1
+A-100270,2,NC,Charlotte,Rain,Construction Zone,Dark - Street Lights,1,0
+A-100271,2,CA,Los Angeles,Snow,Snow Cover,Daylight,8,0
+A-100272,3,CA,Los Angeles,Fog,Dry,Daylight,18,0
+A-100273,1,IL,Chicago,Rain,Wet,Dark - Street Lights,4,1
+A-100274,1,NC,Charlotte,Overcast,Dry,Daylight,16,1
+A-100275,3,CA,San Diego,Clear,Construction Zone,Daylight,10,0
+A-100276,2,FL,Miami,Clear,Dry,Daylight,14,0
+A-100277,4,NC,Charlotte,Fog,Dry,Daylight,13,1
+A-100278,2,IL,Chicago,Heavy Rain,Wet,Daylight,7,0
+A-100279,3,NC,Charlotte,Snow,Icy,Daylight,16,0
+A-100280,1,AZ,Phoenix,Heavy Rain,Wet,Daylight,14,0
+A-100281,1,NC,Charlotte,Overcast,Dry,Daylight,8,0
+A-100282,3,CA,Los Angeles,Rain,Wet,Daylight,14,1
+A-100283,1,TX,Houston,Rain,Wet,Daylight,17,1
+A-100284,2,NC,Charlotte,Rain,Wet,Daylight,9,1
+A-100285,1,NC,Charlotte,Clear,Dry,Daylight,18,0
+A-100286,3,IL,Chicago,Clear,Construction Zone,Dark - Street Lights,23,0
+A-100287,1,IL,Chicago,Rain,Wet,Daylight,15,0
+A-100288,4,NC,Charlotte,Rain,Wet,Daylight,7,1
+A-100289,2,NY,New York,Rain,Wet,Daylight,17,0
+A-100290,2,NY,New York,Rain,Construction Zone,Daylight,8,0
+A-100291,1,IL,Chicago,Clear,Dry,Dark - Street Lights,21,0
+A-100292,1,NC,Charlotte,Clear,Wet,Daylight,15,0
+A-100293,2,NY,New York,Rain,Wet,Daylight,6,0
+A-100294,1,FL,Miami,Clear,Dry,Daylight,15,1
+A-100295,4,TX,Houston,Fog,Dry,Dark - No Lights,0,0
+A-100296,1,NC,Charlotte,Clear,Dry,Daylight,15,0
+A-100297,1,CA,San Diego,Heavy Rain,Construction Zone,Daylight,15,1
+A-100298,3,TX,Houston,Fog,Dry,Daylight,11,0
+A-100299,1,NC,Charlotte,Snow,Icy,Daylight,7,0
+A-100300,4,NY,New York,Overcast,Dry,Daylight,14,1
+A-100301,1,NC,Charlotte,Rain,Wet,Dusk,19,1
+A-100302,1,NC,Charlotte,Clear,Dry,Daylight,15,0
+A-100303,3,FL,Miami,Fog,Wet,Daylight,7,0
+A-100304,3,CA,San Diego,Overcast,Dry,Daylight,10,1
+A-100305,2,CA,Los Angeles,Heavy Rain,Construction Zone,Daylight,8,1
+A-100306,2,CA,Los Angeles,Clear,Dry,Daylight,8,0
+A-100307,2,TX,Houston,Fog,Dry,Daylight,11,0
+A-100308,4,CA,San Diego,Clear,Dry,Daylight,15,0
+A-100309,2,NC,Charlotte,Rain,Wet,Daylight,7,0
+A-100310,3,NC,Charlotte,Snow,Snow Cover,Daylight,16,0
+A-100311,2,CA,San Diego,Clear,Construction Zone,Daylight,13,0
+A-100312,1,FL,Miami,Clear,Dry,Daylight,14,1
+A-100313,1,FL,Miami,Fog,Dry,Daylight,16,0
+A-100314,3,TX,Houston,Clear,Dry,Daylight,13,0
+A-100315,1,CA,Los Angeles,Heavy Rain,Wet,Daylight,10,0
+A-100316,4,IL,Chicago,Clear,Wet,Daylight,16,0
+A-100317,3,NC,Charlotte,Heavy Rain,Wet,Dark - No Lights,2,0
+A-100318,2,AZ,Phoenix,Clear,Construction Zone,Daylight,10,0
+A-100319,1,CA,San Diego,Rain,Wet,Daylight,16,0
+A-100320,3,TX,Houston,Clear,Construction Zone,Dark - No Lights,23,0
+A-100321,1,NY,New York,Clear,Dry,Daylight,12,0
+A-100322,1,NC,Charlotte,Fog,Dry,Daylight,9,1
+A-100323,1,AZ,Phoenix,Fog,Dry,Daylight,15,0
+A-100324,1,CA,Los Angeles,Snow,Icy,Daylight,12,0
+A-100325,3,NC,Charlotte,Snow,Icy,Daylight,7,1
+A-100326,2,NY,New York,Rain,Wet,Daylight,7,0
+A-100327,2,IL,Chicago,Overcast,Dry,Daylight,8,0
+A-100328,3,NY,New York,Snow,Snow Cover,Dawn,5,0
+A-100329,2,CA,Los Angeles,Rain,Wet,Dark - Street Lights,22,0
+A-100330,1,TX,Houston,Rain,Wet,Daylight,8,1
+A-100331,3,TX,Houston,Rain,Construction Zone,Daylight,17,0
+A-100332,2,TX,Houston,Clear,Dry,Daylight,10,1
+A-100333,2,IL,Chicago,Clear,Dry,Daylight,6,0
+A-100334,3,CA,Los Angeles,Heavy Rain,Wet,Daylight,18,1
+A-100335,2,NC,Charlotte,Clear,Construction Zone,Daylight,7,0
+A-100336,2,FL,Miami,Overcast,Dry,Dark - Street Lights,21,1
+A-100337,2,FL,Miami,Clear,Dry,Daylight,10,1
+A-100338,3,IL,Chicago,Fog,Dry,Daylight,8,0
+A-100339,1,NC,Charlotte,Clear,Dry,Daylight,16,0
+A-100340,2,FL,Miami,Rain,Wet,Daylight,16,1
+A-100341,2,NY,New York,Clear,Wet,Daylight,7,0
+A-100342,2,IL,Chicago,Overcast,Dry,Daylight,8,0
+A-100343,1,TX,Houston,Clear,Dry,Daylight,16,0
+A-100344,1,CA,Los Angeles,Clear,Wet,Daylight,13,0
+A-100345,1,CA,Los Angeles,Clear,Dry,Daylight,11,0
+A-100346,2,NC,Charlotte,Rain,Wet,Daylight,10,0
+A-100347,2,NC,Charlotte,Clear,Dry,Dark - Street Lights,0,0
+A-100348,1,NY,New York,Rain,Wet,Dark - No Lights,1,0
+A-100349,1,CA,San Diego,Rain,Wet,Daylight,13,1
+A-100350,1,AZ,Phoenix,Clear,Dry,Dusk,5,0
+A-100351,2,CA,San Diego,Heavy Rain,Wet,Daylight,15,0
+A-100352,2,NC,Charlotte,Clear,Dry,Dark - Street Lights,4,1
+A-100353,2,CA,San Diego,Clear,Construction Zone,Dawn,19,0
+A-100354,1,CA,San Diego,Rain,Wet,Daylight,16,0
+A-100355,3,IL,Chicago,Clear,Wet,Dark - No Lights,0,1
+A-100356,4,NY,New York,Snow,Icy,Daylight,7,1
+A-100357,1,IL,Chicago,Snow,Snow Cover,Daylight,10,0
+A-100358,4,IL,Chicago,Snow,Icy,Dark - Street Lights,4,0
+A-100359,1,AZ,Phoenix,Rain,Wet,Dark - Street Lights,22,0
+A-100360,2,AZ,Phoenix,Rain,Wet,Daylight,11,0
+A-100361,2,FL,Miami,Clear,Dry,Daylight,16,1
+A-100362,1,AZ,Phoenix,Clear,Dry,Daylight,9,1
+A-100363,2,NY,New York,Clear,Dry,Daylight,6,1
+A-100364,1,CA,San Diego,Clear,Dry,Dark - Street Lights,2,0
+A-100365,4,NY,New York,Heavy Rain,Wet,Daylight,11,0
+A-100366,1,FL,Miami,Clear,Dry,Daylight,14,1
+A-100367,2,NC,Charlotte,Clear,Dry,Daylight,6,1
+A-100368,1,IL,Chicago,Rain,Wet,Daylight,8,1
+A-100369,1,CA,San Diego,Clear,Wet,Daylight,6,1
+A-100370,3,IL,Chicago,Snow,Snow Cover,Daylight,11,0
+A-100371,4,NY,New York,Clear,Dry,Daylight,9,0
+A-100372,1,IL,Chicago,Clear,Dry,Daylight,8,0
+A-100373,2,AZ,Phoenix,Clear,Construction Zone,Daylight,8,0
+A-100374,2,TX,Houston,Overcast,Dry,Daylight,16,0
+A-100375,2,NC,Charlotte,Clear,Wet,Daylight,17,0
+A-100376,2,NC,Charlotte,Clear,Dry,Daylight,6,0
+A-100377,2,AZ,Phoenix,Clear,Dry,Dawn,5,0
+A-100378,2,IL,Chicago,Rain,Construction Zone,Daylight,16,0
+A-100379,4,FL,Miami,Rain,Wet,Daylight,15,0
+A-100380,2,AZ,Phoenix,Snow,Icy,Dark - Street Lights,22,0
+A-100381,3,FL,Miami,Heavy Rain,Wet,Daylight,12,0
+A-100382,4,IL,Chicago,Clear,Construction Zone,Dark - Street Lights,23,0
+A-100383,2,TX,Houston,Snow,Icy,Daylight,9,0
+A-100384,3,CA,San Diego,Clear,Dry,Daylight,11,0
+A-100385,2,CA,San Diego,Clear,Wet,Dark - No Lights,1,0
+A-100386,2,TX,Houston,Clear,Dry,Daylight,14,0
+A-100387,3,TX,Houston,Clear,Dry,Daylight,7,0
+A-100388,3,NC,Charlotte,Heavy Rain,Wet,Daylight,14,0
+A-100389,1,CA,San Diego,Rain,Wet,Daylight,14,0
+A-100390,2,CA,San Diego,Rain,Wet,Daylight,8,0
+A-100391,3,AZ,Phoenix,Snow,Snow Cover,Daylight,14,0
+A-100392,1,NY,New York,Rain,Wet,Dark - Street Lights,20,0
+A-100393,1,IL,Chicago,Clear,Dry,Daylight,16,0
+A-100394,2,TX,Houston,Fog,Construction Zone,Daylight,12,0
+A-100395,1,TX,Houston,Clear,Dry,Daylight,12,1
+A-100396,2,IL,Chicago,Clear,Dry,Dark - Street Lights,21,0
+A-100397,1,AZ,Phoenix,Snow,Icy,Daylight,16,0
+A-100398,1,CA,Los Angeles,Clear,Dry,Daylight,17,1
+A-100399,2,NC,Charlotte,Clear,Dry,Daylight,14,0
+A-100400,1,NY,New York,Clear,Wet,Daylight,17,0
+A-100401,2,NC,Charlotte,Clear,Wet,Daylight,14,0
+A-100402,1,NY,New York,Clear,Wet,Daylight,18,1
+A-100403,2,CA,San Diego,Snow,Icy,Daylight,17,1
+A-100404,1,AZ,Phoenix,Clear,Dry,Daylight,7,1
+A-100405,2,IL,Chicago,Clear,Construction Zone,Daylight,13,0
+A-100406,3,NY,New York,Fog,Wet,Dark - Street Lights,21,0
+A-100407,2,AZ,Phoenix,Snow,Icy,Dark - No Lights,20,0
+A-100408,2,IL,Chicago,Rain,Wet,Daylight,17,0
+A-100409,2,NY,New York,Clear,Dry,Daylight,15,0
+A-100410,4,AZ,Phoenix,Fog,Dry,Daylight,13,1
+A-100411,4,IL,Chicago,Snow,Icy,Daylight,14,0
+A-100412,4,IL,Chicago,Clear,Construction Zone,Daylight,18,0
+A-100413,2,NC,Charlotte,Clear,Dry,Daylight,8,0
+A-100414,3,NC,Charlotte,Heavy Rain,Wet,Daylight,17,0
+A-100415,2,NC,Charlotte,Clear,Dry,Dark - No Lights,0,0
+A-100416,1,TX,Houston,Snow,Snow Cover,Daylight,18,0
+A-100417,2,IL,Chicago,Fog,Dry,Daylight,8,0
+A-100418,1,NY,New York,Clear,Dry,Daylight,16,0
+A-100419,1,FL,Miami,Clear,Dry,Daylight,12,1
+A-100420,1,IL,Chicago,Clear,Dry,Daylight,17,0
+A-100421,1,AZ,Phoenix,Clear,Dry,Dawn,5,0
+A-100422,2,TX,Houston,Clear,Dry,Daylight,15,0
+A-100423,2,TX,Houston,Rain,Wet,Daylight,11,0
+A-100424,2,NC,Charlotte,Clear,Dry,Daylight,18,1
+A-100425,3,AZ,Phoenix,Snow,Icy,Daylight,9,0
+A-100426,2,FL,Miami,Rain,Wet,Daylight,14,0
+A-100427,2,NY,New York,Clear,Dry,Daylight,7,0
+A-100428,2,FL,Miami,Clear,Dry,Daylight,12,1
+A-100429,1,CA,Los Angeles,Clear,Wet,Dark - Street Lights,23,0
+A-100430,1,TX,Houston,Heavy Rain,Wet,Daylight,16,0
+A-100431,2,NY,New York,Fog,Dry,Daylight,7,0
+A-100432,1,AZ,Phoenix,Rain,Wet,Daylight,11,0
+A-100433,2,CA,San Diego,Clear,Wet,Daylight,8,0
+A-100434,1,AZ,Phoenix,Rain,Wet,Daylight,14,0
+A-100435,2,AZ,Phoenix,Clear,Dry,Daylight,16,0
+A-100436,1,NC,Charlotte,Rain,Wet,Daylight,15,1
+A-100437,3,CA,Los Angeles,Clear,Construction Zone,Daylight,16,0
+A-100438,4,NY,New York,Snow,Icy,Daylight,7,1
+A-100439,4,CA,Los Angeles,Rain,Wet,Daylight,9,0
+A-100440,1,CA,San Diego,Clear,Wet,Daylight,13,0
+A-100441,1,TX,Houston,Rain,Wet,Daylight,8,1
+A-100442,1,CA,Los Angeles,Clear,Dry,Dark - Street Lights,4,0
+A-100443,2,CA,Los Angeles,Heavy Rain,Wet,Daylight,14,0
+A-100444,3,AZ,Phoenix,Snow,Icy,Dusk,19,0
+A-100445,1,CA,Los Angeles,Overcast,Construction Zone,Daylight,7,0
+A-100446,2,NC,Charlotte,Clear,Dry,Daylight,18,0
+A-100447,2,IL,Chicago,Clear,Dry,Daylight,7,0
+A-100448,2,NC,Charlotte,Heavy Rain,Wet,Dark - Street Lights,23,0
+A-100449,1,AZ,Phoenix,Rain,Wet,Dark - Street Lights,1,0
+A-100450,1,AZ,Phoenix,Clear,Dry,Daylight,18,0
+A-100451,1,NC,Charlotte,Clear,Dry,Dark - Street Lights,21,0
+A-100452,1,AZ,Phoenix,Overcast,Dry,Daylight,16,0
+A-100453,2,TX,Houston,Rain,Wet,Daylight,15,0
+A-100454,2,TX,Houston,Clear,Wet,Daylight,8,1
+A-100455,2,IL,Chicago,Clear,Dry,Daylight,9,1
+A-100456,2,CA,San Diego,Clear,Dry,Daylight,7,1
+A-100457,4,FL,Miami,Snow,Icy,Daylight,12,0
+A-100458,1,NY,New York,Clear,Wet,Daylight,17,0
+A-100459,1,CA,San Diego,Clear,Dry,Daylight,16,0
+A-100460,2,TX,Houston,Clear,Dry,Dark - Street Lights,2,0
+A-100461,2,TX,Houston,Snow,Icy,Daylight,6,1
+A-100462,1,AZ,Phoenix,Rain,Wet,Daylight,10,0
+A-100463,4,CA,San Diego,Fog,Dry,Dark - Street Lights,1,1
+A-100464,3,IL,Chicago,Clear,Construction Zone,Daylight,6,0
+A-100465,3,AZ,Phoenix,Clear,Dry,Daylight,13,0
+A-100466,1,NY,New York,Clear,Dry,Daylight,8,0
+A-100467,1,NY,New York,Clear,Dry,Daylight,13,0
+A-100468,3,AZ,Phoenix,Rain,Wet,Daylight,7,0
+A-100469,3,CA,Los Angeles,Clear,Dry,Dark - Street Lights,23,0
+A-100470,3,IL,Chicago,Clear,Dry,Daylight,10,1
+A-100471,4,NY,New York,Rain,Wet,Dark - No Lights,4,0
+A-100472,2,CA,San Diego,Rain,Wet,Daylight,8,1
+A-100473,4,FL,Miami,Clear,Construction Zone,Daylight,14,0
+A-100474,4,TX,Houston,Snow,Snow Cover,Daylight,7,0
+A-100475,3,CA,Los Angeles,Rain,Wet,Daylight,16,0
+A-100476,2,NC,Charlotte,Clear,Dry,Daylight,13,1
+A-100477,1,CA,Los Angeles,Fog,Dry,Daylight,13,1
+A-100478,3,TX,Houston,Clear,Dry,Dark - Street Lights,20,0
+A-100479,3,CA,San Diego,Overcast,Dry,Daylight,18,0
+A-100480,3,AZ,Phoenix,Clear,Construction Zone,Daylight,14,0
+A-100481,4,AZ,Phoenix,Rain,Wet,Daylight,17,0
+A-100482,2,IL,Chicago,Clear,Dry,Daylight,7,0
+A-100483,4,TX,Houston,Heavy Rain,Wet,Daylight,7,1
+A-100484,3,CA,Los Angeles,Snow,Snow Cover,Daylight,7,0
+A-100485,2,CA,San Diego,Heavy Rain,Wet,Dark - No Lights,20,1
+A-100486,1,CA,San Diego,Heavy Rain,Wet,Daylight,17,0
+A-100487,1,FL,Miami,Clear,Dry,Daylight,8,1
+A-100488,3,AZ,Phoenix,Clear,Dry,Daylight,11,0
+A-100489,2,IL,Chicago,Clear,Wet,Daylight,13,1
+A-100490,2,FL,Miami,Snow,Icy,Daylight,7,1
+A-100491,1,CA,San Diego,Clear,Dry,Dusk,5,1
+A-100492,2,NC,Charlotte,Rain,Wet,Daylight,16,0
+A-100493,2,CA,Los Angeles,Clear,Dry,Daylight,6,1
+A-100494,2,NY,New York,Clear,Dry,Daylight,15,0
+A-100495,2,NC,Charlotte,Clear,Dry,Daylight,7,0
+A-100496,1,NC,Charlotte,Clear,Dry,Daylight,7,1
+A-100497,1,CA,San Diego,Clear,Dry,Daylight,8,0
+A-100498,1,AZ,Phoenix,Clear,Dry,Daylight,7,0
+A-100499,2,NC,Charlotte,Rain,Wet,Daylight,8,0
+A-100500,3,CA,San Diego,Rain,Construction Zone,Dusk,5,0
+A-100501,3,AZ,Phoenix,Rain,Construction Zone,Daylight,17,0
+A-100502,3,FL,Miami,Fog,Dry,Daylight,12,1
+A-100503,4,TX,Houston,Clear,Construction Zone,Daylight,6,0
+A-100504,4,FL,Miami,Overcast,Dry,Daylight,6,0
+A-100505,1,TX,Houston,Fog,Construction Zone,Daylight,18,1
+A-100506,4,AZ,Phoenix,Snow,Icy,Daylight,14,0
+A-100507,2,CA,Los Angeles,Rain,Wet,Daylight,17,0
+A-100508,1,TX,Houston,Overcast,Dry,Daylight,14,0
+A-100509,2,CA,San Diego,Fog,Wet,Daylight,17,0
+A-100510,2,NC,Charlotte,Clear,Dry,Daylight,14,0
+A-100511,3,AZ,Phoenix,Clear,Dry,Dark - Street Lights,3,0
+A-100512,2,IL,Chicago,Clear,Dry,Dark - Street Lights,1,0
+A-100513,1,CA,San Diego,Clear,Dry,Dark - Street Lights,22,1
+A-100514,3,AZ,Phoenix,Clear,Construction Zone,Daylight,14,1
+A-100515,2,NC,Charlotte,Snow,Icy,Daylight,16,0
+A-100516,3,NY,New York,Snow,Icy,Daylight,16,0
+A-100517,3,TX,Houston,Snow,Icy,Daylight,7,0
+A-100518,3,IL,Chicago,Snow,Icy,Daylight,16,1
+A-100519,4,CA,San Diego,Clear,Dry,Daylight,16,1
+A-100520,2,NC,Charlotte,Clear,Wet,Daylight,14,0
+A-100521,4,CA,San Diego,Clear,Dry,Daylight,8,0
+A-100522,1,FL,Miami,Clear,Dry,Daylight,15,0
+A-100523,1,CA,Los Angeles,Clear,Wet,Daylight,12,1
+A-100524,3,NY,New York,Clear,Wet,Daylight,16,0
+A-100525,1,NC,Charlotte,Rain,Wet,Daylight,8,0
+A-100526,2,CA,San Diego,Overcast,Wet,Dark - Street Lights,0,0
+A-100527,3,NY,New York,Clear,Construction Zone,Daylight,8,1
+A-100528,1,NY,New York,Fog,Dry,Daylight,8,0
+A-100529,3,FL,Miami,Snow,Snow Cover,Dawn,19,0
+A-100530,1,CA,Los Angeles,Clear,Dry,Daylight,15,0
+A-100531,3,CA,Los Angeles,Snow,Icy,Daylight,14,0
+A-100532,1,NC,Charlotte,Rain,Wet,Dusk,19,0
+A-100533,2,NC,Charlotte,Snow,Snow Cover,Daylight,6,1
+A-100534,2,IL,Chicago,Clear,Wet,Daylight,15,1
+A-100535,1,IL,Chicago,Clear,Dry,Daylight,10,0
+A-100536,2,CA,San Diego,Clear,Dry,Daylight,12,1
+A-100537,2,AZ,Phoenix,Clear,Dry,Dark - Street Lights,4,0
+A-100538,1,NC,Charlotte,Clear,Dry,Daylight,6,0
+A-100539,2,TX,Houston,Clear,Dry,Daylight,9,1
+A-100540,2,TX,Houston,Clear,Dry,Daylight,12,0
+A-100541,2,AZ,Phoenix,Clear,Dry,Daylight,11,0
+A-100542,2,CA,Los Angeles,Rain,Wet,Dusk,19,0
+A-100543,2,FL,Miami,Clear,Dry,Daylight,7,0
+A-100544,2,NY,New York,Clear,Dry,Daylight,7,0
+A-100545,3,IL,Chicago,Clear,Construction Zone,Daylight,11,0
+A-100546,2,FL,Miami,Snow,Icy,Daylight,7,0
+A-100547,2,TX,Houston,Rain,Wet,Daylight,7,1
+A-100548,3,CA,Los Angeles,Heavy Rain,Wet,Daylight,10,0
+A-100549,2,CA,Los Angeles,Clear,Dry,Daylight,15,0
+A-100550,3,AZ,Phoenix,Heavy Rain,Wet,Daylight,6,1
+A-100551,2,CA,Los Angeles,Rain,Wet,Daylight,8,0
+A-100552,1,TX,Houston,Rain,Wet,Daylight,11,0
+A-100553,4,CA,San Diego,Heavy Rain,Wet,Daylight,13,0
+A-100554,1,IL,Chicago,Clear,Dry,Daylight,16,0
+A-100555,4,NC,Charlotte,Rain,Construction Zone,Daylight,9,1
+A-100556,1,NC,Charlotte,Rain,Wet,Daylight,6,1
+A-100557,1,NY,New York,Overcast,Dry,Daylight,15,0
+A-100558,2,TX,Houston,Clear,Dry,Daylight,18,0
+A-100559,2,CA,San Diego,Clear,Wet,Daylight,6,0
+A-100560,2,TX,Houston,Overcast,Dry,Daylight,9,0
+A-100561,2,IL,Chicago,Clear,Construction Zone,Daylight,17,1
+A-100562,1,AZ,Phoenix,Clear,Wet,Daylight,16,0
+A-100563,2,TX,Houston,Fog,Dry,Daylight,16,1
+A-100564,1,NC,Charlotte,Clear,Dry,Daylight,17,0
+A-100565,3,CA,Los Angeles,Heavy Rain,Construction Zone,Daylight,18,0
+A-100566,1,NC,Charlotte,Clear,Dry,Daylight,6,0
+A-100567,1,FL,Miami,Clear,Dry,Dark - Street Lights,22,0
+A-100568,3,FL,Miami,Rain,Wet,Daylight,12,0
+A-100569,1,CA,Los Angeles,Rain,Wet,Dark - Street Lights,0,0
+A-100570,2,NC,Charlotte,Clear,Dry,Daylight,9,0
+A-100571,2,AZ,Phoenix,Clear,Wet,Daylight,10,1
+A-100572,1,NC,Charlotte,Clear,Dry,Daylight,12,1
+A-100573,3,AZ,Phoenix,Snow,Snow Cover,Dark - No Lights,3,0
+A-100574,3,FL,Miami,Clear,Wet,Daylight,15,0
+A-100575,1,NC,Charlotte,Rain,Wet,Daylight,9,0
+A-100576,3,NC,Charlotte,Clear,Dry,Daylight,6,0
+A-100577,2,NY,New York,Clear,Wet,Daylight,14,0
+A-100578,2,AZ,Phoenix,Clear,Construction Zone,Daylight,6,0
+A-100579,1,NC,Charlotte,Clear,Dry,Daylight,17,1
+A-100580,2,CA,San Diego,Rain,Construction Zone,Daylight,17,0
+A-100581,3,NC,Charlotte,Rain,Wet,Dark - Street Lights,0,0
+A-100582,3,TX,Houston,Snow,Icy,Daylight,16,1
+A-100583,3,IL,Chicago,Overcast,Construction Zone,Daylight,13,0
+A-100584,1,NY,New York,Clear,Wet,Daylight,10,0
+A-100585,2,NY,New York,Clear,Dry,Daylight,18,0
+A-100586,2,FL,Miami,Clear,Dry,Daylight,7,0
+A-100587,1,TX,Houston,Clear,Dry,Daylight,13,0
+A-100588,4,NC,Charlotte,Heavy Rain,Wet,Daylight,14,0
+A-100589,1,NY,New York,Clear,Dry,Daylight,18,0
+A-100590,2,CA,Los Angeles,Heavy Rain,Wet,Daylight,15,1
+A-100591,3,NY,New York,Snow,Icy,Daylight,6,1
+A-100592,4,IL,Chicago,Snow,Snow Cover,Daylight,17,1
+A-100593,3,AZ,Phoenix,Snow,Icy,Daylight,8,0
+A-100594,2,AZ,Phoenix,Overcast,Dry,Daylight,10,0
+A-100595,2,CA,Los Angeles,Snow,Snow Cover,Daylight,16,1
+A-100596,2,FL,Miami,Rain,Wet,Dusk,19,0
+A-100597,1,FL,Miami,Rain,Wet,Daylight,8,1
+A-100598,2,CA,San Diego,Rain,Wet,Daylight,10,0
+A-100599,3,NY,New York,Fog,Dry,Dark - No Lights,0,0
+A-100600,1,NY,New York,Clear,Dry,Daylight,12,0
+A-100601,3,FL,Miami,Snow,Icy,Dark - Street Lights,21,0
+A-100602,1,IL,Chicago,Clear,Dry,Daylight,7,1
+A-100603,2,NC,Charlotte,Overcast,Dry,Dark - Street Lights,23,0
+A-100604,2,FL,Miami,Clear,Construction Zone,Dark - No Lights,21,0
+A-100605,2,NY,New York,Heavy Rain,Wet,Dark - Street Lights,1,0
+A-100606,4,NY,New York,Rain,Construction Zone,Dusk,19,1
+A-100607,2,CA,Los Angeles,Rain,Wet,Daylight,15,1
+A-100608,2,CA,San Diego,Snow,Snow Cover,Daylight,7,0
+A-100609,1,CA,San Diego,Clear,Dry,Daylight,16,1
+A-100610,3,CA,Los Angeles,Clear,Wet,Daylight,7,1
+A-100611,2,AZ,Phoenix,Clear,Dry,Daylight,10,0
+A-100612,3,CA,Los Angeles,Heavy Rain,Wet,Daylight,15,0
+A-100613,2,CA,San Diego,Clear,Dry,Daylight,9,0
+A-100614,2,NY,New York,Clear,Dry,Daylight,17,0
+A-100615,4,FL,Miami,Snow,Icy,Daylight,6,0
+A-100616,2,TX,Houston,Overcast,Wet,Daylight,8,0
+A-100617,2,CA,Los Angeles,Clear,Dry,Daylight,14,0
+A-100618,2,CA,San Diego,Fog,Dry,Daylight,8,0
+A-100619,2,TX,Houston,Snow,Icy,Daylight,7,1
+A-100620,2,CA,Los Angeles,Overcast,Dry,Daylight,18,0
+A-100621,4,NY,New York,Clear,Dry,Daylight,15,1
+A-100622,3,IL,Chicago,Clear,Dry,Daylight,6,0
+A-100623,1,IL,Chicago,Rain,Wet,Daylight,12,0
+A-100624,2,IL,Chicago,Clear,Dry,Daylight,17,0
+A-100625,2,AZ,Phoenix,Rain,Wet,Daylight,8,0
+A-100626,2,NC,Charlotte,Rain,Wet,Daylight,9,0
+A-100627,3,NY,New York,Rain,Wet,Daylight,18,1
+A-100628,3,CA,San Diego,Snow,Snow Cover,Daylight,16,0
+A-100629,3,AZ,Phoenix,Clear,Dry,Daylight,17,1
+A-100630,2,NC,Charlotte,Clear,Wet,Daylight,15,1
+A-100631,1,NY,New York,Clear,Dry,Daylight,6,0
+A-100632,2,FL,Miami,Rain,Wet,Daylight,18,0
+A-100633,2,NC,Charlotte,Rain,Construction Zone,Daylight,7,0
+A-100634,2,NC,Charlotte,Heavy Rain,Wet,Dark - Street Lights,20,1
+A-100635,4,FL,Miami,Clear,Construction Zone,Daylight,13,0
+A-100636,3,CA,Los Angeles,Heavy Rain,Wet,Dark - No Lights,22,0
+A-100637,2,NY,New York,Clear,Dry,Daylight,14,0
+A-100638,2,CA,San Diego,Fog,Dry,Daylight,13,0
+A-100639,1,IL,Chicago,Rain,Wet,Daylight,12,0
+A-100640,1,TX,Houston,Clear,Dry,Daylight,7,0
+A-100641,2,CA,San Diego,Clear,Dry,Daylight,15,0
+A-100642,1,NC,Charlotte,Snow,Icy,Daylight,7,1
+A-100643,2,TX,Houston,Fog,Dry,Daylight,6,0
+A-100644,3,TX,Houston,Overcast,Dry,Daylight,13,0
+A-100645,1,NY,New York,Rain,Wet,Dark - Street Lights,21,1
+A-100646,3,AZ,Phoenix,Snow,Icy,Daylight,14,0
+A-100647,1,NY,New York,Fog,Dry,Daylight,7,0
+A-100648,2,AZ,Phoenix,Clear,Wet,Daylight,10,1
+A-100649,3,AZ,Phoenix,Clear,Construction Zone,Daylight,17,0
+A-100650,1,CA,San Diego,Fog,Dry,Daylight,6,0
+A-100651,1,AZ,Phoenix,Clear,Dry,Daylight,13,0
+A-100652,2,NC,Charlotte,Rain,Wet,Daylight,17,0
+A-100653,1,CA,San Diego,Heavy Rain,Construction Zone,Daylight,11,1
+A-100654,3,AZ,Phoenix,Heavy Rain,Wet,Daylight,8,1
+A-100655,2,CA,Los Angeles,Snow,Icy,Daylight,10,1
+A-100656,2,AZ,Phoenix,Snow,Icy,Daylight,15,1
+A-100657,1,NY,New York,Clear,Dry,Dark - Street Lights,23,0
+A-100658,2,NC,Charlotte,Clear,Dry,Daylight,8,0
+A-100659,1,CA,San Diego,Rain,Wet,Daylight,16,0
+A-100660,1,AZ,Phoenix,Rain,Wet,Daylight,17,0
+A-100661,2,AZ,Phoenix,Clear,Dry,Dark - No Lights,21,1
+A-100662,3,CA,San Diego,Rain,Wet,Daylight,8,0
+A-100663,4,AZ,Phoenix,Heavy Rain,Wet,Daylight,15,0
+A-100664,3,TX,Houston,Clear,Dry,Daylight,15,0
+A-100665,2,NY,New York,Rain,Wet,Daylight,7,0
+A-100666,1,CA,Los Angeles,Overcast,Dry,Daylight,9,0
+A-100667,2,AZ,Phoenix,Rain,Wet,Daylight,9,0
+A-100668,2,CA,San Diego,Heavy Rain,Wet,Dark - Street Lights,20,0
+A-100669,1,NY,New York,Clear,Dry,Daylight,7,0
+A-100670,3,TX,Houston,Clear,Dry,Daylight,11,1
+A-100671,4,NY,New York,Rain,Wet,Daylight,18,0
+A-100672,2,NC,Charlotte,Overcast,Dry,Daylight,17,0
+A-100673,1,CA,Los Angeles,Clear,Dry,Daylight,12,1
+A-100674,2,FL,Miami,Clear,Dry,Daylight,17,0
+A-100675,1,NY,New York,Rain,Wet,Daylight,8,1
+A-100676,4,TX,Houston,Fog,Dry,Daylight,12,0
+A-100677,2,FL,Miami,Heavy Rain,Construction Zone,Daylight,13,1
+A-100678,1,FL,Miami,Clear,Dry,Daylight,18,0
+A-100679,2,CA,San Diego,Rain,Wet,Daylight,15,0
+A-100680,3,CA,Los Angeles,Clear,Wet,Daylight,18,0
+A-100681,2,NY,New York,Fog,Dry,Daylight,12,0
+A-100682,1,TX,Houston,Clear,Dry,Dark - Street Lights,4,0
+A-100683,1,TX,Houston,Rain,Wet,Daylight,12,1
+A-100684,1,FL,Miami,Clear,Wet,Daylight,10,1
+A-100685,2,NY,New York,Rain,Wet,Daylight,8,0
+A-100686,2,FL,Miami,Clear,Dry,Daylight,11,0
+A-100687,3,TX,Houston,Snow,Snow Cover,Dark - No Lights,22,0
+A-100688,1,AZ,Phoenix,Heavy Rain,Wet,Daylight,7,0
+A-100689,3,AZ,Phoenix,Snow,Icy,Daylight,13,0
+A-100690,2,NC,Charlotte,Rain,Wet,Daylight,8,0
+A-100691,3,CA,Los Angeles,Snow,Icy,Daylight,7,1
+A-100692,1,NY,New York,Fog,Dry,Daylight,9,0
+A-100693,2,CA,San Diego,Rain,Wet,Daylight,9,0
+A-100694,2,TX,Houston,Clear,Dry,Dark - Street Lights,22,0
+A-100695,1,CA,San Diego,Rain,Wet,Daylight,10,0
+A-100696,1,IL,Chicago,Clear,Construction Zone,Daylight,11,0
+A-100697,2,IL,Chicago,Clear,Dry,Daylight,7,0
+A-100698,2,NY,New York,Fog,Dry,Dawn,19,0
+A-100699,2,TX,Houston,Clear,Dry,Daylight,18,1
+A-100700,3,CA,San Diego,Clear,Construction Zone,Daylight,7,0
+A-100701,2,CA,Los Angeles,Heavy Rain,Wet,Dark - Street Lights,2,0
+A-100702,1,AZ,Phoenix,Clear,Dry,Daylight,8,1
+A-100703,4,TX,Houston,Snow,Icy,Dark - Street Lights,2,0
+A-100704,3,NY,New York,Fog,Dry,Daylight,14,1
+A-100705,2,NC,Charlotte,Rain,Wet,Daylight,15,0
+A-100706,1,NY,New York,Clear,Dry,Dawn,19,0
+A-100707,1,NY,New York,Rain,Wet,Daylight,7,1
+A-100708,3,NY,New York,Fog,Construction Zone,Daylight,12,1
+A-100709,2,CA,Los Angeles,Rain,Wet,Daylight,17,0
+A-100710,2,FL,Miami,Clear,Dry,Daylight,11,0
+A-100711,2,AZ,Phoenix,Clear,Dry,Daylight,17,1
+A-100712,4,NY,New York,Snow,Icy,Daylight,8,0
+A-100713,2,TX,Houston,Clear,Dry,Daylight,6,1
+A-100714,1,NC,Charlotte,Clear,Dry,Daylight,7,1
+A-100715,1,CA,San Diego,Clear,Dry,Daylight,8,1
+A-100716,4,CA,Los Angeles,Clear,Dry,Daylight,12,0
+A-100717,1,NC,Charlotte,Clear,Dry,Daylight,16,1
+A-100718,3,NY,New York,Clear,Dry,Daylight,17,1
+A-100719,3,AZ,Phoenix,Heavy Rain,Wet,Daylight,17,1
+A-100720,1,NC,Charlotte,Clear,Dry,Daylight,8,0
+A-100721,2,FL,Miami,Clear,Dry,Daylight,12,0
+A-100722,1,CA,Los Angeles,Clear,Dry,Daylight,16,0
+A-100723,1,IL,Chicago,Clear,Dry,Dawn,19,0
+A-100724,4,TX,Houston,Clear,Dry,Daylight,17,0
+A-100725,2,NC,Charlotte,Heavy Rain,Wet,Daylight,16,1
+A-100726,2,IL,Chicago,Rain,Wet,Dark - Street Lights,20,0
+A-100727,2,CA,San Diego,Overcast,Dry,Daylight,6,1
+A-100728,1,NC,Charlotte,Clear,Dry,Daylight,16,1
+A-100729,1,CA,Los Angeles,Clear,Dry,Daylight,12,0
+A-100730,2,TX,Houston,Clear,Wet,Daylight,13,0
+A-100731,2,TX,Houston,Clear,Dry,Dawn,5,1
+A-100732,2,AZ,Phoenix,Rain,Wet,Daylight,16,0
+A-100733,2,IL,Chicago,Rain,Wet,Daylight,16,0
+A-100734,1,NC,Charlotte,Clear,Dry,Daylight,17,1
+A-100735,4,CA,San Diego,Snow,Icy,Daylight,13,1
+A-100736,1,FL,Miami,Clear,Dry,Daylight,6,1
+A-100737,2,NC,Charlotte,Clear,Dry,Daylight,13,0
+A-100738,3,CA,San Diego,Rain,Construction Zone,Dark - No Lights,0,0
+A-100739,3,CA,Los Angeles,Fog,Wet,Daylight,9,0
+A-100740,1,CA,Los Angeles,Clear,Dry,Daylight,17,1
+A-100741,3,FL,Miami,Heavy Rain,Wet,Dark - Street Lights,21,1
+A-100742,2,FL,Miami,Rain,Wet,Daylight,14,0
+A-100743,2,IL,Chicago,Clear,Dry,Daylight,15,0
+A-100744,3,AZ,Phoenix,Rain,Wet,Daylight,13,0
+A-100745,3,IL,Chicago,Snow,Icy,Daylight,14,0
+A-100746,3,IL,Chicago,Clear,Dry,Daylight,15,0
+A-100747,1,NY,New York,Overcast,Dry,Daylight,9,0
+A-100748,1,NY,New York,Overcast,Dry,Daylight,14,0
+A-100749,4,FL,Miami,Heavy Rain,Construction Zone,Daylight,7,0
+A-100750,3,TX,Houston,Clear,Dry,Daylight,6,0
+A-100751,3,FL,Miami,Clear,Dry,Daylight,7,0
+A-100752,2,CA,San Diego,Clear,Wet,Daylight,16,0
+A-100753,1,CA,San Diego,Heavy Rain,Wet,Daylight,14,0
+A-100754,2,CA,Los Angeles,Snow,Icy,Dark - No Lights,20,0
+A-100755,3,FL,Miami,Fog,Dry,Daylight,16,0
+A-100756,2,CA,Los Angeles,Rain,Wet,Daylight,8,1
+A-100757,3,FL,Miami,Overcast,Construction Zone,Daylight,7,0
+A-100758,1,CA,San Diego,Clear,Dry,Daylight,7,0
+A-100759,2,CA,Los Angeles,Clear,Dry,Daylight,14,1
+A-100760,2,TX,Houston,Clear,Dry,Daylight,12,1
+A-100761,2,FL,Miami,Clear,Dry,Daylight,8,1
+A-100762,2,CA,San Diego,Clear,Dry,Daylight,15,0
+A-100763,3,CA,Los Angeles,Clear,Wet,Daylight,17,1
+A-100764,1,TX,Houston,Clear,Dry,Daylight,11,0
+A-100765,4,CA,San Diego,Fog,Construction Zone,Daylight,6,1
+A-100766,1,NY,New York,Clear,Dry,Dark - Street Lights,0,0
+A-100767,2,FL,Miami,Clear,Dry,Daylight,7,0
+A-100768,3,TX,Houston,Clear,Construction Zone,Daylight,16,0
+A-100769,1,NY,New York,Snow,Snow Cover,Daylight,7,0
+A-100770,4,CA,Los Angeles,Rain,Construction Zone,Dawn,5,0
+A-100771,3,CA,Los Angeles,Clear,Construction Zone,Daylight,8,0
+A-100772,2,CA,San Diego,Rain,Wet,Dusk,19,0
+A-100773,2,NC,Charlotte,Clear,Construction Zone,Daylight,14,0
+A-100774,2,NC,Charlotte,Clear,Dry,Daylight,10,1
+A-100775,1,FL,Miami,Clear,Dry,Dark - Street Lights,23,0
+A-100776,1,CA,Los Angeles,Clear,Dry,Dark - Street Lights,21,0
+A-100777,2,AZ,Phoenix,Snow,Snow Cover,Daylight,13,0
+A-100778,1,TX,Houston,Rain,Wet,Daylight,11,0
+A-100779,2,TX,Houston,Clear,Dry,Daylight,14,0
+A-100780,3,TX,Houston,Heavy Rain,Wet,Daylight,11,0
+A-100781,2,TX,Houston,Fog,Dry,Daylight,9,0
+A-100782,2,TX,Houston,Fog,Dry,Daylight,16,0
+A-100783,1,NC,Charlotte,Rain,Wet,Daylight,16,0
+A-100784,2,FL,Miami,Heavy Rain,Wet,Daylight,6,1
+A-100785,2,FL,Miami,Clear,Dry,Daylight,14,1
+A-100786,4,TX,Houston,Heavy Rain,Wet,Daylight,13,0
+A-100787,4,NC,Charlotte,Clear,Dry,Daylight,12,1
+A-100788,1,NY,New York,Rain,Wet,Dark - Street Lights,21,1
+A-100789,1,NC,Charlotte,Clear,Dry,Daylight,18,0
+A-100790,2,AZ,Phoenix,Snow,Snow Cover,Daylight,17,0
+A-100791,4,CA,Los Angeles,Snow,Icy,Daylight,13,0
+A-100792,1,AZ,Phoenix,Clear,Dry,Dark - No Lights,23,1
+A-100793,3,NC,Charlotte,Snow,Icy,Daylight,10,0
+A-100794,1,CA,Los Angeles,Clear,Dry,Daylight,16,0
+A-100795,2,CA,San Diego,Fog,Dry,Daylight,7,0
+A-100796,1,IL,Chicago,Rain,Wet,Daylight,12,1
+A-100797,2,NC,Charlotte,Rain,Wet,Dusk,5,0
+A-100798,2,CA,San Diego,Rain,Wet,Dawn,5,0
+A-100799,3,TX,Houston,Heavy Rain,Construction Zone,Daylight,10,0
+A-100800,2,TX,Houston,Heavy Rain,Wet,Daylight,7,1
+A-100801,1,NC,Charlotte,Fog,Construction Zone,Daylight,8,1
+A-100802,2,NY,New York,Clear,Wet,Dark - Street Lights,0,0
+A-100803,2,FL,Miami,Clear,Dry,Daylight,14,0
+A-100804,1,FL,Miami,Rain,Wet,Daylight,18,1
+A-100805,2,TX,Houston,Clear,Wet,Daylight,6,0
+A-100806,2,NY,New York,Clear,Construction Zone,Daylight,9,1
+A-100807,1,NY,New York,Rain,Wet,Daylight,15,0
+A-100808,1,NC,Charlotte,Clear,Dry,Daylight,16,0
+A-100809,3,AZ,Phoenix,Snow,Icy,Daylight,17,0
+A-100810,2,CA,San Diego,Rain,Wet,Daylight,16,1
+A-100811,3,CA,Los Angeles,Rain,Construction Zone,Daylight,6,0
+A-100812,2,NY,New York,Clear,Dry,Daylight,11,0
+A-100813,3,TX,Houston,Heavy Rain,Wet,Daylight,15,0
+A-100814,2,FL,Miami,Clear,Dry,Daylight,16,0
+A-100815,1,CA,San Diego,Rain,Wet,Daylight,16,1
+A-100816,1,IL,Chicago,Clear,Dry,Daylight,14,0
+A-100817,2,CA,San Diego,Clear,Dry,Daylight,8,0
+A-100818,1,IL,Chicago,Overcast,Wet,Daylight,10,0
+A-100819,1,IL,Chicago,Clear,Dry,Dark - Street Lights,20,0
+A-100820,3,NC,Charlotte,Clear,Dry,Dawn,19,0
+A-100821,3,CA,Los Angeles,Heavy Rain,Wet,Daylight,18,0
+A-100822,1,FL,Miami,Fog,Dry,Daylight,14,0
+A-100823,3,TX,Houston,Overcast,Dry,Daylight,8,1
+A-100824,4,AZ,Phoenix,Snow,Icy,Daylight,7,1
+A-100825,4,CA,Los Angeles,Snow,Icy,Daylight,8,1
+A-100826,2,NY,New York,Clear,Dry,Daylight,7,0
+A-100827,1,CA,San Diego,Clear,Dry,Daylight,11,1
+A-100828,4,NC,Charlotte,Heavy Rain,Wet,Daylight,16,0
+A-100829,1,TX,Houston,Clear,Wet,Daylight,7,1
+A-100830,1,NY,New York,Rain,Wet,Dark - Street Lights,20,0
+A-100831,1,NY,New York,Rain,Wet,Dark - Street Lights,1,0
+A-100832,1,IL,Chicago,Clear,Dry,Daylight,17,0
+A-100833,2,CA,San Diego,Clear,Dry,Daylight,7,0
+A-100834,2,NY,New York,Clear,Wet,Daylight,14,1
+A-100835,1,CA,Los Angeles,Rain,Wet,Daylight,6,0
+A-100836,3,AZ,Phoenix,Fog,Dry,Daylight,10,0
+A-100837,3,NC,Charlotte,Snow,Snow Cover,Daylight,15,0
+A-100838,3,CA,San Diego,Clear,Dry,Dark - No Lights,22,0
+A-100839,2,NC,Charlotte,Rain,Wet,Daylight,6,0
+A-100840,1,FL,Miami,Clear,Dry,Daylight,6,0
+A-100841,2,IL,Chicago,Clear,Dry,Daylight,17,0
+A-100842,2,IL,Chicago,Clear,Dry,Daylight,12,0
+A-100843,1,CA,San Diego,Clear,Dry,Daylight,11,0
+A-100844,2,NY,New York,Clear,Dry,Daylight,13,0
+A-100845,3,NC,Charlotte,Snow,Icy,Daylight,10,0
+A-100846,2,AZ,Phoenix,Rain,Wet,Daylight,14,0
+A-100847,2,NC,Charlotte,Clear,Dry,Daylight,6,0
+A-100848,1,NY,New York,Clear,Wet,Dark - Street Lights,21,1
+A-100849,2,NC,Charlotte,Clear,Dry,Daylight,15,1
+A-100850,2,CA,Los Angeles,Clear,Dry,Daylight,16,0
+A-100851,3,NC,Charlotte,Clear,Dry,Daylight,7,0
+A-100852,3,NY,New York,Heavy Rain,Construction Zone,Dark - No Lights,20,0
+A-100853,4,AZ,Phoenix,Clear,Construction Zone,Daylight,18,0
+A-100854,3,CA,Los Angeles,Clear,Wet,Daylight,16,0
+A-100855,2,FL,Miami,Rain,Wet,Daylight,11,0
+A-100856,1,AZ,Phoenix,Clear,Dry,Daylight,13,0
+A-100857,1,IL,Chicago,Overcast,Dry,Daylight,18,1
+A-100858,4,CA,San Diego,Fog,Dry,Daylight,15,1
+A-100859,2,TX,Houston,Clear,Dry,Dawn,5,0
+A-100860,1,NC,Charlotte,Clear,Dry,Daylight,13,0
+A-100861,2,CA,Los Angeles,Clear,Dry,Daylight,14,0
+A-100862,4,IL,Chicago,Clear,Dry,Dark - Street Lights,2,1
+A-100863,3,CA,San Diego,Overcast,Construction Zone,Daylight,6,0
+A-100864,2,NC,Charlotte,Rain,Wet,Daylight,13,0
+A-100865,3,CA,San Diego,Rain,Wet,Daylight,16,0
+A-100866,2,CA,Los Angeles,Clear,Dry,Daylight,12,0
+A-100867,3,NY,New York,Fog,Dry,Daylight,8,1
+A-100868,3,NY,New York,Clear,Dry,Dawn,5,0
+A-100869,2,CA,Los Angeles,Rain,Construction Zone,Daylight,8,1
+A-100870,2,TX,Houston,Clear,Dry,Daylight,15,1
+A-100871,1,TX,Houston,Clear,Dry,Daylight,15,0
+A-100872,1,TX,Houston,Clear,Dry,Daylight,17,0
+A-100873,2,TX,Houston,Clear,Dry,Daylight,18,0
+A-100874,2,TX,Houston,Clear,Dry,Daylight,7,0
+A-100875,3,CA,San Diego,Clear,Dry,Dark - No Lights,4,0
+A-100876,3,FL,Miami,Clear,Dry,Daylight,10,0
+A-100877,2,CA,Los Angeles,Clear,Dry,Daylight,8,0
+A-100878,2,CA,Los Angeles,Clear,Wet,Daylight,6,0
+A-100879,1,NY,New York,Clear,Dry,Daylight,9,1
+A-100880,2,FL,Miami,Clear,Dry,Daylight,16,0
+A-100881,2,TX,Houston,Clear,Dry,Daylight,9,1
+A-100882,1,CA,San Diego,Heavy Rain,Wet,Daylight,16,0
+A-100883,1,CA,San Diego,Fog,Dry,Dark - Street Lights,4,0
+A-100884,3,CA,San Diego,Clear,Dry,Dusk,5,0
+A-100885,4,TX,Houston,Fog,Dry,Daylight,8,0
+A-100886,1,NY,New York,Rain,Wet,Daylight,17,0
+A-100887,2,CA,San Diego,Clear,Construction Zone,Daylight,8,1
+A-100888,1,NY,New York,Overcast,Dry,Daylight,7,1
+A-100889,1,NC,Charlotte,Clear,Dry,Daylight,6,0
+A-100890,1,NC,Charlotte,Clear,Dry,Daylight,16,1
+A-100891,1,NC,Charlotte,Rain,Wet,Dark - Street Lights,1,0
+A-100892,3,TX,Houston,Rain,Wet,Daylight,16,0
+A-100893,1,NC,Charlotte,Heavy Rain,Wet,Daylight,12,0
+A-100894,4,FL,Miami,Snow,Icy,Dark - Street Lights,0,0
+A-100895,3,IL,Chicago,Clear,Construction Zone,Daylight,9,0
+A-100896,2,IL,Chicago,Clear,Dry,Daylight,13,0
+A-100897,2,FL,Miami,Clear,Dry,Daylight,7,1
+A-100898,2,CA,San Diego,Clear,Dry,Daylight,15,0
+A-100899,2,TX,Houston,Overcast,Dry,Dark - Street Lights,3,1
+A-100900,1,NY,New York,Snow,Snow Cover,Daylight,13,0
+A-100901,2,IL,Chicago,Clear,Dry,Dark - No Lights,4,0
+A-100902,1,NC,Charlotte,Rain,Wet,Dark - Street Lights,20,0
+A-100903,2,TX,Houston,Fog,Dry,Daylight,12,1
+A-100904,3,TX,Houston,Fog,Wet,Dark - Street Lights,0,0
+A-100905,1,CA,San Diego,Clear,Dry,Daylight,17,1
+A-100906,1,FL,Miami,Overcast,Dry,Daylight,11,0
+A-100907,1,TX,Houston,Clear,Dry,Daylight,9,0
+A-100908,2,CA,San Diego,Clear,Dry,Daylight,6,1
+A-100909,2,NC,Charlotte,Clear,Dry,Daylight,8,0
+A-100910,1,AZ,Phoenix,Clear,Dry,Daylight,17,1
+A-100911,2,CA,San Diego,Clear,Dry,Daylight,16,0
+A-100912,2,NC,Charlotte,Rain,Wet,Daylight,16,1
+A-100913,4,TX,Houston,Clear,Dry,Daylight,15,1
+A-100914,2,NY,New York,Clear,Dry,Daylight,9,1
+A-100915,2,CA,San Diego,Overcast,Dry,Daylight,15,0
+A-100916,4,FL,Miami,Snow,Snow Cover,Daylight,8,1
+A-100917,2,NC,Charlotte,Fog,Dry,Daylight,13,1
+A-100918,1,FL,Miami,Snow,Snow Cover,Daylight,11,0
+A-100919,4,CA,Los Angeles,Snow,Icy,Dark - Street Lights,20,1
+A-100920,1,NC,Charlotte,Clear,Dry,Daylight,14,0
+A-100921,2,CA,San Diego,Heavy Rain,Construction Zone,Daylight,9,1
+A-100922,3,FL,Miami,Clear,Dry,Dusk,5,0
+A-100923,1,NC,Charlotte,Clear,Dry,Daylight,7,0
+A-100924,1,NY,New York,Rain,Wet,Daylight,7,1
+A-100925,2,NC,Charlotte,Clear,Wet,Daylight,12,1
+A-100926,2,TX,Houston,Clear,Dry,Daylight,14,0
+A-100927,2,FL,Miami,Clear,Dry,Daylight,14,0
+A-100928,4,FL,Miami,Clear,Construction Zone,Daylight,8,0
+A-100929,2,CA,Los Angeles,Overcast,Dry,Daylight,11,1
+A-100930,2,AZ,Phoenix,Snow,Snow Cover,Daylight,13,0
+A-100931,1,FL,Miami,Rain,Wet,Dusk,5,0
+A-100932,1,NY,New York,Clear,Dry,Daylight,8,0
+A-100933,2,NC,Charlotte,Clear,Dry,Daylight,18,0
+A-100934,1,AZ,Phoenix,Rain,Wet,Daylight,7,0
+A-100935,2,CA,San Diego,Rain,Wet,Daylight,10,0
+A-100936,1,FL,Miami,Fog,Dry,Daylight,17,1
+A-100937,1,IL,Chicago,Clear,Dry,Dawn,19,1
+A-100938,2,CA,San Diego,Clear,Dry,Daylight,14,0
+A-100939,3,NC,Charlotte,Snow,Snow Cover,Daylight,16,0
+A-100940,1,FL,Miami,Rain,Wet,Daylight,9,0
+A-100941,2,IL,Chicago,Rain,Wet,Daylight,9,0
+A-100942,4,NY,New York,Rain,Wet,Daylight,12,0
+A-100943,1,CA,San Diego,Clear,Dry,Daylight,7,0
+A-100944,3,CA,San Diego,Rain,Wet,Daylight,6,1
+A-100945,1,CA,Los Angeles,Rain,Wet,Daylight,8,0
+A-100946,3,NC,Charlotte,Clear,Dry,Daylight,16,1
+A-100947,2,IL,Chicago,Rain,Wet,Daylight,11,0
+A-100948,3,NC,Charlotte,Fog,Dry,Daylight,12,0
+A-100949,2,FL,Miami,Heavy Rain,Wet,Daylight,12,0
+A-100950,1,NC,Charlotte,Clear,Dry,Dark - Street Lights,21,0
+A-100951,2,TX,Houston,Overcast,Dry,Daylight,7,1
+A-100952,1,IL,Chicago,Clear,Dry,Daylight,7,0
+A-100953,1,IL,Chicago,Rain,Wet,Daylight,12,0
+A-100954,4,NC,Charlotte,Fog,Dry,Daylight,17,0
+A-100955,3,IL,Chicago,Fog,Construction Zone,Daylight,15,0
+A-100956,1,TX,Houston,Fog,Dry,Daylight,17,0
+A-100957,2,NC,Charlotte,Rain,Wet,Dawn,19,1
+A-100958,2,FL,Miami,Clear,Dry,Daylight,12,1
+A-100959,3,FL,Miami,Clear,Dry,Daylight,17,0
+A-100960,1,CA,San Diego,Clear,Dry,Dark - Street Lights,22,0
+A-100961,1,IL,Chicago,Clear,Dry,Daylight,10,0
+A-100962,3,IL,Chicago,Snow,Icy,Daylight,9,0
+A-100963,2,NC,Charlotte,Clear,Dry,Daylight,16,0
+A-100964,2,AZ,Phoenix,Snow,Icy,Daylight,16,0
+A-100965,4,NY,New York,Overcast,Dry,Daylight,12,0
+A-100966,3,AZ,Phoenix,Fog,Dry,Dawn,5,0
+A-100967,3,TX,Houston,Clear,Dry,Daylight,7,0
+A-100968,1,NY,New York,Rain,Wet,Daylight,18,0
+A-100969,1,CA,Los Angeles,Rain,Wet,Daylight,7,0
+A-100970,1,NY,New York,Rain,Wet,Daylight,11,0
+A-100971,2,NY,New York,Rain,Wet,Daylight,12,0
+A-100972,1,AZ,Phoenix,Clear,Dry,Daylight,18,0
+A-100973,3,CA,Los Angeles,Clear,Dry,Daylight,18,1
+A-100974,4,TX,Houston,Clear,Dry,Daylight,9,1
+A-100975,3,CA,Los Angeles,Fog,Dry,Daylight,8,0
+A-100976,1,TX,Houston,Clear,Dry,Daylight,16,0
+A-100977,1,NY,New York,Clear,Dry,Daylight,8,0
+A-100978,3,TX,Houston,Clear,Dry,Dark - Street Lights,0,0
+A-100979,3,CA,San Diego,Snow,Snow Cover,Daylight,7,0
+A-100980,1,CA,San Diego,Clear,Dry,Daylight,11,0
+A-100981,3,IL,Chicago,Snow,Snow Cover,Daylight,9,0
+A-100982,1,IL,Chicago,Heavy Rain,Wet,Daylight,7,0
+A-100983,3,TX,Houston,Clear,Construction Zone,Daylight,16,0
+A-100984,1,CA,San Diego,Heavy Rain,Wet,Dusk,5,0
+A-100985,1,CA,Los Angeles,Clear,Dry,Daylight,12,0
+A-100986,2,CA,San Diego,Clear,Construction Zone,Daylight,17,0
+A-100987,2,IL,Chicago,Heavy Rain,Wet,Dark - Street Lights,2,1
+A-100988,3,FL,Miami,Snow,Snow Cover,Daylight,13,1
+A-100989,4,FL,Miami,Heavy Rain,Wet,Dark - Street Lights,21,1
+A-100990,2,NC,Charlotte,Clear,Construction Zone,Daylight,10,0
+A-100991,1,IL,Chicago,Rain,Wet,Dark - Street Lights,22,0
+A-100992,3,NC,Charlotte,Heavy Rain,Wet,Daylight,6,1
+A-100993,2,CA,Los Angeles,Clear,Dry,Dawn,5,0
+A-100994,3,NC,Charlotte,Overcast,Dry,Daylight,7,0
+A-100995,1,NC,Charlotte,Clear,Dry,Dark - Street Lights,20,0
+A-100996,3,CA,San Diego,Rain,Construction Zone,Daylight,6,0
+A-100997,1,TX,Houston,Clear,Dry,Dawn,5,0
+A-100998,2,AZ,Phoenix,Heavy Rain,Wet,Daylight,16,1
+A-100999,3,AZ,Phoenix,Overcast,Construction Zone,Daylight,9,0
+A-101000,2,TX,Houston,Clear,Dry,Daylight,17,1
+A-101001,2,TX,Houston,Snow,Icy,Dark - Street Lights,2,0
+A-101002,2,IL,Chicago,Clear,Dry,Daylight,7,0
+A-101003,1,NC,Charlotte,Rain,Wet,Daylight,17,1
+A-101004,4,IL,Chicago,Clear,Dry,Daylight,17,0
+A-101005,1,CA,San Diego,Clear,Dry,Daylight,10,0
+A-101006,2,NY,New York,Clear,Dry,Dawn,19,1
+A-101007,2,CA,San Diego,Rain,Wet,Daylight,14,0
+A-101008,3,TX,Houston,Clear,Construction Zone,Daylight,13,0
+A-101009,1,IL,Chicago,Clear,Dry,Daylight,17,0
+A-101010,1,IL,Chicago,Clear,Wet,Daylight,9,0
+A-101011,1,CA,San Diego,Clear,Dry,Daylight,11,0
+A-101012,2,FL,Miami,Fog,Dry,Daylight,15,0
+A-101013,2,IL,Chicago,Clear,Dry,Daylight,7,0
+A-101014,2,AZ,Phoenix,Rain,Construction Zone,Daylight,8,0
+A-101015,1,AZ,Phoenix,Clear,Dry,Daylight,9,1
+A-101016,1,NC,Charlotte,Clear,Dry,Daylight,13,0
+A-101017,3,AZ,Phoenix,Overcast,Dry,Daylight,7,0
+A-101018,1,FL,Miami,Overcast,Dry,Daylight,8,1
+A-101019,2,CA,San Diego,Rain,Wet,Daylight,16,0
+A-101020,2,NC,Charlotte,Clear,Wet,Daylight,11,0
+A-101021,2,NY,New York,Clear,Dry,Daylight,11,0
+A-101022,3,NC,Charlotte,Fog,Dry,Daylight,15,0
+A-101023,2,TX,Houston,Overcast,Dry,Daylight,14,1
+A-101024,1,AZ,Phoenix,Clear,Dry,Dark - Street Lights,20,0
+A-101025,3,NY,New York,Snow,Snow Cover,Daylight,18,0
+A-101026,1,AZ,Phoenix,Clear,Dry,Daylight,8,0
+A-101027,2,FL,Miami,Clear,Wet,Daylight,6,1
+A-101028,1,AZ,Phoenix,Clear,Dry,Daylight,11,0
+A-101029,2,NY,New York,Snow,Snow Cover,Daylight,15,1
+A-101030,4,CA,Los Angeles,Clear,Dry,Dark - Street Lights,4,0
+A-101031,3,IL,Chicago,Clear,Wet,Daylight,15,0
+A-101032,3,FL,Miami,Fog,Dry,Daylight,6,0
+A-101033,1,NY,New York,Rain,Wet,Daylight,13,1
+A-101034,1,AZ,Phoenix,Fog,Dry,Daylight,17,0
+A-101035,1,FL,Miami,Clear,Dry,Dark - Street Lights,22,0
+A-101036,4,CA,San Diego,Rain,Construction Zone,Daylight,9,0
+A-101037,4,TX,Houston,Snow,Icy,Daylight,10,0
+A-101038,3,CA,Los Angeles,Fog,Dry,Daylight,18,0
+A-101039,3,FL,Miami,Rain,Wet,Daylight,8,0
+A-101040,4,CA,San Diego,Clear,Dry,Daylight,13,1
+A-101041,4,NY,New York,Heavy Rain,Wet,Daylight,8,0
+A-101042,3,TX,Houston,Snow,Snow Cover,Dawn,19,0
+A-101043,2,NY,New York,Fog,Dry,Daylight,18,0
+A-101044,3,IL,Chicago,Snow,Snow Cover,Daylight,16,0
+A-101045,2,CA,San Diego,Snow,Snow Cover,Daylight,9,0
+A-101046,2,CA,Los Angeles,Clear,Dry,Daylight,16,0
+A-101047,1,CA,Los Angeles,Clear,Dry,Daylight,10,0
+A-101048,3,TX,Houston,Snow,Icy,Daylight,18,0
+A-101049,2,TX,Houston,Snow,Snow Cover,Daylight,8,0
+A-101050,2,AZ,Phoenix,Clear,Wet,Daylight,10,0
+A-101051,4,CA,Los Angeles,Rain,Wet,Dark - No Lights,21,0
+A-101052,2,FL,Miami,Clear,Dry,Daylight,8,0
+A-101053,3,TX,Houston,Fog,Dry,Dawn,5,0
+A-101054,3,NC,Charlotte,Clear,Dry,Daylight,17,0
+A-101055,2,NY,New York,Clear,Wet,Daylight,8,0
+A-101056,1,NY,New York,Clear,Dry,Daylight,16,1
+A-101057,2,NY,New York,Clear,Dry,Daylight,8,0
+A-101058,2,CA,San Diego,Clear,Dry,Dark - Street Lights,0,1
+A-101059,1,AZ,Phoenix,Clear,Dry,Daylight,16,1
+A-101060,3,FL,Miami,Rain,Wet,Daylight,12,0
+A-101061,2,CA,Los Angeles,Clear,Construction Zone,Dark - Street Lights,0,0
+A-101062,4,CA,Los Angeles,Rain,Construction Zone,Daylight,14,1
+A-101063,1,TX,Houston,Clear,Dry,Dawn,5,0
+A-101064,2,TX,Houston,Clear,Dry,Daylight,13,0
+A-101065,3,NY,New York,Clear,Dry,Daylight,15,0
+A-101066,3,IL,Chicago,Overcast,Dry,Daylight,16,0
+A-101067,2,NC,Charlotte,Clear,Dry,Dark - Street Lights,4,1
+A-101068,4,AZ,Phoenix,Clear,Dry,Daylight,6,0
+A-101069,2,NC,Charlotte,Heavy Rain,Wet,Daylight,12,1
+A-101070,1,FL,Miami,Clear,Dry,Daylight,18,1
+A-101071,2,FL,Miami,Rain,Wet,Daylight,14,0
+A-101072,1,CA,San Diego,Clear,Dry,Daylight,8,0
+A-101073,1,CA,San Diego,Overcast,Wet,Daylight,10,0
+A-101074,1,CA,San Diego,Clear,Dry,Daylight,12,0
+A-101075,3,CA,Los Angeles,Rain,Wet,Daylight,9,1
+A-101076,1,TX,Houston,Rain,Wet,Daylight,7,1
+A-101077,1,CA,San Diego,Clear,Dry,Daylight,14,0
+A-101078,2,AZ,Phoenix,Clear,Dry,Dawn,5,0
+A-101079,1,TX,Houston,Clear,Wet,Daylight,6,0
+A-101080,2,TX,Houston,Clear,Dry,Daylight,9,1
+A-101081,3,AZ,Phoenix,Clear,Dry,Daylight,12,0
+A-101082,2,TX,Houston,Clear,Dry,Daylight,11,0
+A-101083,3,FL,Miami,Fog,Dry,Daylight,15,0
+A-101084,1,CA,San Diego,Fog,Dry,Daylight,8,0
+A-101085,2,TX,Houston,Clear,Dry,Daylight,16,0
+A-101086,2,CA,San Diego,Rain,Wet,Dark - Street Lights,20,0
+A-101087,3,NY,New York,Heavy Rain,Wet,Daylight,9,0
+A-101088,3,NC,Charlotte,Clear,Dry,Daylight,7,1
+A-101089,3,NY,New York,Heavy Rain,Wet,Daylight,9,0
+A-101090,2,IL,Chicago,Clear,Dry,Dark - Street Lights,22,0
+A-101091,2,CA,San Diego,Clear,Dry,Daylight,11,1
+A-101092,2,NC,Charlotte,Overcast,Dry,Daylight,16,0
+A-101093,1,IL,Chicago,Rain,Wet,Daylight,16,0
+A-101094,2,TX,Houston,Clear,Construction Zone,Dark - No Lights,0,1
+A-101095,1,TX,Houston,Rain,Wet,Daylight,15,0
+A-101096,3,NY,New York,Clear,Dry,Daylight,17,1
+A-101097,3,NC,Charlotte,Snow,Icy,Dark - Street Lights,21,0
+A-101098,3,AZ,Phoenix,Rain,Wet,Dark - No Lights,4,1
+A-101099,3,NY,New York,Rain,Wet,Dark - No Lights,3,0
+A-101100,2,NC,Charlotte,Clear,Dry,Daylight,7,1
+A-101101,2,NY,New York,Clear,Dry,Dawn,19,0
+A-101102,1,AZ,Phoenix,Clear,Dry,Dark - Street Lights,1,0
+A-101103,3,IL,Chicago,Heavy Rain,Wet,Dark - No Lights,20,0
+A-101104,2,AZ,Phoenix,Rain,Wet,Dark - Street Lights,21,0
+A-101105,1,TX,Houston,Heavy Rain,Wet,Daylight,15,0
+A-101106,2,FL,Miami,Snow,Snow Cover,Daylight,7,0
+A-101107,1,FL,Miami,Clear,Wet,Daylight,7,1
+A-101108,1,TX,Houston,Rain,Wet,Daylight,7,0
+A-101109,1,CA,San Diego,Clear,Dry,Daylight,15,1
+A-101110,4,IL,Chicago,Rain,Construction Zone,Daylight,17,0
+A-101111,3,CA,San Diego,Clear,Dry,Daylight,16,0
+A-101112,3,CA,San Diego,Rain,Construction Zone,Dark - Street Lights,22,0
+A-101113,2,CA,San Diego,Clear,Dry,Daylight,7,1
+A-101114,2,NC,Charlotte,Snow,Icy,Daylight,16,0
+A-101115,1,TX,Houston,Overcast,Dry,Daylight,6,1
+A-101116,2,NC,Charlotte,Clear,Dry,Daylight,9,0
+A-101117,3,IL,Chicago,Heavy Rain,Wet,Daylight,15,1
+A-101118,3,TX,Houston,Clear,Dry,Daylight,17,0
+A-101119,1,IL,Chicago,Heavy Rain,Wet,Dark - Street Lights,21,0
+A-101120,2,IL,Chicago,Clear,Dry,Daylight,9,0
+A-101121,2,TX,Houston,Rain,Wet,Dawn,19,1
+A-101122,3,NY,New York,Clear,Wet,Daylight,16,0
+A-101123,2,TX,Houston,Clear,Dry,Daylight,16,0
+A-101124,2,NC,Charlotte,Snow,Icy,Daylight,16,0
+A-101125,2,NY,New York,Clear,Dry,Dusk,5,0
+A-101126,2,NY,New York,Clear,Dry,Daylight,7,0
+A-101127,2,CA,Los Angeles,Rain,Wet,Dark - Street Lights,2,0
+A-101128,1,CA,San Diego,Clear,Dry,Daylight,16,0
+A-101129,1,CA,San Diego,Clear,Dry,Daylight,12,0
+A-101130,3,FL,Miami,Snow,Snow Cover,Daylight,9,0
+A-101131,3,AZ,Phoenix,Clear,Dry,Daylight,13,1
+A-101132,1,IL,Chicago,Clear,Dry,Daylight,12,1
+A-101133,2,AZ,Phoenix,Clear,Dry,Dawn,19,0
+A-101134,3,AZ,Phoenix,Rain,Construction Zone,Daylight,18,0
+A-101135,2,NC,Charlotte,Clear,Dry,Daylight,16,0
+A-101136,2,NC,Charlotte,Snow,Icy,Daylight,6,0
+A-101137,4,NC,Charlotte,Rain,Construction Zone,Dark - Street Lights,2,1
+A-101138,1,CA,San Diego,Clear,Dry,Daylight,6,0
+A-101139,3,IL,Chicago,Snow,Icy,Daylight,8,0
+A-101140,1,CA,Los Angeles,Clear,Dry,Dark - Street Lights,20,0
+A-101141,3,IL,Chicago,Clear,Dry,Dawn,5,1
+A-101142,2,AZ,Phoenix,Rain,Wet,Daylight,12,0
+A-101143,1,NC,Charlotte,Clear,Dry,Daylight,16,0
+A-101144,2,AZ,Phoenix,Clear,Dry,Daylight,10,0
+A-101145,3,NC,Charlotte,Snow,Snow Cover,Daylight,16,0
+A-101146,2,NY,New York,Rain,Wet,Daylight,14,1
+A-101147,3,CA,Los Angeles,Heavy Rain,Wet,Dark - Street Lights,21,0
+A-101148,2,TX,Houston,Clear,Wet,Dark - No Lights,21,1
+A-101149,3,CA,San Diego,Clear,Dry,Daylight,17,0
+A-101150,1,CA,Los Angeles,Clear,Dry,Daylight,9,1
+A-101151,1,CA,San Diego,Clear,Dry,Daylight,6,1
+A-101152,4,CA,San Diego,Rain,Wet,Daylight,7,0
+A-101153,1,TX,Houston,Clear,Dry,Dark - Street Lights,2,1
+A-101154,1,AZ,Phoenix,Clear,Dry,Dark - Street Lights,21,0
+A-101155,1,AZ,Phoenix,Clear,Dry,Dark - Street Lights,21,1
+A-101156,1,FL,Miami,Rain,Wet,Dusk,19,1
+A-101157,1,TX,Houston,Clear,Dry,Daylight,8,0
+A-101158,3,TX,Houston,Snow,Icy,Daylight,10,0
+A-101159,1,NC,Charlotte,Overcast,Dry,Dark - Street Lights,3,0
+A-101160,1,CA,Los Angeles,Rain,Wet,Dark - Street Lights,20,0
+A-101161,2,FL,Miami,Clear,Dry,Daylight,14,0
+A-101162,4,NY,New York,Snow,Snow Cover,Dawn,5,0
+A-101163,1,FL,Miami,Clear,Dry,Daylight,15,0
+A-101164,1,NY,New York,Clear,Dry,Dark - Street Lights,22,0
+A-101165,3,IL,Chicago,Rain,Wet,Dark - Street Lights,0,0
+A-101166,3,TX,Houston,Heavy Rain,Wet,Daylight,11,0
+A-101167,2,CA,San Diego,Snow,Icy,Daylight,13,0
+A-101168,2,AZ,Phoenix,Clear,Dry,Daylight,17,0
+A-101169,2,CA,Los Angeles,Clear,Dry,Daylight,6,0
+A-101170,2,NY,New York,Clear,Wet,Daylight,15,0
+A-101171,3,FL,Miami,Clear,Dry,Daylight,7,0
+A-101172,2,FL,Miami,Rain,Wet,Dark - Street Lights,0,0
+A-101173,2,TX,Houston,Rain,Wet,Daylight,14,0
+A-101174,4,CA,San Diego,Clear,Construction Zone,Daylight,14,0
+A-101175,2,NY,New York,Overcast,Dry,Daylight,7,0
+A-101176,2,NY,New York,Clear,Dry,Daylight,16,0
+A-101177,2,CA,Los Angeles,Snow,Icy,Daylight,18,0
+A-101178,1,NC,Charlotte,Clear,Dry,Daylight,12,0
+A-101179,3,AZ,Phoenix,Clear,Dry,Daylight,13,0
+A-101180,2,CA,Los Angeles,Rain,Construction Zone,Dark - No Lights,23,1
+A-101181,3,IL,Chicago,Clear,Dry,Daylight,8,0
+A-101182,4,IL,Chicago,Clear,Construction Zone,Daylight,18,1
+A-101183,2,IL,Chicago,Clear,Dry,Daylight,13,1
+A-101184,1,CA,San Diego,Clear,Dry,Daylight,15,0
+A-101185,1,IL,Chicago,Snow,Icy,Dawn,19,0
+A-101186,2,AZ,Phoenix,Rain,Wet,Dawn,5,0
+A-101187,1,AZ,Phoenix,Rain,Wet,Daylight,7,0
+A-101188,3,AZ,Phoenix,Clear,Construction Zone,Daylight,18,0
+A-101189,2,NC,Charlotte,Clear,Dry,Daylight,13,0
+A-101190,2,FL,Miami,Rain,Wet,Dawn,19,1
+A-101191,2,NC,Charlotte,Clear,Dry,Daylight,7,1
+A-101192,2,IL,Chicago,Heavy Rain,Wet,Daylight,9,0
+A-101193,1,IL,Chicago,Rain,Wet,Daylight,8,0
+A-101194,2,FL,Miami,Snow,Icy,Daylight,13,0
+A-101195,2,FL,Miami,Clear,Dry,Daylight,15,1
+A-101196,3,NC,Charlotte,Rain,Construction Zone,Daylight,14,0
+A-101197,2,AZ,Phoenix,Snow,Snow Cover,Daylight,9,1
+A-101198,2,CA,Los Angeles,Clear,Dry,Daylight,15,0
+A-101199,1,IL,Chicago,Clear,Wet,Daylight,17,0
+A-101200,2,CA,Los Angeles,Clear,Dry,Dusk,5,1
+A-101201,2,IL,Chicago,Clear,Dry,Dark - No Lights,4,1
+A-101202,1,IL,Chicago,Clear,Dry,Daylight,18,1
+A-101203,3,CA,San Diego,Clear,Dry,Dark - Street Lights,1,0
+A-101204,2,NY,New York,Clear,Dry,Daylight,12,0
+A-101205,3,AZ,Phoenix,Clear,Construction Zone,Daylight,18,1
+A-101206,2,FL,Miami,Clear,Dry,Daylight,13,0
+A-101207,2,CA,Los Angeles,Snow,Icy,Daylight,16,0
+A-101208,4,FL,Miami,Snow,Snow Cover,Dark - No Lights,4,0
+A-101209,2,FL,Miami,Snow,Snow Cover,Daylight,16,0
+A-101210,2,AZ,Phoenix,Rain,Wet,Daylight,16,0
+A-101211,3,IL,Chicago,Clear,Construction Zone,Daylight,16,0
+A-101212,3,AZ,Phoenix,Rain,Wet,Daylight,15,0
+A-101213,2,NC,Charlotte,Clear,Wet,Daylight,18,0
+A-101214,3,IL,Chicago,Heavy Rain,Wet,Daylight,8,1
+A-101215,2,FL,Miami,Rain,Wet,Daylight,14,0
+A-101216,2,AZ,Phoenix,Clear,Dry,Daylight,10,0
+A-101217,2,NY,New York,Clear,Wet,Daylight,15,0
+A-101218,1,CA,San Diego,Clear,Dry,Daylight,17,0
+A-101219,2,FL,Miami,Clear,Dry,Daylight,9,0
+A-101220,2,NY,New York,Clear,Wet,Daylight,7,0
+A-101221,2,NY,New York,Snow,Snow Cover,Dark - Street Lights,0,0
+A-101222,2,CA,Los Angeles,Heavy Rain,Wet,Daylight,12,0
+A-101223,2,FL,Miami,Clear,Dry,Daylight,16,1
+A-101224,2,NC,Charlotte,Snow,Icy,Daylight,16,0
+A-101225,2,AZ,Phoenix,Rain,Wet,Daylight,7,0
+A-101226,1,TX,Houston,Clear,Dry,Daylight,8,0
+A-101227,2,FL,Miami,Clear,Dry,Daylight,11,0
+A-101228,4,IL,Chicago,Clear,Dry,Daylight,14,0
+A-101229,2,IL,Chicago,Fog,Dry,Daylight,14,0
+A-101230,1,AZ,Phoenix,Rain,Wet,Daylight,7,0
+A-101231,1,NC,Charlotte,Clear,Dry,Daylight,15,0
+A-101232,2,NC,Charlotte,Fog,Dry,Dark - Street Lights,2,1
+A-101233,3,CA,San Diego,Clear,Dry,Daylight,12,0
+A-101234,1,AZ,Phoenix,Rain,Wet,Daylight,7,1
+A-101235,2,FL,Miami,Clear,Dry,Daylight,6,1
+A-101236,1,NY,New York,Rain,Wet,Daylight,14,0
+A-101237,1,TX,Houston,Rain,Wet,Daylight,12,0
+A-101238,4,NC,Charlotte,Heavy Rain,Wet,Daylight,12,0
+A-101239,4,NC,Charlotte,Snow,Icy,Daylight,9,0
+A-101240,1,TX,Houston,Rain,Wet,Daylight,11,1
+A-101241,3,TX,Houston,Rain,Wet,Daylight,16,1
+A-101242,3,TX,Houston,Clear,Construction Zone,Daylight,8,0
+A-101243,1,FL,Miami,Heavy Rain,Wet,Dawn,19,0
+A-101244,1,CA,San Diego,Clear,Dry,Daylight,13,0
+A-101245,1,CA,Los Angeles,Rain,Wet,Daylight,12,1
+A-101246,3,AZ,Phoenix,Clear,Dry,Daylight,18,0
+A-101247,2,IL,Chicago,Clear,Dry,Daylight,15,0
+A-101248,1,NC,Charlotte,Snow,Icy,Daylight,6,0
+A-101249,3,CA,San Diego,Heavy Rain,Wet,Daylight,7,1
+A-101250,1,CA,Los Angeles,Clear,Dry,Daylight,15,1
+A-101251,2,FL,Miami,Rain,Wet,Daylight,11,1
+A-101252,2,CA,San Diego,Clear,Dry,Daylight,10,0
+A-101253,4,FL,Miami,Clear,Dry,Dark - Street Lights,20,0
+A-101254,1,IL,Chicago,Clear,Construction Zone,Daylight,17,0
+A-101255,1,TX,Houston,Rain,Wet,Daylight,16,1
+A-101256,1,FL,Miami,Clear,Dry,Daylight,15,0
+A-101257,1,CA,San Diego,Clear,Dry,Daylight,9,1
+A-101258,1,NC,Charlotte,Clear,Dry,Daylight,7,0
+A-101259,3,FL,Miami,Clear,Construction Zone,Daylight,11,0
+A-101260,1,TX,Houston,Clear,Dry,Daylight,8,1
+A-101261,4,TX,Houston,Fog,Dry,Daylight,9,0
+A-101262,3,NC,Charlotte,Fog,Dry,Dusk,5,1
+A-101263,3,CA,Los Angeles,Fog,Dry,Daylight,7,0
+A-101264,1,FL,Miami,Clear,Dry,Daylight,15,1
+A-101265,3,FL,Miami,Heavy Rain,Construction Zone,Daylight,15,1
+A-101266,3,IL,Chicago,Snow,Icy,Daylight,6,0
+A-101267,1,AZ,Phoenix,Clear,Wet,Daylight,15,0
+A-101268,4,FL,Miami,Fog,Construction Zone,Daylight,7,1
+A-101269,1,FL,Miami,Clear,Dry,Daylight,15,0
+A-101270,1,NC,Charlotte,Rain,Wet,Dusk,5,1
+A-101271,1,TX,Houston,Fog,Dry,Daylight,14,0
+A-101272,1,NC,Charlotte,Clear,Dry,Daylight,9,0
+A-101273,2,NY,New York,Clear,Wet,Daylight,14,0
+A-101274,2,IL,Chicago,Clear,Dry,Daylight,10,1
+A-101275,3,TX,Houston,Clear,Dry,Daylight,17,0
+A-101276,2,NY,New York,Heavy Rain,Wet,Daylight,14,1
+A-101277,2,NC,Charlotte,Clear,Dry,Daylight,8,0
+A-101278,2,FL,Miami,Clear,Dry,Daylight,7,1
+A-101279,1,NC,Charlotte,Clear,Dry,Daylight,11,0
+A-101280,3,NY,New York,Clear,Dry,Daylight,15,0
+A-101281,3,AZ,Phoenix,Heavy Rain,Construction Zone,Dark - Street Lights,20,1
+A-101282,2,IL,Chicago,Rain,Wet,Daylight,13,0
+A-101283,2,AZ,Phoenix,Clear,Wet,Daylight,16,1
+A-101284,2,CA,Los Angeles,Clear,Dry,Daylight,16,0
+A-101285,1,NY,New York,Rain,Wet,Daylight,8,0
+A-101286,3,CA,San Diego,Clear,Dry,Daylight,15,0
+A-101287,2,FL,Miami,Clear,Dry,Daylight,18,1
+A-101288,4,AZ,Phoenix,Heavy Rain,Construction Zone,Daylight,14,0
+A-101289,2,CA,San Diego,Clear,Dry,Daylight,15,0
+A-101290,1,AZ,Phoenix,Clear,Dry,Daylight,16,1
+A-101291,2,AZ,Phoenix,Heavy Rain,Wet,Daylight,13,0
+A-101292,3,TX,Houston,Fog,Dry,Daylight,7,1
+A-101293,4,TX,Houston,Snow,Icy,Daylight,7,0
+A-101294,1,AZ,Phoenix,Clear,Dry,Daylight,11,0
+A-101295,2,CA,San Diego,Clear,Dry,Daylight,10,1
+A-101296,1,CA,San Diego,Overcast,Dry,Dark - Street Lights,0,1
+A-101297,3,FL,Miami,Rain,Construction Zone,Daylight,13,1
+A-101298,3,NC,Charlotte,Clear,Dry,Daylight,12,0
+A-101299,1,IL,Chicago,Rain,Wet,Daylight,17,0
+A-101300,2,IL,Chicago,Clear,Wet,Daylight,18,0
+A-101301,2,TX,Houston,Rain,Construction Zone,Dark - Street Lights,2,1
+A-101302,1,NC,Charlotte,Clear,Dry,Daylight,15,0
+A-101303,2,IL,Chicago,Clear,Wet,Dark - Street Lights,0,0
+A-101304,3,NC,Charlotte,Clear,Dry,Daylight,10,0
+A-101305,2,NC,Charlotte,Fog,Dry,Dark - Street Lights,23,0
+A-101306,1,TX,Houston,Snow,Snow Cover,Daylight,18,0
+A-101307,3,NC,Charlotte,Rain,Wet,Daylight,17,0
+A-101308,1,TX,Houston,Clear,Dry,Dusk,19,0
+A-101309,2,CA,San Diego,Clear,Construction Zone,Daylight,6,0
+A-101310,3,AZ,Phoenix,Clear,Dry,Daylight,17,1
+A-101311,2,CA,San Diego,Rain,Wet,Daylight,15,0
+A-101312,3,IL,Chicago,Heavy Rain,Wet,Daylight,18,0
+A-101313,3,AZ,Phoenix,Heavy Rain,Wet,Dawn,19,0
+A-101314,2,FL,Miami,Clear,Dry,Daylight,8,0
+A-101315,4,FL,Miami,Clear,Wet,Daylight,16,1
+A-101316,2,CA,Los Angeles,Clear,Dry,Daylight,8,0
+A-101317,2,IL,Chicago,Clear,Dry,Daylight,17,0
+A-101318,3,CA,San Diego,Clear,Dry,Daylight,10,0
+A-101319,2,FL,Miami,Rain,Wet,Daylight,13,0
+A-101320,4,CA,Los Angeles,Overcast,Dry,Daylight,14,0
+A-101321,1,NC,Charlotte,Clear,Construction Zone,Daylight,15,1
+A-101322,2,IL,Chicago,Snow,Snow Cover,Daylight,7,0
+A-101323,3,CA,Los Angeles,Snow,Snow Cover,Dark - Street Lights,20,0
+A-101324,2,TX,Houston,Clear,Dry,Dark - No Lights,23,0
+A-101325,1,AZ,Phoenix,Clear,Construction Zone,Dawn,5,0
+A-101326,3,IL,Chicago,Snow,Snow Cover,Daylight,16,0
+A-101327,3,NC,Charlotte,Clear,Dry,Daylight,15,0
+A-101328,3,FL,Miami,Heavy Rain,Wet,Daylight,7,0
+A-101329,3,CA,San Diego,Clear,Construction Zone,Daylight,15,0
+A-101330,4,TX,Houston,Overcast,Dry,Dark - Street Lights,20,1
+A-101331,1,IL,Chicago,Rain,Wet,Daylight,14,0
+A-101332,2,FL,Miami,Rain,Wet,Daylight,10,0
+A-101333,2,CA,San Diego,Rain,Wet,Daylight,17,0
+A-101334,1,IL,Chicago,Clear,Dry,Dark - No Lights,0,1
+A-101335,3,NC,Charlotte,Snow,Icy,Daylight,8,0
+A-101336,3,AZ,Phoenix,Clear,Dry,Daylight,8,1
+A-101337,2,TX,Houston,Clear,Wet,Daylight,11,0
+A-101338,2,NC,Charlotte,Rain,Wet,Dusk,5,0
+A-101339,2,FL,Miami,Clear,Dry,Dark - Street Lights,21,0
+A-101340,2,IL,Chicago,Clear,Dry,Daylight,6,1
+A-101341,3,CA,Los Angeles,Clear,Construction Zone,Dusk,5,1
+A-101342,2,CA,Los Angeles,Fog,Construction Zone,Daylight,8,1
+A-101343,4,NC,Charlotte,Clear,Construction Zone,Daylight,6,0
+A-101344,1,FL,Miami,Clear,Dry,Daylight,16,0
+A-101345,2,FL,Miami,Clear,Dry,Dark - Street Lights,21,0
+A-101346,2,CA,San Diego,Rain,Wet,Daylight,14,1
+A-101347,2,NY,New York,Clear,Dry,Daylight,15,0
+A-101348,3,NY,New York,Clear,Dry,Dark - Street Lights,23,0
+A-101349,1,TX,Houston,Overcast,Dry,Daylight,11,1
+A-101350,1,FL,Miami,Clear,Dry,Dusk,5,1
+A-101351,1,CA,San Diego,Clear,Wet,Daylight,10,0
+A-101352,3,CA,Los Angeles,Clear,Construction Zone,Daylight,6,0
+A-101353,2,CA,San Diego,Clear,Wet,Daylight,7,0
+A-101354,3,IL,Chicago,Rain,Wet,Daylight,16,0
+A-101355,2,TX,Houston,Clear,Wet,Daylight,9,0
+A-101356,1,AZ,Phoenix,Clear,Dry,Daylight,12,1
+A-101357,3,TX,Houston,Clear,Construction Zone,Daylight,6,0
+A-101358,1,IL,Chicago,Rain,Wet,Daylight,16,1
+A-101359,3,IL,Chicago,Clear,Dry,Daylight,17,0
+A-101360,2,FL,Miami,Fog,Dry,Daylight,8,0
+A-101361,2,CA,San Diego,Clear,Dry,Daylight,15,1
+A-101362,4,CA,San Diego,Clear,Wet,Daylight,16,0
+A-101363,2,AZ,Phoenix,Clear,Dry,Daylight,15,0
+A-101364,3,CA,San Diego,Fog,Dry,Daylight,11,0
+A-101365,3,IL,Chicago,Overcast,Wet,Daylight,8,0
+A-101366,3,CA,Los Angeles,Rain,Construction Zone,Daylight,15,0
+A-101367,1,FL,Miami,Clear,Dry,Daylight,7,0
+A-101368,2,NC,Charlotte,Clear,Construction Zone,Daylight,10,0
+A-101369,2,CA,San Diego,Clear,Dry,Daylight,8,0
+A-101370,3,AZ,Phoenix,Fog,Dry,Daylight,7,0
+A-101371,3,CA,Los Angeles,Snow,Icy,Dark - Street Lights,20,0
+A-101372,2,NY,New York,Fog,Dry,Daylight,9,1
+A-101373,3,CA,San Diego,Rain,Construction Zone,Daylight,11,1
+A-101374,1,NC,Charlotte,Clear,Dry,Dark - Street Lights,0,0
+A-101375,2,TX,Houston,Overcast,Dry,Daylight,13,1
+A-101376,1,TX,Houston,Clear,Wet,Daylight,9,0
+A-101377,1,FL,Miami,Clear,Dry,Daylight,8,1
+A-101378,2,FL,Miami,Overcast,Dry,Dark - Street Lights,21,0
+A-101379,4,TX,Houston,Fog,Dry,Daylight,9,0
+A-101380,2,AZ,Phoenix,Snow,Icy,Daylight,6,0
+A-101381,4,CA,Los Angeles,Rain,Wet,Daylight,17,1
+A-101382,1,CA,Los Angeles,Clear,Dry,Daylight,11,0
+A-101383,1,TX,Houston,Clear,Dry,Daylight,16,1
+A-101384,1,FL,Miami,Clear,Dry,Daylight,15,0
+A-101385,1,TX,Houston,Rain,Wet,Daylight,7,0
+A-101386,1,AZ,Phoenix,Fog,Dry,Dark - Street Lights,3,0
+A-101387,2,CA,Los Angeles,Heavy Rain,Construction Zone,Daylight,10,0
+A-101388,1,AZ,Phoenix,Rain,Wet,Daylight,12,0
+A-101389,1,NY,New York,Clear,Wet,Dark - Street Lights,21,0
+A-101390,2,IL,Chicago,Fog,Dry,Daylight,7,0
+A-101391,2,NC,Charlotte,Clear,Dry,Daylight,10,0
+A-101392,2,TX,Houston,Clear,Dry,Daylight,9,0
+A-101393,1,IL,Chicago,Rain,Wet,Daylight,8,1
+A-101394,2,CA,San Diego,Fog,Wet,Dark - Street Lights,3,0
+A-101395,2,CA,San Diego,Clear,Dry,Dusk,5,0
+A-101396,3,TX,Houston,Rain,Wet,Dark - No Lights,4,1
+A-101397,3,IL,Chicago,Heavy Rain,Construction Zone,Dusk,19,0
+A-101398,4,CA,Los Angeles,Overcast,Dry,Daylight,7,1
+A-101399,3,CA,Los Angeles,Heavy Rain,Wet,Daylight,17,0
+A-101400,2,CA,San Diego,Clear,Dry,Daylight,7,0
+A-101401,1,NY,New York,Rain,Wet,Daylight,7,1
+A-101402,1,NC,Charlotte,Clear,Wet,Daylight,13,0
+A-101403,1,NY,New York,Clear,Dry,Daylight,14,1
+A-101404,4,TX,Houston,Clear,Wet,Dark - Street Lights,21,1
+A-101405,1,FL,Miami,Clear,Dry,Daylight,13,1
+A-101406,1,CA,San Diego,Clear,Dry,Dark - No Lights,21,0
+A-101407,1,CA,Los Angeles,Clear,Dry,Daylight,15,1
+A-101408,1,NY,New York,Overcast,Dry,Dark - Street Lights,22,0
+A-101409,2,AZ,Phoenix,Rain,Wet,Dark - Street Lights,21,1
+A-101410,2,IL,Chicago,Snow,Snow Cover,Daylight,8,0
+A-101411,2,FL,Miami,Clear,Dry,Daylight,16,0
+A-101412,2,NC,Charlotte,Clear,Dry,Daylight,7,0
+A-101413,1,NY,New York,Clear,Dry,Dark - Street Lights,1,1
+A-101414,2,CA,San Diego,Rain,Wet,Daylight,11,0
+A-101415,1,TX,Houston,Rain,Wet,Daylight,16,0
+A-101416,1,CA,Los Angeles,Clear,Dry,Daylight,16,0
+A-101417,3,TX,Houston,Snow,Icy,Dark - Street Lights,20,0
+A-101418,3,IL,Chicago,Clear,Dry,Daylight,18,1
+A-101419,1,TX,Houston,Clear,Dry,Daylight,8,0
+A-101420,2,CA,San Diego,Rain,Wet,Dark - No Lights,1,1
+A-101421,1,CA,Los Angeles,Clear,Dry,Dawn,19,1
+A-101422,4,AZ,Phoenix,Fog,Dry,Daylight,16,0
+A-101423,1,FL,Miami,Clear,Dry,Daylight,6,0
+A-101424,2,CA,San Diego,Clear,Dry,Dusk,19,0
+A-101425,1,TX,Houston,Rain,Wet,Dusk,19,0
+A-101426,1,NC,Charlotte,Snow,Snow Cover,Daylight,15,0
+A-101427,1,CA,Los Angeles,Heavy Rain,Wet,Daylight,18,0
+A-101428,2,NC,Charlotte,Clear,Dry,Daylight,16,0
+A-101429,1,NY,New York,Clear,Dry,Daylight,6,0
+A-101430,1,NC,Charlotte,Clear,Dry,Daylight,11,0
+A-101431,2,FL,Miami,Rain,Wet,Daylight,10,0
+A-101432,2,FL,Miami,Clear,Dry,Daylight,10,0
+A-101433,1,FL,Miami,Clear,Construction Zone,Daylight,16,1
+A-101434,3,NC,Charlotte,Clear,Dry,Dark - No Lights,21,0
+A-101435,4,TX,Houston,Snow,Snow Cover,Daylight,8,1
+A-101436,3,FL,Miami,Heavy Rain,Wet,Daylight,7,1
+A-101437,2,TX,Houston,Overcast,Dry,Daylight,10,1
+A-101438,1,CA,San Diego,Clear,Dry,Daylight,12,0
+A-101439,3,FL,Miami,Snow,Icy,Dusk,5,0
+A-101440,1,TX,Houston,Clear,Dry,Daylight,16,0
+A-101441,3,CA,Los Angeles,Fog,Dry,Daylight,8,1
+A-101442,4,TX,Houston,Rain,Construction Zone,Dark - Street Lights,0,0
+A-101443,3,NY,New York,Clear,Construction Zone,Daylight,16,0
+A-101444,3,TX,Houston,Clear,Dry,Daylight,16,0
+A-101445,3,CA,San Diego,Clear,Dry,Daylight,17,0
+A-101446,1,TX,Houston,Clear,Dry,Dark - Street Lights,4,0
+A-101447,2,IL,Chicago,Rain,Wet,Dark - Street Lights,2,0
+A-101448,1,NY,New York,Fog,Dry,Daylight,7,1
+A-101449,3,CA,Los Angeles,Clear,Dry,Daylight,14,0
+A-101450,1,CA,Los Angeles,Overcast,Dry,Dark - Street Lights,22,0
+A-101451,1,IL,Chicago,Clear,Dry,Dark - Street Lights,22,0
+A-101452,1,TX,Houston,Clear,Wet,Dark - Street Lights,1,0
+A-101453,3,NC,Charlotte,Overcast,Dry,Dusk,5,0
+A-101454,2,TX,Houston,Overcast,Dry,Daylight,17,1
+A-101455,3,IL,Chicago,Clear,Dry,Daylight,12,1
+A-101456,4,CA,Los Angeles,Clear,Dry,Dusk,19,0
+A-101457,4,NC,Charlotte,Heavy Rain,Wet,Daylight,6,1
+A-101458,1,CA,San Diego,Clear,Dry,Daylight,13,0
+A-101459,4,IL,Chicago,Heavy Rain,Wet,Daylight,9,1
+A-101460,4,NY,New York,Fog,Construction Zone,Daylight,16,0
+A-101461,1,NC,Charlotte,Clear,Wet,Dark - No Lights,3,0
+A-101462,2,IL,Chicago,Clear,Dry,Daylight,13,0
+A-101463,2,NC,Charlotte,Rain,Wet,Daylight,8,0
+A-101464,1,FL,Miami,Clear,Dry,Daylight,16,0
+A-101465,2,AZ,Phoenix,Snow,Snow Cover,Daylight,18,1
+A-101466,2,NC,Charlotte,Clear,Dry,Daylight,15,0
+A-101467,4,AZ,Phoenix,Clear,Dry,Daylight,17,1
+A-101468,2,NC,Charlotte,Clear,Dry,Daylight,7,0
+A-101469,3,NC,Charlotte,Rain,Construction Zone,Daylight,6,1
+A-101470,3,CA,Los Angeles,Clear,Dry,Dark - Street Lights,20,0
+A-101471,2,AZ,Phoenix,Clear,Dry,Daylight,8,0
+A-101472,3,NY,New York,Clear,Dry,Daylight,18,0
+A-101473,3,TX,Houston,Fog,Dry,Daylight,17,1
+A-101474,2,TX,Houston,Clear,Dry,Daylight,7,0
+A-101475,2,AZ,Phoenix,Clear,Dry,Daylight,9,0
+A-101476,1,FL,Miami,Rain,Wet,Dawn,5,0
+A-101477,1,NC,Charlotte,Clear,Dry,Dark - Street Lights,20,0
+A-101478,3,CA,Los Angeles,Snow,Snow Cover,Dark - Street Lights,23,0
+A-101479,1,CA,Los Angeles,Clear,Dry,Daylight,7,0
+A-101480,4,AZ,Phoenix,Clear,Dry,Daylight,7,1
+A-101481,4,IL,Chicago,Fog,Dry,Daylight,17,1
+A-101482,2,NC,Charlotte,Clear,Dry,Daylight,15,0
+A-101483,2,IL,Chicago,Clear,Dry,Daylight,6,1
+A-101484,1,AZ,Phoenix,Rain,Wet,Daylight,10,0
+A-101485,2,CA,San Diego,Clear,Dry,Dark - Street Lights,23,0
+A-101486,2,NC,Charlotte,Rain,Wet,Daylight,16,0
+A-101487,2,CA,Los Angeles,Clear,Dry,Daylight,15,0
+A-101488,4,CA,San Diego,Clear,Construction Zone,Daylight,7,0
+A-101489,3,AZ,Phoenix,Snow,Icy,Dawn,19,0
+A-101490,4,NY,New York,Clear,Construction Zone,Daylight,8,0
+A-101491,3,FL,Miami,Clear,Dry,Dark - Street Lights,0,0
+A-101492,4,IL,Chicago,Overcast,Dry,Daylight,9,0
+A-101493,3,FL,Miami,Clear,Construction Zone,Daylight,15,0
+A-101494,1,AZ,Phoenix,Fog,Dry,Dark - Street Lights,22,1
+A-101495,3,TX,Houston,Snow,Snow Cover,Daylight,13,0
+A-101496,1,NY,New York,Clear,Dry,Daylight,18,1
+A-101497,3,CA,Los Angeles,Clear,Dry,Daylight,15,0
+A-101498,3,CA,San Diego,Heavy Rain,Construction Zone,Daylight,14,1
+A-101499,3,IL,Chicago,Clear,Dry,Daylight,7,0
+A-101500,3,AZ,Phoenix,Clear,Construction Zone,Daylight,17,0
+A-101501,1,CA,San Diego,Clear,Dry,Daylight,6,0
+A-101502,1,TX,Houston,Clear,Wet,Daylight,6,0
+A-101503,1,NC,Charlotte,Clear,Dry,Daylight,17,0
+A-101504,2,AZ,Phoenix,Fog,Wet,Daylight,10,0
+A-101505,4,CA,Los Angeles,Rain,Construction Zone,Dusk,19,0
+A-101506,2,IL,Chicago,Rain,Wet,Daylight,12,0
+A-101507,1,CA,San Diego,Clear,Dry,Daylight,7,1
+A-101508,2,IL,Chicago,Clear,Dry,Daylight,6,1
+A-101509,2,TX,Houston,Overcast,Dry,Daylight,8,0
+A-101510,4,NY,New York,Clear,Construction Zone,Daylight,12,0
+A-101511,2,NY,New York,Fog,Dry,Daylight,7,0
+A-101512,2,NY,New York,Heavy Rain,Wet,Daylight,7,1
+A-101513,2,NY,New York,Rain,Wet,Daylight,17,0
+A-101514,2,IL,Chicago,Clear,Wet,Dawn,19,0
+A-101515,1,NY,New York,Overcast,Dry,Daylight,14,0
+A-101516,1,CA,San Diego,Snow,Icy,Daylight,7,0
+A-101517,1,IL,Chicago,Clear,Dry,Daylight,10,0
+A-101518,1,IL,Chicago,Clear,Dry,Daylight,7,0
+A-101519,2,NY,New York,Clear,Dry,Daylight,14,0
+A-101520,3,CA,San Diego,Rain,Wet,Daylight,14,0
+A-101521,3,FL,Miami,Clear,Construction Zone,Daylight,7,0
+A-101522,1,CA,San Diego,Rain,Wet,Daylight,12,0
+A-101523,2,CA,Los Angeles,Overcast,Construction Zone,Daylight,15,0
+A-101524,2,AZ,Phoenix,Rain,Wet,Dark - Street Lights,3,0
+A-101525,3,AZ,Phoenix,Heavy Rain,Wet,Daylight,16,1
+A-101526,3,IL,Chicago,Clear,Construction Zone,Daylight,12,1
+A-101527,3,CA,San Diego,Clear,Dry,Daylight,18,0
+A-101528,1,TX,Houston,Rain,Wet,Daylight,6,0
+A-101529,1,FL,Miami,Snow,Icy,Daylight,16,0
+A-101530,1,CA,Los Angeles,Clear,Construction Zone,Daylight,8,0
+A-101531,3,IL,Chicago,Clear,Dry,Daylight,16,0
+A-101532,3,NC,Charlotte,Clear,Dry,Daylight,6,0
+A-101533,2,AZ,Phoenix,Rain,Wet,Daylight,15,0
+A-101534,2,NC,Charlotte,Heavy Rain,Wet,Dark - Street Lights,22,0
+A-101535,3,CA,San Diego,Clear,Dry,Daylight,9,0
+A-101536,3,CA,San Diego,Clear,Dry,Dawn,5,0
+A-101537,3,FL,Miami,Snow,Snow Cover,Daylight,12,0
+A-101538,2,IL,Chicago,Clear,Dry,Daylight,16,0
+A-101539,2,TX,Houston,Overcast,Wet,Daylight,7,0
+A-101540,3,AZ,Phoenix,Clear,Dry,Daylight,7,1
+A-101541,4,CA,San Diego,Heavy Rain,Wet,Daylight,6,0
+A-101542,1,TX,Houston,Rain,Wet,Daylight,8,0
+A-101543,1,CA,San Diego,Clear,Dry,Daylight,9,1
+A-101544,2,NC,Charlotte,Rain,Wet,Daylight,8,1
+A-101545,2,NY,New York,Clear,Dry,Daylight,7,1
+A-101546,1,CA,San Diego,Overcast,Dry,Daylight,16,0
+A-101547,3,CA,Los Angeles,Rain,Wet,Daylight,14,1
+A-101548,2,AZ,Phoenix,Heavy Rain,Construction Zone,Daylight,10,1
+A-101549,1,FL,Miami,Rain,Wet,Daylight,7,1
+A-101550,2,CA,Los Angeles,Heavy Rain,Wet,Daylight,6,0
+A-101551,2,FL,Miami,Clear,Dry,Daylight,7,0
+A-101552,4,CA,Los Angeles,Clear,Construction Zone,Daylight,15,0
+A-101553,3,TX,Houston,Rain,Construction Zone,Daylight,15,0
+A-101554,2,NC,Charlotte,Clear,Dry,Daylight,18,0
+A-101555,1,NY,New York,Clear,Dry,Daylight,18,0
+A-101556,2,NY,New York,Clear,Dry,Daylight,17,0
+A-101557,2,NC,Charlotte,Snow,Icy,Daylight,8,0
+A-101558,4,NC,Charlotte,Heavy Rain,Wet,Daylight,6,0
+A-101559,2,FL,Miami,Clear,Dry,Daylight,15,1
+A-101560,3,AZ,Phoenix,Clear,Construction Zone,Daylight,9,0
+A-101561,4,NY,New York,Fog,Dry,Daylight,18,0
+A-101562,2,TX,Houston,Fog,Dry,Daylight,8,0
+A-101563,2,NY,New York,Rain,Wet,Daylight,8,1
+A-101564,2,AZ,Phoenix,Snow,Icy,Daylight,17,0
+A-101565,4,CA,Los Angeles,Clear,Dry,Daylight,13,0
+A-101566,1,TX,Houston,Snow,Icy,Daylight,8,0
+A-101567,1,NY,New York,Clear,Dry,Daylight,17,1
+A-101568,4,CA,Los Angeles,Snow,Snow Cover,Dark - Street Lights,4,1
+A-101569,3,TX,Houston,Clear,Dry,Dark - Street Lights,21,0
+A-101570,2,NY,New York,Clear,Wet,Daylight,7,0
+A-101571,3,AZ,Phoenix,Fog,Construction Zone,Daylight,10,0
+A-101572,2,TX,Houston,Clear,Dry,Daylight,14,0
+A-101573,1,FL,Miami,Clear,Dry,Daylight,8,0
+A-101574,2,NC,Charlotte,Snow,Icy,Daylight,13,0
+A-101575,1,NC,Charlotte,Rain,Wet,Daylight,16,0
+A-101576,4,NC,Charlotte,Clear,Dry,Daylight,11,0
+A-101577,1,AZ,Phoenix,Fog,Dry,Dawn,5,1
+A-101578,2,NY,New York,Clear,Dry,Dark - Street Lights,4,0
+A-101579,2,NC,Charlotte,Clear,Construction Zone,Daylight,18,1
+A-101580,2,CA,San Diego,Rain,Construction Zone,Daylight,17,0
+A-101581,2,CA,Los Angeles,Rain,Construction Zone,Daylight,16,0
+A-101582,2,TX,Houston,Overcast,Dry,Daylight,8,0
+A-101583,1,FL,Miami,Rain,Wet,Daylight,6,1
+A-101584,3,FL,Miami,Rain,Wet,Daylight,6,1
+A-101585,3,NY,New York,Snow,Snow Cover,Daylight,11,0
+A-101586,1,NC,Charlotte,Clear,Dry,Daylight,18,0
+A-101587,1,FL,Miami,Rain,Wet,Daylight,7,0
+A-101588,1,CA,San Diego,Rain,Wet,Dark - Street Lights,21,0
+A-101589,1,AZ,Phoenix,Clear,Dry,Daylight,17,1
+A-101590,1,NY,New York,Rain,Wet,Dark - No Lights,3,0
+A-101591,2,TX,Houston,Clear,Construction Zone,Daylight,12,0
+A-101592,2,FL,Miami,Clear,Dry,Daylight,9,0
+A-101593,1,IL,Chicago,Clear,Wet,Daylight,15,0
+A-101594,3,NY,New York,Snow,Icy,Dark - No Lights,20,1
+A-101595,1,TX,Houston,Heavy Rain,Wet,Daylight,14,0
+A-101596,1,IL,Chicago,Rain,Wet,Daylight,14,0
+A-101597,3,CA,Los Angeles,Clear,Dry,Daylight,18,1
+A-101598,3,NC,Charlotte,Heavy Rain,Construction Zone,Daylight,9,1
+A-101599,4,CA,San Diego,Fog,Dry,Dawn,19,1
+A-101600,3,CA,Los Angeles,Snow,Icy,Daylight,15,1
+A-101601,2,CA,Los Angeles,Rain,Wet,Dark - No Lights,20,0
+A-101602,2,FL,Miami,Rain,Wet,Daylight,7,0
+A-101603,2,AZ,Phoenix,Clear,Dry,Daylight,17,0
+A-101604,2,CA,San Diego,Fog,Dry,Daylight,7,0
+A-101605,2,CA,San Diego,Overcast,Dry,Daylight,9,0
+A-101606,2,FL,Miami,Clear,Dry,Daylight,18,0
+A-101607,3,TX,Houston,Rain,Construction Zone,Daylight,17,0
+A-101608,2,TX,Houston,Clear,Dry,Daylight,17,0
+A-101609,1,IL,Chicago,Clear,Wet,Dark - Street Lights,1,0
+A-101610,3,TX,Houston,Rain,Construction Zone,Dark - No Lights,22,1
+A-101611,4,AZ,Phoenix,Fog,Dry,Daylight,15,0
+A-101612,3,NY,New York,Clear,Dry,Daylight,15,1
+A-101613,3,CA,Los Angeles,Heavy Rain,Construction Zone,Daylight,6,0
+A-101614,3,CA,Los Angeles,Fog,Construction Zone,Daylight,8,1
+A-101615,3,CA,Los Angeles,Clear,Dry,Daylight,9,1
+A-101616,2,NC,Charlotte,Clear,Dry,Dark - Street Lights,21,1
+A-101617,4,AZ,Phoenix,Snow,Icy,Daylight,12,0
+A-101618,3,CA,Los Angeles,Rain,Construction Zone,Daylight,17,0
+A-101619,2,CA,Los Angeles,Heavy Rain,Wet,Daylight,14,1
+A-101620,3,AZ,Phoenix,Clear,Dry,Daylight,14,1
+A-101621,2,IL,Chicago,Clear,Dry,Daylight,7,0
+A-101622,1,FL,Miami,Snow,Icy,Daylight,11,0
+A-101623,2,CA,Los Angeles,Clear,Dry,Daylight,18,1
+A-101624,2,NY,New York,Rain,Wet,Dark - Street Lights,4,0
+A-101625,2,NC,Charlotte,Clear,Construction Zone,Daylight,15,0
+A-101626,2,IL,Chicago,Clear,Dry,Dawn,19,0
+A-101627,3,NY,New York,Fog,Dry,Daylight,18,1
+A-101628,2,CA,San Diego,Heavy Rain,Wet,Dark - Street Lights,4,0
+A-101629,1,TX,Houston,Clear,Dry,Daylight,18,0
+A-101630,1,TX,Houston,Clear,Dry,Dark - No Lights,3,1
+A-101631,1,CA,Los Angeles,Clear,Construction Zone,Daylight,8,0
+A-101632,1,AZ,Phoenix,Clear,Dry,Daylight,12,0
+A-101633,2,TX,Houston,Rain,Wet,Daylight,15,0
+A-101634,3,CA,Los Angeles,Clear,Wet,Dawn,19,0
+A-101635,3,FL,Miami,Snow,Icy,Daylight,16,0
+A-101636,2,CA,Los Angeles,Overcast,Construction Zone,Daylight,17,0
+A-101637,4,NC,Charlotte,Heavy Rain,Wet,Daylight,11,0
+A-101638,2,NC,Charlotte,Clear,Dry,Daylight,16,0
+A-101639,1,NY,New York,Rain,Wet,Dawn,5,1
+A-101640,3,NY,New York,Snow,Snow Cover,Daylight,10,0
+A-101641,2,CA,San Diego,Snow,Snow Cover,Daylight,8,0
+A-101642,3,CA,Los Angeles,Overcast,Dry,Daylight,11,0
+A-101643,2,FL,Miami,Clear,Wet,Daylight,11,0
+A-101644,3,CA,San Diego,Snow,Icy,Daylight,11,1
+A-101645,1,FL,Miami,Rain,Wet,Daylight,15,1
+A-101646,2,CA,Los Angeles,Clear,Dry,Daylight,7,0
+A-101647,2,FL,Miami,Clear,Dry,Dawn,5,0
+A-101648,2,CA,Los Angeles,Clear,Dry,Daylight,14,0
+A-101649,1,FL,Miami,Snow,Snow Cover,Daylight,7,0
+A-101650,1,AZ,Phoenix,Clear,Dry,Daylight,18,1
+A-101651,2,AZ,Phoenix,Fog,Dry,Dusk,19,0
+A-101652,1,CA,Los Angeles,Rain,Wet,Daylight,8,1
+A-101653,1,IL,Chicago,Rain,Wet,Daylight,13,0
+A-101654,2,FL,Miami,Rain,Wet,Daylight,10,0
+A-101655,2,CA,San Diego,Overcast,Dry,Dark - No Lights,21,0
+A-101656,3,AZ,Phoenix,Snow,Snow Cover,Daylight,13,1
+A-101657,2,NC,Charlotte,Rain,Construction Zone,Daylight,9,1
+A-101658,2,IL,Chicago,Overcast,Dry,Daylight,7,0
+A-101659,3,AZ,Phoenix,Rain,Construction Zone,Daylight,10,0
+A-101660,1,FL,Miami,Rain,Wet,Daylight,12,0
+A-101661,1,FL,Miami,Rain,Wet,Daylight,17,0
+A-101662,1,NY,New York,Clear,Dry,Daylight,9,1
+A-101663,1,NC,Charlotte,Fog,Wet,Daylight,15,0
+A-101664,1,CA,San Diego,Heavy Rain,Wet,Daylight,11,0
+A-101665,2,CA,Los Angeles,Clear,Dry,Daylight,18,1
+A-101666,1,AZ,Phoenix,Clear,Dry,Dawn,19,0
+A-101667,2,IL,Chicago,Overcast,Dry,Daylight,14,0
+A-101668,2,IL,Chicago,Rain,Wet,Dark - Street Lights,21,0
+A-101669,2,TX,Houston,Rain,Wet,Daylight,16,0
+A-101670,1,TX,Houston,Clear,Dry,Dawn,19,0
+A-101671,2,TX,Houston,Fog,Dry,Daylight,13,0
+A-101672,1,IL,Chicago,Rain,Wet,Dark - No Lights,4,0
+A-101673,2,AZ,Phoenix,Clear,Wet,Daylight,9,1
+A-101674,2,FL,Miami,Snow,Icy,Daylight,11,1
+A-101675,1,TX,Houston,Clear,Wet,Daylight,6,1
+A-101676,2,NY,New York,Fog,Dry,Dark - Street Lights,23,0
+A-101677,1,TX,Houston,Overcast,Dry,Dark - Street Lights,2,0
+A-101678,2,CA,Los Angeles,Fog,Dry,Daylight,10,0
+A-101679,3,TX,Houston,Clear,Dry,Daylight,17,0
+A-101680,2,NC,Charlotte,Clear,Dry,Dawn,19,0
+A-101681,2,CA,San Diego,Heavy Rain,Wet,Dark - Street Lights,22,0
+A-101682,2,IL,Chicago,Rain,Wet,Daylight,8,0
+A-101683,1,IL,Chicago,Clear,Dry,Dawn,19,1
+A-101684,1,CA,Los Angeles,Clear,Dry,Dark - No Lights,21,0
+A-101685,2,FL,Miami,Snow,Snow Cover,Daylight,8,1
+A-101686,1,FL,Miami,Rain,Wet,Daylight,15,1
+A-101687,2,AZ,Phoenix,Clear,Dry,Dawn,5,0
+A-101688,4,AZ,Phoenix,Clear,Dry,Daylight,15,1
+A-101689,2,NY,New York,Rain,Wet,Daylight,18,0
+A-101690,4,IL,Chicago,Clear,Construction Zone,Daylight,13,0
+A-101691,1,NY,New York,Clear,Dry,Daylight,11,0
+A-101692,3,IL,Chicago,Clear,Dry,Daylight,15,0
+A-101693,1,NC,Charlotte,Clear,Dry,Daylight,14,0
+A-101694,3,AZ,Phoenix,Clear,Dry,Dawn,5,0
+A-101695,1,AZ,Phoenix,Clear,Dry,Daylight,10,0
+A-101696,1,CA,Los Angeles,Rain,Wet,Daylight,8,0
+A-101697,2,CA,San Diego,Clear,Dry,Dark - Street Lights,21,0
+A-101698,3,AZ,Phoenix,Fog,Dry,Dusk,5,0
+A-101699,3,FL,Miami,Clear,Dry,Daylight,10,1
+A-101700,2,FL,Miami,Clear,Dry,Daylight,8,1
+A-101701,2,FL,Miami,Clear,Construction Zone,Dark - Street Lights,20,1
+A-101702,1,NC,Charlotte,Clear,Dry,Dark - Street Lights,4,0
+A-101703,3,CA,San Diego,Clear,Wet,Daylight,17,0
+A-101704,1,CA,San Diego,Heavy Rain,Wet,Dusk,5,0
+A-101705,3,TX,Houston,Clear,Wet,Daylight,6,0
+A-101706,1,IL,Chicago,Clear,Dry,Daylight,11,0
+A-101707,1,NC,Charlotte,Clear,Dry,Daylight,10,0
+A-101708,2,NY,New York,Clear,Dry,Dawn,19,0
+A-101709,1,IL,Chicago,Clear,Dry,Daylight,16,0
+A-101710,1,FL,Miami,Clear,Dry,Daylight,12,0
+A-101711,2,CA,San Diego,Snow,Icy,Daylight,6,1
+A-101712,2,TX,Houston,Rain,Wet,Daylight,10,0
+A-101713,1,CA,Los Angeles,Clear,Dry,Daylight,17,1
+A-101714,2,IL,Chicago,Snow,Icy,Daylight,16,0
+A-101715,2,NC,Charlotte,Rain,Wet,Daylight,13,0
+A-101716,2,CA,San Diego,Clear,Dry,Dark - Street Lights,20,0
+A-101717,2,CA,San Diego,Overcast,Dry,Daylight,7,0
+A-101718,2,TX,Houston,Clear,Wet,Daylight,15,0
+A-101719,3,CA,Los Angeles,Clear,Construction Zone,Daylight,8,0
+A-101720,2,IL,Chicago,Rain,Wet,Daylight,15,0
+A-101721,2,FL,Miami,Clear,Dry,Daylight,17,0
+A-101722,3,FL,Miami,Heavy Rain,Construction Zone,Dark - Street Lights,20,0
+A-101723,1,NC,Charlotte,Clear,Dry,Dark - No Lights,0,0
+A-101724,2,FL,Miami,Clear,Dry,Daylight,7,1
+A-101725,4,TX,Houston,Fog,Dry,Dusk,5,0
+A-101726,1,NY,New York,Clear,Dry,Daylight,8,0
+A-101727,1,AZ,Phoenix,Rain,Wet,Dark - Street Lights,20,0
+A-101728,2,FL,Miami,Clear,Dry,Daylight,8,1
+A-101729,3,AZ,Phoenix,Rain,Wet,Daylight,9,0
+A-101730,3,NC,Charlotte,Clear,Dry,Daylight,7,1
+A-101731,4,TX,Houston,Clear,Dry,Daylight,6,0
+A-101732,2,TX,Houston,Rain,Wet,Daylight,13,0
+A-101733,2,CA,San Diego,Heavy Rain,Wet,Daylight,8,0
+A-101734,4,IL,Chicago,Snow,Snow Cover,Daylight,13,0
+A-101735,2,NY,New York,Rain,Wet,Daylight,16,0
+A-101736,1,CA,San Diego,Clear,Dry,Daylight,14,0
+A-101737,3,NC,Charlotte,Clear,Dry,Daylight,17,0
+A-101738,2,FL,Miami,Heavy Rain,Wet,Daylight,10,1
+A-101739,3,FL,Miami,Clear,Dry,Dark - Street Lights,0,0
+A-101740,1,NY,New York,Clear,Dry,Dark - Street Lights,2,1
+A-101741,3,CA,Los Angeles,Snow,Snow Cover,Dark - No Lights,22,0
+A-101742,1,NC,Charlotte,Rain,Wet,Daylight,7,0
+A-101743,1,IL,Chicago,Clear,Dry,Dark - No Lights,2,0
+A-101744,1,AZ,Phoenix,Clear,Dry,Daylight,18,1
+A-101745,3,NY,New York,Rain,Wet,Dark - No Lights,23,1
+A-101746,2,IL,Chicago,Overcast,Dry,Dawn,19,1
+A-101747,2,AZ,Phoenix,Clear,Dry,Daylight,11,0
+A-101748,1,TX,Houston,Clear,Dry,Daylight,16,1
+A-101749,2,AZ,Phoenix,Snow,Icy,Daylight,7,0
+A-101750,4,IL,Chicago,Snow,Icy,Daylight,6,0
+A-101751,3,CA,San Diego,Heavy Rain,Wet,Daylight,6,1
+A-101752,1,CA,Los Angeles,Clear,Dry,Daylight,17,0
+A-101753,3,FL,Miami,Fog,Wet,Daylight,8,0
+A-101754,2,TX,Houston,Clear,Dry,Daylight,8,0
+A-101755,2,AZ,Phoenix,Fog,Dry,Daylight,7,1
+A-101756,2,NC,Charlotte,Rain,Wet,Daylight,8,0
+A-101757,3,NC,Charlotte,Clear,Construction Zone,Daylight,17,0
+A-101758,3,TX,Houston,Heavy Rain,Wet,Daylight,13,1
+A-101759,2,NY,New York,Rain,Wet,Daylight,7,0
+A-101760,3,CA,San Diego,Clear,Dry,Daylight,13,1
+A-101761,2,TX,Houston,Clear,Dry,Daylight,12,0
+A-101762,2,CA,Los Angeles,Clear,Construction Zone,Daylight,9,1
+A-101763,2,NC,Charlotte,Clear,Construction Zone,Daylight,9,0
+A-101764,2,NC,Charlotte,Clear,Dry,Daylight,14,0
+A-101765,2,AZ,Phoenix,Clear,Dry,Daylight,16,0
+A-101766,2,NC,Charlotte,Overcast,Wet,Daylight,15,0
+A-101767,1,CA,San Diego,Overcast,Dry,Daylight,11,0
+A-101768,4,TX,Houston,Overcast,Construction Zone,Dark - Street Lights,20,0
+A-101769,2,TX,Houston,Overcast,Construction Zone,Daylight,6,0
+A-101770,1,TX,Houston,Clear,Dry,Daylight,17,0
+A-101771,1,TX,Houston,Clear,Dry,Daylight,8,1
+A-101772,2,FL,Miami,Heavy Rain,Wet,Daylight,7,0
+A-101773,3,CA,San Diego,Rain,Construction Zone,Daylight,12,0
+A-101774,2,NC,Charlotte,Clear,Dry,Daylight,16,0
+A-101775,3,TX,Houston,Clear,Dry,Daylight,10,0
+A-101776,1,AZ,Phoenix,Rain,Construction Zone,Daylight,13,0
+A-101777,2,TX,Houston,Clear,Wet,Daylight,17,0
+A-101778,1,AZ,Phoenix,Clear,Dry,Dusk,19,0
+A-101779,1,CA,San Diego,Clear,Dry,Daylight,9,0
+A-101780,3,NC,Charlotte,Clear,Dry,Dark - Street Lights,3,0
+A-101781,2,NC,Charlotte,Heavy Rain,Wet,Daylight,17,0
+A-101782,1,CA,Los Angeles,Rain,Wet,Daylight,7,1
+A-101783,1,AZ,Phoenix,Clear,Dry,Daylight,11,1
+A-101784,4,NC,Charlotte,Heavy Rain,Wet,Daylight,13,0
+A-101785,2,CA,San Diego,Rain,Wet,Daylight,17,0
+A-101786,3,TX,Houston,Heavy Rain,Wet,Dark - Street Lights,0,0
+A-101787,2,NC,Charlotte,Clear,Wet,Daylight,11,0
+A-101788,2,CA,Los Angeles,Clear,Dry,Dawn,19,0
+A-101789,1,CA,Los Angeles,Clear,Dry,Daylight,13,1
+A-101790,1,CA,Los Angeles,Clear,Dry,Daylight,14,0
+A-101791,3,CA,San Diego,Clear,Dry,Daylight,13,1
+A-101792,2,IL,Chicago,Clear,Wet,Dark - No Lights,22,0
+A-101793,3,NC,Charlotte,Clear,Dry,Dark - Street Lights,3,0
+A-101794,3,CA,San Diego,Clear,Construction Zone,Daylight,10,0
+A-101795,3,AZ,Phoenix,Heavy Rain,Wet,Daylight,10,1
+A-101796,1,CA,San Diego,Clear,Dry,Daylight,18,0
+A-101797,1,NY,New York,Snow,Snow Cover,Daylight,15,0
+A-101798,1,NC,Charlotte,Clear,Dry,Daylight,7,0
+A-101799,2,CA,Los Angeles,Rain,Wet,Daylight,14,0
+A-101800,2,CA,Los Angeles,Clear,Dry,Daylight,17,0
+A-101801,3,IL,Chicago,Heavy Rain,Wet,Daylight,6,1
+A-101802,3,NC,Charlotte,Clear,Dry,Daylight,14,0
+A-101803,4,CA,Los Angeles,Snow,Icy,Daylight,9,0
+A-101804,1,NC,Charlotte,Rain,Wet,Daylight,7,0
+A-101805,4,CA,San Diego,Clear,Dry,Daylight,15,0
+A-101806,1,IL,Chicago,Clear,Dry,Daylight,8,0
+A-101807,2,TX,Houston,Clear,Dry,Daylight,15,0
+A-101808,2,NY,New York,Clear,Construction Zone,Daylight,14,0
+A-101809,1,CA,San Diego,Overcast,Dry,Daylight,6,1
+A-101810,1,TX,Houston,Overcast,Dry,Daylight,17,0
+A-101811,1,FL,Miami,Clear,Dry,Daylight,11,0
+A-101812,2,IL,Chicago,Clear,Dry,Daylight,13,0
+A-101813,2,NY,New York,Fog,Dry,Daylight,17,0
+A-101814,2,IL,Chicago,Rain,Wet,Daylight,16,0
+A-101815,2,AZ,Phoenix,Rain,Wet,Dark - Street Lights,22,0
+A-101816,2,CA,San Diego,Fog,Dry,Daylight,14,0
+A-101817,2,NC,Charlotte,Clear,Dry,Daylight,16,0
+A-101818,2,AZ,Phoenix,Snow,Icy,Daylight,14,0
+A-101819,2,FL,Miami,Fog,Dry,Daylight,7,0
+A-101820,4,CA,Los Angeles,Clear,Dry,Daylight,7,0
+A-101821,3,TX,Houston,Clear,Dry,Dark - Street Lights,22,0
+A-101822,2,TX,Houston,Clear,Dry,Daylight,8,0
+A-101823,3,AZ,Phoenix,Snow,Icy,Daylight,18,0
+A-101824,2,NY,New York,Heavy Rain,Wet,Dusk,19,0
+A-101825,2,CA,Los Angeles,Snow,Snow Cover,Daylight,8,0
+A-101826,3,NC,Charlotte,Clear,Dry,Daylight,11,1
+A-101827,1,CA,San Diego,Rain,Wet,Daylight,16,0
+A-101828,3,NC,Charlotte,Rain,Wet,Daylight,7,1
+A-101829,1,NC,Charlotte,Clear,Dry,Daylight,16,0
+A-101830,1,NC,Charlotte,Rain,Wet,Daylight,16,0
+A-101831,2,NY,New York,Rain,Wet,Dark - Street Lights,2,0
+A-101832,2,NY,New York,Clear,Dry,Daylight,12,0
+A-101833,3,TX,Houston,Clear,Dry,Daylight,15,0
+A-101834,3,NY,New York,Clear,Dry,Daylight,6,1
+A-101835,2,AZ,Phoenix,Overcast,Dry,Daylight,12,0
+A-101836,4,IL,Chicago,Fog,Dry,Daylight,13,0
+A-101837,2,NC,Charlotte,Clear,Construction Zone,Daylight,7,0
+A-101838,1,NY,New York,Rain,Wet,Daylight,7,1
+A-101839,4,FL,Miami,Fog,Construction Zone,Daylight,9,0
+A-101840,4,FL,Miami,Clear,Dry,Daylight,16,0
+A-101841,1,CA,San Diego,Snow,Icy,Daylight,8,0
+A-101842,1,CA,Los Angeles,Clear,Dry,Daylight,12,0
+A-101843,2,FL,Miami,Clear,Construction Zone,Daylight,7,0
+A-101844,3,NY,New York,Snow,Icy,Dusk,5,1
+A-101845,1,CA,Los Angeles,Heavy Rain,Wet,Daylight,7,1
+A-101846,1,CA,Los Angeles,Clear,Dry,Daylight,9,0
+A-101847,1,FL,Miami,Rain,Wet,Daylight,6,0
+A-101848,2,AZ,Phoenix,Fog,Dry,Daylight,18,1
+A-101849,1,NC,Charlotte,Clear,Dry,Dark - Street Lights,23,1
+A-101850,1,NC,Charlotte,Clear,Wet,Daylight,13,0
+A-101851,2,NY,New York,Rain,Wet,Daylight,15,0
+A-101852,1,TX,Houston,Overcast,Dry,Daylight,12,0
+A-101853,1,CA,San Diego,Clear,Wet,Daylight,16,0
+A-101854,1,TX,Houston,Clear,Dry,Daylight,7,1
+A-101855,1,NC,Charlotte,Rain,Wet,Daylight,6,0
+A-101856,2,TX,Houston,Clear,Dry,Daylight,7,0
+A-101857,1,IL,Chicago,Rain,Wet,Dark - Street Lights,21,0
+A-101858,1,NY,New York,Clear,Dry,Daylight,12,0
+A-101859,2,IL,Chicago,Clear,Dry,Daylight,17,0
+A-101860,3,CA,Los Angeles,Overcast,Dry,Daylight,16,0
+A-101861,3,NC,Charlotte,Heavy Rain,Wet,Daylight,17,1
+A-101862,2,NY,New York,Clear,Dry,Daylight,18,1
+A-101863,1,FL,Miami,Clear,Dry,Daylight,17,0
+A-101864,4,TX,Houston,Heavy Rain,Wet,Daylight,9,0
+A-101865,1,CA,Los Angeles,Overcast,Dry,Daylight,17,0
+A-101866,3,AZ,Phoenix,Clear,Dry,Dawn,5,1
+A-101867,3,CA,San Diego,Clear,Construction Zone,Daylight,12,0
+A-101868,2,TX,Houston,Rain,Wet,Daylight,18,0
+A-101869,1,IL,Chicago,Clear,Dry,Daylight,14,0
+A-101870,3,CA,Los Angeles,Snow,Snow Cover,Daylight,6,0
+A-101871,2,IL,Chicago,Fog,Dry,Dawn,19,0
+A-101872,3,IL,Chicago,Heavy Rain,Wet,Daylight,9,0
+A-101873,2,CA,Los Angeles,Clear,Wet,Daylight,6,0
+A-101874,4,CA,Los Angeles,Clear,Dry,Dusk,19,0
+A-101875,2,IL,Chicago,Rain,Wet,Daylight,17,0
+A-101876,1,CA,San Diego,Rain,Wet,Dark - No Lights,22,0
+A-101877,2,NC,Charlotte,Heavy Rain,Wet,Daylight,15,0
+A-101878,1,NY,New York,Overcast,Dry,Daylight,12,0
+A-101879,3,TX,Houston,Rain,Wet,Daylight,15,0
+A-101880,1,AZ,Phoenix,Clear,Dry,Dawn,19,0
+A-101881,3,FL,Miami,Snow,Icy,Daylight,9,1
+A-101882,4,NC,Charlotte,Snow,Snow Cover,Daylight,15,1
+A-101883,2,TX,Houston,Clear,Dry,Daylight,7,1
+A-101884,1,CA,Los Angeles,Overcast,Dry,Daylight,17,0
+A-101885,2,FL,Miami,Clear,Construction Zone,Daylight,15,1
+A-101886,1,FL,Miami,Snow,Snow Cover,Daylight,17,1
+A-101887,3,AZ,Phoenix,Snow,Icy,Dark - Street Lights,2,0
+A-101888,2,FL,Miami,Snow,Icy,Daylight,7,0
+A-101889,2,CA,San Diego,Fog,Dry,Daylight,7,1
+A-101890,2,IL,Chicago,Clear,Dry,Daylight,11,1
+A-101891,1,CA,San Diego,Clear,Dry,Dark - No Lights,21,1
+A-101892,4,IL,Chicago,Clear,Wet,Dark - Street Lights,21,0
+A-101893,4,CA,San Diego,Snow,Icy,Daylight,15,0
+A-101894,1,IL,Chicago,Clear,Dry,Dark - Street Lights,4,0
+A-101895,3,NC,Charlotte,Snow,Snow Cover,Daylight,16,1
+A-101896,2,IL,Chicago,Clear,Dry,Daylight,15,0
+A-101897,1,TX,Houston,Clear,Wet,Daylight,16,0
+A-101898,2,TX,Houston,Clear,Dry,Dark - No Lights,2,1
+A-101899,4,CA,Los Angeles,Fog,Dry,Daylight,17,0
+A-101900,1,AZ,Phoenix,Rain,Wet,Dark - Street Lights,4,0
+A-101901,3,FL,Miami,Clear,Dry,Dawn,5,0
+A-101902,2,NC,Charlotte,Rain,Wet,Daylight,6,0
+A-101903,2,NY,New York,Clear,Dry,Daylight,6,0
+A-101904,2,NC,Charlotte,Rain,Wet,Daylight,12,0
+A-101905,3,TX,Houston,Clear,Dry,Daylight,7,1
+A-101906,3,CA,San Diego,Heavy Rain,Wet,Daylight,8,1
+A-101907,3,NC,Charlotte,Rain,Construction Zone,Daylight,15,0
+A-101908,3,TX,Houston,Clear,Dry,Daylight,9,0
+A-101909,2,AZ,Phoenix,Overcast,Dry,Daylight,15,0
+A-101910,1,FL,Miami,Rain,Wet,Daylight,7,0
+A-101911,1,AZ,Phoenix,Rain,Wet,Daylight,12,1
+A-101912,2,NY,New York,Clear,Construction Zone,Daylight,15,0
+A-101913,2,IL,Chicago,Rain,Wet,Daylight,17,0
+A-101914,1,IL,Chicago,Snow,Icy,Daylight,16,1
+A-101915,3,TX,Houston,Snow,Icy,Daylight,6,0
+A-101916,1,TX,Houston,Clear,Construction Zone,Daylight,18,0
+A-101917,3,TX,Houston,Overcast,Dry,Daylight,10,0
+A-101918,3,FL,Miami,Heavy Rain,Wet,Daylight,17,1
+A-101919,3,CA,Los Angeles,Clear,Construction Zone,Daylight,17,0
+A-101920,2,IL,Chicago,Rain,Construction Zone,Daylight,7,0
+A-101921,1,TX,Houston,Clear,Dry,Daylight,13,0
+A-101922,2,AZ,Phoenix,Overcast,Wet,Daylight,8,0
+A-101923,2,TX,Houston,Clear,Dry,Daylight,16,0
+A-101924,1,FL,Miami,Overcast,Dry,Dark - Street Lights,20,0
+A-101925,2,TX,Houston,Overcast,Dry,Daylight,16,0
+A-101926,4,AZ,Phoenix,Snow,Icy,Daylight,10,1
+A-101927,3,NY,New York,Heavy Rain,Wet,Daylight,6,0
+A-101928,1,FL,Miami,Heavy Rain,Wet,Daylight,11,0
+A-101929,2,NY,New York,Rain,Wet,Daylight,13,0
+A-101930,2,CA,San Diego,Clear,Wet,Daylight,13,0
+A-101931,1,IL,Chicago,Clear,Wet,Daylight,18,0
+A-101932,3,NC,Charlotte,Heavy Rain,Construction Zone,Daylight,11,1
+A-101933,2,NY,New York,Overcast,Dry,Daylight,7,1
+A-101934,2,IL,Chicago,Clear,Dry,Daylight,8,0
+A-101935,1,CA,Los Angeles,Clear,Dry,Daylight,15,0
+A-101936,1,NY,New York,Rain,Wet,Daylight,15,0
+A-101937,2,CA,Los Angeles,Clear,Dry,Daylight,6,0
+A-101938,3,NY,New York,Heavy Rain,Wet,Daylight,6,0
+A-101939,1,AZ,Phoenix,Rain,Wet,Daylight,15,0
+A-101940,3,CA,San Diego,Heavy Rain,Wet,Daylight,14,1
+A-101941,2,AZ,Phoenix,Clear,Dry,Daylight,17,0
+A-101942,3,NC,Charlotte,Fog,Wet,Daylight,14,0
+A-101943,3,AZ,Phoenix,Rain,Wet,Daylight,15,1
+A-101944,3,CA,San Diego,Clear,Dry,Daylight,8,0
+A-101945,2,IL,Chicago,Overcast,Dry,Daylight,17,0
+A-101946,1,CA,Los Angeles,Rain,Wet,Daylight,9,0
+A-101947,3,IL,Chicago,Snow,Icy,Daylight,16,0
+A-101948,2,CA,San Diego,Heavy Rain,Wet,Daylight,9,0
+A-101949,2,NY,New York,Rain,Wet,Daylight,6,0
+A-101950,2,TX,Houston,Snow,Icy,Daylight,16,1
+A-101951,1,NC,Charlotte,Overcast,Dry,Dusk,19,0
+A-101952,1,NY,New York,Rain,Wet,Dusk,19,0
+A-101953,3,CA,San Diego,Rain,Construction Zone,Daylight,7,1
+A-101954,1,NY,New York,Clear,Dry,Daylight,6,0
+A-101955,3,NY,New York,Clear,Dry,Daylight,15,0
+A-101956,3,FL,Miami,Clear,Dry,Daylight,14,0
+A-101957,1,FL,Miami,Rain,Wet,Daylight,8,1
+A-101958,4,FL,Miami,Clear,Dry,Dark - Street Lights,21,0
+A-101959,3,FL,Miami,Rain,Wet,Daylight,11,0
+A-101960,1,AZ,Phoenix,Overcast,Wet,Daylight,16,0
+A-101961,1,IL,Chicago,Clear,Dry,Daylight,10,0
+A-101962,3,TX,Houston,Heavy Rain,Wet,Daylight,9,0
+A-101963,3,CA,San Diego,Rain,Wet,Dark - Street Lights,22,0
+A-101964,4,FL,Miami,Rain,Wet,Daylight,16,0
+A-101965,2,NC,Charlotte,Clear,Dry,Daylight,8,0
+A-101966,1,CA,San Diego,Rain,Wet,Dark - Street Lights,21,1
+A-101967,3,TX,Houston,Overcast,Dry,Dawn,5,0
+A-101968,4,CA,Los Angeles,Heavy Rain,Construction Zone,Daylight,16,0
+A-101969,1,FL,Miami,Rain,Wet,Daylight,15,0
+A-101970,1,AZ,Phoenix,Rain,Wet,Daylight,6,0
+A-101971,3,CA,Los Angeles,Clear,Construction Zone,Daylight,16,0
+A-101972,2,AZ,Phoenix,Clear,Dry,Daylight,16,0
+A-101973,2,TX,Houston,Fog,Dry,Daylight,18,1
+A-101974,3,CA,San Diego,Fog,Dry,Dark - Street Lights,21,0
+A-101975,2,TX,Houston,Clear,Dry,Daylight,18,1
+A-101976,4,NY,New York,Clear,Dry,Daylight,13,1
+A-101977,2,CA,San Diego,Rain,Wet,Daylight,9,0
+A-101978,1,CA,Los Angeles,Clear,Construction Zone,Daylight,16,1
+A-101979,4,IL,Chicago,Fog,Dry,Daylight,10,1
+A-101980,1,TX,Houston,Clear,Dry,Daylight,7,0
+A-101981,4,TX,Houston,Fog,Dry,Daylight,14,0
+A-101982,3,TX,Houston,Clear,Dry,Daylight,13,0
+A-101983,1,CA,San Diego,Clear,Dry,Daylight,17,0
+A-101984,4,TX,Houston,Rain,Construction Zone,Dawn,19,0
+A-101985,1,AZ,Phoenix,Rain,Wet,Daylight,17,0
+A-101986,1,TX,Houston,Clear,Dry,Daylight,8,0
+A-101987,1,NC,Charlotte,Heavy Rain,Wet,Daylight,17,0
+A-101988,2,CA,San Diego,Rain,Wet,Daylight,15,0
+A-101989,2,AZ,Phoenix,Clear,Dry,Daylight,16,0
+A-101990,1,NY,New York,Clear,Dry,Dark - Street Lights,21,0
+A-101991,2,NC,Charlotte,Overcast,Dry,Daylight,15,0
+A-101992,3,CA,Los Angeles,Fog,Dry,Daylight,13,1
+A-101993,1,TX,Houston,Rain,Wet,Daylight,15,0
+A-101994,2,FL,Miami,Snow,Snow Cover,Daylight,9,0
+A-101995,2,TX,Houston,Clear,Dry,Daylight,13,0
+A-101996,2,TX,Houston,Clear,Dry,Dusk,19,0
+A-101997,4,CA,Los Angeles,Fog,Dry,Dark - Street Lights,4,0
+A-101998,1,IL,Chicago,Snow,Icy,Dark - No Lights,23,0
+A-101999,3,TX,Houston,Clear,Construction Zone,Daylight,14,0
+A-102000,3,NY,New York,Heavy Rain,Wet,Daylight,7,0
+A-102001,3,AZ,Phoenix,Snow,Icy,Daylight,17,0
+A-102002,2,NY,New York,Clear,Dry,Daylight,14,0
+A-102003,1,FL,Miami,Clear,Dry,Dusk,5,1
+A-102004,2,IL,Chicago,Overcast,Dry,Daylight,7,0
+A-102005,1,NY,New York,Rain,Wet,Daylight,13,0
+A-102006,2,FL,Miami,Clear,Dry,Dark - No Lights,21,0
+A-102007,2,CA,San Diego,Clear,Dry,Daylight,6,1
+A-102008,2,CA,San Diego,Clear,Dry,Daylight,8,0
+A-102009,2,CA,Los Angeles,Overcast,Dry,Daylight,15,0
+A-102010,4,CA,Los Angeles,Clear,Construction Zone,Daylight,14,0
+A-102011,3,IL,Chicago,Clear,Dry,Daylight,12,0
+A-102012,1,CA,San Diego,Clear,Dry,Daylight,7,0
+A-102013,2,NC,Charlotte,Rain,Wet,Dusk,5,1
+A-102014,1,IL,Chicago,Clear,Dry,Dark - Street Lights,4,0
+A-102015,1,IL,Chicago,Clear,Dry,Daylight,10,1
+A-102016,2,CA,Los Angeles,Clear,Dry,Daylight,17,0
+A-102017,2,CA,San Diego,Clear,Dry,Dark - Street Lights,1,0
+A-102018,1,AZ,Phoenix,Rain,Wet,Daylight,12,0
+A-102019,1,NC,Charlotte,Clear,Wet,Daylight,12,0
+A-102020,4,NY,New York,Overcast,Construction Zone,Daylight,15,1
+A-102021,2,IL,Chicago,Clear,Dry,Daylight,16,0
+A-102022,3,FL,Miami,Rain,Wet,Dark - Street Lights,23,1
+A-102023,1,NC,Charlotte,Clear,Dry,Daylight,16,0
+A-102024,2,AZ,Phoenix,Clear,Dry,Daylight,6,0
+A-102025,2,IL,Chicago,Heavy Rain,Wet,Dawn,19,0
+A-102026,4,TX,Houston,Clear,Construction Zone,Daylight,12,0
+A-102027,2,AZ,Phoenix,Rain,Wet,Dark - Street Lights,4,1
+A-102028,4,TX,Houston,Clear,Dry,Dark - Street Lights,21,1
+A-102029,2,TX,Houston,Snow,Icy,Daylight,15,0
+A-102030,4,FL,Miami,Fog,Dry,Daylight,18,1
+A-102031,3,CA,Los Angeles,Clear,Dry,Daylight,15,0
+A-102032,3,CA,Los Angeles,Fog,Dry,Daylight,9,1
+A-102033,3,FL,Miami,Rain,Wet,Daylight,8,1
+A-102034,2,NC,Charlotte,Clear,Dry,Daylight,12,0
+A-102035,3,TX,Houston,Fog,Dry,Daylight,7,1
+A-102036,2,NC,Charlotte,Snow,Icy,Daylight,16,0
+A-102037,1,TX,Houston,Clear,Wet,Dawn,19,1
+A-102038,2,TX,Houston,Overcast,Dry,Daylight,17,0
+A-102039,1,TX,Houston,Clear,Dry,Daylight,12,1
+A-102040,1,IL,Chicago,Clear,Dry,Dark - Street Lights,23,0
+A-102041,2,TX,Houston,Overcast,Dry,Daylight,6,0
+A-102042,2,NY,New York,Clear,Dry,Daylight,16,0
+A-102043,1,CA,Los Angeles,Overcast,Dry,Daylight,15,0
+A-102044,2,NY,New York,Clear,Dry,Dark - Street Lights,22,0
+A-102045,4,NY,New York,Clear,Dry,Daylight,8,0
+A-102046,3,NC,Charlotte,Clear,Wet,Daylight,15,0
+A-102047,2,CA,Los Angeles,Clear,Construction Zone,Daylight,16,1
+A-102048,2,CA,Los Angeles,Clear,Dry,Daylight,16,1
+A-102049,3,AZ,Phoenix,Fog,Dry,Daylight,11,0
+A-102050,3,NC,Charlotte,Clear,Dry,Daylight,8,1
+A-102051,2,IL,Chicago,Clear,Dry,Daylight,18,0
+A-102052,3,FL,Miami,Clear,Wet,Dusk,5,0
+A-102053,1,CA,Los Angeles,Clear,Construction Zone,Daylight,16,0
+A-102054,1,NC,Charlotte,Rain,Wet,Daylight,15,0
+A-102055,4,TX,Houston,Clear,Dry,Daylight,7,0
+A-102056,1,CA,Los Angeles,Clear,Dry,Daylight,11,0
+A-102057,1,FL,Miami,Overcast,Dry,Daylight,12,1
+A-102058,3,NY,New York,Snow,Icy,Daylight,16,0
+A-102059,4,CA,San Diego,Clear,Dry,Daylight,7,1
+A-102060,4,CA,San Diego,Clear,Dry,Daylight,16,1
+A-102061,2,TX,Houston,Clear,Dry,Daylight,10,0
+A-102062,3,FL,Miami,Heavy Rain,Wet,Daylight,11,0
+A-102063,3,NY,New York,Clear,Dry,Daylight,8,1
+A-102064,2,CA,Los Angeles,Clear,Dry,Daylight,15,0
+A-102065,2,CA,Los Angeles,Clear,Dry,Dark - No Lights,22,0
+A-102066,3,CA,San Diego,Clear,Dry,Daylight,14,0
+A-102067,2,IL,Chicago,Clear,Construction Zone,Daylight,13,0
+A-102068,3,TX,Houston,Clear,Dry,Dark - No Lights,4,0
+A-102069,2,AZ,Phoenix,Clear,Dry,Daylight,12,0
+A-102070,2,AZ,Phoenix,Snow,Icy,Dark - No Lights,21,0
+A-102071,1,IL,Chicago,Rain,Wet,Dark - Street Lights,0,0
+A-102072,1,CA,San Diego,Clear,Dry,Dark - Street Lights,0,0
+A-102073,4,NY,New York,Heavy Rain,Wet,Daylight,7,0
+A-102074,4,TX,Houston,Clear,Dry,Daylight,12,0
+A-102075,1,NC,Charlotte,Rain,Wet,Daylight,15,1
+A-102076,2,NC,Charlotte,Clear,Dry,Dark - Street Lights,0,0
+A-102077,2,CA,San Diego,Clear,Dry,Daylight,14,0
+A-102078,2,TX,Houston,Clear,Dry,Daylight,10,0
+A-102079,4,FL,Miami,Fog,Construction Zone,Dark - Street Lights,21,0
+A-102080,1,NC,Charlotte,Rain,Wet,Daylight,17,0
+A-102081,3,TX,Houston,Rain,Construction Zone,Dark - Street Lights,21,0
+A-102082,1,FL,Miami,Clear,Dry,Daylight,12,0
+A-102083,3,TX,Houston,Clear,Dry,Daylight,15,1
+A-102084,1,NY,New York,Clear,Dry,Dusk,5,0
+A-102085,2,CA,Los Angeles,Clear,Dry,Daylight,12,1
+A-102086,3,TX,Houston,Clear,Dry,Daylight,17,0
+A-102087,1,FL,Miami,Overcast,Dry,Daylight,17,0
+A-102088,3,CA,Los Angeles,Snow,Icy,Daylight,16,1
+A-102089,1,AZ,Phoenix,Clear,Dry,Daylight,16,0
+A-102090,3,CA,Los Angeles,Clear,Dry,Daylight,15,0
+A-102091,1,TX,Houston,Clear,Dry,Daylight,12,0
+A-102092,2,NY,New York,Rain,Wet,Daylight,12,1
+A-102093,2,IL,Chicago,Snow,Icy,Dark - Street Lights,21,1
+A-102094,1,AZ,Phoenix,Rain,Wet,Daylight,14,0
+A-102095,3,CA,Los Angeles,Heavy Rain,Wet,Daylight,15,0
+A-102096,1,TX,Houston,Clear,Dry,Daylight,13,0
+A-102097,2,FL,Miami,Clear,Dry,Dawn,5,0
+A-102098,2,NC,Charlotte,Clear,Dry,Daylight,10,1
+A-102099,2,CA,San Diego,Clear,Construction Zone,Daylight,17,0
+A-102100,2,FL,Miami,Clear,Dry,Dark - Street Lights,4,0
+A-102101,2,CA,Los Angeles,Clear,Wet,Daylight,7,1
+A-102102,1,IL,Chicago,Clear,Dry,Daylight,10,0
+A-102103,2,CA,Los Angeles,Rain,Wet,Daylight,15,0
+A-102104,3,FL,Miami,Clear,Dry,Daylight,7,0
+A-102105,2,TX,Houston,Clear,Dry,Daylight,10,1
+A-102106,2,NY,New York,Clear,Dry,Daylight,14,0
+A-102107,2,IL,Chicago,Clear,Dry,Daylight,7,0
+A-102108,1,NC,Charlotte,Rain,Wet,Daylight,14,0
+A-102109,3,CA,Los Angeles,Fog,Dry,Daylight,10,1
+A-102110,2,NY,New York,Fog,Wet,Daylight,18,0
+A-102111,2,CA,Los Angeles,Fog,Wet,Daylight,15,1
+A-102112,2,CA,Los Angeles,Clear,Dry,Daylight,8,1
+A-102113,3,AZ,Phoenix,Clear,Dry,Daylight,16,0
+A-102114,1,NC,Charlotte,Overcast,Wet,Daylight,14,0
+A-102115,4,CA,San Diego,Rain,Construction Zone,Dawn,19,0
+A-102116,1,NY,New York,Overcast,Dry,Daylight,11,0
+A-102117,1,FL,Miami,Clear,Dry,Dark - Street Lights,22,0
+A-102118,2,CA,Los Angeles,Clear,Construction Zone,Dusk,19,0
+A-102119,2,CA,Los Angeles,Clear,Dry,Daylight,18,0
+A-102120,2,NC,Charlotte,Rain,Wet,Daylight,18,0
+A-102121,1,NC,Charlotte,Clear,Dry,Dawn,5,0
+A-102122,3,NC,Charlotte,Clear,Dry,Daylight,11,0
+A-102123,2,CA,San Diego,Heavy Rain,Wet,Dark - Street Lights,21,0
+A-102124,1,NY,New York,Rain,Wet,Dark - No Lights,21,1
+A-102125,3,AZ,Phoenix,Snow,Snow Cover,Daylight,14,0
+A-102126,1,NY,New York,Clear,Dry,Daylight,10,0
+A-102127,2,IL,Chicago,Clear,Dry,Daylight,16,0
+A-102128,3,AZ,Phoenix,Heavy Rain,Wet,Daylight,10,0
+A-102129,1,NC,Charlotte,Overcast,Dry,Daylight,15,0
+A-102130,3,TX,Houston,Clear,Dry,Daylight,9,0
+A-102131,3,TX,Houston,Fog,Construction Zone,Dusk,19,0
+A-102132,3,TX,Houston,Overcast,Dry,Daylight,18,0
+A-102133,2,AZ,Phoenix,Clear,Dry,Dusk,5,0
+A-102134,3,CA,Los Angeles,Fog,Dry,Daylight,8,0
+A-102135,4,IL,Chicago,Snow,Icy,Daylight,12,0
+A-102136,1,AZ,Phoenix,Clear,Dry,Daylight,7,0
+A-102137,4,NC,Charlotte,Heavy Rain,Wet,Daylight,7,0
+A-102138,2,CA,San Diego,Rain,Wet,Daylight,12,0
+A-102139,1,NY,New York,Clear,Wet,Daylight,17,0
+A-102140,1,CA,Los Angeles,Snow,Snow Cover,Daylight,8,1
+A-102141,1,NC,Charlotte,Clear,Dry,Dark - Street Lights,21,0
+A-102142,3,AZ,Phoenix,Rain,Construction Zone,Daylight,10,0
+A-102143,1,CA,Los Angeles,Clear,Dry,Daylight,15,0
+A-102144,2,NC,Charlotte,Rain,Wet,Daylight,18,0
+A-102145,2,IL,Chicago,Overcast,Dry,Dark - No Lights,21,0
+A-102146,2,CA,San Diego,Clear,Dry,Daylight,12,0
+A-102147,1,CA,San Diego,Clear,Construction Zone,Daylight,12,0
+A-102148,1,NY,New York,Clear,Dry,Daylight,14,0
+A-102149,1,TX,Houston,Clear,Dry,Daylight,14,0
+A-102150,3,TX,Houston,Clear,Construction Zone,Daylight,12,0
+A-102151,2,CA,Los Angeles,Rain,Wet,Daylight,8,1
+A-102152,1,TX,Houston,Clear,Dry,Dark - No Lights,3,0
+A-102153,4,NC,Charlotte,Heavy Rain,Wet,Daylight,12,1
+A-102154,1,AZ,Phoenix,Clear,Dry,Dark - No Lights,4,1
+A-102155,1,NC,Charlotte,Clear,Dry,Daylight,17,0
+A-102156,2,CA,Los Angeles,Rain,Wet,Daylight,11,0
+A-102157,2,IL,Chicago,Clear,Dry,Daylight,15,1
+A-102158,2,AZ,Phoenix,Snow,Snow Cover,Dawn,5,1
+A-102159,2,FL,Miami,Clear,Dry,Dusk,19,0
+A-102160,4,NC,Charlotte,Rain,Wet,Daylight,15,0
+A-102161,1,TX,Houston,Clear,Dry,Daylight,14,1
+A-102162,3,AZ,Phoenix,Snow,Icy,Dark - Street Lights,0,1
+A-102163,2,CA,Los Angeles,Clear,Dry,Daylight,8,0
+A-102164,1,FL,Miami,Clear,Dry,Daylight,7,0
+A-102165,1,CA,San Diego,Rain,Construction Zone,Daylight,6,1
+A-102166,2,CA,San Diego,Heavy Rain,Wet,Daylight,14,1
+A-102167,2,FL,Miami,Heavy Rain,Wet,Daylight,17,0
+A-102168,4,AZ,Phoenix,Fog,Dry,Dark - Street Lights,2,0
+A-102169,3,TX,Houston,Rain,Wet,Daylight,12,0
+A-102170,2,TX,Houston,Clear,Dry,Daylight,8,0
+A-102171,2,AZ,Phoenix,Fog,Dry,Dusk,5,1
+A-102172,3,AZ,Phoenix,Overcast,Dry,Daylight,8,0
+A-102173,3,IL,Chicago,Clear,Dry,Dark - Street Lights,20,0
+A-102174,2,TX,Houston,Clear,Dry,Daylight,12,1
+A-102175,2,CA,San Diego,Clear,Dry,Daylight,8,1
+A-102176,1,IL,Chicago,Clear,Dry,Dark - No Lights,20,0
+A-102177,2,IL,Chicago,Clear,Dry,Daylight,13,0
+A-102178,2,TX,Houston,Clear,Dry,Daylight,17,0
+A-102179,2,IL,Chicago,Rain,Wet,Daylight,7,0
+A-102180,2,NY,New York,Snow,Snow Cover,Daylight,15,1
+A-102181,3,NC,Charlotte,Heavy Rain,Construction Zone,Daylight,10,0
+A-102182,4,IL,Chicago,Clear,Construction Zone,Daylight,6,0
+A-102183,4,AZ,Phoenix,Fog,Construction Zone,Dark - Street Lights,0,1
+A-102184,3,NY,New York,Clear,Construction Zone,Daylight,13,0
+A-102185,1,NC,Charlotte,Clear,Dry,Daylight,14,0
+A-102186,1,IL,Chicago,Clear,Dry,Daylight,16,0
+A-102187,1,NY,New York,Heavy Rain,Wet,Daylight,6,1
+A-102188,1,CA,Los Angeles,Rain,Wet,Dark - Street Lights,0,0
+A-102189,2,NY,New York,Clear,Dry,Dark - Street Lights,20,0
+A-102190,4,TX,Houston,Clear,Dry,Daylight,17,0
+A-102191,1,CA,San Diego,Overcast,Wet,Daylight,14,0
+A-102192,1,FL,Miami,Clear,Dry,Daylight,18,1
+A-102193,3,FL,Miami,Rain,Wet,Daylight,8,1
+A-102194,3,AZ,Phoenix,Snow,Icy,Daylight,12,1
+A-102195,2,TX,Houston,Rain,Wet,Daylight,16,0
+A-102196,1,NY,New York,Clear,Wet,Daylight,7,0
+A-102197,2,CA,Los Angeles,Snow,Snow Cover,Daylight,13,0
+A-102198,1,CA,San Diego,Clear,Dry,Daylight,14,0
+A-102199,2,IL,Chicago,Heavy Rain,Construction Zone,Daylight,9,1
+A-102200,2,NC,Charlotte,Rain,Wet,Dark - Street Lights,21,0
+A-102201,2,CA,Los Angeles,Clear,Dry,Daylight,10,0
+A-102202,2,AZ,Phoenix,Clear,Dry,Dawn,5,1
+A-102203,1,TX,Houston,Rain,Wet,Daylight,7,0
+A-102204,1,CA,Los Angeles,Heavy Rain,Wet,Dark - No Lights,22,0
+A-102205,1,CA,Los Angeles,Clear,Dry,Daylight,8,0
+A-102206,2,AZ,Phoenix,Clear,Dry,Daylight,8,0
+A-102207,3,FL,Miami,Rain,Wet,Daylight,18,0
+A-102208,1,TX,Houston,Clear,Dry,Daylight,8,0
+A-102209,3,FL,Miami,Heavy Rain,Wet,Daylight,14,1
+A-102210,2,CA,San Diego,Clear,Dry,Daylight,17,0
+A-102211,3,TX,Houston,Snow,Snow Cover,Daylight,8,1
+A-102212,2,CA,Los Angeles,Clear,Dry,Daylight,13,0
+A-102213,2,TX,Houston,Clear,Dry,Daylight,8,0
+A-102214,2,NC,Charlotte,Clear,Dry,Daylight,7,1
+A-102215,2,CA,San Diego,Clear,Dry,Dark - Street Lights,22,1
+A-102216,2,AZ,Phoenix,Rain,Wet,Dawn,19,0
+A-102217,1,AZ,Phoenix,Clear,Dry,Daylight,7,0
+A-102218,2,IL,Chicago,Fog,Dry,Daylight,18,1
+A-102219,2,CA,Los Angeles,Clear,Dry,Daylight,9,1
+A-102220,3,TX,Houston,Heavy Rain,Wet,Daylight,12,0
+A-102221,2,AZ,Phoenix,Clear,Dry,Daylight,8,1
+A-102222,4,NC,Charlotte,Clear,Dry,Daylight,16,0
+A-102223,2,FL,Miami,Fog,Dry,Dark - Street Lights,21,0
+A-102224,1,AZ,Phoenix,Clear,Dry,Dawn,19,0
+A-102225,4,NC,Charlotte,Clear,Dry,Dusk,5,0
+A-102226,2,TX,Houston,Clear,Dry,Daylight,16,0
+A-102227,2,IL,Chicago,Snow,Icy,Dark - Street Lights,1,0
+A-102228,2,CA,Los Angeles,Fog,Dry,Daylight,17,0
+A-102229,4,CA,Los Angeles,Heavy Rain,Wet,Daylight,15,0
+A-102230,1,TX,Houston,Rain,Wet,Dark - Street Lights,20,0
+A-102231,1,TX,Houston,Rain,Wet,Daylight,16,1
+A-102232,2,CA,Los Angeles,Clear,Dry,Daylight,8,0
+A-102233,4,TX,Houston,Overcast,Dry,Daylight,11,0
+A-102234,2,TX,Houston,Clear,Dry,Daylight,18,1
+A-102235,2,TX,Houston,Clear,Dry,Dark - No Lights,20,0
+A-102236,3,IL,Chicago,Clear,Dry,Daylight,18,0
+A-102237,2,IL,Chicago,Clear,Dry,Daylight,15,0
+A-102238,2,NY,New York,Clear,Wet,Daylight,17,0
+A-102239,2,NY,New York,Clear,Dry,Daylight,9,0
+A-102240,4,NY,New York,Snow,Icy,Daylight,17,1
+A-102241,3,FL,Miami,Fog,Construction Zone,Daylight,18,1
+A-102242,1,IL,Chicago,Rain,Wet,Daylight,11,0
+A-102243,3,NC,Charlotte,Heavy Rain,Construction Zone,Dark - Street Lights,21,0
+A-102244,2,AZ,Phoenix,Clear,Construction Zone,Daylight,7,0
+A-102245,2,FL,Miami,Fog,Dry,Daylight,12,0
+A-102246,1,AZ,Phoenix,Rain,Wet,Daylight,18,0
+A-102247,2,IL,Chicago,Clear,Dry,Daylight,14,0
+A-102248,4,TX,Houston,Clear,Construction Zone,Daylight,13,0
+A-102249,1,TX,Houston,Clear,Dry,Dark - No Lights,23,1
+A-102250,1,IL,Chicago,Clear,Dry,Daylight,15,1
+A-102251,2,CA,San Diego,Snow,Icy,Dark - Street Lights,23,0
+A-102252,3,NC,Charlotte,Rain,Wet,Daylight,6,0
+A-102253,3,NY,New York,Snow,Icy,Daylight,6,0
+A-102254,1,CA,San Diego,Clear,Dry,Daylight,13,1
+A-102255,1,TX,Houston,Clear,Dry,Daylight,16,0
+A-102256,3,AZ,Phoenix,Snow,Snow Cover,Daylight,11,0
+A-102257,2,FL,Miami,Clear,Dry,Daylight,8,1
+A-102258,1,CA,San Diego,Clear,Dry,Daylight,6,0
+A-102259,1,IL,Chicago,Heavy Rain,Wet,Daylight,16,0
+A-102260,1,NY,New York,Clear,Dry,Dark - Street Lights,20,1
+A-102261,3,CA,San Diego,Snow,Icy,Dark - No Lights,4,0
+A-102262,2,AZ,Phoenix,Clear,Wet,Daylight,17,0
+A-102263,2,AZ,Phoenix,Heavy Rain,Construction Zone,Daylight,15,0
+A-102264,4,TX,Houston,Clear,Construction Zone,Dark - Street Lights,21,0
+A-102265,1,FL,Miami,Clear,Dry,Daylight,13,0
+A-102266,2,CA,Los Angeles,Heavy Rain,Wet,Daylight,17,0
+A-102267,1,CA,Los Angeles,Overcast,Dry,Daylight,6,0
+A-102268,2,NY,New York,Overcast,Dry,Daylight,13,0
+A-102269,3,AZ,Phoenix,Clear,Construction Zone,Daylight,17,0
+A-102270,2,NY,New York,Clear,Dry,Daylight,13,0
+A-102271,3,CA,San Diego,Fog,Construction Zone,Daylight,12,0
+A-102272,3,FL,Miami,Clear,Dry,Dark - No Lights,20,0
+A-102273,1,FL,Miami,Clear,Dry,Daylight,15,0
+A-102274,3,FL,Miami,Clear,Dry,Dark - No Lights,21,0
+A-102275,4,NY,New York,Fog,Dry,Daylight,13,0
+A-102276,2,NY,New York,Clear,Dry,Daylight,17,0
+A-102277,3,NY,New York,Fog,Dry,Daylight,17,0
+A-102278,2,TX,Houston,Rain,Wet,Daylight,13,1
+A-102279,3,NC,Charlotte,Heavy Rain,Wet,Dark - Street Lights,1,1
+A-102280,3,AZ,Phoenix,Heavy Rain,Wet,Daylight,7,0
+A-102281,4,NY,New York,Rain,Wet,Daylight,8,0
+A-102282,2,CA,San Diego,Clear,Dry,Daylight,18,1
+A-102283,2,NY,New York,Clear,Dry,Dark - Street Lights,21,1
+A-102284,1,NC,Charlotte,Rain,Wet,Daylight,13,0
+A-102285,3,CA,San Diego,Clear,Construction Zone,Daylight,9,0
+A-102286,1,CA,San Diego,Clear,Dry,Dark - Street Lights,23,1
+A-102287,3,IL,Chicago,Snow,Icy,Dark - No Lights,2,0
+A-102288,2,AZ,Phoenix,Rain,Wet,Daylight,7,1
+A-102289,3,CA,San Diego,Snow,Snow Cover,Dark - Street Lights,22,0
+A-102290,2,NC,Charlotte,Clear,Dry,Daylight,10,0
+A-102291,1,CA,Los Angeles,Rain,Wet,Daylight,14,1
+A-102292,2,CA,Los Angeles,Clear,Wet,Dark - Street Lights,22,0
+A-102293,2,CA,San Diego,Rain,Wet,Daylight,14,0
+A-102294,2,CA,San Diego,Snow,Icy,Daylight,15,1
+A-102295,4,AZ,Phoenix,Clear,Dry,Daylight,8,0
+A-102296,3,TX,Houston,Overcast,Dry,Daylight,16,0
+A-102297,1,CA,San Diego,Clear,Dry,Dark - Street Lights,22,0
+A-102298,3,NY,New York,Snow,Snow Cover,Daylight,9,0
+A-102299,3,CA,San Diego,Clear,Dry,Daylight,10,1
+A-102300,1,TX,Houston,Clear,Dry,Daylight,14,0
+A-102301,1,CA,San Diego,Rain,Wet,Daylight,17,0
+A-102302,4,NY,New York,Fog,Dry,Daylight,6,0
+A-102303,3,CA,San Diego,Clear,Dry,Daylight,15,1
+A-102304,2,CA,Los Angeles,Clear,Dry,Daylight,6,0
+A-102305,2,NY,New York,Fog,Dry,Daylight,7,0
+A-102306,1,TX,Houston,Snow,Snow Cover,Daylight,15,0
+A-102307,3,FL,Miami,Heavy Rain,Wet,Daylight,16,1
+A-102308,2,FL,Miami,Rain,Wet,Dark - Street Lights,23,1
+A-102309,1,FL,Miami,Clear,Dry,Daylight,12,1
+A-102310,2,NY,New York,Rain,Construction Zone,Daylight,9,0
+A-102311,3,FL,Miami,Heavy Rain,Wet,Daylight,15,0
+A-102312,1,CA,Los Angeles,Clear,Dry,Dark - Street Lights,22,0
+A-102313,1,CA,San Diego,Heavy Rain,Wet,Dark - Street Lights,22,1
+A-102314,3,CA,San Diego,Clear,Construction Zone,Daylight,16,1
+A-102315,1,FL,Miami,Clear,Dry,Daylight,16,0
+A-102316,4,TX,Houston,Clear,Dry,Daylight,6,0
+A-102317,2,AZ,Phoenix,Clear,Dry,Daylight,15,0
+A-102318,2,FL,Miami,Rain,Construction Zone,Daylight,10,1
+A-102319,2,NC,Charlotte,Clear,Dry,Dark - Street Lights,21,0
+A-102320,1,CA,Los Angeles,Clear,Dry,Daylight,16,0
+A-102321,2,NY,New York,Clear,Dry,Daylight,8,0
+A-102322,1,NC,Charlotte,Clear,Dry,Daylight,9,0
+A-102323,2,NC,Charlotte,Clear,Dry,Dark - Street Lights,21,1
+A-102324,1,NC,Charlotte,Rain,Wet,Daylight,10,0
+A-102325,2,NY,New York,Rain,Wet,Daylight,16,0
+A-102326,2,NY,New York,Rain,Construction Zone,Daylight,16,1
+A-102327,4,NY,New York,Overcast,Construction Zone,Daylight,8,1
+A-102328,2,TX,Houston,Clear,Construction Zone,Daylight,15,0
+A-102329,1,AZ,Phoenix,Clear,Dry,Daylight,14,1
+A-102330,2,AZ,Phoenix,Rain,Wet,Daylight,8,0
+A-102331,1,IL,Chicago,Clear,Dry,Daylight,6,0
+A-102332,2,IL,Chicago,Rain,Wet,Daylight,9,0
+A-102333,4,CA,Los Angeles,Fog,Dry,Daylight,16,1
+A-102334,4,FL,Miami,Heavy Rain,Wet,Daylight,12,0
+A-102335,1,NC,Charlotte,Clear,Dry,Daylight,16,1
+A-102336,3,CA,Los Angeles,Overcast,Dry,Dark - No Lights,20,0
+A-102337,2,CA,San Diego,Clear,Wet,Daylight,9,1
+A-102338,1,FL,Miami,Rain,Wet,Dark - Street Lights,4,0
+A-102339,1,NC,Charlotte,Clear,Dry,Daylight,17,1
+A-102340,2,FL,Miami,Clear,Dry,Dark - Street Lights,20,1
+A-102341,1,TX,Houston,Rain,Wet,Dark - Street Lights,2,1
+A-102342,1,TX,Houston,Clear,Wet,Daylight,7,1
+A-102343,1,NY,New York,Clear,Dry,Daylight,12,0
+A-102344,2,FL,Miami,Heavy Rain,Wet,Daylight,10,0
+A-102345,1,CA,San Diego,Clear,Dry,Daylight,18,1
+A-102346,1,TX,Houston,Clear,Dry,Daylight,16,0
+A-102347,2,TX,Houston,Rain,Wet,Daylight,11,0
+A-102348,4,IL,Chicago,Overcast,Dry,Dusk,19,1
+A-102349,2,AZ,Phoenix,Clear,Dry,Daylight,7,0
+A-102350,1,CA,Los Angeles,Heavy Rain,Wet,Daylight,7,0
+A-102351,2,CA,San Diego,Clear,Dry,Daylight,17,1
+A-102352,3,CA,San Diego,Rain,Wet,Daylight,14,0
+A-102353,3,CA,Los Angeles,Clear,Dry,Daylight,13,0
+A-102354,1,CA,San Diego,Clear,Dry,Daylight,8,0
+A-102355,3,IL,Chicago,Clear,Dry,Daylight,14,0
+A-102356,2,TX,Houston,Rain,Wet,Daylight,17,1
+A-102357,2,CA,San Diego,Clear,Dry,Daylight,11,0
+A-102358,2,NY,New York,Clear,Dry,Dark - Street Lights,23,0
+A-102359,2,CA,Los Angeles,Clear,Dry,Daylight,18,0
+A-102360,1,CA,San Diego,Overcast,Dry,Dawn,5,1
+A-102361,2,CA,Los Angeles,Clear,Dry,Daylight,16,0
+A-102362,2,NY,New York,Clear,Wet,Daylight,16,1
+A-102363,3,NC,Charlotte,Heavy Rain,Wet,Daylight,8,0
+A-102364,2,NY,New York,Clear,Dry,Daylight,13,0
+A-102365,1,NC,Charlotte,Clear,Dry,Dark - Street Lights,2,0
+A-102366,2,IL,Chicago,Clear,Dry,Dawn,5,0
+A-102367,2,FL,Miami,Rain,Construction Zone,Daylight,11,0
+A-102368,1,CA,Los Angeles,Snow,Icy,Daylight,10,0
+A-102369,3,CA,Los Angeles,Clear,Dry,Daylight,15,1
+A-102370,2,NC,Charlotte,Clear,Dry,Daylight,15,0
+A-102371,4,TX,Houston,Snow,Snow Cover,Daylight,6,1
+A-102372,1,NY,New York,Rain,Wet,Daylight,18,1
+A-102373,1,NY,New York,Rain,Wet,Dark - No Lights,21,0
+A-102374,1,FL,Miami,Rain,Wet,Daylight,10,0
+A-102375,2,TX,Houston,Clear,Dry,Daylight,15,1
+A-102376,2,NY,New York,Clear,Dry,Daylight,11,1
+A-102377,4,IL,Chicago,Clear,Dry,Daylight,16,0
+A-102378,2,NY,New York,Snow,Icy,Dawn,5,0
+A-102379,1,IL,Chicago,Clear,Dry,Daylight,16,0
+A-102380,4,IL,Chicago,Clear,Construction Zone,Daylight,9,0
+A-102381,3,CA,Los Angeles,Clear,Dry,Daylight,15,0
+A-102382,2,CA,Los Angeles,Clear,Dry,Daylight,17,0
+A-102383,3,TX,Houston,Heavy Rain,Wet,Daylight,17,1
+A-102384,4,CA,Los Angeles,Clear,Dry,Daylight,15,0
+A-102385,1,NY,New York,Clear,Dry,Daylight,8,0
+A-102386,3,NY,New York,Clear,Dry,Daylight,14,0
+A-102387,2,CA,San Diego,Clear,Dry,Dusk,5,0
+A-102388,1,FL,Miami,Rain,Wet,Daylight,8,1
+A-102389,1,IL,Chicago,Clear,Dry,Dark - Street Lights,23,1
+A-102390,2,NC,Charlotte,Clear,Dry,Daylight,16,0
+A-102391,3,AZ,Phoenix,Rain,Wet,Daylight,17,0
+A-102392,2,FL,Miami,Clear,Dry,Daylight,17,0
+A-102393,2,CA,San Diego,Rain,Wet,Daylight,14,0
+A-102394,4,IL,Chicago,Clear,Dry,Daylight,12,0
+A-102395,2,CA,San Diego,Fog,Wet,Dark - Street Lights,21,0
+A-102396,1,IL,Chicago,Clear,Dry,Daylight,6,1
+A-102397,1,NY,New York,Clear,Dry,Daylight,6,0
+A-102398,2,CA,Los Angeles,Clear,Dry,Daylight,14,0
+A-102399,1,FL,Miami,Clear,Dry,Daylight,15,0
+A-102400,1,AZ,Phoenix,Clear,Dry,Dawn,5,1
+A-102401,1,AZ,Phoenix,Clear,Dry,Dark - Street Lights,20,1
+A-102402,1,AZ,Phoenix,Heavy Rain,Wet,Daylight,11,0
+A-102403,4,TX,Houston,Fog,Construction Zone,Daylight,11,0
+A-102404,1,CA,Los Angeles,Clear,Wet,Daylight,13,1
+A-102405,2,CA,Los Angeles,Clear,Construction Zone,Daylight,10,0
+A-102406,2,TX,Houston,Clear,Dry,Daylight,17,1
+A-102407,2,TX,Houston,Rain,Wet,Daylight,11,1
+A-102408,4,TX,Houston,Snow,Icy,Daylight,15,0
+A-102409,2,CA,San Diego,Clear,Dry,Daylight,8,0
+A-102410,3,FL,Miami,Snow,Snow Cover,Daylight,9,1
+A-102411,1,TX,Houston,Rain,Wet,Daylight,11,1
+A-102412,1,CA,San Diego,Rain,Wet,Daylight,15,0
+A-102413,3,IL,Chicago,Clear,Dry,Dark - Street Lights,23,0
+A-102414,2,NC,Charlotte,Clear,Dry,Dark - Street Lights,23,0
+A-102415,1,AZ,Phoenix,Clear,Dry,Daylight,17,0
+A-102416,2,NC,Charlotte,Clear,Dry,Dawn,5,0
+A-102417,3,FL,Miami,Clear,Dry,Daylight,6,0
+A-102418,1,FL,Miami,Clear,Wet,Dark - No Lights,21,0
+A-102419,1,TX,Houston,Rain,Construction Zone,Daylight,17,0
+A-102420,4,CA,Los Angeles,Clear,Dry,Dark - Street Lights,23,0
+A-102421,4,CA,Los Angeles,Clear,Dry,Daylight,15,1
+A-102422,1,FL,Miami,Rain,Wet,Daylight,13,1
+A-102423,3,FL,Miami,Rain,Wet,Dusk,19,0
+A-102424,1,NY,New York,Overcast,Wet,Daylight,17,0
+A-102425,2,TX,Houston,Clear,Dry,Dusk,19,0
+A-102426,2,IL,Chicago,Rain,Wet,Daylight,13,1
+A-102427,3,AZ,Phoenix,Fog,Dry,Daylight,9,0
+A-102428,3,AZ,Phoenix,Fog,Dry,Daylight,6,0
+A-102429,2,IL,Chicago,Heavy Rain,Wet,Daylight,14,0
+A-102430,3,NY,New York,Rain,Wet,Daylight,10,1
+A-102431,3,NY,New York,Clear,Construction Zone,Daylight,15,1
+A-102432,1,FL,Miami,Rain,Wet,Dark - No Lights,0,0
+A-102433,1,CA,Los Angeles,Clear,Dry,Daylight,6,0
+A-102434,1,FL,Miami,Overcast,Wet,Daylight,17,0
+A-102435,2,CA,San Diego,Rain,Wet,Daylight,10,1
+A-102436,3,CA,San Diego,Clear,Dry,Daylight,18,0
+A-102437,1,FL,Miami,Rain,Wet,Daylight,18,0
+A-102438,2,IL,Chicago,Clear,Dry,Daylight,7,1
+A-102439,3,NY,New York,Fog,Wet,Daylight,10,1
+A-102440,1,AZ,Phoenix,Clear,Dry,Daylight,15,0
+A-102441,4,NC,Charlotte,Fog,Construction Zone,Daylight,16,0
+A-102442,2,CA,San Diego,Clear,Dry,Daylight,17,1
+A-102443,3,CA,San Diego,Clear,Dry,Dark - Street Lights,22,1
+A-102444,2,IL,Chicago,Clear,Construction Zone,Daylight,16,1
+A-102445,3,CA,San Diego,Overcast,Construction Zone,Daylight,12,1
+A-102446,1,CA,San Diego,Clear,Dry,Daylight,14,1
+A-102447,1,IL,Chicago,Rain,Wet,Daylight,6,0
+A-102448,2,FL,Miami,Rain,Wet,Daylight,12,0
+A-102449,2,TX,Houston,Clear,Dry,Daylight,18,0
+A-102450,2,CA,San Diego,Clear,Dry,Daylight,11,0
+A-102451,3,CA,San Diego,Fog,Construction Zone,Daylight,10,0
+A-102452,1,NC,Charlotte,Clear,Dry,Daylight,15,1
+A-102453,1,CA,San Diego,Rain,Wet,Daylight,18,0
+A-102454,1,FL,Miami,Clear,Dry,Daylight,8,0
+A-102455,3,NC,Charlotte,Clear,Dry,Daylight,17,0
+A-102456,2,FL,Miami,Snow,Snow Cover,Daylight,18,0
+A-102457,2,IL,Chicago,Rain,Wet,Daylight,11,0
+A-102458,3,NC,Charlotte,Heavy Rain,Wet,Daylight,17,0
+A-102459,2,CA,San Diego,Clear,Construction Zone,Daylight,12,0
+A-102460,3,AZ,Phoenix,Snow,Icy,Daylight,13,0
+A-102461,3,AZ,Phoenix,Snow,Icy,Daylight,13,1
+A-102462,1,IL,Chicago,Clear,Wet,Daylight,15,1
+A-102463,2,IL,Chicago,Clear,Dry,Daylight,13,0
+A-102464,2,CA,San Diego,Clear,Construction Zone,Daylight,13,0
+A-102465,2,AZ,Phoenix,Overcast,Dry,Dark - Street Lights,22,0
+A-102466,1,FL,Miami,Clear,Dry,Daylight,11,0
+A-102467,4,TX,Houston,Snow,Snow Cover,Daylight,6,0
+A-102468,2,FL,Miami,Overcast,Dry,Daylight,15,0
+A-102469,2,NY,New York,Rain,Wet,Daylight,15,0
+A-102470,2,CA,San Diego,Clear,Dry,Daylight,15,0
+A-102471,3,CA,Los Angeles,Clear,Dry,Daylight,16,0
+A-102472,2,AZ,Phoenix,Rain,Construction Zone,Daylight,12,0
+A-102473,2,NC,Charlotte,Overcast,Dry,Daylight,8,0
+A-102474,2,NC,Charlotte,Clear,Dry,Daylight,12,0
+A-102475,1,AZ,Phoenix,Clear,Wet,Daylight,13,0
+A-102476,3,FL,Miami,Snow,Icy,Daylight,12,0
+A-102477,1,CA,Los Angeles,Rain,Wet,Daylight,10,1
+A-102478,2,NY,New York,Snow,Snow Cover,Dawn,19,0
+A-102479,1,IL,Chicago,Clear,Dry,Daylight,16,0
+A-102480,3,TX,Houston,Clear,Dry,Daylight,17,0
+A-102481,2,AZ,Phoenix,Clear,Wet,Daylight,12,0
+A-102482,2,TX,Houston,Clear,Dry,Daylight,15,0
+A-102483,3,NY,New York,Clear,Construction Zone,Daylight,17,0
+A-102484,1,CA,San Diego,Clear,Dry,Daylight,9,1
+A-102485,2,IL,Chicago,Clear,Construction Zone,Daylight,16,0
+A-102486,3,TX,Houston,Snow,Icy,Daylight,11,0
+A-102487,3,IL,Chicago,Fog,Dry,Daylight,6,0
+A-102488,1,IL,Chicago,Clear,Dry,Daylight,10,0
+A-102489,1,IL,Chicago,Clear,Dry,Dark - No Lights,0,0
+A-102490,3,FL,Miami,Snow,Snow Cover,Daylight,8,0
+A-102491,2,CA,San Diego,Clear,Dry,Dark - Street Lights,20,1
+A-102492,1,IL,Chicago,Clear,Wet,Daylight,14,1
+A-102493,1,NY,New York,Clear,Wet,Dusk,5,0
+A-102494,4,TX,Houston,Snow,Icy,Daylight,10,0
+A-102495,4,CA,San Diego,Snow,Icy,Daylight,8,0
+A-102496,3,NY,New York,Snow,Snow Cover,Dark - Street Lights,21,1
+A-102497,1,CA,San Diego,Clear,Dry,Dark - No Lights,3,0
+A-102498,1,NC,Charlotte,Snow,Snow Cover,Daylight,14,0
+A-102499,2,IL,Chicago,Rain,Construction Zone,Daylight,6,0
+A-102500,3,TX,Houston,Rain,Construction Zone,Dawn,19,0
