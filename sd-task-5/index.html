@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SD Task 05 - Web Scraper & Data Extractor | Software Development</title>
+  <meta name="description" content="Prodigy InfoTech SD Task 05: Web Scraper application extracting product titles, pricing, and ratings with CSV/JSON export.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card: rgba(18, 24, 38, 0.8);
+      --primary: #ec4899;
+      --secondary: #38bdf8;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--font-body); background-color: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    header { padding: 1.5rem 2rem; background: rgba(9, 13, 22, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+    .brand { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .brand span { color: var(--primary); }
+    .nav-links { display: flex; gap: 1rem; }
+    .nav-btn { padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600; text-decoration: none; color: var(--muted); border: 1px solid var(--border); }
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+    .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) { .grid-2col { grid-template-columns: 1fr; } }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; }
+    input { width: 100%; background: #060911; border: 1px solid var(--border); border-radius: 8px; padding: 0.6rem; color: white; margin-bottom: 0.75rem; font-size: 0.85rem; }
+    button { width: 100%; padding: 0.65rem; background: var(--primary); color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; }
+    .data-item { background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 8px; padding: 0.65rem 0.85rem; margin-bottom: 0.5rem; font-size: 0.85rem; display: flex; justify-content: space-between; }
+    pre { background: #060911; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; font-family: var(--font-mono); font-size: 0.85rem; color: #a5f3fc; overflow-x: auto; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../index.html" class="brand">🕷️ PRODIGY <span>SD TRACK</span></a>
+    <div class="nav-links">
+      <a href="../sd_dashboard.html" class="nav-btn">SD Suite Hub</a>
+      <a href="../index.html" class="nav-btn">Master Web Hub</a>
+    </div>
+  </header>
+  <div class="container">
+    <h1>Web Scraper & <span style="color: var(--primary);">Data Extractor</span></h1>
+    <p style="color: var(--muted); margin-bottom: 2rem;">Extract e-commerce product titles, pricing, ratings, and export to CSV.</p>
+    <div class="grid-2col">
+      <div class="card">
+        <div style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">🕷️ Scraper Controls</div>
+        <input type="text" id="targetUrl" value="https://books.toscrape.com/">
+        <button onclick="runScraper()">Execute Web Scraper</button>
+        <div style="margin-top: 1rem;" id="resultsList"></div>
+      </div>
+      <div class="card">
+        <div style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">💻 BeautifulSoup Python Scraper</div>
+        <pre><code>import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+
+url = 'https://books.toscrape.com/'
+res = requests.get(url)
+soup = BeautifulSoup(res.text, 'html.parser')
+
+items = []
+for book in soup.find_all('article', class_='product_pod'):
+    title = book.h3.a['title']
+    price = book.find('p', class_='price_color').text
+    items.append({'Title': title, 'Price': price})
+
+df = pd.DataFrame(items)
+df.to_csv('products.csv', index=False)</code></pre>
+      </div>
+    </div>
+  </div>
+  <script>
+    const sampleData = [
+      { title: "A Light in the Attic", price: "£51.77", rating: "5 Stars" },
+      { title: "Tipping the Velvet", price: "£53.74", rating: "1 Star" },
+      { title: "Soumission", price: "£50.10", rating: "1 Star" },
+      { title: "Sharp Objects", price: "£47.82", rating: "4 Stars" }
+    ];
+    function runScraper() {
+      const list = document.getElementById('resultsList');
+      list.innerHTML = '<div style="color:var(--primary); font-weight:700;">Scraping target URL...</div>';
+      setTimeout(() => {
+        list.innerHTML = '';
+        sampleData.forEach(item => {
+          const div = document.createElement('div');
+          div.className = 'data-item';
+          div.innerHTML = `<div><strong>${item.title}</strong></div><div style="color:var(--secondary); font-family:var(--font-mono);">${item.price} • ${item.rating}</div>`;
+          list.appendChild(div);
+        });
+      }, 500);
+    }
+  </script>
+</body>
+</html>

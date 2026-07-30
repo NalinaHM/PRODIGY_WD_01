@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Android Task 03 - Quiz App | Android App</title>
+  <meta name="description" content="Prodigy InfoTech Android Task 03: Android Development Quiz app with score tracking, countdown timer, and immediate answer evaluation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card: rgba(18, 24, 38, 0.8);
+      --primary: #3b82f6;
+      --secondary: #22d3ee;
+      --accent: #10b981;
+      --red: #ef4444;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(34, 211, 238, 0.12) 0%, transparent 40%);
+      min-height: 100vh;
+    }
+    header {
+      padding: 1.5rem 2rem;
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .brand span { color: var(--primary); }
+    .nav-links { display: flex; gap: 1rem; }
+    .nav-btn {
+      padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+      text-decoration: none; color: var(--muted); border: 1px solid var(--border); transition: all 0.2s ease;
+    }
+    .nav-btn:hover { color: white; border-color: var(--primary); background: rgba(59, 130, 246, 0.15); }
+
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+    .hero-pill {
+      display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem;
+      font-weight: 700; letter-spacing: 0.05em; color: var(--secondary); background: rgba(34, 211, 238, 0.1);
+      border: 1px solid rgba(34, 211, 238, 0.2); margin-bottom: 1rem;
+    }
+    h1 { font-family: var(--font-heading); font-size: 2.25rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .gradient-text { background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { color: var(--muted); font-size: 1rem; max-width: 700px; margin-bottom: 2rem; }
+
+    .grid-2col { display: grid; grid-template-columns: 360px 1fr; gap: 2rem; }
+    @media (max-width: 850px) { .grid-2col { grid-template-columns: 1fr; } }
+
+    /* Smartphone Device Frame */
+    .phone-frame {
+      width: 340px; height: 680px; background: #000; border-radius: 40px; padding: 12px;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.7), 0 0 0 8px #1e293b; margin: 0 auto;
+      display: flex; flex-direction: column; position: relative;
+    }
+    .phone-notch { width: 120px; height: 22px; background: #1e293b; border-radius: 0 0 14px 14px; margin: 0 auto; z-index: 10; }
+    .phone-screen {
+      flex: 1; background: #0f172a; border-radius: 30px; overflow: hidden; display: flex; flex-direction: column;
+    }
+    .android-app-bar { background: #1e3a8a; padding: 1rem; color: white; display: flex; justify-content: space-between; align-items: center; }
+    .app-title { font-size: 1.1rem; font-weight: 700; }
+    .app-body { padding: 1.25rem; flex: 1; overflow-y: auto; display: flex; flex-direction: column; justify-content: space-between; }
+
+    .q-number { font-size: 0.75rem; color: var(--secondary); font-weight: 700; text-transform: uppercase; }
+    .q-title { font-size: 1.05rem; font-weight: 700; margin: 0.5rem 0 1rem; line-height: 1.4; }
+
+    .opt-list { display: flex; flex-direction: column; gap: 0.6rem; }
+    .opt-btn {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px;
+      padding: 0.75rem; color: white; font-size: 0.85rem; font-weight: 600; text-align: left; cursor: pointer; transition: all 0.2s ease;
+    }
+    .opt-btn:hover { background: rgba(59, 130, 246, 0.2); border-color: var(--primary); }
+    .opt-btn.correct { background: rgba(16, 185, 129, 0.25); border-color: var(--accent); color: #34d399; }
+    .opt-btn.wrong { background: rgba(239, 68, 68, 0.25); border-color: var(--red); color: #f87171; }
+
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; }
+    pre { background: #060911; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; font-family: var(--font-mono); font-size: 0.85rem; color: #a5f3fc; overflow-x: auto; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="brand">💡 PRODIGY <span>ANDROID TRACK</span></a>
+    <div class="nav-links">
+      <a href="../ad_dashboard.html" class="nav-btn">Android Suite Hub</a>
+      <a href="../index.html" class="nav-btn">Master Web Hub</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="hero-pill">ANDROID TASK 03 • STANDALONE APP DEMO</div>
+    <h1>Interactive Quiz <span class="gradient-text">Application</span></h1>
+    <p class="subtitle">An Android Quiz Master app featuring multiple-choice questions, score tracking, countdown timers, and review feedback.</p>
+
+    <div class="grid-2col">
+      <!-- Smartphone Simulator -->
+      <div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="android-app-bar">
+              <div class="app-title">DroidQuiz 🧠</div>
+              <div style="font-size: 0.8rem; font-weight: 700; color: var(--secondary);" id="scoreBadge">Score: 0</div>
+            </div>
+            <div class="app-body" id="quizBody">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kotlin Source Code & Details -->
+      <div class="card">
+        <h2 style="font-family: var(--font-heading); margin-bottom: 1rem;">⚙️ Quiz Engine Architecture</h2>
+        <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 1.25rem;">
+          Implements a Kotlin Data Class model for <code>QuizQuestion</code> and manages state transitions between question screens and score review screens.
+        </p>
+
+        <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">📄 QuizQuestion.kt & MainActivity.kt Snippet</h3>
+        <pre><code>data class QuizQuestion(
+    val id: Int,
+    val questionText: String,
+    val options: List<String>,
+    val correctAnswerIndex: Int
+)
+
+class MainActivity : AppCompatActivity() {
+    private var currentQuestionIndex = 0
+    private var currentScore = 0
+
+    private fun checkAnswer(selectedIndex: Int) {
+        val q = quizQuestions[currentQuestionIndex]
+        if (selectedIndex == q.correctAnswerIndex) {
+            currentScore += 10
+            showToast("Correct! +10 Points")
+        }
+        loadNextQuestion()
+    }
+}</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+      { q: "What is the recommended official programming language for Android app development?", opts: ["Java", "Kotlin", "C++", "Python"], ans: 1 },
+      { q: "Which Android component handles UI layout rendering?", opts: ["BroadcastReceiver", "Activity", "Service", "ContentProvider"], ans: 1 },
+      { q: "What library is used for local SQLite database management in Modern Android?", opts: ["Room DB", "Retrofit", "Glide", "WorkManager"], ans: 0 },
+    ];
+    let qIdx = 0;
+    let score = 0;
+
+    function renderQuestion() {
+      const body = document.getElementById('quizBody');
+      if (qIdx >= questions.length) {
+        body.innerHTML = `
+          <div style="text-align: center; margin: auto;">
+            <div style="font-size: 3rem;">🏆</div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; margin: 0.5rem 0;">Quiz Completed!</h3>
+            <p style="color: var(--secondary); font-weight: 700; font-size: 1.2rem;">Final Score: ${score} Points</p>
+            <button onclick="resetQuiz()" style="margin-top: 1rem; padding: 0.6rem 1.2rem; background: var(--primary); color: white; border: none; border-radius: 10px; font-weight: 700; cursor: pointer;">Restart Quiz</button>
+          </div>
+        `;
+        return;
+      }
+
+      const q = questions[qIdx];
+      body.innerHTML = `
+        <div>
+          <div class="q-number">QUESTION ${qIdx + 1} OF ${questions.length}</div>
+          <div class="q-title">${q.q}</div>
+          <div class="opt-list">
+            ${q.opts.map((opt, i) => `<button class="opt-btn" onclick="selectOpt(${i})">${opt}</button>`).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    function selectOpt(idx) {
+      const q = questions[qIdx];
+      const btns = document.querySelectorAll('.opt-btn');
+      btns.forEach((b, i) => {
+        if (i === q.ans) b.classList.add('correct');
+        else if (i === idx) b.classList.add('wrong');
+        b.disabled = true;
+      });
+
+      if (idx === q.ans) score += 10;
+      document.getElementById('scoreBadge').textContent = `Score: ${score}`;
+
+      setTimeout(() => {
+        qIdx++;
+        renderQuestion();
+      }, 1000);
+    }
+
+    function resetQuiz() {
+      qIdx = 0; score = 0;
+      document.getElementById('scoreBadge').textContent = `Score: 0`;
+      renderQuestion();
+    }
+    renderQuestion();
+  </script>
+</body>
+</html>

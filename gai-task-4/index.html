@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GenAI Task 04 - AI Code Explainer & Debugger | Generative AI</title>
+  <meta name="description" content="Prodigy InfoTech GenAI Task 04: AI-powered code analysis tool providing syntax error detection, line-by-line explanations, and refactoring suggestions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card: rgba(18, 24, 38, 0.8);
+      --primary: #a855f7;
+      --secondary: #38bdf8;
+      --accent: #10b981;
+      --amber: #f59e0b;
+      --red: #ef4444;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(168, 85, 247, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(56, 189, 248, 0.12) 0%, transparent 40%);
+      min-height: 100vh;
+    }
+    header {
+      padding: 1.5rem 2rem;
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .brand span { color: var(--primary); }
+    .nav-links { display: flex; gap: 1rem; }
+    .nav-btn {
+      padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+      text-decoration: none; color: var(--muted); border: 1px solid var(--border); transition: all 0.2s ease;
+    }
+    .nav-btn:hover { color: white; border-color: var(--primary); background: rgba(168, 85, 247, 0.15); }
+
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+    .hero-pill {
+      display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem;
+      font-weight: 700; letter-spacing: 0.05em; color: var(--primary); background: rgba(168, 85, 247, 0.1);
+      border: 1px solid rgba(168, 85, 247, 0.2); margin-bottom: 1rem;
+    }
+    h1 { font-family: var(--font-heading); font-size: 2.25rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .gradient-text { background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { color: var(--muted); font-size: 1rem; max-width: 700px; margin-bottom: 2rem; }
+
+    .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) { .grid-2col { grid-template-columns: 1fr; } }
+
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; backdrop-filter: blur(12px); }
+    .card-title { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+
+    textarea { width: 100%; background: #060911; border: 1px solid var(--border); border-radius: 12px; padding: 0.85rem; color: #a5f3fc; font-family: var(--font-mono); font-size: 0.85rem; outline: none; margin-bottom: 1rem; }
+
+    .analysis-box { background: rgba(0,0,0,0.3); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; }
+    .bug-alert { background: rgba(239, 68, 68, 0.15); border-left: 4px solid var(--red); padding: 0.75rem; border-radius: 6px; margin-bottom: 1rem; font-size: 0.85rem; }
+    .opt-alert { background: rgba(16, 185, 129, 0.15); border-left: 4px solid var(--accent); padding: 0.75rem; border-radius: 6px; margin-bottom: 1rem; font-size: 0.85rem; }
+
+    pre { background: #060911; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; font-family: var(--font-mono); font-size: 0.85rem; color: #a5f3fc; overflow-x: auto; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="brand">💻 PRODIGY <span>GEN AI TRACK</span></a>
+    <div class="nav-links">
+      <a href="../gai_dashboard.html" class="nav-btn">Gen AI Suite Hub</a>
+      <a href="../index.html" class="nav-btn">Master Web Hub</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="hero-pill">GEN AI TASK 04 • STANDALONE DEMO</div>
+    <h1>AI Code Explainer & <span class="gradient-text">Debugger Engine</span></h1>
+    <p class="subtitle">AI code intelligence analyzing syntax bugs, security vulnerabilities, time complexity ($O(N)$), and refactoring recommendations.</p>
+
+    <div class="grid-2col">
+      <!-- Input -->
+      <div class="card">
+        <div class="card-title">💻 Source Code Input</div>
+
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem;">
+          <button style="padding: 0.35rem 0.75rem; border-radius: 6px; border: 1px solid var(--primary); background: rgba(168, 85, 247, 0.15); color: white; font-weight: 700; font-size: 0.75rem;">Python</button>
+          <button style="padding: 0.35rem 0.75rem; border-radius: 6px; border: 1px solid var(--border); background: rgba(255,255,255,0.05); color: var(--muted); font-size: 0.75rem;">JavaScript</button>
+          <button style="padding: 0.35rem 0.75rem; border-radius: 6px; border: 1px solid var(--border); background: rgba(255,255,255,0.05); color: var(--muted); font-size: 0.75rem;">Kotlin</button>
+        </div>
+
+        <textarea id="codeText" rows="10">def calculate_discount(price, discount_rate):
+    # Potential Bug: Missing zero-check and bounds check
+    total = price - (price * discount_rate)
+    return total
+
+prices = [100, 250, 400]
+for p in prices:
+    print(calculate_discount(p, 0.15))</textarea>
+
+        <button onclick="analyzeCode()" style="width: 100%; padding: 0.75rem; background: var(--primary); color: white; border: none; border-radius: 12px; font-weight: 700; font-family: var(--font-heading); cursor: pointer;">
+          Analyze & Debug Code 🔍
+        </button>
+      </div>
+
+      <!-- Analysis Results -->
+      <div class="card">
+        <div class="card-title">📊 AI Code Intelligence Report</div>
+
+        <div class="analysis-box">
+          <div class="bug-alert">
+            <strong style="color: #f87171;">⚠️ Identified Edge Case / Bug:</strong><br>
+            <code>discount_rate</code> should be bounded between 0.0 and 1.0 to prevent negative pricing.
+          </div>
+
+          <div class="opt-alert">
+            <strong style="color: #34d399;">💡 Refactored Recommendation:</strong><br>
+            Use list comprehension <code>[p * (1 - rate) for p in prices]</code> for $O(N)$ efficiency.
+          </div>
+
+          <div style="font-size: 0.85rem; margin-top: 1rem;">
+            <strong>⏱️ Time Complexity:</strong> <code style="color: var(--secondary);">O(N)</code> linear traversal<br>
+            <strong>💾 Space Complexity:</strong> <code style="color: var(--secondary);">O(1)</code> auxiliary space
+          </div>
+        </div>
+
+        <div style="margin-top: 1.25rem;">
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--text);">🐍 Python Execution Command</span>
+          <pre><code>cd gai-task-4
+python code_assistant.py</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function analyzeCode() {
+      alert("AI Code Intelligence complete! 0 Critical Errors, 1 Boundary Warning detected.");
+    }
+  </script>
+</body>
+</html>

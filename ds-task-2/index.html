@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DS Task 02 - Titanic Data Cleaning & EDA | Data Science</title>
+  <meta name="description" content="Data Science Task 02: Titanic passenger data cleaning, missing value imputation, feature engineering, and survival bias exploratory analysis.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: rgba(22, 30, 46, 0.75);
+      --primary: #0284c7;
+      --secondary: #38bdf8;
+      --accent: #10b981;
+      --pink: #ec4899;
+      --amber: #f59e0b;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(2, 132, 199, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.12) 0%, transparent 40%);
+      min-height: 100vh;
+    }
+    header {
+      padding: 1.5rem 2rem;
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .brand span { color: var(--secondary); }
+    .nav-links { display: flex; gap: 1rem; }
+    .nav-btn {
+      padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+      text-decoration: none; color: var(--muted); border: 1px solid var(--border); transition: all 0.2s ease;
+    }
+    .nav-btn:hover { color: white; border-color: var(--secondary); background: rgba(56, 189, 248, 0.15); }
+    
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+    
+    .hero-pill {
+      display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem;
+      font-weight: 700; letter-spacing: 0.05em; color: var(--secondary); background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.2); margin-bottom: 1rem;
+    }
+    h1 { font-family: var(--font-heading); font-size: 2.25rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .gradient-text { background: linear-gradient(135deg, var(--secondary), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { color: var(--muted); font-size: 1rem; max-width: 700px; margin-bottom: 2rem; }
+
+    .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .metric-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem;
+      backdrop-filter: blur(10px);
+    }
+    .metric-title { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; font-weight: 600; }
+    .metric-value { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; color: var(--secondary); margin-top: 0.25rem; }
+
+    .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) { .grid-2col { grid-template-columns: 1fr; } }
+
+    .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem;
+      backdrop-filter: blur(12px); box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .card-title { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+
+    .table-custom { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.85rem; }
+    .table-custom th, .table-custom td { padding: 0.65rem 0.75rem; text-align: left; border-bottom: 1px solid var(--border); }
+    .table-custom th { color: var(--muted); text-transform: uppercase; font-size: 0.75rem; font-weight: 700; }
+
+    .rate-badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 6px; font-weight: 700; font-family: var(--font-mono); }
+    .rate-high { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+    .rate-low { background: rgba(239, 68, 68, 0.15); color: #f87171; }
+
+    pre {
+      background: #060911; border: 1px solid var(--border); border-radius: 12px; padding: 1rem;
+      font-family: var(--font-mono); font-size: 0.85rem; color: #a5f3fc; overflow-x: auto; margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="brand" id="brandLink">🚢 PRODIGY <span>DS TRACK</span></a>
+    <div class="nav-links">
+      <a href="../ds_dashboard.html" class="nav-btn" id="btnDSDashboard">DS Hub Dashboard</a>
+      <a href="../index.html" class="nav-btn" id="btnMasterHub">Master Web Hub</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="hero-pill">DS TASK 02 • STANDALONE DEMO</div>
+    <h1>Titanic Data Cleaning & <span class="gradient-text">EDA Analysis</span></h1>
+    <p class="subtitle">Data cleaning pipeline for passenger records (age median imputation, feature engineering for family size) and exploratory survival bias analysis.</p>
+
+    <!-- Metrics -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-title">Overall Survival Rate</div>
+        <div class="metric-value" style="color: var(--secondary);">41.08%</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Female Survival Rate</div>
+        <div class="metric-value" style="color: var(--pink);">79.81%</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Male Survival Rate</div>
+        <div class="metric-value" style="color: #f87171;">19.69%</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">1st Class Female Survival</div>
+        <div class="metric-value" style="color: var(--accent);">93.59%</div>
+      </div>
+    </div>
+
+    <div class="grid-2col">
+      <!-- Survival Crosstab -->
+      <div class="card">
+        <div class="card-title">📊 Survival Rate by Gender & Passenger Class</div>
+
+        <table class="table-custom">
+          <thead>
+            <tr>
+              <th>Passenger Class</th>
+              <th>Gender</th>
+              <th>Total Count</th>
+              <th>Survival Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1st Class 🥇</td>
+              <td>Female 👩</td>
+              <td>109</td>
+              <td><span class="rate-badge rate-high">93.59%</span></td>
+            </tr>
+            <tr>
+              <td>1st Class 🥇</td>
+              <td>Male 👨</td>
+              <td>116</td>
+              <td><span class="rate-badge rate-low">36.05%</span></td>
+            </tr>
+            <tr>
+              <td>2nd Class 🥈</td>
+              <td>Female 👩</td>
+              <td>77</td>
+              <td><span class="rate-badge rate-high">75.41%</span></td>
+            </tr>
+            <tr>
+              <td>2nd Class 🥈</td>
+              <td>Male 👨</td>
+              <td>120</td>
+              <td><span class="rate-badge rate-low">12.50%</span></td>
+            </tr>
+            <tr>
+              <td>3rd Class 🥉</td>
+              <td>Female 👩</td>
+              <td>131</td>
+              <td><span class="rate-badge rate-high">75.28%</span></td>
+            </tr>
+            <tr>
+              <td>3rd Class 🥉</td>
+              <td>Male 👨</td>
+              <td>338</td>
+              <td><span class="rate-badge rate-low">14.78%</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- EDA Insights & Pipeline -->
+      <div class="card">
+        <div class="card-title">💡 Data Cleaning & Key EDA Insights</div>
+
+        <div style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.85rem;">
+          <div style="background: rgba(255,255,255,0.03); padding: 0.85rem; border-radius: 10px; border-left: 4px solid var(--secondary);">
+            <strong style="color: var(--secondary);">1. Missing Value Imputation:</strong> Age missing values imputed using median grouped by <code>Pclass</code> and <code>Sex</code>.
+          </div>
+          <div style="background: rgba(255,255,255,0.03); padding: 0.85rem; border-radius: 10px; border-left: 4px solid var(--pink);">
+            <strong style="color: var(--pink);">2. "Women & Children First":</strong> Female passengers achieved a 79.81% survival rate compared to 19.69% for male passengers.
+          </div>
+          <div style="background: rgba(255,255,255,0.03); padding: 0.85rem; border-radius: 10px; border-left: 4px solid var(--accent);">
+            <strong style="color: var(--accent);">3. Socio-Economic Status Bias:</strong> 1st Class passengers had a 56.0% overall survival rate vs 31.98% for 2nd Class and 37.74% for 3rd Class.
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--text);">🐍 Python Execution Command</span>
+          <pre><code>cd ds-task-2
+python clean_and_eda.py</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

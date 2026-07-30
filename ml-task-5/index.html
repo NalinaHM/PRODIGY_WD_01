@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ML Task 05 - Food Recognition & Calorie Estimator | Multi-Output Model</title>
+  <meta name="description" content="Machine Learning Task 05: Multi-modal Random Forest & Gradient Boosting Regressor for food item recognition and calorie/nutrition estimation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: rgba(22, 30, 46, 0.75);
+      --primary: #6366f1;
+      --secondary: #38bdf8;
+      --accent: #10b981;
+      --amber: #f59e0b;
+      --red: #ef4444;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(245, 158, 11, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(239, 68, 68, 0.12) 0%, transparent 40%);
+      min-height: 100vh;
+    }
+    header {
+      padding: 1.5rem 2rem;
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .brand span { color: var(--amber); }
+    .nav-links { display: flex; gap: 1rem; }
+    .nav-btn {
+      padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+      text-decoration: none; color: var(--muted); border: 1px solid var(--border); transition: all 0.2s ease;
+    }
+    .nav-btn:hover { color: white; border-color: var(--amber); background: rgba(245, 158, 11, 0.15); }
+    
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+    
+    .hero-pill {
+      display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem;
+      font-weight: 700; letter-spacing: 0.05em; color: var(--amber); background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.2); margin-bottom: 1rem;
+    }
+    h1 { font-family: var(--font-heading); font-size: 2.25rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .gradient-text { background: linear-gradient(135deg, var(--amber), var(--red)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { color: var(--muted); font-size: 1rem; max-width: 700px; margin-bottom: 2rem; }
+
+    .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .metric-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem;
+      backdrop-filter: blur(10px);
+    }
+    .metric-title { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; font-weight: 600; }
+    .metric-value { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; color: var(--amber); margin-top: 0.25rem; }
+
+    .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) { .grid-2col { grid-template-columns: 1fr; } }
+
+    .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem;
+      backdrop-filter: blur(12px); box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .card-title { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+
+    .food-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-bottom: 1.25rem; }
+    .food-btn {
+      background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); border-radius: 10px;
+      padding: 0.6rem 0.25rem; text-align: center; cursor: pointer; transition: all 0.2s ease;
+    }
+    .food-btn:hover, .food-btn.active { border-color: var(--amber); background: rgba(245, 158, 11, 0.15); }
+    .food-icon { font-size: 1.8rem; display: block; }
+    .food-name { font-size: 0.75rem; font-weight: 600; color: var(--muted); margin-top: 0.2rem; }
+
+    .form-group { margin-bottom: 1.25rem; }
+    .form-label { display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .form-value { color: var(--amber); font-family: var(--font-mono); font-weight: 600; }
+    input[type="range"] {
+      width: 100%; height: 6px; border-radius: 3px; background: rgba(255, 255, 255, 0.15);
+      outline: none; accent-color: var(--amber); cursor: pointer;
+    }
+
+    .calorie-box {
+      background: rgba(245, 158, 11, 0.1); border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 12px; padding: 1.5rem; text-align: center; margin-top: 1rem;
+    }
+    .calorie-num { font-family: var(--font-heading); font-size: 2.8rem; font-weight: 800; color: var(--amber); margin: 0.2rem 0; }
+
+    .macro-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-top: 1.25rem; }
+    .macro-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem; text-align: center; }
+    .macro-val { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; margin-top: 0.2rem; }
+
+    pre {
+      background: #060911; border: 1px solid var(--border); border-radius: 12px; padding: 1rem;
+      font-family: var(--font-mono); font-size: 0.85rem; color: #a5f3fc; overflow-x: auto; margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="brand" id="brandLink">🥗 PRODIGY <span>ML TRACK</span></a>
+    <div class="nav-links">
+      <a href="../ml_dashboard.html" class="nav-btn" id="btnMLDashboard">ML Hub Dashboard</a>
+      <a href="../index.html" class="nav-btn" id="btnMasterHub">Master Web Hub</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="hero-pill">ML TASK 05 • STANDALONE DEMO</div>
+    <h1>Food Recognition & <span class="gradient-text">Calorie Estimator</span></h1>
+    <p class="subtitle">Multi-modal Random Forest & Gradient Boosting Regressor identifying food items and predicting precise caloric density and macronutrient breakdown.</p>
+
+    <!-- Metrics -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-title">Classification Accuracy</div>
+        <div class="metric-value" style="color: var(--accent);">98.93%</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Calorie Regressor R²</div>
+        <div class="metric-value" style="color: var(--amber);">0.9925</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Mean Absolute Error</div>
+        <div class="metric-value">4.06 kcal/100g</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Food Categories</div>
+        <div class="metric-value">7 Items</div>
+      </div>
+    </div>
+
+    <div class="grid-2col">
+      <!-- Calculator -->
+      <div class="card">
+        <div class="card-title">🍕 Food Item & Portion Simulator</div>
+
+        <span style="font-size: 0.8rem; color: var(--muted); font-weight: 600;">SELECT RECOGNIZED FOOD ITEM:</span>
+        <div class="food-grid" style="margin-top: 0.5rem;">
+          <div class="food-btn active" onclick="selectFood(0)">
+            <span class="food-icon">🍕</span>
+            <div class="food-name">Pizza</div>
+          </div>
+          <div class="food-btn" onclick="selectFood(1)">
+            <span class="food-icon">🥗</span>
+            <div class="food-name">Salad</div>
+          </div>
+          <div class="food-btn" onclick="selectFood(2)">
+            <span class="food-icon">🍔</span>
+            <div class="food-name">Burger</div>
+          </div>
+          <div class="food-btn" onclick="selectFood(3)">
+            <span class="food-icon">🍣</span>
+            <div class="food-name">Sushi</div>
+          </div>
+          <div class="food-btn" onclick="selectFood(4)">
+            <span class="food-icon">🍝</span>
+            <div class="food-name">Pasta</div>
+          </div>
+          <div class="food-btn" onclick="selectFood(5)">
+            <span class="food-icon">🍎</span>
+            <div class="food-name">Apple</div>
+          </div>
+          <div class="food-btn" onclick="selectFood(6)">
+            <span class="food-icon">🥩</span>
+            <div class="food-name">Steak</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label"><span>Portion Weight (Grams)</span><span class="form-value" id="valWeight">250g</span></div>
+          <input type="range" id="inputWeight" min="50" max="600" step="10" value="250">
+        </div>
+
+        <div class="calorie-box">
+          <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--muted);">ESTIMATED ENERGY CONTENT</span>
+          <div class="calorie-num" id="totalCalories">665 kcal</div>
+          <span style="font-size: 0.8rem; color: var(--accent); font-weight: 600;" id="modelConf">ML Recognition Confidence: 99.4%</span>
+        </div>
+      </div>
+
+      <!-- Macro Details -->
+      <div class="card">
+        <div class="card-title">📊 Estimated Macronutrient Breakdown</div>
+
+        <div class="macro-grid">
+          <div class="macro-card">
+            <span style="font-size: 0.75rem; color: var(--muted); text-transform: uppercase;">Carbohydrates</span>
+            <div class="macro-val" style="color: var(--amber);" id="valCarbs">82g</div>
+          </div>
+          <div class="macro-card">
+            <span style="font-size: 0.75rem; color: var(--muted); text-transform: uppercase;">Protein</span>
+            <div class="macro-val" style="color: var(--secondary);" id="valProtein">28g</div>
+          </div>
+          <div class="macro-card">
+            <span style="font-size: 0.75rem; color: var(--muted); text-transform: uppercase;">Fat</span>
+            <div class="macro-val" style="color: var(--red);" id="valFat">26g</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem; background: rgba(0,0,0,0.2); border-radius: 10px; padding: 1rem; border: 1px solid var(--border);">
+          <div style="font-size: 0.85rem; font-weight: 700; color: var(--text); margin-bottom: 0.4rem;">💡 Model Nutritional Profile</div>
+          <p style="font-size: 0.8rem; color: var(--muted);" id="foodDesc">Pizza slice featuring melted mozzarella, tomato passata, and wheat crust. Caloric density: 266 kcal per 100g.</p>
+        </div>
+
+        <div style="margin-top: 1.25rem;">
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--text);">🐍 Python Execution Command</span>
+          <pre><code>cd ml-task-5
+python train_food_model.py</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const foods = [
+      { name: "Pizza", icon: "🍕", kcal100: 266, carbs100: 33, prot100: 11, fat100: 10, desc: "Mozzarella cheese, tomato passata, and wheat crust. Caloric density: 266 kcal / 100g." },
+      { name: "Salad", icon: "🥗", kcal100: 65, carbs100: 6, prot100: 2, fat100: 4, desc: "Fresh garden greens, cherry tomatoes, and olive oil dressing. Caloric density: 65 kcal / 100g." },
+      { name: "Burger", icon: "🍔", kcal100: 295, carbs100: 30, prot100: 17, fat100: 14, desc: "Beef patty, brioche bun, cheddar cheese, and pickles. Caloric density: 295 kcal / 100g." },
+      { name: "Sushi", icon: "🍣", kcal100: 145, carbs100: 28, prot100: 6, fat100: 1.5, desc: "Seasoned vinegared rice with fresh salmon and nori seaweed. Caloric density: 145 kcal / 100g." },
+      { name: "Pasta", icon: "🍝", kcal100: 158, carbs100: 31, prot100: 6, fat100: 1.2, desc: "Durum wheat pasta cooked al dente with rich marinara sauce. Caloric density: 158 kcal / 100g." },
+      { name: "Apple", icon: "🍎", kcal100: 52, carbs100: 14, prot100: 0.3, fat100: 0.2, desc: "Fresh crisp apple packed with natural fructose and dietary fiber. Caloric density: 52 kcal / 100g." },
+      { name: "Steak", icon: "🥩", kcal100: 271, carbs100: 0, prot100: 26, fat100: 19, desc: "Grilled ribeye beef steak rich in protein and iron. Caloric density: 271 kcal / 100g." },
+    ];
+
+    let currentFoodIdx = 0;
+    const inputWeight = document.getElementById('inputWeight');
+
+    function selectFood(idx) {
+      currentFoodIdx = idx;
+      document.querySelectorAll('.food-btn').forEach((b, i) => b.classList.toggle('active', i === idx));
+      update();
+    }
+
+    function update() {
+      const w = parseInt(inputWeight.value);
+      document.getElementById('valWeight').textContent = w + 'g';
+
+      const food = foods[currentFoodIdx];
+      const factor = w / 100;
+      const totalKcal = Math.round(food.kcal100 * factor);
+      const totalCarbs = Math.round(food.carbs100 * factor);
+      const totalProt = Math.round(food.prot100 * factor);
+      const totalFat = Math.round(food.fat100 * factor);
+
+      document.getElementById('totalCalories').textContent = totalKcal + ' kcal';
+      document.getElementById('valCarbs').textContent = totalCarbs + 'g';
+      document.getElementById('valProtein').textContent = totalProt + 'g';
+      document.getElementById('valFat').textContent = totalFat + 'g';
+      document.getElementById('foodDesc').textContent = food.desc;
+    }
+
+    inputWeight.addEventListener('input', update);
+    selectFood(0);
+  </script>
+</body>
+</html>

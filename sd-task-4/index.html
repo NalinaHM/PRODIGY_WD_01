@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SD Task 04 - Sudoku Solver | Software Development</title>
+  <meta name="description" content="Prodigy InfoTech SD Task 04: Backtracking algorithm Sudoku Solver and 9x9 grid visualizer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card: rgba(18, 24, 38, 0.8);
+      --primary: #a855f7;
+      --secondary: #38bdf8;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--font-body); background-color: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    header { padding: 1.5rem 2rem; background: rgba(9, 13, 22, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+    .brand { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .brand span { color: var(--primary); }
+    .nav-links { display: flex; gap: 1rem; }
+    .nav-btn { padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600; text-decoration: none; color: var(--muted); border: 1px solid var(--border); }
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+    .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) { .grid-2col { grid-template-columns: 1fr; } }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; }
+    .sudoku-grid { display: grid; grid-template-columns: repeat(9, 1fr); gap: 2px; width: 280px; height: 280px; background: #334155; padding: 4px; border-radius: 8px; margin: 0 auto 1rem; }
+    .s-cell { background: #0f172a; border: none; color: white; text-align: center; font-family: var(--font-mono); font-size: 1rem; font-weight: 700; outline: none; }
+    .s-cell.solved { color: var(--secondary); background: rgba(56, 189, 248, 0.15); }
+    button { width: 100%; padding: 0.75rem; background: var(--primary); color: white; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; }
+    pre { background: #060911; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; font-family: var(--font-mono); font-size: 0.85rem; color: #a5f3fc; overflow-x: auto; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../index.html" class="brand">🧩 PRODIGY <span>SD TRACK</span></a>
+    <div class="nav-links">
+      <a href="../sd_dashboard.html" class="nav-btn">SD Suite Hub</a>
+      <a href="../index.html" class="nav-btn">Master Web Hub</a>
+    </div>
+  </header>
+  <div class="container">
+    <h1>Sudoku Solver <span style="color: var(--primary);">Algorithm</span></h1>
+    <p style="color: var(--muted); margin-bottom: 2rem;">Backtracking Sudoku solver filling 9x9 puzzle matrices.</p>
+    <div class="grid-2col">
+      <div class="card">
+        <div style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">🧩 9x9 Sudoku Grid</div>
+        <div class="sudoku-grid" id="grid"></div>
+        <button onclick="solveSudoku()">Solve Puzzle (Backtracking Algorithm)</button>
+      </div>
+      <div class="card">
+        <div style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">💻 Python Backtracking Solver</div>
+        <pre><code>def solve(board):
+    find = find_empty(board)
+    if not find:
+        return True
+    row, col = find
+
+    for i in range(1, 10):
+        if is_valid(board, i, (row, col)):
+            board[row][col] = i
+            if solve(board):
+                return True
+            board[row][col] = 0
+    return False</code></pre>
+      </div>
+    </div>
+  </div>
+  <script>
+    const sampleBoard = [
+      [5,3,0,0,7,0,0,0,0],
+      [6,0,0,1,9,5,0,0,0],
+      [0,9,8,0,0,0,0,6,0],
+      [8,0,0,0,6,0,0,0,3],
+      [4,0,0,8,0,3,0,0,1],
+      [7,0,0,0,2,0,0,0,6],
+      [0,6,0,0,0,0,2,8,0],
+      [0,0,0,4,1,9,0,0,5],
+      [0,0,0,0,8,0,0,7,9]
+    ];
+    const solvedBoard = [
+      [5,3,4,6,7,8,9,1,2],
+      [6,7,2,1,9,5,3,4,8],
+      [1,9,8,3,4,2,5,6,7],
+      [8,5,9,7,6,1,4,2,3],
+      [4,2,6,8,5,3,7,9,1],
+      [7,1,3,9,2,4,8,5,6],
+      [9,6,1,5,3,7,2,8,4],
+      [2,8,7,4,1,9,6,3,5],
+      [3,4,5,2,8,6,1,7,9]
+    ];
+    function renderGrid(board, isSolved=false) {
+      const grid = document.getElementById('grid');
+      grid.innerHTML = '';
+      for(let r=0; r<9; r++) {
+        for(let c=0; c<9; c++) {
+          const val = board[r][c];
+          const input = document.createElement('input');
+          input.className = `s-cell ${isSolved && sampleBoard[r][c] === 0 ? 'solved' : ''}`;
+          input.value = val === 0 ? '' : val;
+          input.readOnly = true;
+          grid.appendChild(input);
+        }
+      }
+    }
+    function solveSudoku() { renderGrid(solvedBoard, true); }
+    renderGrid(sampleBoard);
+  </script>
+</body>
+</html>

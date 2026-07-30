@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SD Task 02 - Number Guessing Game | Software Development</title>
+  <meta name="description" content="Prodigy InfoTech SD Task 02: Interactive Number Guessing Game with difficulty bounds and attempt counters.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card: rgba(18, 24, 38, 0.8);
+      --primary: #38bdf8;
+      --secondary: #10b981;
+      --accent: #f59e0b;
+      --red: #ef4444;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--font-body); background-color: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    header { padding: 1.5rem 2rem; background: rgba(9, 13, 22, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+    .brand { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .brand span { color: var(--primary); }
+    .nav-links { display: flex; gap: 1rem; }
+    .nav-btn { padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600; text-decoration: none; color: var(--muted); border: 1px solid var(--border); }
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+    .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) { .grid-2col { grid-template-columns: 1fr; } }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; }
+    .card-title { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; }
+    .game-box { background: rgba(0,0,0,0.3); border-radius: 12px; padding: 1.25rem; border: 1px solid var(--border); text-align: center; }
+    input[type="number"] { width: 100%; background: #060911; border: 1px solid var(--border); border-radius: 10px; padding: 0.75rem; color: white; font-size: 1.2rem; font-family: var(--font-mono); text-align: center; margin-bottom: 1rem; }
+    button { width: 100%; padding: 0.75rem; background: var(--primary); color: white; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; }
+    pre { background: #060911; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; font-family: var(--font-mono); font-size: 0.85rem; color: #a5f3fc; overflow-x: auto; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../index.html" class="brand">🎲 PRODIGY <span>SD TRACK</span></a>
+    <div class="nav-links">
+      <a href="../sd_dashboard.html" class="nav-btn">SD Suite Hub</a>
+      <a href="../index.html" class="nav-btn">Master Web Hub</a>
+    </div>
+  </header>
+  <div class="container">
+    <h1>Number Guessing <span style="color: var(--primary);">Game Engine</span></h1>
+    <p style="color: var(--muted); margin-bottom: 2rem;">Guess the random number generated between 1 and 100.</p>
+    <div class="grid-2col">
+      <div class="card">
+        <div class="card-title">🎮 Interactive Game Board</div>
+        <div class="game-box">
+          <div style="font-size: 0.8rem; color: var(--muted); margin-bottom: 0.5rem;" id="attemptCount">Attempts: 0</div>
+          <input type="number" id="guessIn" placeholder="Enter number (1-100)">
+          <button onclick="submitGuess()">Submit Guess</button>
+          <div style="margin-top: 1rem; font-weight: 700; font-size: 1.1rem; color: var(--primary);" id="feedbackText">Game Started! Take a guess.</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">💻 Python Game Code</div>
+        <pre><code>import random
+
+secret = random.randint(1, 100)
+attempts = 0
+while True:
+    guess = int(input("Enter guess: "))
+    attempts += 1
+    if guess < secret:
+        print("Too Low!")
+    elif guess > secret:
+        print("Too High!")
+    else:
+        print(f"Correct in {attempts} attempts!")
+        break</code></pre>
+      </div>
+    </div>
+  </div>
+  <script>
+    let secret = Math.floor(Math.random() * 100) + 1;
+    let attempts = 0;
+    function submitGuess() {
+      const val = parseInt(document.getElementById('guessIn').value);
+      if (!val) return;
+      attempts++;
+      document.getElementById('attemptCount').textContent = `Attempts: ${attempts}`;
+      const fb = document.getElementById('feedbackText');
+      if (val < secret) { fb.textContent = "📈 Too Low! Try a higher number."; fb.style.color = "var(--primary)"; }
+      else if (val > secret) { fb.textContent = "📉 Too High! Try a lower number."; fb.style.color = "var(--accent)"; }
+      else { fb.textContent = `🎉 Correct! You guessed ${secret} in ${attempts} attempts!`; fb.style.color = "var(--secondary)"; }
+    }
+  </script>
+</body>
+</html>

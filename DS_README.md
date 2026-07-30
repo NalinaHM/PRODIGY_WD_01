@@ -6,13 +6,13 @@ Official project repository containing 5 standalone Data Science tasks implement
 
 ## 📂 Standalone Data Science Tasks
 
-| Task ID | Task Title | Methodology / Analytics | Project Directory | Documentation |
-| :--- | :--- | :--- | :--- | :--- |
-| **DS Task 01** | **Demographic Distribution Analysis** | Continuous & Categorical Histograms / Bar Charts | [`/ds-task-1`](ds-task-1/) | [`/ds-task-1/README.md`](ds-task-1/README.md) |
-| **DS Task 02** | **Titanic Data Cleaning & EDA** | Imputation, Feature Engineering & Survival Trends | [`/ds-task-2`](ds-task-2/) | [`/ds-task-2/README.md`](ds-task-2/README.md) |
-| **DS Task 03** | **Bank Marketing Decision Tree** | Pruned Entropy Decision Tree Classifier | [`/ds-task-3`](ds-task-3/) | [`/ds-task-3/README.md`](ds-task-3/README.md) |
-| **DS Task 04** | **Social Media Sentiment Analysis** | Brand Polarity Crosstab & Net Sentiment Score | [`/ds-task-4`](ds-task-4/) | [`/ds-task-4/README.md`](ds-task-4/README.md) |
-| **DS Task 05** | **Traffic Accident Hotspot Analysis** | Rush Hour Temporal & Weather Hotspot Analysis | [`/ds-task-5`](ds-task-5/) | [`/ds-task-5/README.md`](ds-task-5/README.md) |
+| Task ID | Task Title | Methodology / Analytics | Standalone Live Demo | Project Directory | Documentation |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **DS Task 01** | **Demographic Distribution Analysis** | Continuous & Categorical Histograms / Bar Charts | 📈 [Live Demo](ds-task-1/index.html) | [`/ds-task-1`](ds-task-1/) | [`/ds-task-1/README.md`](ds-task-1/README.md) |
+| **DS Task 02** | **Titanic Data Cleaning & EDA** | Imputation, Feature Engineering & Survival Trends | 🚢 [Live Demo](ds-task-2/index.html) | [`/ds-task-2`](ds-task-2/) | [`/ds-task-2/README.md`](ds-task-2/README.md) |
+| **DS Task 03** | **Bank Marketing Decision Tree** | Pruned Entropy Decision Tree Classifier | 🌳 [Live Demo](ds-task-3/index.html) | [`/ds-task-3`](ds-task-3/) | [`/ds-task-3/README.md`](ds-task-3/README.md) |
+| **DS Task 04** | **Social Media Sentiment Analysis** | Brand Polarity Crosstab & Net Sentiment Score | 💬 [Live Demo](ds-task-4/index.html) | [`/ds-task-4`](ds-task-4/) | [`/ds-task-4/README.md`](ds-task-4/README.md) |
+| **DS Task 05** | **Traffic Accident Hotspot Analysis** | Rush Hour Temporal & Weather Hotspot Analysis | 🚗 [Live Demo](ds-task-5/index.html) | [`/ds-task-5`](ds-task-5/) | [`/ds-task-5/README.md`](ds-task-5/README.md) |
 
 ---
 

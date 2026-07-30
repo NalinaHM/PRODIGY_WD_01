@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FS Task 04 - Blogging & CMS Platform | Full Stack Web</title>
+  <meta name="description" content="Prodigy InfoTech FS Task 04: Full Stack Blogging and Content Management System (CMS) with rich post creation and tag management.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card: rgba(18, 24, 38, 0.8);
+      --primary: #a855f7;
+      --secondary: #38bdf8;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--font-body); background-color: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    header { padding: 1.5rem 2rem; background: rgba(9, 13, 22, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+    .brand { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .brand span { color: var(--primary); }
+    .nav-links { display: flex; gap: 1rem; }
+    .nav-btn { padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600; text-decoration: none; color: var(--muted); border: 1px solid var(--border); }
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+    .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) { .grid-2col { grid-template-columns: 1fr; } }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; }
+    input, textarea { width: 100%; background: #060911; border: 1px solid var(--border); border-radius: 8px; padding: 0.6rem; color: white; margin-bottom: 0.75rem; font-size: 0.85rem; }
+    button { width: 100%; padding: 0.65rem; background: var(--primary); color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; }
+    pre { background: #060911; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; font-family: var(--font-mono); font-size: 0.85rem; color: #a5f3fc; overflow-x: auto; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../index.html" class="brand">📝 PRODIGY <span>FULL STACK TRACK</span></a>
+    <div class="nav-links">
+      <a href="../fs_dashboard.html" class="nav-btn">FS Suite Hub</a>
+      <a href="../index.html" class="nav-btn">Master Web Hub</a>
+    </div>
+  </header>
+  <div class="container">
+    <h1>Blogging & <span style="color: var(--primary);">CMS Platform</span></h1>
+    <p style="color: var(--muted); margin-bottom: 2rem;">Full Stack Content Management System with post CRUD and tag filtering.</p>
+    <div class="grid-2col">
+      <div class="card">
+        <div style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">✍️ Create Blog Article</div>
+        <input type="text" id="postTitle" placeholder="Article Title">
+        <textarea id="postBody" rows="4" placeholder="Write article content..."></textarea>
+        <button onclick="publishPost()">Publish Article</button>
+        <div style="margin-top: 1rem;" id="postFeed"></div>
+      </div>
+      <div class="card">
+        <div style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">💻 Express.js CMS Posts API</div>
+        <pre><code>app.post('/api/posts', async (req, res) => {
+    const post = new Post({
+        title: req.body.title,
+        content: req.body.content,
+        author: req.user.id
+    });
+    await post.save();
+    res.status(201).json(post);
+});</code></pre>
+      </div>
+    </div>
+  </div>
+  <script>
+    let posts = [
+      { title: "Building Modern Full Stack Web Applications", content: "Combining React and Node.js for scalability..." }
+    ];
+    function render() {
+      const feed = document.getElementById('postFeed');
+      feed.innerHTML = '';
+      posts.forEach(p => {
+        const div = document.createElement('div');
+        div.style.cssText = "background:rgba(255,255,255,0.04); padding:0.75rem; border-radius:8px; margin-bottom:0.5rem; font-size:0.85rem;";
+        div.innerHTML = `<strong>${p.title}</strong><p style="color:var(--muted); margin-top:0.2rem;">${p.content}</p>`;
+        feed.appendChild(div);
+      });
+    }
+    function publishPost() {
+      const t = document.getElementById('postTitle').value.trim();
+      const b = document.getElementById('postBody').value.trim();
+      if (!t || !b) return;
+      posts.unshift({ title: t, content: b });
+      document.getElementById('postTitle').value = ''; document.getElementById('postBody').value = '';
+      render();
+    }
+    render();
+  </script>
+</body>
+</html>

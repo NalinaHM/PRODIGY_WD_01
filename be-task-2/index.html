@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BE Task 02 - Database ORM & Query Optimization | Backend Web</title>
+  <meta name="description" content="Prodigy InfoTech BE Task 02: Database ORM schema indexing and SQL query optimization.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card: rgba(18, 24, 38, 0.8);
+      --primary: #10b981;
+      --secondary: #38bdf8;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--font-body); background-color: var(--bg); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    header { padding: 1.5rem 2rem; background: rgba(9, 13, 22, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+    .brand { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .brand span { color: var(--primary); }
+    .nav-links { display: flex; gap: 1rem; }
+    .nav-btn { padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600; text-decoration: none; color: var(--muted); border: 1px solid var(--border); }
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+    .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) { .grid-2col { grid-template-columns: 1fr; } }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; }
+    pre { background: #060911; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; font-family: var(--font-mono); font-size: 0.85rem; color: #a5f3fc; overflow-x: auto; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../index.html" class="brand">🗄️ PRODIGY <span>BACKEND TRACK</span></a>
+    <div class="nav-links">
+      <a href="../be_dashboard.html" class="nav-btn">BE Suite Hub</a>
+      <a href="../index.html" class="nav-btn">Master Web Hub</a>
+    </div>
+  </header>
+  <div class="container">
+    <h1>Database ORM & <span style="color: var(--primary);">Query Optimization</span></h1>
+    <p style="color: var(--muted); margin-bottom: 2rem;">SQL database query indexing and ORM model mapping.</p>
+    <div class="grid-2col">
+      <div class="card">
+        <div style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">📊 Query Performance Metrics</div>
+        <div style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 10px; border: 1px solid var(--border);">
+          <div style="font-size: 0.85rem; color: var(--muted);">UNINDEXED QUERY TIME: <strong style="color:#f87171;">450ms</strong></div>
+          <div style="font-size: 0.85rem; color: var(--muted); margin-top: 0.5rem;">INDEXED ORM QUERY TIME: <strong style="color:var(--primary);">12ms (37.5x faster)</strong></div>
+        </div>
+      </div>
+      <div class="card">
+        <div style="font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;">💻 SQLAlchemy ORM Model</div>
+        <pre><code>from sqlalchemy import Column, Integer, String, Index
+from sqlalchemy.ext.declarative import declarative_base
+
+Base = declarative_base()
+
+class User(Base):
+    __tablename__ = 'users'
+    id = Column(Integer, primary_key=True)
+    email = Column(String(255), unique=True, index=True)
+    
+    __table_args__ = (
+        Index('idx_user_email', 'email'),
+    )</code></pre>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

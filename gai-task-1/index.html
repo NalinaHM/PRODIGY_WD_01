@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GenAI Task 01 - AI Text & Story Generator | Generative AI</title>
+  <meta name="description" content="Prodigy InfoTech GenAI Task 01: LLM text & story generation application with prompt engineering, temperature/top-p controls, and genre presets.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card: rgba(18, 24, 38, 0.8);
+      --primary: #10b981;
+      --secondary: #6366f1;
+      --accent: #38bdf8;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.12) 0%, transparent 40%);
+      min-height: 100vh;
+    }
+    header {
+      padding: 1.5rem 2rem;
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .brand span { color: var(--primary); }
+    .nav-links { display: flex; gap: 1rem; }
+    .nav-btn {
+      padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+      text-decoration: none; color: var(--muted); border: 1px solid var(--border); transition: all 0.2s ease;
+    }
+    .nav-btn:hover { color: white; border-color: var(--primary); background: rgba(16, 185, 129, 0.15); }
+
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+    .hero-pill {
+      display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem;
+      font-weight: 700; letter-spacing: 0.05em; color: var(--primary); background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.2); margin-bottom: 1rem;
+    }
+    h1 { font-family: var(--font-heading); font-size: 2.25rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .gradient-text { background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { color: var(--muted); font-size: 1rem; max-width: 700px; margin-bottom: 2rem; }
+
+    .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) { .grid-2col { grid-template-columns: 1fr; } }
+
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; backdrop-filter: blur(12px); }
+    .card-title { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+
+    .genre-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-bottom: 1rem; }
+    .genre-btn { background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 8px; padding: 0.4rem; text-align: center; font-size: 0.75rem; font-weight: 700; color: var(--muted); cursor: pointer; }
+    .genre-btn:hover, .genre-btn.active { border-color: var(--primary); background: rgba(16, 185, 129, 0.15); color: white; }
+
+    .form-group { margin-bottom: 1.25rem; }
+    .form-label { display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; }
+    .form-value { color: var(--primary); font-family: var(--font-mono); }
+    input[type="range"] { width: 100%; height: 5px; accent-color: var(--primary); }
+
+    textarea { width: 100%; background: #060911; border: 1px solid var(--border); border-radius: 12px; padding: 0.85rem; color: white; font-family: var(--font-body); font-size: 0.9rem; outline: none; }
+
+    .output-box { background: #060911; border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; min-height: 220px; font-size: 0.9rem; line-height: 1.7; white-space: pre-wrap; margin-top: 1rem; color: #e2e8f0; }
+
+    pre { background: #060911; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; font-family: var(--font-mono); font-size: 0.85rem; color: #a5f3fc; overflow-x: auto; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="brand">✨ PRODIGY <span>GEN AI TRACK</span></a>
+    <div class="nav-links">
+      <a href="../gai_dashboard.html" class="nav-btn">Gen AI Suite Hub</a>
+      <a href="../index.html" class="nav-btn">Master Web Hub</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="hero-pill">GEN AI TASK 01 • STANDALONE DEMO</div>
+    <h1>AI Text & Story <span class="gradient-text">Generator Studio</span></h1>
+    <p class="subtitle">An LLM-powered creative writing and prompt engineering playground with hyperparameter controls (Temperature, Top-P, Max Tokens).</p>
+
+    <div class="grid-2col">
+      <!-- Input Controls -->
+      <div class="card">
+        <div class="card-title">🎛️ Generation Controls & Prompt</div>
+
+        <span style="font-size: 0.75rem; color: var(--muted); font-weight: 700; text-transform: uppercase;">GENRE PRESETS</span>
+        <div class="genre-grid" style="margin-top: 0.4rem;">
+          <button class="genre-btn active" onclick="setPreset('cyberpunk')">Cyberpunk 🏙️</button>
+          <button class="genre-btn" onclick="setPreset('fantasy')">Fantasy 🧙‍♂️</button>
+          <button class="genre-btn" onclick="setPreset('scifi')">Sci-Fi 🚀</button>
+          <button class="genre-btn" onclick="setPreset('tech')">Tech Blog 💻</button>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label"><span>Prompt Input</span><span style="font-size: 0.75rem; color: var(--muted);">LLM Context</span></div>
+          <textarea id="promptInput" rows="3">In a neon-lit metropolis governed by autonomous AI algorithms, a rogue synth hacker discovers an encrypted memory chip...</textarea>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label"><span>Temperature (Creativity)</span><span class="form-value" id="valTemp">0.80</span></div>
+          <input type="range" id="inputTemp" min="0.1" max="1.5" step="0.05" value="0.80" oninput="updatePars()">
+        </div>
+
+        <div class="form-group">
+          <div class="form-label"><span>Top-P Nucleus Sampling</span><span class="form-value" id="valTopP">0.90</span></div>
+          <input type="range" id="inputTopP" min="0.1" max="1.0" step="0.05" value="0.90" oninput="updatePars()">
+        </div>
+
+        <button onclick="generateText()" style="width: 100%; padding: 0.75rem; background: var(--primary); color: white; border: none; border-radius: 12px; font-weight: 700; font-family: var(--font-heading); cursor: pointer;">
+          Generate Story Stream ✨
+        </button>
+      </div>
+
+      <!-- Output Stream -->
+      <div class="card">
+        <div class="card-title">📝 Generated LLM Output</div>
+
+        <div class="output-box" id="outputBox">Click 'Generate Story Stream' to synthesize AI content...</div>
+
+        <div style="margin-top: 1.25rem;">
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--text);">🐍 Python Execution Command</span>
+          <pre><code>cd gai-task-1
+python text_generator.py</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const presets = {
+      cyberpunk: "In a neon-lit metropolis governed by autonomous AI algorithms, a rogue synth hacker discovers an encrypted memory chip containing humanity's forgotten history...",
+      fantasy: "Deep within the Whispering Woods, an ancient spellbook began to glow with sapphire runes, unlocking a forgotten realm of elemental magic...",
+      scifi: "As Starship Odyssey crossed the event horizon of Alpha Centauri, quantum sensors registered an impossible artificial megastructure orbiting a dying star...",
+      tech: "Generative AI is revolutionizing software engineering. By combining transformer architecture with retrieval-augmented generation (RAG)..."
+    };
+
+    const stories = {
+      cyberpunk: " The chip hummed with high-frequency quantum pulses. As Maya plugged the neural jack directly into her cybernetic temple, raw streams of binary data illuminated her retinas.\n\n\"Accessing sector 7-Omega,\" a synthesized voice echoed in her mind. Files dating back to the year 2042 unfolded: holographic records of real sunlight, oceans before desalination, and human emotion unmonitored by corporate neural grids.\n\nSuddenly, security drones activated overhead. Neon rain slicked the alleyway as Maya vanished into the shadows, carrying the ultimate truth.",
+      fantasy: " Sir Eldrin drew his glowing broadsword, the blade shimmering with celestial flame. The shadow dragon roared, shaking the cavern walls with sonic force.\n\nRunes of protection circled Eldrin's armor, absorbing the dragon's dark plasma breath. With a decisive leap, he unleashed the Incantation of Sol, piercing the heart of darkness and restoring light to the kingdom.",
+      scifi: " Captain Vance adjusted the warp drive dampeners. The megastructure was colossal—a Dyson Swarm spanning millions of kilometers in diameter, harvesting stellar energy with 99.9% efficiency.\n\n\"No life signs detected, Captain,\" Chief Science Officer T'Ral reported. \"Yet the automated defense grid is transmitting a greeting in ancient Earth mathematical code.\"",
+      tech: " Developers can now leverage LLM fine-tuning and vector embeddings to construct context-aware AI copilots. By indexing codebases using Dense Passage Retrieval (DPR), agents achieve over 95% accuracy in complex refactoring and bug resolution."
+    };
+
+    let activePreset = 'cyberpunk';
+
+    function setPreset(key) {
+      activePreset = key;
+      document.querySelectorAll('.genre-btn').forEach(b => b.classList.toggle('active', b.textContent.toLowerCase().includes(key)));
+      document.getElementById('promptInput').value = presets[key];
+    }
+
+    function updatePars() {
+      document.getElementById('valTemp').textContent = parseFloat(document.getElementById('inputTemp').value).toFixed(2);
+      document.getElementById('valTopP').textContent = parseFloat(document.getElementById('inputTopP').value).toFixed(2);
+    }
+
+    function generateText() {
+      const box = document.getElementById('outputBox');
+      const prompt = document.getElementById('promptInput').value;
+      const fullText = prompt + "\n\n" + stories[activePreset];
+
+      box.textContent = '';
+      let i = 0;
+      const interval = setInterval(() => {
+        box.textContent += fullText.charAt(i);
+        i++;
+        if (i >= fullText.length) clearInterval(interval);
+      }, 15);
+    }
+  </script>
+</body>
+</html>

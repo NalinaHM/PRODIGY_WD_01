@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DS Task 04 - Social Media Sentiment Analysis | Data Science</title>
+  <meta name="description" content="Data Science Task 04: Social media tweet sentiment analysis, tech brand polarity crosstab, and Net Sentiment Score (NSS) analytics.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: rgba(22, 30, 46, 0.75);
+      --primary: #ec4899;
+      --secondary: #38bdf8;
+      --accent: #10b981;
+      --amber: #f59e0b;
+      --purple: #a855f7;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(236, 72, 153, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.12) 0%, transparent 40%);
+      min-height: 100vh;
+    }
+    header {
+      padding: 1.5rem 2rem;
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .brand span { color: var(--primary); }
+    .nav-links { display: flex; gap: 1rem; }
+    .nav-btn {
+      padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+      text-decoration: none; color: var(--muted); border: 1px solid var(--border); transition: all 0.2s ease;
+    }
+    .nav-btn:hover { color: white; border-color: var(--primary); background: rgba(236, 72, 153, 0.15); }
+    
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+    
+    .hero-pill {
+      display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem;
+      font-weight: 700; letter-spacing: 0.05em; color: var(--primary); background: rgba(236, 72, 153, 0.1);
+      border: 1px solid rgba(236, 72, 153, 0.2); margin-bottom: 1rem;
+    }
+    h1 { font-family: var(--font-heading); font-size: 2.25rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .gradient-text { background: linear-gradient(135deg, var(--primary), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { color: var(--muted); font-size: 1rem; max-width: 700px; margin-bottom: 2rem; }
+
+    .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .metric-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem;
+      backdrop-filter: blur(10px);
+    }
+    .metric-title { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; font-weight: 600; }
+    .metric-value { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; color: var(--primary); margin-top: 0.25rem; }
+
+    .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) { .grid-2col { grid-template-columns: 1fr; } }
+
+    .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem;
+      backdrop-filter: blur(12px); box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .card-title { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+
+    .brand-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-bottom: 1.25rem; }
+    .brand-btn {
+      background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); border-radius: 10px;
+      padding: 0.65rem; text-align: center; cursor: pointer; transition: all 0.2s ease;
+    }
+    .brand-btn:hover, .brand-btn.active { border-color: var(--primary); background: rgba(236, 72, 153, 0.15); }
+    .brand-icon { font-size: 1.5rem; display: block; }
+    .brand-label { font-size: 0.8rem; font-weight: 700; margin-top: 0.2rem; color: var(--text); }
+
+    .nss-box {
+      background: rgba(236, 72, 153, 0.1); border: 1px solid rgba(236, 72, 153, 0.3);
+      border-radius: 12px; padding: 1.25rem; text-align: center; margin-top: 1rem;
+    }
+    .nss-score { font-family: var(--font-heading); font-size: 2.2rem; font-weight: 800; color: var(--accent); margin: 0.2rem 0; }
+
+    .sentiment-stack { display: flex; height: 20px; border-radius: 6px; overflow: hidden; margin-top: 1rem; }
+    .sent-pos { background: var(--accent); }
+    .sent-neg { background: #f87171; }
+    .sent-neu { background: var(--secondary); }
+    .sent-irr { background: var(--muted); }
+
+    pre {
+      background: #060911; border: 1px solid var(--border); border-radius: 12px; padding: 1rem;
+      font-family: var(--font-mono); font-size: 0.85rem; color: #a5f3fc; overflow-x: auto; margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="brand" id="brandLink">💬 PRODIGY <span>DS TRACK</span></a>
+    <div class="nav-links">
+      <a href="../ds_dashboard.html" class="nav-btn" id="btnDSDashboard">DS Hub Dashboard</a>
+      <a href="../index.html" class="nav-btn" id="btnMasterHub">Master Web Hub</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="hero-pill">DS TASK 04 • STANDALONE DEMO</div>
+    <h1>Social Media <span class="gradient-text">Sentiment Analysis</span></h1>
+    <p class="subtitle">Natural Language & Sentiment Analysis across 1,200 tweets for top tech brands evaluating Net Sentiment Scores (NSS = % Positive - % Negative).</p>
+
+    <!-- Metrics -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-title">Overall Positive Ratio</div>
+        <div class="metric-value" style="color: var(--accent);">44.25%</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Overall Negative Ratio</div>
+        <div class="metric-value" style="color: #f87171;">25.42%</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Highest NSS Brand</div>
+        <div class="metric-value">Apple (+35.05%)</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Analyzed Tweets</div>
+        <div class="metric-value">1,200 Posts</div>
+      </div>
+    </div>
+
+    <div class="grid-2col">
+      <!-- Brand Crosstab Selector -->
+      <div class="card">
+        <div class="card-title">🏷️ Tech Brand Sentiment Crosstab</div>
+
+        <div class="brand-grid">
+          <div class="brand-btn active" onclick="selectBrand(0)">
+            <span class="brand-icon">🍎</span>
+            <div class="brand-label">Apple</div>
+          </div>
+          <div class="brand-btn" onclick="selectBrand(1)">
+            <span class="brand-icon">🔍</span>
+            <div class="brand-label">Google</div>
+          </div>
+          <div class="brand-btn" onclick="selectBrand(2)">
+            <span class="brand-icon">📦</span>
+            <div class="brand-label">Amazon</div>
+          </div>
+          <div class="brand-btn" onclick="selectBrand(3)">
+            <span class="brand-icon">💻</span>
+            <div class="brand-label">Microsoft</div>
+          </div>
+          <div class="brand-btn" onclick="selectBrand(4)">
+            <span class="brand-icon">⚡</span>
+            <div class="brand-label">Tesla</div>
+          </div>
+          <div class="brand-btn" onclick="selectBrand(5)">
+            <span class="brand-icon">♾️</span>
+            <div class="brand-label">Meta</div>
+          </div>
+        </div>
+
+        <div class="nss-box">
+          <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: var(--muted);">NET SENTIMENT SCORE (NSS)</span>
+          <div class="nss-score" id="nssScore">+35.05%</div>
+          <div style="font-size: 0.8rem; color: var(--muted);" id="nssDesc">Positive: 53.1% | Negative: 18.0%</div>
+        </div>
+
+        <div style="margin-top: 1rem;">
+          <div style="display: flex; justify-content: space-between; font-size: 0.75rem; font-weight: 700; color: var(--muted);">
+            <span>Positive</span><span>Neutral</span><span>Negative</span><span>Irrelevant</span>
+          </div>
+          <div class="sentiment-stack" id="sentStack">
+            <div class="sent-pos" style="width: 53.1%;"></div>
+            <div class="sent-neu" style="width: 25.3%;"></div>
+            <div class="sent-neg" style="width: 18.0%;"></div>
+            <div class="sent-irr" style="width: 3.6%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Tweet Tester -->
+      <div class="card">
+        <div class="card-title">💬 Live Tweet Sentiment Tester</div>
+
+        <div style="margin-bottom: 1rem;">
+          <textarea id="tweetInput" rows="3" style="width: 100%; background: #060911; border: 1px solid var(--border); border-radius: 10px; padding: 0.75rem; color: white; font-family: var(--font-body); font-size: 0.9rem;" placeholder="Type a tweet or product feedback here..."></textarea>
+        </div>
+
+        <button onclick="analyzeText()" style="width: 100%; padding: 0.65rem; background: var(--primary); color: white; border: none; border-radius: 10px; font-weight: 700; font-family: var(--font-heading); cursor: pointer;">
+          Analyze Tweet Polarity
+        </button>
+
+        <div style="margin-top: 1rem; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 10px; border: 1px solid var(--border); text-align: center;" id="testResult">
+          <div style="font-size: 1.4rem; font-weight: 800; color: var(--accent);" id="testPolarity">POSITIVE 🟢</div>
+          <span style="font-size: 0.8rem; color: var(--muted);" id="testSub">Polarity Score: +0.78</span>
+        </div>
+
+        <div style="margin-top: 1.25rem;">
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--text);">🐍 Python Execution Command</span>
+          <pre><code>cd ds-task-4
+python sentiment_analysis.py</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const brandData = [
+      { name: "Apple", pos: 53.09, neg: 18.04, neu: 25.26, irr: 3.61, nss: "+35.05%" },
+      { name: "Google", pos: 48.50, neg: 18.00, neu: 30.00, irr: 3.50, nss: "+30.50%" },
+      { name: "Amazon", pos: 42.05, neg: 23.08, neu: 25.13, irr: 9.74, nss: "+18.97%" },
+      { name: "Microsoft", pos: 41.41, neg: 25.76, neu: 27.27, irr: 5.56, nss: "+15.66%" },
+      { name: "Tesla", pos: 44.15, neg: 36.17, neu: 15.43, irr: 4.26, nss: "+7.98%" },
+      { name: "Meta", pos: 37.33, neg: 31.11, neu: 22.67, irr: 8.89, nss: "+6.22%" }
+    ];
+
+    function selectBrand(idx) {
+      document.querySelectorAll('.brand-btn').forEach((b, i) => b.classList.toggle('active', i === idx));
+      const b = brandData[idx];
+      document.getElementById('nssScore').textContent = b.nss;
+      document.getElementById('nssDesc').textContent = `Positive: ${b.pos.toFixed(1)}% | Negative: ${b.neg.toFixed(1)}%`;
+
+      const stack = document.getElementById('sentStack');
+      stack.children[0].style.width = b.pos + '%';
+      stack.children[1].style.width = b.neu + '%';
+      stack.children[2].style.width = b.neg + '%';
+      stack.children[3].style.width = b.irr + '%';
+    }
+
+    function analyzeText() {
+      const text = document.getElementById('tweetInput').value.toLowerCase();
+      const posWords = ['great', 'love', 'amazing', 'best', 'awesome', 'good', 'fast', 'smooth'];
+      const negWords = ['bad', 'worst', 'hate', 'slow', 'crash', 'terrible', 'bug', 'broken'];
+
+      let pScore = 0;
+      let nScore = 0;
+
+      posWords.forEach(w => { if (text.includes(w)) pScore++; });
+      negWords.forEach(w => { if (text.includes(w)) nScore++; });
+
+      const res = document.getElementById('testResult');
+      const pol = document.getElementById('testPolarity');
+      const sub = document.getElementById('testSub');
+
+      if (pScore > nScore) {
+        pol.textContent = "POSITIVE 🟢"; pol.style.color = "var(--accent)";
+        sub.textContent = `Polarity Score: +0.${pScore * 35}`;
+      } else if (nScore > pScore) {
+        pol.textContent = "NEGATIVE 🔴"; pol.style.color = "#f87171";
+        sub.textContent = `Polarity Score: -0.${nScore * 40}`;
+      } else {
+        pol.textContent = "NEUTRAL ⚪"; pol.style.color = "var(--secondary)";
+        sub.textContent = "Polarity Score: 0.00";
+      }
+    }
+
+    selectBrand(0);
+  </script>
+</body>
+</html>

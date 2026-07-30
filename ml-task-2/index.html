@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ML Task 02 - Customer Segmentation | K-Means Clustering</title>
+  <meta name="description" content="Machine Learning Task 02: K-Means clustering algorithm for customer segmentation based on annual income and spending score.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: rgba(22, 30, 46, 0.75);
+      --primary: #6366f1;
+      --secondary: #38bdf8;
+      --accent: #10b981;
+      --pink: #ec4899;
+      --amber: #f59e0b;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(236, 72, 153, 0.12) 0%, transparent 45%);
+      min-height: 100vh;
+    }
+    header {
+      padding: 1.5rem 2rem;
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .brand span { color: var(--primary); }
+    .nav-links { display: flex; gap: 1rem; }
+    .nav-btn {
+      padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+      text-decoration: none; color: var(--muted); border: 1px solid var(--border); transition: all 0.2s ease;
+    }
+    .nav-btn:hover { color: white; border-color: var(--primary); background: rgba(99, 102, 241, 0.15); }
+    
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+    
+    .hero-pill {
+      display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem;
+      font-weight: 700; letter-spacing: 0.05em; color: var(--pink); background: rgba(236, 72, 153, 0.1);
+      border: 1px solid rgba(236, 72, 153, 0.2); margin-bottom: 1rem;
+    }
+    h1 { font-family: var(--font-heading); font-size: 2.25rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .gradient-text { background: linear-gradient(135deg, var(--primary), var(--pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { color: var(--muted); font-size: 1rem; max-width: 700px; margin-bottom: 2rem; }
+
+    .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .metric-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem;
+      backdrop-filter: blur(10px);
+    }
+    .metric-title { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; font-weight: 600; }
+    .metric-value { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; color: var(--pink); margin-top: 0.25rem; }
+
+    .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) { .grid-2col { grid-template-columns: 1fr; } }
+
+    .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem;
+      backdrop-filter: blur(12px); box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .card-title { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+
+    .form-group { margin-bottom: 1.25rem; }
+    .form-label { display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .form-value { color: var(--pink); font-family: var(--font-mono); font-weight: 600; }
+    input[type="range"] {
+      width: 100%; height: 6px; border-radius: 3px; background: rgba(255, 255, 255, 0.15);
+      outline: none; accent-color: var(--pink); cursor: pointer;
+    }
+
+    .cluster-result {
+      border-radius: 12px; padding: 1.5rem; text-align: center; margin-top: 1rem;
+      border: 1px solid var(--border); transition: all 0.3s ease;
+    }
+    .cluster-name { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; margin: 0.25rem 0; }
+
+    .cluster-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; margin-top: 1rem; }
+    .cluster-badge-card {
+      background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border); border-radius: 10px; padding: 0.85rem; font-size: 0.85rem;
+    }
+    .cluster-badge-card strong { display: block; font-size: 0.95rem; margin-bottom: 0.25rem; }
+
+    pre {
+      background: #060911; border: 1px solid var(--border); border-radius: 12px; padding: 1rem;
+      font-family: var(--font-mono); font-size: 0.85rem; color: #a5f3fc; overflow-x: auto; margin-top: 1rem;
+    }
+
+    canvas { background: #060911; border-radius: 12px; border: 1px solid var(--border); width: 100%; height: 280px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="brand" id="brandLink">🛍️ PRODIGY <span>ML TRACK</span></a>
+    <div class="nav-links">
+      <a href="../ml_dashboard.html" class="nav-btn" id="btnMLDashboard">ML Hub Dashboard</a>
+      <a href="../index.html" class="nav-btn" id="btnMasterHub">Master Web Hub</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="hero-pill">ML TASK 02 • STANDALONE DEMO</div>
+    <h1>Customer <span class="gradient-text">Segmentation Engine</span></h1>
+    <p class="subtitle">An interactive K-Means clustering simulator categorizing shopping mall customers into distinct personas based on Annual Income ($k) and Spending Score (1-100).</p>
+
+    <!-- Metrics -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-title">Optimal Clusters (K)</div>
+        <div class="metric-value">K = 5</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Silhouette Score</div>
+        <div class="metric-value" style="color: var(--accent);">0.5678</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">WCSS Inertia</div>
+        <div class="metric-value">76,870.75</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Total Samples</div>
+        <div class="metric-value">300 Customers</div>
+      </div>
+    </div>
+
+    <div class="grid-2col">
+      <!-- Calculator Form -->
+      <div class="card">
+        <div class="card-title">🎛️ Live Customer Persona Predictor</div>
+
+        <div class="form-group">
+          <div class="form-label"><span>Annual Income ($k)</span><span class="form-value" id="valIncome">$85k</span></div>
+          <input type="range" id="inputIncome" min="15" max="140" step="1" value="85">
+        </div>
+
+        <div class="form-group">
+          <div class="form-label"><span>Spending Score (1-100)</span><span class="form-value" id="valSpending">80</span></div>
+          <input type="range" id="inputSpending" min="1" max="100" step="1" value="80">
+        </div>
+
+        <div class="cluster-result" id="clusterBox">
+          <span style="font-size: 0.75rem; text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em;" id="clusterIdLabel">CLUSTER ASSIGNMENT</span>
+          <div class="cluster-name" id="clusterName">Target VIPs 🌟</div>
+          <div style="font-size: 0.85rem; color: var(--muted);" id="clusterDesc">High Earners & High Spenders</div>
+        </div>
+
+        <div style="margin-top: 1.25rem;">
+          <canvas id="clusterCanvas"></canvas>
+        </div>
+      </div>
+
+      <!-- Persona Breakdown -->
+      <div class="card">
+        <div class="card-title">👥 K-Means Persona Dictionary</div>
+
+        <div class="cluster-grid">
+          <div class="cluster-badge-card" style="border-left: 4px solid #ec4899;">
+            <strong style="color: #ec4899;">Cluster 4: Target VIPs 🌟</strong>
+            Avg Income: $109.9k<br>Avg Spending: 78.4/100<br>
+            <span style="color: var(--muted); font-size: 0.75rem;">High Income, High Spending</span>
+          </div>
+
+          <div class="cluster-badge-card" style="border-left: 4px solid #38bdf8;">
+            <strong style="color: #38bdf8;">Cluster 1: Careless Spenders 🛍️</strong>
+            Avg Income: $26.7k<br>Avg Spending: 80.0/100<br>
+            <span style="color: var(--muted); font-size: 0.75rem;">Low Income, High Spending</span>
+          </div>
+
+          <div class="cluster-badge-card" style="border-left: 4px solid #f59e0b;">
+            <strong style="color: #f59e0b;">Cluster 0: Sensible Investors 💼</strong>
+            Avg Income: $107.9k<br>Avg Spending: 22.6/100<br>
+            <span style="color: var(--muted); font-size: 0.75rem;">High Income, Low Spending</span>
+          </div>
+
+          <div class="cluster-badge-card" style="border-left: 4px solid #10b981;">
+            <strong style="color: #10b981;">Cluster 2: Frugal Savers 🪙</strong>
+            Avg Income: $27.8k<br>Avg Spending: 22.0/100<br>
+            <span style="color: var(--muted); font-size: 0.75rem;">Low Income, Low Spending</span>
+          </div>
+
+          <div class="cluster-badge-card" style="border-left: 4px solid #a855f7;">
+            <strong style="color: #a855f7;">Cluster 3: Standard Shoppers 🛒</strong>
+            Avg Income: $60.6k<br>Avg Spending: 49.6/100<br>
+            <span style="color: var(--muted); font-size: 0.75rem;">Moderate Income & Spending</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--text);">🐍 Python Execution Command</span>
+          <pre><code>cd ml-task-2
+python cluster_model.py</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const centers = [
+      { id: 0, name: "Sensible Investors 💼", desc: "High Income & Low Spending", income: 107.9, spend: 22.6, color: "#f59e0b" },
+      { id: 1, name: "Careless Spenders 🛍️", desc: "Low Income & High Spending", income: 26.7, spend: 80.0, color: "#38bdf8" },
+      { id: 2, name: "Frugal Savers 🪙", desc: "Low Income & Low Spending", income: 27.8, spend: 22.0, color: "#10b981" },
+      { id: 3, name: "Standard Shoppers 🛒", desc: "Moderate Income & Spending", income: 60.6, spend: 49.6, color: "#a855f7" },
+      { id: 4, name: "Target VIPs 🌟", desc: "High Income & High Spending", income: 109.9, spend: 78.4, color: "#ec4899" },
+    ];
+
+    const inputIncome = document.getElementById('inputIncome');
+    const inputSpending = document.getElementById('inputSpending');
+    const canvas = document.getElementById('clusterCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function update() {
+      const inc = parseFloat(inputIncome.value);
+      const spd = parseFloat(inputSpending.value);
+
+      document.getElementById('valIncome').textContent = '$' + inc + 'k';
+      document.getElementById('valSpending').textContent = spd;
+
+      // Find nearest cluster centroid
+      let minDist = Infinity;
+      let closest = centers[0];
+
+      centers.forEach(c => {
+        const d = Math.hypot(inc - c.income, spd - c.spend);
+        if (d < minDist) { minDist = d; closest = c; }
+      });
+
+      const box = document.getElementById('clusterBox');
+      box.style.background = closest.color + '15';
+      box.style.borderColor = closest.color + '50';
+      document.getElementById('clusterIdLabel').style.color = closest.color;
+      document.getElementById('clusterName').textContent = closest.name;
+      document.getElementById('clusterName').style.color = closest.color;
+      document.getElementById('clusterDesc').textContent = closest.desc;
+
+      drawScatter(inc, spd, closest);
+    }
+
+    function drawScatter(userInc, userSpd, closest) {
+      canvas.width = canvas.parentElement.clientWidth;
+      canvas.height = 280;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const margin = 35;
+      const w = canvas.width - margin * 2;
+      const h = canvas.height - margin * 2;
+
+      // Draw Grid
+      ctx.strokeStyle = "rgba(255,255,255,0.08)";
+      ctx.lineWidth = 1;
+      for (let i = 0; i <= 4; i++) {
+        const x = margin + (w / 4) * i;
+        ctx.beginPath(); ctx.moveTo(x, margin); ctx.lineTo(x, canvas.height - margin); ctx.stroke();
+        const y = margin + (h / 4) * i;
+        ctx.beginPath(); ctx.moveTo(margin, y); ctx.lineTo(canvas.width - margin, y); ctx.stroke();
+      }
+
+      // Draw Axis Labels
+      ctx.fillStyle = "#94a3b8"; ctx.font = "10px Inter";
+      ctx.fillText("Income ($k)", canvas.width - 70, canvas.height - 10);
+      ctx.fillText("Spending", 5, 20);
+
+      // Draw Centroids
+      centers.forEach(c => {
+        const cx = margin + (c.income / 140) * w;
+        const cy = canvas.height - margin - (c.spend / 100) * h;
+
+        ctx.fillStyle = c.color;
+        ctx.beginPath(); ctx.arc(cx, cy, 10, 0, Math.PI * 2); ctx.fill();
+        ctx.strokeStyle = "#fff"; ctx.lineWidth = 2; ctx.stroke();
+
+        ctx.fillStyle = "#fff"; ctx.font = "bold 9px Outfit";
+        ctx.fillText("C" + c.id, cx - 5, cy + 3);
+      });
+
+      // Draw User point
+      const ux = margin + (userInc / 140) * w;
+      const uy = canvas.height - margin - (userSpd / 100) * h;
+
+      ctx.fillStyle = "#ffffff";
+      ctx.beginPath(); ctx.arc(ux, uy, 7, 0, Math.PI * 2); ctx.fill();
+      ctx.strokeStyle = closest.color; ctx.lineWidth = 3; ctx.stroke();
+    }
+
+    [inputIncome, inputSpending].forEach(el => el.addEventListener('input', update));
+    window.addEventListener('resize', update);
+    update();
+  </script>
+</body>
+</html>

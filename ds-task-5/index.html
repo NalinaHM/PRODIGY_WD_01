@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DS Task 05 - Traffic Accident Hotspot Analysis | Data Science</title>
+  <meta name="description" content="Data Science Task 05: Traffic accident hotspot analysis, rush hour temporal patterns, weather severity matrix, and high-risk city mapping.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: rgba(22, 30, 46, 0.75);
+      --primary: #ef4444;
+      --secondary: #f97316;
+      --accent: #10b981;
+      --amber: #f59e0b;
+      --blue: #3b82f6;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(239, 68, 68, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(249, 115, 22, 0.12) 0%, transparent 40%);
+      min-height: 100vh;
+    }
+    header {
+      padding: 1.5rem 2rem;
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .brand span { color: var(--primary); }
+    .nav-links { display: flex; gap: 1rem; }
+    .nav-btn {
+      padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+      text-decoration: none; color: var(--muted); border: 1px solid var(--border); transition: all 0.2s ease;
+    }
+    .nav-btn:hover { color: white; border-color: var(--primary); background: rgba(239, 68, 68, 0.15); }
+    
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+    
+    .hero-pill {
+      display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem;
+      font-weight: 700; letter-spacing: 0.05em; color: var(--primary); background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.2); margin-bottom: 1rem;
+    }
+    h1 { font-family: var(--font-heading); font-size: 2.25rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .gradient-text { background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { color: var(--muted); font-size: 1rem; max-width: 700px; margin-bottom: 2rem; }
+
+    .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .metric-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem;
+      backdrop-filter: blur(10px);
+    }
+    .metric-title { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; font-weight: 600; }
+    .metric-value { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; color: var(--primary); margin-top: 0.25rem; }
+
+    .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) { .grid-2col { grid-template-columns: 1fr; } }
+
+    .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem;
+      backdrop-filter: blur(12px); box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .card-title { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+
+    canvas { background: #060911; border-radius: 12px; border: 1px solid var(--border); width: 100%; height: 260px; }
+
+    .city-list { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 1rem; }
+    .city-item { display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; padding-bottom: 0.4rem; border-bottom: 1px dashed rgba(255,255,255,0.08); }
+    .city-name { font-weight: 600; }
+    .city-count { font-family: var(--font-mono); font-weight: 700; color: var(--secondary); }
+
+    pre {
+      background: #060911; border: 1px solid var(--border); border-radius: 12px; padding: 1rem;
+      font-family: var(--font-mono); font-size: 0.85rem; color: #a5f3fc; overflow-x: auto; margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="brand" id="brandLink">🚗 PRODIGY <span>DS TRACK</span></a>
+    <div class="nav-links">
+      <a href="../ds_dashboard.html" class="nav-btn" id="btnDSDashboard">DS Hub Dashboard</a>
+      <a href="../index.html" class="nav-btn" id="btnMasterHub">Master Web Hub</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="hero-pill">DS TASK 05 • STANDALONE DEMO</div>
+    <h1>Traffic Accident <span class="gradient-text">Hotspot Analysis</span></h1>
+    <p class="subtitle">Spatial & temporal risk analysis mapping commuter rush hour accident spikes (7-8 AM & 4-5 PM), adverse weather severity multipliers, and top metro hotspots.</p>
+
+    <!-- Metrics -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-title">Accidents Analyzed</div>
+        <div class="metric-value">2,500 Events</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Peak Rush Hour Share</div>
+        <div class="metric-value" style="color: var(--primary);">35.2%</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Fog/Icy Max Severity</div>
+        <div class="metric-value" style="color: var(--secondary);">2.75 / 4.0</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Top Hotspot Metro</div>
+        <div class="metric-value">Houston, TX</div>
+      </div>
+    </div>
+
+    <div class="grid-2col">
+      <!-- Rush Hour Chart -->
+      <div class="card">
+        <div class="card-title">⏰ Hourly Accident Distribution (Rush Hours)</div>
+
+        <canvas id="rushCanvas"></canvas>
+
+        <div style="margin-top: 1rem; font-size: 0.8rem; color: var(--muted);">
+          🔥 Morning rush peak (7-8 AM) & Evening rush peak (4-5 PM) account for over 35% of daily collisions.
+        </div>
+      </div>
+
+      <!-- Hotspots & Severity -->
+      <div class="card">
+        <div class="card-title">📍 Top Accident Hotspot Metro Cities</div>
+
+        <div class="city-list">
+          <div class="city-item">
+            <span class="city-name">1. Houston, TX 🤠</span>
+            <span class="city-count">355 Accidents</span>
+          </div>
+          <div class="city-item">
+            <span class="city-name">2. Charlotte, NC 👑</span>
+            <span class="city-count">334 Accidents</span>
+          </div>
+          <div class="city-item">
+            <span class="city-name">3. San Diego, CA 🌊</span>
+            <span class="city-count">325 Accidents</span>
+          </div>
+          <div class="city-item">
+            <span class="city-name">4. Miami, FL 🌴</span>
+            <span class="city-count">303 Accidents</span>
+          </div>
+          <div class="city-item">
+            <span class="city-name">5. New York, NY 🗽</span>
+            <span class="city-count">301 Accidents</span>
+          </div>
+          <div class="city-item">
+            <span class="city-name">6. Chicago, IL 🏙️</span>
+            <span class="city-count">300 Accidents</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--text);">🐍 Python Execution Command</span>
+          <pre><code>cd ds-task-5
+python accident_analysis.py</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const rushCanvas = document.getElementById('rushCanvas');
+    const ctx = rushCanvas.getContext('2d');
+
+    const hourlyCounts = [40, 25, 18, 15, 20, 45, 110, 280, 210, 140, 105, 95, 115, 125, 160, 240, 295, 220, 150, 110, 85, 65, 50, 42];
+
+    function drawRushChart() {
+      rushCanvas.width = rushCanvas.parentElement.clientWidth;
+      rushCanvas.height = 260;
+      ctx.clearRect(0, 0, rushCanvas.width, rushCanvas.height);
+
+      const margin = 35;
+      const w = rushCanvas.width - margin * 2;
+      const h = rushCanvas.height - margin * 2;
+
+      const maxVal = 320;
+
+      // Draw Grid
+      ctx.strokeStyle = "rgba(255,255,255,0.08)";
+      ctx.lineWidth = 1;
+      for (let i = 0; i <= 4; i++) {
+        const y = margin + (h / 4) * i;
+        ctx.beginPath(); ctx.moveTo(margin, y); ctx.lineTo(rushCanvas.width - margin, y); ctx.stroke();
+      }
+
+      // Draw Line
+      ctx.beginPath();
+      ctx.strokeStyle = "#ef4444";
+      ctx.lineWidth = 3;
+
+      hourlyCounts.forEach((val, hour) => {
+        const x = margin + (hour / 23) * w;
+        const y = rushCanvas.height - margin - (val / maxVal) * h;
+        if (hour === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      });
+      ctx.stroke();
+
+      // Draw Peak Highlight Points
+      [7, 16].forEach(pk => {
+        const px = margin + (pk / 23) * w;
+        const py = rushCanvas.height - margin - (hourlyCounts[pk] / maxVal) * h;
+
+        ctx.fillStyle = "#f97316";
+        ctx.beginPath(); ctx.arc(px, py, 6, 0, Math.PI * 2); ctx.fill();
+        ctx.strokeStyle = "#fff"; ctx.lineWidth = 2; ctx.stroke();
+
+        ctx.fillStyle = "#fff"; ctx.font = "bold 10px JetBrains Mono";
+        ctx.fillText(hourlyCounts[pk] + " Peak", px - 18, py - 10);
+      });
+    }
+
+    window.addEventListener('resize', drawRushChart);
+    drawRushChart();
+  </script>
+</body>
+</html>

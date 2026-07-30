@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GenAI Task 02 - AI Art & Image Generator | Generative AI</title>
+  <meta name="description" content="Prodigy InfoTech GenAI Task 02: Text-to-Image AI generation studio supporting prompt enhancement, style modifiers, and aspect ratio controls.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card: rgba(18, 24, 38, 0.8);
+      --primary: #ec4899;
+      --secondary: #a855f7;
+      --accent: #38bdf8;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(236, 72, 153, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.12) 0%, transparent 40%);
+      min-height: 100vh;
+    }
+    header {
+      padding: 1.5rem 2rem;
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .brand span { color: var(--primary); }
+    .nav-links { display: flex; gap: 1rem; }
+    .nav-btn {
+      padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+      text-decoration: none; color: var(--muted); border: 1px solid var(--border); transition: all 0.2s ease;
+    }
+    .nav-btn:hover { color: white; border-color: var(--primary); background: rgba(236, 72, 153, 0.15); }
+
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+    .hero-pill {
+      display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem;
+      font-weight: 700; letter-spacing: 0.05em; color: var(--primary); background: rgba(236, 72, 153, 0.1);
+      border: 1px solid rgba(236, 72, 153, 0.2); margin-bottom: 1rem;
+    }
+    h1 { font-family: var(--font-heading); font-size: 2.25rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .gradient-text { background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { color: var(--muted); font-size: 1rem; max-width: 700px; margin-bottom: 2rem; }
+
+    .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) { .grid-2col { grid-template-columns: 1fr; } }
+
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; backdrop-filter: blur(12px); }
+    .card-title { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+
+    .style-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-bottom: 1rem; }
+    .style-btn { background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 10px; padding: 0.5rem; text-align: center; font-size: 0.75rem; font-weight: 700; color: var(--muted); cursor: pointer; }
+    .style-btn:hover, .style-btn.active { border-color: var(--primary); background: rgba(236, 72, 153, 0.15); color: white; }
+
+    textarea { width: 100%; background: #060911; border: 1px solid var(--border); border-radius: 12px; padding: 0.85rem; color: white; font-family: var(--font-body); font-size: 0.9rem; outline: none; margin-bottom: 1rem; }
+
+    .preview-canvas-box { background: #060911; border: 1px solid var(--border); border-radius: 14px; height: 320px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 1rem; position: relative; overflow: hidden; }
+
+    pre { background: #060911; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; font-family: var(--font-mono); font-size: 0.85rem; color: #a5f3fc; overflow-x: auto; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="brand">🎨 PRODIGY <span>GEN AI TRACK</span></a>
+    <div class="nav-links">
+      <a href="../gai_dashboard.html" class="nav-btn">Gen AI Suite Hub</a>
+      <a href="../index.html" class="nav-btn">Master Web Hub</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="hero-pill">GEN AI TASK 02 • STANDALONE DEMO</div>
+    <h1>AI Art & Image <span class="gradient-text">Generator Studio</span></h1>
+    <p class="subtitle">Text-to-Image prompt engineering studio with artistic style modifiers, resolution settings, and diffusion rendering preview.</p>
+
+    <div class="grid-2col">
+      <!-- Controls -->
+      <div class="card">
+        <div class="card-title">🎨 Text-to-Image Prompt Studio</div>
+
+        <span style="font-size: 0.75rem; color: var(--muted); font-weight: 700; text-transform: uppercase;">ARTISTIC STYLE PRESETS</span>
+        <div class="style-grid" style="margin-top: 0.4rem;">
+          <button class="style-btn active" onclick="setStyle('cyberpunk')">Cyberpunk 🏙️</button>
+          <button class="style-btn" onclick="setStyle('anime')">Anime 🎌</button>
+          <button class="style-btn" onclick="setStyle('photo')">Photo 8K 📸</button>
+          <button class="style-btn" onclick="setStyle('oil')">Oil Painting 🎨</button>
+          <button class="style-btn" onclick="setStyle('synthwave')">Synthwave 🌅</button>
+          <button class="style-btn" onclick="setStyle('concept')">Concept Art ⚔️</button>
+        </div>
+
+        <div style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem;">Positive Prompt</div>
+        <textarea id="imagePrompt" rows="3">A futuristic neon cyberpunk city at night, rain-slicked streets, glowing purple holograms, hyperrealistic 8k resolution, cinematic lighting</textarea>
+
+        <button onclick="renderArt()" style="width: 100%; padding: 0.75rem; background: var(--primary); color: white; border: none; border-radius: 12px; font-weight: 700; font-family: var(--font-heading); cursor: pointer;">
+          Synthesize AI Image 🎨
+        </button>
+      </div>
+
+      <!-- Preview -->
+      <div class="card">
+        <div class="card-title">🖼️ Generated AI Canvas Preview</div>
+
+        <div class="preview-canvas-box" id="canvasBox">
+          <div style="font-size: 4rem; margin-bottom: 0.5rem;" id="artIcon">🏙️</div>
+          <div style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 800; color: var(--primary);" id="artTitle">Cyberpunk Neon City 8K</div>
+          <span style="font-size: 0.8rem; color: var(--muted);" id="artStatus">Diffusion Latent Render Complete • 1024x1024</span>
+        </div>
+
+        <div style="margin-top: 1.25rem;">
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--text);">🐍 Python Execution Command</span>
+          <pre><code>cd gai-task-2
+python image_generator.py</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const styles = {
+      cyberpunk: { icon: "🏙️", title: "Cyberpunk Neon City 8K", bg: "linear-gradient(135deg, #1e1b4b, #831843)" },
+      anime: { icon: "🎌", title: "Anime Fantasy Landscape", bg: "linear-gradient(135deg, #0c4a6e, #701a75)" },
+      photo: { icon: "📸", title: "Photorealistic 8K Portrait", bg: "linear-gradient(135deg, #064e3b, #1e293b)" },
+      oil: { icon: "🎨", title: "Impressionist Oil Canvas", bg: "linear-gradient(135deg, #78350f, #7c2d12)" },
+      synthwave: { icon: "🌅", title: "80s Retro Synthwave Grid", bg: "linear-gradient(135deg, #581c87, #9d174d)" },
+      concept: { icon: "⚔️", title: "Epic Mythological Concept Art", bg: "linear-gradient(135deg, #14532d, #1e3a8a)" }
+    };
+    let currentStyle = 'cyberpunk';
+
+    function setStyle(key) {
+      currentStyle = key;
+      document.querySelectorAll('.style-btn').forEach(b => b.classList.toggle('active', b.textContent.toLowerCase().includes(key)));
+    }
+
+    function renderArt() {
+      const box = document.getElementById('canvasBox');
+      const st = styles[currentStyle];
+      document.getElementById('artIcon').textContent = st.icon;
+      document.getElementById('artTitle').textContent = st.title;
+      box.style.background = st.bg;
+    }
+    renderArt();
+  </script>
+</body>
+</html>

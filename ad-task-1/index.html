@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Android Task 01 - Unit & Currency Converter | Android App</title>
+  <meta name="description" content="Prodigy InfoTech Android Task 01: Multi-category Unit and Currency Converter mobile app built with Kotlin and Material 3 UI design.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card: rgba(18, 24, 38, 0.8);
+      --primary: #a855f7;
+      --secondary: #ec4899;
+      --accent: #10b981;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(168, 85, 247, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.12) 0%, transparent 40%);
+      min-height: 100vh;
+    }
+    header {
+      padding: 1.5rem 2rem;
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .brand span { color: var(--primary); }
+    .nav-links { display: flex; gap: 1rem; }
+    .nav-btn {
+      padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+      text-decoration: none; color: var(--muted); border: 1px solid var(--border); transition: all 0.2s ease;
+    }
+    .nav-btn:hover { color: white; border-color: var(--primary); background: rgba(168, 85, 247, 0.15); }
+
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+    .hero-pill {
+      display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem;
+      font-weight: 700; letter-spacing: 0.05em; color: var(--primary); background: rgba(168, 85, 247, 0.1);
+      border: 1px solid rgba(168, 85, 247, 0.2); margin-bottom: 1rem;
+    }
+    h1 { font-family: var(--font-heading); font-size: 2.25rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .gradient-text { background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { color: var(--muted); font-size: 1rem; max-width: 700px; margin-bottom: 2rem; }
+
+    .grid-2col { display: grid; grid-template-columns: 360px 1fr; gap: 2rem; }
+    @media (max-width: 850px) { .grid-2col { grid-template-columns: 1fr; } }
+
+    /* Smartphone Device Frame */
+    .phone-frame {
+      width: 340px; height: 680px; background: #000; border-radius: 40px; padding: 12px;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.7), 0 0 0 8px #1e293b; margin: 0 auto;
+      display: flex; flex-direction: column; position: relative;
+    }
+    .phone-notch { width: 120px; height: 22px; background: #1e293b; border-radius: 0 0 14px 14px; margin: 0 auto; z-index: 10; }
+    .phone-screen {
+      flex: 1; background: #0f172a; border-radius: 30px; overflow: hidden; display: flex; flex-direction: column;
+      font-family: 'Roboto', var(--font-body);
+    }
+    .android-app-bar { background: #1e1b4b; padding: 1rem; color: white; display: flex; justify-content: space-between; align-items: center; }
+    .app-title { font-size: 1.1rem; font-weight: 700; }
+    .app-body { padding: 1.25rem; flex: 1; overflow-y: auto; }
+
+    .cat-tabs { display: flex; gap: 0.5rem; margin-bottom: 1.25rem; overflow-x: auto; padding-bottom: 0.25rem; }
+    .cat-chip {
+      padding: 0.4rem 0.85rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700;
+      background: rgba(255,255,255,0.08); color: var(--muted); border: none; cursor: pointer; white-space: nowrap;
+    }
+    .cat-chip.active { background: var(--primary); color: white; }
+
+    .field-box { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 0.85rem; margin-bottom: 1rem; }
+    .field-label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; font-weight: 700; margin-bottom: 0.2rem; }
+    .field-input { width: 100%; background: transparent; border: none; color: white; font-size: 1.4rem; font-weight: 700; font-family: var(--font-mono); outline: none; }
+    select.unit-select { width: 100%; background: rgba(255,255,255,0.1); color: white; border: none; border-radius: 6px; padding: 0.4rem; font-size: 0.85rem; margin-top: 0.4rem; }
+
+    .result-display { background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(236, 72, 153, 0.2)); border: 1px solid rgba(168, 85, 247, 0.4); border-radius: 14px; padding: 1.25rem; text-align: center; margin-top: 0.5rem; }
+    .result-val { font-size: 1.8rem; font-weight: 800; color: var(--accent); font-family: var(--font-mono); margin: 0.2rem 0; }
+
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; }
+    pre { background: #060911; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; font-family: var(--font-mono); font-size: 0.85rem; color: #a5f3fc; overflow-x: auto; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="brand">📱 PRODIGY <span>ANDROID TRACK</span></a>
+    <div class="nav-links">
+      <a href="../ad_dashboard.html" class="nav-btn">Android Suite Hub</a>
+      <a href="../index.html" class="nav-btn">Master Web Hub</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="hero-pill">ANDROID TASK 01 • STANDALONE APP DEMO</div>
+    <h1>Unit & Currency <span class="gradient-text">Converter App</span></h1>
+    <p class="subtitle">A full-featured Material 3 Android Application supporting length, weight, temperature, and live currency conversions.</p>
+
+    <div class="grid-2col">
+      <!-- Smartphone Simulator -->
+      <div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="android-app-bar">
+              <div class="app-title">ConvertX ⚡</div>
+              <div style="font-size: 0.8rem; opacity: 0.8;">Material 3</div>
+            </div>
+            <div class="app-body">
+              <div class="cat-tabs">
+                <button class="cat-chip active" onclick="setCat('length')">Length 📏</button>
+                <button class="cat-chip" onclick="setCat('weight')">Weight ⚖️</button>
+                <button class="cat-chip" onclick="setCat('temp')">Temp 🌡️</button>
+                <button class="cat-chip" onclick="setCat('currency')">Currency 💵</button>
+              </div>
+
+              <div class="field-box">
+                <div class="field-label">INPUT VALUE</div>
+                <input type="number" class="field-input" id="inputValue" value="10" oninput="convert()">
+                <select class="unit-select" id="fromUnit" onchange="convert()"></select>
+              </div>
+
+              <div style="text-align: center; margin: -0.5rem 0 0.5rem; font-size: 1.2rem; color: var(--primary);">⬇️</div>
+
+              <div class="result-display">
+                <div class="field-label" style="color: var(--text);">CONVERTED RESULT</div>
+                <div class="result-val" id="resultVal">32.81 ft</div>
+                <select class="unit-select" id="toUnit" onchange="convert()"></select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kotlin Source Code & Details -->
+      <div class="card">
+        <h2 style="font-family: var(--font-heading); margin-bottom: 1rem;">⚙️ Android Architecture Details</h2>
+        <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 1.25rem;">
+          Built using Kotlin and Android Jetpack libraries. Uses <code>TextWatcher</code> for real-time calculation and Material 3 <code>TextInputLayout</code> components.
+        </p>
+
+        <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">📄 MainActivity.kt Snippet</h3>
+        <pre><code>package com.prodigy.unitconverter
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.prodigy.unitconverter.databinding.ActivityMainBinding
+
+class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        
+        setupUnitSpinners()
+        binding.inputField.addTextChangedListener { convertUnits() }
+    }
+
+    private fun convertUnits() {
+        val input = binding.inputField.text.toString().toDoubleOrNull() ?: 0.0
+        val result = UnitConverterEngine.convert(input, fromUnit, toUnit)
+        binding.resultText.text = String.format("%.2f %s", result, toUnit)
+    }
+}</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const categories = {
+      length: { units: ["Meters (m)", "Feet (ft)", "Kilometers (km)", "Miles (mi)", "Inches (in)"], rates: { "Meters (m)": 1, "Feet (ft)": 3.28084, "Kilometers (km)": 0.001, "Miles (mi)": 0.000621371, "Inches (in)": 39.3701 } },
+      weight: { units: ["Kilograms (kg)", "Pounds (lbs)", "Grams (g)", "Ounces (oz)"], rates: { "Kilograms (kg)": 1, "Pounds (lbs)": 2.20462, "Grams (g)": 1000, "Ounces (oz)": 35.274 } },
+      temp: { units: ["Celsius (°C)", "Fahrenheit (°F)", "Kelvin (K)"] },
+      currency: { units: ["USD ($)", "EUR (€)", "GBP (£)", "INR (₹)", "JPY (¥)"], rates: { "USD ($)": 1, "EUR (€)": 0.92, "GBP (£)": 0.78, "INR (₹)": 83.5, "JPY (¥)": 155.2 } }
+    };
+    let currentCat = "length";
+
+    function setCat(cat) {
+      currentCat = cat;
+      document.querySelectorAll('.cat-chip').forEach(b => b.classList.toggle('active', b.textContent.toLowerCase().includes(cat)));
+      const fromSel = document.getElementById('fromUnit');
+      const toSel = document.getElementById('toUnit');
+      fromSel.innerHTML = ''; toSel.innerHTML = '';
+      categories[cat].units.forEach((u, i) => {
+        fromSel.add(new Option(u, u));
+        toSel.add(new Option(u, u));
+      });
+      if (toSel.options.length > 1) toSel.selectedIndex = 1;
+      convert();
+    }
+
+    function convert() {
+      const val = parseFloat(document.getElementById('inputValue').value) || 0;
+      const from = document.getElementById('fromUnit').value;
+      const to = document.getElementById('toUnit').value;
+      let res = 0;
+
+      if (currentCat === 'temp') {
+        if (from.includes("Celsius") && to.includes("Fahrenheit")) res = (val * 9/5) + 32;
+        else if (from.includes("Fahrenheit") && to.includes("Celsius")) res = (val - 32) * 5/9;
+        else if (from.includes("Celsius") && to.includes("Kelvin")) res = val + 273.15;
+        else res = val;
+      } else {
+        const rates = categories[currentCat].rates;
+        const inBase = val / (rates[from] || 1);
+        res = inBase * (rates[to] || 1);
+      }
+      document.getElementById('resultVal').textContent = res.toFixed(2) + " " + to.split(" ")[1];
+    }
+    setCat('length');
+  </script>
+</body>
+</html>

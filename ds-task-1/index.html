@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DS Task 01 - Demographic Distribution Analysis | Data Science</title>
+  <meta name="description" content="Data Science Task 01: Continuous (Age/Income) and Categorical (Gender/Education) demographic distribution analysis and visualizations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: rgba(22, 30, 46, 0.75);
+      --primary: #3b82f6;
+      --secondary: #22d3ee;
+      --accent: #10b981;
+      --purple: #a855f7;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(34, 211, 238, 0.12) 0%, transparent 40%);
+      min-height: 100vh;
+    }
+    header {
+      padding: 1.5rem 2rem;
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .brand span { color: var(--primary); }
+    .nav-links { display: flex; gap: 1rem; }
+    .nav-btn {
+      padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+      text-decoration: none; color: var(--muted); border: 1px solid var(--border); transition: all 0.2s ease;
+    }
+    .nav-btn:hover { color: white; border-color: var(--primary); background: rgba(59, 130, 246, 0.15); }
+    
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+    
+    .hero-pill {
+      display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem;
+      font-weight: 700; letter-spacing: 0.05em; color: var(--secondary); background: rgba(34, 211, 238, 0.1);
+      border: 1px solid rgba(34, 211, 238, 0.2); margin-bottom: 1rem;
+    }
+    h1 { font-family: var(--font-heading); font-size: 2.25rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .gradient-text { background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { color: var(--muted); font-size: 1rem; max-width: 700px; margin-bottom: 2rem; }
+
+    .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .metric-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem;
+      backdrop-filter: blur(10px);
+    }
+    .metric-title { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; font-weight: 600; }
+    .metric-value { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; color: var(--secondary); margin-top: 0.25rem; }
+
+    .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) { .grid-2col { grid-template-columns: 1fr; } }
+
+    .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem;
+      backdrop-filter: blur(12px); box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .card-title { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+
+    canvas { background: #060911; border-radius: 12px; border: 1px solid var(--border); width: 100%; height: 260px; }
+
+    .filter-bar { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .filter-chip {
+      padding: 0.4rem 0.85rem; border-radius: 8px; font-size: 0.8rem; font-weight: 600;
+      background: rgba(255,255,255,0.05); border: 1px solid var(--border); cursor: pointer; color: var(--muted);
+      transition: all 0.2s ease;
+    }
+    .filter-chip.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+    pre {
+      background: #060911; border: 1px solid var(--border); border-radius: 12px; padding: 1rem;
+      font-family: var(--font-mono); font-size: 0.85rem; color: #a5f3fc; overflow-x: auto; margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="brand" id="brandLink">📊 PRODIGY <span>DS TRACK</span></a>
+    <div class="nav-links">
+      <a href="../ds_dashboard.html" class="nav-btn" id="btnDSDashboard">DS Hub Dashboard</a>
+      <a href="../index.html" class="nav-btn" id="btnMasterHub">Master Web Hub</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="hero-pill">DS TASK 01 • STANDALONE DEMO</div>
+    <h1>Demographic Distribution <span class="gradient-text">Analysis</span></h1>
+    <p class="subtitle">Exploratory Data Analysis (EDA) of continuous variables (Age, Income) using histograms/boxplots and categorical variables (Gender, Education, Country) via frequency bar charts.</p>
+
+    <!-- Metrics -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-title">Dataset Size</div>
+        <div class="metric-value">1,500 Records</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Mean Income ($)</div>
+        <div class="metric-value" style="color: var(--accent);">$65,420</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Median Age</div>
+        <div class="metric-value">42.5 Years</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Top Education Level</div>
+        <div class="metric-value">Bachelor's (42%)</div>
+      </div>
+    </div>
+
+    <div class="grid-2col">
+      <!-- Histogram -->
+      <div class="card">
+        <div class="card-title">📈 Continuous Variable: Age Distribution Histogram</div>
+
+        <div class="filter-bar">
+          <button class="filter-chip active" onclick="setAgeGroup('all')">All Ages</button>
+          <button class="filter-chip" onclick="setAgeGroup('young')">18-34 Yrs</button>
+          <button class="filter-chip" onclick="setAgeGroup('mid')">35-54 Yrs</button>
+          <button class="filter-chip" onclick="setAgeGroup('senior')">55+ Yrs</button>
+        </div>
+
+        <canvas id="ageCanvas"></canvas>
+      </div>
+
+      <!-- Categorical Bar Chart -->
+      <div class="card">
+        <div class="card-title">📊 Categorical Variable: Education & Gender Counts</div>
+
+        <canvas id="eduCanvas"></canvas>
+
+        <div style="margin-top: 1.5rem;">
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--text);">🐍 Python Execution Command</span>
+          <pre><code>cd ds-task-1
+python analyze_visualize.py</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const ageCanvas = document.getElementById('ageCanvas');
+    const ageCtx = ageCanvas.getContext('2d');
+    const eduCanvas = document.getElementById('eduCanvas');
+    const eduCtx = eduCanvas.getContext('2d');
+
+    const ageBins = [
+      { label: "18-24", count: 215, filter: "young" },
+      { label: "25-34", count: 380, filter: "young" },
+      { label: "35-44", count: 410, filter: "mid" },
+      { label: "45-54", count: 290, filter: "mid" },
+      { label: "55-64", count: 140, filter: "senior" },
+      { label: "65+", count: 65, filter: "senior" }
+    ];
+
+    const eduData = [
+      { label: "High School", count: 320, color: "#38bdf8" },
+      { label: "Bachelor's", count: 630, color: "#3b82f6" },
+      { label: "Master's", count: 390, color: "#a855f7" },
+      { label: "Doctorate / PhD", count: 160, color: "#10b981" }
+    ];
+
+    let currentAgeFilter = 'all';
+
+    function setAgeGroup(filter) {
+      currentAgeFilter = filter;
+      document.querySelectorAll('.filter-chip').forEach(btn => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase().includes(filter) || (filter === 'all' && btn.textContent.includes('All')));
+      });
+      drawAgeHistogram();
+    }
+
+    function drawAgeHistogram() {
+      ageCanvas.width = ageCanvas.parentElement.clientWidth;
+      ageCanvas.height = 260;
+      ageCtx.clearRect(0, 0, ageCanvas.width, ageCanvas.height);
+
+      const margin = 35;
+      const w = ageCanvas.width - margin * 2;
+      const h = ageCanvas.height - margin * 2;
+      const barWidth = w / ageBins.length - 12;
+
+      const maxCount = 450;
+
+      ageBins.forEach((bin, i) => {
+        const x = margin + i * (barWidth + 12) + 6;
+        const active = currentAgeFilter === 'all' || bin.filter === currentAgeFilter;
+        const barH = (bin.count / maxCount) * h;
+        const y = ageCanvas.height - margin - barH;
+
+        ageCtx.fillStyle = active ? "#3b82f6" : "rgba(255,255,255,0.1)";
+        ageCtx.beginPath();
+        ageCtx.roundRect(x, y, barWidth, barH, [6, 6, 0, 0]);
+        ageCtx.fill();
+
+        ageCtx.fillStyle = active ? "#f8fafc" : "#94a3b8";
+        ageCtx.font = "11px Inter";
+        ageCtx.fillText(bin.label, x + barWidth / 2 - 12, ageCanvas.height - 12);
+        if (active) {
+          ageCtx.font = "bold 10px JetBrains Mono";
+          ageCtx.fillText(bin.count, x + barWidth / 2 - 10, y - 6);
+        }
+      });
+    }
+
+    function drawEduChart() {
+      eduCanvas.width = eduCanvas.parentElement.clientWidth;
+      eduCanvas.height = 260;
+      eduCtx.clearRect(0, 0, eduCanvas.width, eduCanvas.height);
+
+      const margin = 35;
+      const w = eduCanvas.width - margin * 2;
+      const h = eduCanvas.height - margin * 2;
+      const barHeight = h / eduData.length - 10;
+
+      const maxCount = 700;
+
+      eduData.forEach((item, i) => {
+        const y = margin + i * (barHeight + 10);
+        const barW = (item.count / maxCount) * w;
+
+        eduCtx.fillStyle = item.color;
+        eduCtx.beginPath();
+        eduCtx.roundRect(margin, y, barW, barHeight, [0, 6, 6, 0]);
+        eduCtx.fill();
+
+        eduCtx.fillStyle = "#f8fafc";
+        eduCtx.font = "11px Inter";
+        eduCtx.fillText(item.label, margin + 10, y + barHeight / 2 + 4);
+
+        eduCtx.font = "bold 10px JetBrains Mono";
+        eduCtx.fillText(item.count + " (" + Math.round((item.count/1500)*100) + "%)", margin + barW + 8, y + barHeight / 2 + 4);
+      });
+    }
+
+    window.addEventListener('resize', () => { drawAgeHistogram(); drawEduChart(); });
+    drawAgeHistogram();
+    drawEduChart();
+  </script>
+</body>
+</html>

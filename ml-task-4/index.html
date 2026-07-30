@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ML Task 04 - Hand Gesture Recognition | Random Forest Classifier</title>
+  <meta name="description" content="Machine Learning Task 04: Random Forest classifier for hand gesture recognition and touchless HCI based on landmark feature coordinates.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: rgba(22, 30, 46, 0.75);
+      --primary: #6366f1;
+      --secondary: #38bdf8;
+      --accent: #10b981;
+      --amber: #f59e0b;
+      --purple: #a855f7;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(168, 85, 247, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(99, 102, 241, 0.12) 0%, transparent 45%);
+      min-height: 100vh;
+    }
+    header {
+      padding: 1.5rem 2rem;
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .brand span { color: var(--purple); }
+    .nav-links { display: flex; gap: 1rem; }
+    .nav-btn {
+      padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+      text-decoration: none; color: var(--muted); border: 1px solid var(--border); transition: all 0.2s ease;
+    }
+    .nav-btn:hover { color: white; border-color: var(--purple); background: rgba(168, 85, 247, 0.15); }
+    
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+    
+    .hero-pill {
+      display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem;
+      font-weight: 700; letter-spacing: 0.05em; color: var(--purple); background: rgba(168, 85, 247, 0.1);
+      border: 1px solid rgba(168, 85, 247, 0.2); margin-bottom: 1rem;
+    }
+    h1 { font-family: var(--font-heading); font-size: 2.25rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .gradient-text { background: linear-gradient(135deg, var(--purple), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { color: var(--muted); font-size: 1rem; max-width: 700px; margin-bottom: 2rem; }
+
+    .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .metric-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem;
+      backdrop-filter: blur(10px);
+    }
+    .metric-title { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; font-weight: 600; }
+    .metric-value { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; color: var(--purple); margin-top: 0.25rem; }
+
+    .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) { .grid-2col { grid-template-columns: 1fr; } }
+
+    .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem;
+      backdrop-filter: blur(12px); box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .card-title { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+
+    .gesture-selector { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.5rem; margin-bottom: 1.5rem; }
+    .gesture-btn {
+      background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); border-radius: 12px;
+      padding: 0.75rem 0.25rem; text-align: center; cursor: pointer; transition: all 0.2s ease;
+    }
+    .gesture-btn:hover, .gesture-btn.active { border-color: var(--purple); background: rgba(168, 85, 247, 0.2); }
+    .gesture-icon { font-size: 2.2rem; display: block; }
+    .gesture-name { font-size: 0.7rem; font-weight: 700; margin-top: 0.25rem; color: var(--muted); }
+
+    .result-display {
+      background: rgba(168, 85, 247, 0.1); border: 1px solid rgba(168, 85, 247, 0.3);
+      border-radius: 12px; padding: 1.5rem; text-align: center;
+    }
+
+    .confidence-list { margin-top: 1.25rem; display: flex; flex-direction: column; gap: 0.6rem; }
+    .confidence-row { font-size: 0.85rem; }
+    .confidence-header { display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 0.2rem; }
+    .confidence-track { background: rgba(255,255,255,0.05); border-radius: 6px; height: 10px; overflow: hidden; }
+    .confidence-fill { background: var(--purple); height: 100%; transition: width 0.3s ease; }
+
+    pre {
+      background: #060911; border: 1px solid var(--border); border-radius: 12px; padding: 1rem;
+      font-family: var(--font-mono); font-size: 0.85rem; color: #a5f3fc; overflow-x: auto; margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="brand" id="brandLink">🖐️ PRODIGY <span>ML TRACK</span></a>
+    <div class="nav-links">
+      <a href="../ml_dashboard.html" class="nav-btn" id="btnMLDashboard">ML Hub Dashboard</a>
+      <a href="../index.html" class="nav-btn" id="btnMasterHub">Master Web Hub</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="hero-pill">ML TASK 04 • STANDALONE DEMO</div>
+    <h1>Hand Gesture <span class="gradient-text">Recognition Model</span></h1>
+    <p class="subtitle">Random Forest Classifier (100 Decision Trees) detecting 5 distinct hand gestures for touchless Human-Computer Interaction (HCI) based on landmark keypoints.</p>
+
+    <!-- Metrics -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-title">Model Algorithm</div>
+        <div class="metric-value">Random Forest (100 Trees)</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Classification Accuracy</div>
+        <div class="metric-value" style="color: var(--accent);">100.00%</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Gesture Classes</div>
+        <div class="metric-value">5 Gestures</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Test Evaluation Samples</div>
+        <div class="metric-value">250 Samples</div>
+      </div>
+    </div>
+
+    <div class="grid-2col">
+      <!-- Simulator -->
+      <div class="card">
+        <div class="card-title">🖐️ Real-time HCI Gesture Detector</div>
+
+        <span style="font-size: 0.8rem; color: var(--muted); font-weight: 600;">SELECT HAND GESTURE KEYPOINT INPUT:</span>
+        <div class="gesture-selector" style="margin-top: 0.5rem;">
+          <div class="gesture-btn active" onclick="selectGesture(0)">
+            <span class="gesture-icon">🖐️</span>
+            <div class="gesture-name">Open Palm</div>
+          </div>
+          <div class="gesture-btn" onclick="selectGesture(1)">
+            <span class="gesture-icon">✊</span>
+            <div class="gesture-name">Closed Fist</div>
+          </div>
+          <div class="gesture-btn" onclick="selectGesture(2)">
+            <span class="gesture-icon">✌️</span>
+            <div class="gesture-name">Peace Sign</div>
+          </div>
+          <div class="gesture-btn" onclick="selectGesture(3)">
+            <span class="gesture-icon">👍</span>
+            <div class="gesture-name">Thumbs Up</div>
+          </div>
+          <div class="gesture-btn" onclick="selectGesture(4)">
+            <span class="gesture-icon">👌</span>
+            <div class="gesture-name">OK Sign</div>
+          </div>
+        </div>
+
+        <div class="result-display">
+          <div style="font-size: 3.5rem;" id="activeIcon">🖐️</div>
+          <div style="font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; color: var(--purple); margin: 0.3rem 0;" id="activeTitle">OPEN PALM 🖐️</div>
+          <div style="font-size: 0.85rem; color: var(--accent); font-weight: 600;" id="activeConf">Random Forest Certainty: 100.0%</div>
+        </div>
+      </div>
+
+      <!-- Probabilities & Details -->
+      <div class="card">
+        <div class="card-title">📊 Multi-Class Probability Breakdown</div>
+
+        <div class="confidence-list" id="probList">
+          <!-- Filled by JS -->
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--text);">🐍 Python Execution Command</span>
+          <pre><code>cd ml-task-4
+python train_gesture_model.py</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const gestures = [
+      { name: "Open Palm", icon: "🖐️", confs: [100, 0, 0, 0, 0] },
+      { name: "Closed Fist", icon: "✊", confs: [0, 100, 0, 0, 0] },
+      { name: "Peace Sign", icon: "✌️", confs: [0, 0, 100, 0, 0] },
+      { name: "Thumbs Up", icon: "👍", confs: [0, 0, 0, 100, 0] },
+      { name: "OK Sign", icon: "👌", confs: [0, 0, 0, 0, 100] },
+    ];
+
+    function selectGesture(idx) {
+      document.querySelectorAll('.gesture-btn').forEach((b, i) => b.classList.toggle('active', i === idx));
+      const g = gestures[idx];
+      document.getElementById('activeIcon').textContent = g.icon;
+      document.getElementById('activeTitle').textContent = g.name.toUpperCase() + ' ' + g.icon;
+      renderProbs(g.confs);
+    }
+
+    function renderProbs(confs) {
+      const container = document.getElementById('probList');
+      container.innerHTML = '';
+      gestures.forEach((g, i) => {
+        const val = confs[i];
+        const row = document.createElement('div');
+        row.className = 'confidence-row';
+        row.innerHTML = `
+          <div class="confidence-header">
+            <span>${g.icon} ${g.name}</span>
+            <span style="color: ${val > 50 ? 'var(--purple)' : 'var(--muted)'}; font-family: var(--font-mono);">${val.toFixed(1)}%</span>
+          </div>
+          <div class="confidence-track">
+            <div class="confidence-fill" style="width: ${val}%; background: ${val > 50 ? 'var(--purple)' : 'rgba(255,255,255,0.2)'};"></div>
+          </div>
+        `;
+        container.appendChild(row);
+      });
+    }
+
+    selectGesture(0);
+  </script>
+</body>
+</html>

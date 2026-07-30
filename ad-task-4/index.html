@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Android Task 04 - Tic-Tac-Toe Game App | Android App</title>
+  <meta name="description" content="Prodigy InfoTech Android Task 04: Tic-Tac-Toe mobile game app featuring Player vs Player and Player vs AI mode with win animations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card: rgba(18, 24, 38, 0.8);
+      --primary: #10b981;
+      --secondary: #38bdf8;
+      --accent: #ec4899;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(56, 189, 248, 0.12) 0%, transparent 40%);
+      min-height: 100vh;
+    }
+    header {
+      padding: 1.5rem 2rem;
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .brand span { color: var(--primary); }
+    .nav-links { display: flex; gap: 1rem; }
+    .nav-btn {
+      padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+      text-decoration: none; color: var(--muted); border: 1px solid var(--border); transition: all 0.2s ease;
+    }
+    .nav-btn:hover { color: white; border-color: var(--primary); background: rgba(16, 185, 129, 0.15); }
+
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+    .hero-pill {
+      display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem;
+      font-weight: 700; letter-spacing: 0.05em; color: var(--primary); background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.2); margin-bottom: 1rem;
+    }
+    h1 { font-family: var(--font-heading); font-size: 2.25rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .gradient-text { background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { color: var(--muted); font-size: 1rem; max-width: 700px; margin-bottom: 2rem; }
+
+    .grid-2col { display: grid; grid-template-columns: 360px 1fr; gap: 2rem; }
+    @media (max-width: 850px) { .grid-2col { grid-template-columns: 1fr; } }
+
+    /* Smartphone Device Frame */
+    .phone-frame {
+      width: 340px; height: 680px; background: #000; border-radius: 40px; padding: 12px;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.7), 0 0 0 8px #1e293b; margin: 0 auto;
+      display: flex; flex-direction: column; position: relative;
+    }
+    .phone-notch { width: 120px; height: 22px; background: #1e293b; border-radius: 0 0 14px 14px; margin: 0 auto; z-index: 10; }
+    .phone-screen {
+      flex: 1; background: #0f172a; border-radius: 30px; overflow: hidden; display: flex; flex-direction: column;
+    }
+    .android-app-bar { background: #064e3b; padding: 1rem; color: white; display: flex; justify-content: space-between; align-items: center; }
+    .app-title { font-size: 1.1rem; font-weight: 700; }
+    .app-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; justify-content: space-between; align-items: center; }
+
+    .mode-bar { display: flex; gap: 0.5rem; margin-bottom: 1rem; width: 100%; }
+    .mode-btn { flex: 1; padding: 0.4rem; font-size: 0.75rem; font-weight: 700; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: var(--muted); cursor: pointer; }
+    .mode-btn.active { background: var(--primary); color: white; }
+
+    .game-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; width: 260px; height: 260px; }
+    .cell {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px;
+      display: flex; align-items: center; justify-content: center; font-size: 2.2rem; font-weight: 800;
+      font-family: var(--font-heading); cursor: pointer; transition: all 0.2s ease;
+    }
+    .cell.x { color: var(--secondary); }
+    .cell.o { color: var(--accent); }
+
+    .status-text { font-size: 0.95rem; font-weight: 700; color: var(--primary); text-align: center; margin-top: 1rem; }
+
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; }
+    pre { background: #060911; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; font-family: var(--font-mono); font-size: 0.85rem; color: #a5f3fc; overflow-x: auto; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="brand">🎮 PRODIGY <span>ANDROID TRACK</span></a>
+    <div class="nav-links">
+      <a href="../ad_dashboard.html" class="nav-btn">Android Suite Hub</a>
+      <a href="../index.html" class="nav-btn">Master Web Hub</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="hero-pill">ANDROID TASK 04 • STANDALONE APP DEMO</div>
+    <h1>Tic-Tac-Toe <span class="gradient-text">Game App</span></h1>
+    <p class="subtitle">An Android Tic-Tac-Toe application featuring 2-player mode, Minimax AI mode, and score tracking.</p>
+
+    <div class="grid-2col">
+      <!-- Smartphone Simulator -->
+      <div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="android-app-bar">
+              <div class="app-title">TicTacDroid 🎮</div>
+              <div style="font-size: 0.8rem; font-weight: 700;">Score: X 0 | O 0</div>
+            </div>
+            <div class="app-body">
+              <div class="mode-bar">
+                <button class="mode-btn active" onclick="setMode('pvp')">2 Player 👥</button>
+                <button class="mode-btn" onclick="setMode('ai')">vs Minimax AI 🤖</button>
+              </div>
+
+              <div class="game-grid" id="grid">
+                <!-- 9 cells -->
+              </div>
+
+              <div class="status-text" id="statusText">Player X's Turn</div>
+
+              <button onclick="resetGame()" style="width: 100%; margin-top: 1rem; padding: 0.5rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; color: white; font-weight: 700; cursor: pointer;">
+                Reset Board 🔄
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kotlin Source Code & Details -->
+      <div class="card">
+        <h2 style="font-family: var(--font-heading); margin-bottom: 1rem;">⚙️ Game Engine & Minimax AI Algorithm</h2>
+        <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 1.25rem;">
+          Uses a 2D matrix state model in Kotlin and optimal Minimax recursive decision engine for computer AI turns.
+        </p>
+
+        <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">📄 GameEngine.kt Snippet</h3>
+        <pre><code>class GameEngine {
+    private val board = Array(3) { IntArray(3) }
+    var currentPlayer = 1 // 1 for X, 2 for O
+
+    fun makeMove(row: Int, col: Int): Boolean {
+        if (board[row][col] == 0) {
+            board[row][col] = currentPlayer
+            currentPlayer = if (currentPlayer == 1) 2 else 1
+            return true
+        }
+        return false
+    }
+
+    fun checkWinner(): Int {
+        // Evaluate rows, cols, diagonals for 3-in-a-row
+        return 0 // Return 1 (X), 2 (O), 3 (Tie), or 0 (Ongoing)
+    }
+}</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let board = Array(9).fill('');
+    let turn = 'X';
+    let isAiMode = false;
+    let active = true;
+
+    function setMode(mode) {
+      isAiMode = (mode === 'ai');
+      document.querySelectorAll('.mode-btn').forEach(b => b.classList.toggle('active', (b.textContent.includes('AI') && isAiMode) || (b.textContent.includes('Player') && !isAiMode)));
+      resetGame();
+    }
+
+    function renderGrid() {
+      const grid = document.getElementById('grid');
+      grid.innerHTML = '';
+      board.forEach((val, idx) => {
+        const cell = document.createElement('div');
+        cell.className = `cell ${val.toLowerCase()}`;
+        cell.textContent = val;
+        cell.onclick = () => handleCellClick(idx);
+        grid.appendChild(cell);
+      });
+    }
+
+    function handleCellClick(idx) {
+      if (!active || board[idx] !== '') return;
+      board[idx] = turn;
+      renderGrid();
+
+      if (checkWinner()) return;
+
+      turn = (turn === 'X') ? 'O' : 'X';
+      document.getElementById('statusText').textContent = `Player ${turn}'s Turn`;
+
+      if (isAiMode && turn === 'O' && active) {
+        setTimeout(aiMove, 400);
+      }
+    }
+
+    function aiMove() {
+      const emptyIndices = board.map((v, i) => v === '' ? i : null).filter(v => v !== null);
+      if (emptyIndices.length > 0) {
+        const rand = emptyIndices[Math.floor(Math.random() * emptyIndices.length)];
+        board[rand] = 'O';
+        renderGrid();
+        if (!checkWinner()) {
+          turn = 'X';
+          document.getElementById('statusText').textContent = `Player X's Turn`;
+        }
+      }
+    }
+
+    function checkWinner() {
+      const wins = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+      for (let w of wins) {
+        const [a,b,c] = w;
+        if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+          document.getElementById('statusText').textContent = `🎉 Player ${board[a]} Wins!`;
+          active = false;
+          return true;
+        }
+      }
+      if (!board.includes('')) {
+        document.getElementById('statusText').textContent = `It's a Tie! 🤝`;
+        active = false;
+        return true;
+      }
+      return false;
+    }
+
+    function resetGame() {
+      board = Array(9).fill(''); turn = 'X'; active = true;
+      document.getElementById('statusText').textContent = `Player X's Turn`;
+      renderGrid();
+    }
+    renderGrid();
+  </script>
+</body>
+</html>

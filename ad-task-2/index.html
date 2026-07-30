@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Android Task 02 - Task Manager & To-Do App | Android App</title>
+  <meta name="description" content="Prodigy InfoTech Android Task 02: To-Do List and Task Manager Android app with priority tags, category filters, and persistent local storage.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card: rgba(18, 24, 38, 0.8);
+      --primary: #ec4899;
+      --secondary: #a855f7;
+      --accent: #10b981;
+      --amber: #f59e0b;
+      --red: #ef4444;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(236, 72, 153, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.12) 0%, transparent 40%);
+      min-height: 100vh;
+    }
+    header {
+      padding: 1.5rem 2rem;
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .brand span { color: var(--primary); }
+    .nav-links { display: flex; gap: 1rem; }
+    .nav-btn {
+      padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+      text-decoration: none; color: var(--muted); border: 1px solid var(--border); transition: all 0.2s ease;
+    }
+    .nav-btn:hover { color: white; border-color: var(--primary); background: rgba(236, 72, 153, 0.15); }
+
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+    .hero-pill {
+      display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem;
+      font-weight: 700; letter-spacing: 0.05em; color: var(--primary); background: rgba(236, 72, 153, 0.1);
+      border: 1px solid rgba(236, 72, 153, 0.2); margin-bottom: 1rem;
+    }
+    h1 { font-family: var(--font-heading); font-size: 2.25rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .gradient-text { background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { color: var(--muted); font-size: 1rem; max-width: 700px; margin-bottom: 2rem; }
+
+    .grid-2col { display: grid; grid-template-columns: 360px 1fr; gap: 2rem; }
+    @media (max-width: 850px) { .grid-2col { grid-template-columns: 1fr; } }
+
+    /* Smartphone Device Frame */
+    .phone-frame {
+      width: 340px; height: 680px; background: #000; border-radius: 40px; padding: 12px;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.7), 0 0 0 8px #1e293b; margin: 0 auto;
+      display: flex; flex-direction: column; position: relative;
+    }
+    .phone-notch { width: 120px; height: 22px; background: #1e293b; border-radius: 0 0 14px 14px; margin: 0 auto; z-index: 10; }
+    .phone-screen {
+      flex: 1; background: #0f172a; border-radius: 30px; overflow: hidden; display: flex; flex-direction: column;
+    }
+    .android-app-bar { background: #831843; padding: 1rem; color: white; display: flex; justify-content: space-between; align-items: center; }
+    .app-title { font-size: 1.1rem; font-weight: 700; }
+    .app-body { padding: 1rem; flex: 1; overflow-y: auto; display: flex; flex-direction: column; }
+
+    .add-bar { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+    .task-in { flex: 1; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 0.5rem 0.75rem; color: white; font-size: 0.85rem; outline: none; }
+    .add-btn { background: var(--primary); color: white; border: none; border-radius: 10px; padding: 0.5rem 0.85rem; font-weight: 700; cursor: pointer; }
+
+    .task-list { flex: 1; display: flex; flex-direction: column; gap: 0.6rem; overflow-y: auto; }
+    .task-card {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;
+      padding: 0.75rem; display: flex; align-items: center; justify-content: space-between; font-size: 0.85rem;
+    }
+    .task-card.done { opacity: 0.5; text-decoration: line-through; }
+    .prio-badge { padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; }
+    .prio-high { background: rgba(239, 68, 68, 0.2); color: #f87171; }
+    .prio-med { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; }
+    pre { background: #060911; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; font-family: var(--font-mono); font-size: 0.85rem; color: #a5f3fc; overflow-x: auto; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="brand">📝 PRODIGY <span>ANDROID TRACK</span></a>
+    <div class="nav-links">
+      <a href="../ad_dashboard.html" class="nav-btn">Android Suite Hub</a>
+      <a href="../index.html" class="nav-btn">Master Web Hub</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="hero-pill">ANDROID TASK 02 • STANDALONE APP DEMO</div>
+    <h1>Task Manager & <span class="gradient-text">To-Do App</span></h1>
+    <p class="subtitle">An Android Task Manager application featuring task CRUD, priority tags, checkmark completion, and Room DB local persistence.</p>
+
+    <div class="grid-2col">
+      <!-- Smartphone Simulator -->
+      <div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="android-app-bar">
+              <div class="app-title">TaskFlow 📌</div>
+              <div style="font-size: 0.8rem; opacity: 0.8;">Room DB</div>
+            </div>
+            <div class="app-body">
+              <div class="add-bar">
+                <input type="text" class="task-in" id="taskInput" placeholder="Add new task...">
+                <button class="add-btn" onclick="addTask()">Add</button>
+              </div>
+
+              <div class="task-list" id="taskList">
+                <!-- Task items dynamically rendered -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Kotlin Source Code & Details -->
+      <div class="card">
+        <h2 style="font-family: var(--font-heading); margin-bottom: 1rem;">⚙️ Room DB & RecyclerView Controller</h2>
+        <p style="font-size: 0.9rem; color: var(--muted); margin-bottom: 1.25rem;">
+          Uses Android Jetpack Room Persistence Library with ViewModel and LiveData to maintain local task state across app restarts.
+        </p>
+
+        <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">📄 TaskEntity.kt & MainActivity.kt Snippet</h3>
+        <pre><code>@Entity(tableName = "tasks")
+data class TaskEntity(
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    val title: String,
+    val priority: String = "HIGH",
+    var isCompleted: Boolean = false
+)
+
+class MainActivity : AppCompatActivity() {
+    private val taskViewModel: TaskViewModel by viewModels()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val adapter = TaskAdapter { task -> taskViewModel.toggleTask(task) }
+        binding.recyclerView.adapter = adapter
+
+        taskViewModel.allTasks.observe(this) { tasks ->
+            adapter.submitList(tasks)
+        }
+    }
+}</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let tasks = [
+      { id: 1, title: "Complete Prodigy Android Task 02", prio: "high", done: false },
+      { id: 2, title: "Review Kotlin LiveData architecture", prio: "med", done: true },
+      { id: 3, title: "Deploy demo to GitHub Pages", prio: "high", done: false },
+    ];
+
+    function renderTasks() {
+      const container = document.getElementById('taskList');
+      container.innerHTML = '';
+      tasks.forEach(t => {
+        const item = document.createElement('div');
+        item.className = `task-card ${t.done ? 'done' : ''}`;
+        item.innerHTML = `
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <input type="checkbox" ${t.done ? 'checked' : ''} onchange="toggleTask(${t.id})">
+            <span>${t.title}</span>
+          </div>
+          <span class="prio-badge ${t.prio === 'high' ? 'prio-high' : 'prio-med'}">${t.prio}</span>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    function addTask() {
+      const input = document.getElementById('taskInput');
+      if (!input.value.trim()) return;
+      tasks.unshift({ id: Date.now(), title: input.value.trim(), prio: "high", done: false });
+      input.value = '';
+      renderTasks();
+    }
+
+    function toggleTask(id) {
+      tasks = tasks.map(t => t.id === id ? { ...t, done: !t.done } : t);
+      renderTasks();
+    }
+    renderTasks();
+  </script>
+</body>
+</html>

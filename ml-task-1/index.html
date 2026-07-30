@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ML Task 01 - House Price Prediction | Linear Regression</title>
+  <meta name="description" content="Machine Learning Task 01: Multiple Linear Regression model for house price prediction based on square footage, bedrooms, bathrooms, age, and garage capacity.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: rgba(22, 30, 46, 0.75);
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --secondary: #38bdf8;
+      --accent: #10b981;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(56, 189, 248, 0.12) 0%, transparent 40%);
+      min-height: 100vh;
+    }
+    header {
+      padding: 1.5rem 2rem;
+      background: rgba(11, 15, 25, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .brand span { color: var(--primary); }
+    .nav-links { display: flex; gap: 1rem; }
+    .nav-btn {
+      padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+      text-decoration: none; color: var(--muted); border: 1px solid var(--border); transition: all 0.2s ease;
+    }
+    .nav-btn:hover { color: white; border-color: var(--primary); background: rgba(99, 102, 241, 0.15); }
+    
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+    
+    .hero-pill {
+      display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem;
+      font-weight: 700; letter-spacing: 0.05em; color: var(--secondary); background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.2); margin-bottom: 1rem;
+    }
+    h1 { font-family: var(--font-heading); font-size: 2.25rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .gradient-text { background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { color: var(--muted); font-size: 1rem; max-width: 700px; margin-bottom: 2rem; }
+
+    .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+    .metric-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem;
+      backdrop-filter: blur(10px);
+    }
+    .metric-title { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; font-weight: 600; }
+    .metric-value { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 700; color: var(--secondary); margin-top: 0.25rem; }
+
+    .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) { .grid-2col { grid-template-columns: 1fr; } }
+
+    .card {
+      background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem;
+      backdrop-filter: blur(12px); box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .card-title { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+
+    .form-group { margin-bottom: 1.25rem; }
+    .form-label { display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .form-value { color: var(--secondary); font-family: var(--font-mono); font-weight: 600; }
+    input[type="range"] {
+      width: 100%; height: 6px; border-radius: 3px; background: rgba(255, 255, 255, 0.15);
+      outline: none; accent-color: var(--primary); cursor: pointer;
+    }
+
+    .result-box {
+      background: rgba(99, 102, 241, 0.1); border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 12px; padding: 1.5rem; text-align: center; margin-top: 1rem;
+    }
+    .result-label { font-size: 0.85rem; color: var(--muted); text-transform: uppercase; font-weight: 700; }
+    .result-price { font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; color: var(--accent); margin: 0.25rem 0; }
+
+    .contrib-list { margin-top: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
+    .contrib-item { display: flex; justify-content: space-between; font-size: 0.85rem; padding-bottom: 0.5rem; border-bottom: 1px dashed rgba(255, 255, 255, 0.1); }
+    .contrib-name { color: var(--muted); }
+    .contrib-val { font-family: var(--font-mono); font-weight: 600; }
+
+    pre {
+      background: #060911; border: 1px solid var(--border); border-radius: 12px; padding: 1rem;
+      font-family: var(--font-mono); font-size: 0.85rem; color: #a5f3fc; overflow-x: auto; margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="brand" id="brandLink">🏠 PRODIGY <span>ML TRACK</span></a>
+    <div class="nav-links">
+      <a href="../ml_dashboard.html" class="nav-btn" id="btnMLDashboard">ML Hub Dashboard</a>
+      <a href="../index.html" class="nav-btn" id="btnMasterHub">Master Web Hub</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="hero-pill">ML TASK 01 • STANDALONE DEMO</div>
+    <h1>House Price <span class="gradient-text">Prediction Model</span></h1>
+    <p class="subtitle">An interactive linear regression engine trained to predict property valuations using continuous features like square footage, room metrics, age, and garage spaces.</p>
+
+    <!-- Metrics -->
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-title">Model Algorithm</div>
+        <div class="metric-value">Linear Regression</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">R² Variance Score</div>
+        <div class="metric-value" style="color: var(--accent);">0.9902 (99.02%)</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Mean Absolute Error</div>
+        <div class="metric-value">$17,244.20</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-title">Root Mean Sq Error</div>
+        <div class="metric-value">$21,216.20</div>
+      </div>
+    </div>
+
+    <div class="grid-2col">
+      <!-- Calculator Form -->
+      <div class="card">
+        <div class="card-title">🎛️ Interactive Valuation Simulator</div>
+
+        <div class="form-group">
+          <div class="form-label"><span>Square Footage (sq ft)</span><span class="form-value" id="valSqFt">2,200</span></div>
+          <input type="range" id="inputSqFt" min="500" max="5000" step="50" value="2200">
+        </div>
+
+        <div class="form-group">
+          <div class="form-label"><span>Bedrooms</span><span class="form-value" id="valBeds">3</span></div>
+          <input type="range" id="inputBeds" min="1" max="6" step="1" value="3">
+        </div>
+
+        <div class="form-group">
+          <div class="form-label"><span>Bathrooms</span><span class="form-value" id="valBaths">2</span></div>
+          <input type="range" id="inputBaths" min="1" max="5" step="1" value="2">
+        </div>
+
+        <div class="form-group">
+          <div class="form-label"><span>Property Age (Years)</span><span class="form-value" id="valAge">15</span></div>
+          <input type="range" id="inputAge" min="0" max="50" step="1" value="15">
+        </div>
+
+        <div class="form-group">
+          <div class="form-label"><span>Garage Capacity (Cars)</span><span class="form-value" id="valGarage">2</span></div>
+          <input type="range" id="inputGarage" min="0" max="3" step="1" value="2">
+        </div>
+
+        <div class="result-box">
+          <div class="result-label">Estimated Property Price</div>
+          <div class="result-price" id="valPredictedPrice">$0</div>
+          <span style="font-size: 0.8rem; color: var(--muted);">Real-time evaluation based on trained weights</span>
+        </div>
+      </div>
+
+      <!-- Linear Regression Details -->
+      <div class="card">
+        <div class="card-title">📊 Coefficient Weight Breakdown</div>
+        <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem;">
+          The linear regression equation evaluates price as: <br>
+          <code style="color: var(--secondary); font-family: var(--font-mono);">Price = Base + W₁*SqFt + W₂*Beds + W₃*Baths - W₄*Age + W₅*Garage</code>
+        </p>
+
+        <div class="contrib-list">
+          <div class="contrib-item">
+            <span class="contrib-name">Base Intercept (Offset)</span>
+            <span class="contrib-val" style="color: var(--secondary);">+$49,956.57</span>
+          </div>
+          <div class="contrib-item">
+            <span class="contrib-name">Square Footage ($184.84/sq ft)</span>
+            <span class="contrib-val" id="contribSqFt">+$406,648.00</span>
+          </div>
+          <div class="contrib-item">
+            <span class="contrib-name">Bedrooms ($25,544.62/room)</span>
+            <span class="contrib-val" id="contribBeds">+$76,633.86</span>
+          </div>
+          <div class="contrib-item">
+            <span class="contrib-name">Bathrooms ($34,684.71/room)</span>
+            <span class="contrib-val" id="contribBaths">+$69,369.42</span>
+          </div>
+          <div class="contrib-item">
+            <span class="contrib-name">Property Age (-$1,196.07/yr)</span>
+            <span class="contrib-val" id="contribAge" style="color: #f87171;">-$17,941.05</span>
+          </div>
+          <div class="contrib-item">
+            <span class="contrib-name">Garage Spaces ($15,138.96/space)</span>
+            <span class="contrib-val" id="contribGarage">+$30,277.92</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--text);">🐍 Python Execution Command</span>
+          <pre><code>cd ml-task-1
+python model.py
+python predict.py</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const W_BASE = 49956.57;
+    const W_SQFT = 184.84;
+    const W_BEDS = 25544.62;
+    const W_BATHS = 34684.71;
+    const W_AGE = -1196.07;
+    const W_GARAGE = 15138.96;
+
+    const inputSqFt = document.getElementById('inputSqFt');
+    const inputBeds = document.getElementById('inputBeds');
+    const inputBaths = document.getElementById('inputBaths');
+    const inputAge = document.getElementById('inputAge');
+    const inputGarage = document.getElementById('inputGarage');
+
+    function fmt(val) { return '$' + Math.round(val).toLocaleString(); }
+
+    function update() {
+      const sqft = parseFloat(inputSqFt.value);
+      const beds = parseInt(inputBeds.value);
+      const baths = parseInt(inputBaths.value);
+      const age = parseInt(inputAge.value);
+      const garage = parseInt(inputGarage.value);
+
+      document.getElementById('valSqFt').textContent = sqft.toLocaleString();
+      document.getElementById('valBeds').textContent = beds;
+      document.getElementById('valBaths').textContent = baths;
+      document.getElementById('valAge').textContent = age;
+      document.getElementById('valGarage').textContent = garage;
+
+      const cSqFt = sqft * W_SQFT;
+      const cBeds = beds * W_BEDS;
+      const cBaths = baths * W_BATHS;
+      const cAge = age * W_AGE;
+      const cGarage = garage * W_GARAGE;
+
+      document.getElementById('contribSqFt').textContent = '+' + fmt(cSqFt);
+      document.getElementById('contribBeds').textContent = '+' + fmt(cBeds);
+      document.getElementById('contribBaths').textContent = '+' + fmt(cBaths);
+      document.getElementById('contribAge').textContent = fmt(cAge);
+      document.getElementById('contribGarage').textContent = '+' + fmt(cGarage);
+
+      const totalPrice = W_BASE + cSqFt + cBeds + cBaths + cAge + cGarage;
+      document.getElementById('valPredictedPrice').textContent = fmt(totalPrice);
+    }
+
+    [inputSqFt, inputBeds, inputBaths, inputAge, inputGarage].forEach(el => el.addEventListener('input', update));
+    update();
+  </script>
+</body>
+</html>

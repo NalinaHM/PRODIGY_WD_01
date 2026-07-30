@@ -6,13 +6,13 @@ Official project repository containing 5 standalone Machine Learning tasks imple
 
 ## 📂 Standalone Machine Learning Tasks
 
-| Task ID | Task Title | Model / Algorithm | Project Directory | Documentation |
-| :--- | :--- | :--- | :--- | :--- |
-| **ML Task 01** | **House Price Prediction** | Linear Regression | [`/ml-task-1`](ml-task-1/) | [`/ml-task-1/README.md`](ml-task-1/README.md) |
-| **ML Task 02** | **Customer Segmentation** | K-Means Clustering | [`/ml-task-2`](ml-task-2/) | [`/ml-task-2/README.md`](ml-task-2/README.md) |
-| **ML Task 03** | **Dog vs. Cat Classifier** | Support Vector Machine (SVM) | [`/ml-task-3`](ml-task-3/) | [`/ml-task-3/README.md`](ml-task-3/README.md) |
-| **ML Task 04** | **Hand Gesture Recognition** | Random Forest / HCI Classifier | [`/ml-task-4`](ml-task-4/) | [`/ml-task-4/README.md`](ml-task-4/README.md) |
-| **ML Task 05** | **Food Recognition & Calorie Estimator** | Multi-modal RF & Gradient Boosting | [`/ml-task-5`](ml-task-5/) | [`/ml-task-5/README.md`](ml-task-5/README.md) |
+| Task ID | Task Title | Model / Algorithm | Standalone Live Demo | Project Directory | Documentation |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **ML Task 01** | **House Price Prediction** | Linear Regression | 🌐 [Live Demo](ml-task-1/index.html) | [`/ml-task-1`](ml-task-1/) | [`/ml-task-1/README.md`](ml-task-1/README.md) |
+| **ML Task 02** | **Customer Segmentation** | K-Means Clustering | 🛍️ [Live Demo](ml-task-2/index.html) | [`/ml-task-2`](ml-task-2/) | [`/ml-task-2/README.md`](ml-task-2/README.md) |
+| **ML Task 03** | **Dog vs. Cat Classifier** | Support Vector Machine (SVM) | 🐶 [Live Demo](ml-task-3/index.html) | [`/ml-task-3`](ml-task-3/) | [`/ml-task-3/README.md`](ml-task-3/README.md) |
+| **ML Task 04** | **Hand Gesture Recognition** | Random Forest / HCI Classifier | 🖐️ [Live Demo](ml-task-4/index.html) | [`/ml-task-4`](ml-task-4/) | [`/ml-task-4/README.md`](ml-task-4/README.md) |
+| **ML Task 05** | **Food Recognition & Calorie Estimator** | Multi-modal RF & Gradient Boosting | 🥗 [Live Demo](ml-task-5/index.html) | [`/ml-task-5`](ml-task-5/) | [`/ml-task-5/README.md`](ml-task-5/README.md) |
 
 ---
 

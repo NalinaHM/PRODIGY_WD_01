@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GenAI Task 03 - Conversational AI Chatbot | Generative AI</title>
+  <meta name="description" content="Prodigy InfoTech GenAI Task 03: Multi-turn conversational AI chatbot with custom persona switching and context retention.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card: rgba(18, 24, 38, 0.8);
+      --primary: #38bdf8;
+      --secondary: #6366f1;
+      --accent: #10b981;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.1);
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.12) 0%, transparent 40%);
+      min-height: 100vh;
+    }
+    header {
+      padding: 1.5rem 2rem;
+      background: rgba(9, 13, 22, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .brand { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .brand span { color: var(--primary); }
+    .nav-links { display: flex; gap: 1rem; }
+    .nav-btn {
+      padding: 0.45rem 1rem; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+      text-decoration: none; color: var(--muted); border: 1px solid var(--border); transition: all 0.2s ease;
+    }
+    .nav-btn:hover { color: white; border-color: var(--primary); background: rgba(56, 189, 248, 0.15); }
+
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+    .hero-pill {
+      display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem;
+      font-weight: 700; letter-spacing: 0.05em; color: var(--primary); background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.2); margin-bottom: 1rem;
+    }
+    h1 { font-family: var(--font-heading); font-size: 2.25rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .gradient-text { background: linear-gradient(135deg, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .subtitle { color: var(--muted); font-size: 1rem; max-width: 700px; margin-bottom: 2rem; }
+
+    .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    @media (max-width: 768px) { .grid-2col { grid-template-columns: 1fr; } }
+
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; backdrop-filter: blur(12px); display: flex; flex-direction: column; }
+    .card-title { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.5rem; }
+
+    .persona-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; margin-bottom: 1rem; }
+    .persona-btn { background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 10px; padding: 0.6rem; text-align: left; font-size: 0.8rem; font-weight: 700; color: var(--muted); cursor: pointer; }
+    .persona-btn.active { border-color: var(--primary); background: rgba(56, 189, 248, 0.15); color: white; }
+
+    .chat-box { flex: 1; background: #060911; border: 1px solid var(--border); border-radius: 14px; padding: 1rem; height: 320px; overflow-y: auto; display: flex; flex-direction: column; gap: 0.75rem; }
+    .msg-bubble { max-width: 85%; padding: 0.75rem 1rem; border-radius: 14px; font-size: 0.85rem; line-height: 1.5; }
+    .msg-user { align-self: flex-end; background: var(--secondary); color: white; border-bottom-right-radius: 2px; }
+    .msg-ai { align-self: flex-start; background: rgba(255,255,255,0.08); border: 1px solid var(--border); color: #e2e8f0; border-bottom-left-radius: 2px; }
+
+    .chat-input-bar { display: flex; gap: 0.5rem; margin-top: 1rem; }
+    .chat-in { flex: 1; background: #060911; border: 1px solid var(--border); border-radius: 10px; padding: 0.65rem 0.85rem; color: white; font-size: 0.85rem; outline: none; }
+
+    pre { background: #060911; border: 1px solid var(--border); border-radius: 12px; padding: 1rem; font-family: var(--font-mono); font-size: 0.85rem; color: #a5f3fc; overflow-x: auto; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="../index.html" class="brand">🤖 PRODIGY <span>GEN AI TRACK</span></a>
+    <div class="nav-links">
+      <a href="../gai_dashboard.html" class="nav-btn">Gen AI Suite Hub</a>
+      <a href="../index.html" class="nav-btn">Master Web Hub</a>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="hero-pill">GEN AI TASK 03 • STANDALONE DEMO</div>
+    <h1>Conversational AI <span class="gradient-text">Chatbot & Assistant</span></h1>
+    <p class="subtitle">Multi-turn conversational dialogue assistant with persona switching and context retention.</p>
+
+    <div class="grid-2col">
+      <!-- Chat Interface -->
+      <div class="card">
+        <div class="card-title">💬 Interactive AI Dialogue Window</div>
+
+        <div class="chat-box" id="chatBox">
+          <div class="msg-bubble msg-ai">Hello! I am your AI Assistant powered by LLM transformer architecture. How can I help you today?</div>
+        </div>
+
+        <div class="chat-input-bar">
+          <input type="text" class="chat-in" id="chatInput" placeholder="Ask a question..." onkeydown="if(event.key==='Enter') sendMsg()">
+          <button onclick="sendMsg()" style="padding: 0.65rem 1rem; background: var(--primary); color: white; border: none; border-radius: 10px; font-weight: 700; cursor: pointer;">Send</button>
+        </div>
+      </div>
+
+      <!-- Personas & Details -->
+      <div class="card">
+        <div class="card-title">🎭 System Persona Customization</div>
+
+        <div class="persona-grid">
+          <div class="persona-btn active" onclick="setPersona('coder')">
+            👨‍💻 Senior Developer
+            <div style="font-size: 0.7rem; color: var(--muted); font-weight: normal;">Code optimization & debugging</div>
+          </div>
+          <div class="persona-btn" onclick="setPersona('tutor')">
+            🎓 STEM Tutor
+            <div style="font-size: 0.7rem; color: var(--muted); font-weight: normal;">Math, Physics & ML explanations</div>
+          </div>
+          <div class="persona-btn" onclick="setPersona('writer')">
+            📚 Creative Storyteller
+            <div style="font-size: 0.7rem; color: var(--muted); font-weight: normal;">Fiction & prompt drafting</div>
+          </div>
+          <div class="persona-btn" onclick="setPersona('finance')">
+            💰 Financial Advisor
+            <div style="font-size: 0.7rem; color: var(--muted); font-weight: normal;">Market analysis & metrics</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.25rem;">
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--text);">🐍 Python Execution Command</span>
+          <pre><code>cd gai-task-3
+python chatbot.py</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentPersona = 'coder';
+
+    function setPersona(p) {
+      currentPersona = p;
+      document.querySelectorAll('.persona-btn').forEach(b => b.classList.toggle('active', b.onclick.toString().includes(p)));
+      appendAiMsg(`Switched persona to ${p.toUpperCase()} mode! Ready to assist.`);
+    }
+
+    function sendMsg() {
+      const input = document.getElementById('chatInput');
+      const text = input.value.trim();
+      if (!text) return;
+
+      appendUserMsg(text);
+      input.value = '';
+
+      setTimeout(() => {
+        let reply = "That's a great question! Generative AI leverages attention mechanisms to process context efficiently.";
+        if (text.toLowerCase().includes('kotlin') || text.toLowerCase().includes('code')) {
+          reply = "In Kotlin, ViewBinding replaces `findViewById` to ensure type-safe and null-safe view interactions!";
+        } else if (text.toLowerCase().includes('hello') || text.toLowerCase().includes('hi')) {
+          reply = "Greetings! I am configured as your AI Assistant. What project shall we tackle?";
+        }
+        appendAiMsg(reply);
+      }, 500);
+    }
+
+    function appendUserMsg(msg) {
+      const box = document.getElementById('chatBox');
+      const div = document.createElement('div');
+      div.className = 'msg-bubble msg-user';
+      div.textContent = msg;
+      box.appendChild(div);
+      box.scrollTop = box.scrollHeight;
+    }
+
+    function appendAiMsg(msg) {
+      const box = document.getElementById('chatBox');
+      const div = document.createElement('div');
+      div.className = 'msg-bubble msg-ai';
+      div.textContent = msg;
+      box.appendChild(div);
+      box.scrollTop = box.scrollHeight;
+    }
+  </script>
+</body>
+</html>
